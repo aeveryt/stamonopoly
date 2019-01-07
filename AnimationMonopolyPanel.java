@@ -8,7 +8,14 @@ public class AnimationMonopolyPanel extends JPanel{
 	//Properties
 	
 	//Methods
-	
+	public void paintComponent(Graphics g){
+		
+	}
+
 	//Constructor
+	public AnimationMonopolyPanel(){
+		super();
+		
+	}
 	
 }
