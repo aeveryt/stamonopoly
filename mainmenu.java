@@ -6,6 +6,7 @@ import java.awt.Font;
 
 public class mainmenu implements ActionListener{
 
+	//Properties
 	public JFrame theframe; 
 	public JPanel thepanel;
 	public JButton InstrucButt;
@@ -14,7 +15,7 @@ public class mainmenu implements ActionListener{
 	public monopolyinstructions thepanelinstructions;
 
 	
-	// method 
+	//Methods
 	public void actionPerformed(ActionEvent evt){
 		if(evt.getSource() == InstrucButt){
 			theframe.setContentPane(thepanelinstructions);
@@ -24,12 +25,11 @@ public class mainmenu implements ActionListener{
 			System.exit(0);
 		
 		}else if(evt.getSource() == PlayButt){
-		
-		}
 	
+		}
 	}
 	
-	// constructor 
+	//Constructor
 	public mainmenu(){
 	
 		theframe = new JFrame("Main Menu");
@@ -60,14 +60,14 @@ public class mainmenu implements ActionListener{
 		ExitButt. setLocation(1200, 0); 
 		ExitButt.addActionListener(this);
 		
-		// insert image
+		//Insert image
 		ImageIcon icon = new ImageIcon("Homepage.jpg"); 
 		JLabel label = new JLabel(icon);
 		label.setSize(1280,720);  
 		label.setLocation(0,0); 
 		
 		
-		
+		//Add Images
 		thepanel.add(InstrucButt);
 		thepanel.add(PlayButt); 
 		thepanel.add(ExitButt); 
