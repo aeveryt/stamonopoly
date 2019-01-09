@@ -13,6 +13,7 @@ public class monopolyinstructions extends JPanel{
 	public JButton backtomain;
 	public JButton topage2;
 	public JButton backtopage1;
+	public JButton topage3;
 	
 	boolean blnpage1 = true;
 	boolean blnpage2 = false;
@@ -43,24 +44,27 @@ public class monopolyinstructions extends JPanel{
 		super();
 		
 		//-INSTRUCTIONS PAGE 1
-		if(blnpage1){
-			//- back to main menu button
-			backtomain = new JButton("BACK TO MAIN MENU");
-			backtomain.setSize(150,35);
-			backtomain.setLocation(15,25);
+		//- back to main menu button
+		backtomain = new JButton("BACK TO MAIN MENU");
+		backtomain.setSize(150,35);
+		backtomain.setLocation(15,25);
 		
-			//- to page 2
-			topage2 = new JButton("NEXT PAGE");
-			topage2.setSize(150,35);
-			topage2.setLocation(1100,25);
+		//- to page 2
+		topage2 = new JButton("NEXT PAGE");
+		topage2.setSize(150,35);
+		topage2.setLocation(1100,25);
 		
-		}
-		else if(blnpage2){
-			//-back to page 1
-			backtopage1 = new JButton("BACK TO PAGE 1");
-			backtopage1.setSize(150,35);
-			backtopage1.setLocation(15,25);
-		}
+		//-INSTRUCTION PAGE 2
+		//-back to page 1
+		backtopage1 = new JButton("BACK TO PAGE 1");
+		backtopage1.setSize(150,35);
+		backtopage1.setLocation(15,25);
+		
+		//- to page 3
+		topage3 = new JButton("NEXT PAGE");
+		topage3.setSize(150,35);
+		topage3.setLocation(1100,25);
+		
 		
 		//checking whether or not image or font is available
 		try{

@@ -39,7 +39,7 @@ public class serverpanel extends JPanel{
 		
 		
 		// Exit button
-		back = new JButton("Exit"); 
+		back = new JButton("Back"); 
 		back.setSize(80, 30); 
 		back.setLocation(1200, 0); 
 		

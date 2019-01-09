@@ -19,6 +19,8 @@ public class mainmenu implements ActionListener{
 	//Methods
 	public void actionPerformed(ActionEvent evt){
 		if(evt.getSource() == InstrucButt){
+			thepanelinstructions.backtopage1.setVisible(false);
+			thepanelinstructions.topage3.setVisible(false);
 			theframe.setContentPane(thepanelinstructions);
 			theframe.setVisible(true);	
 		}
@@ -29,10 +31,29 @@ public class mainmenu implements ActionListener{
 		}
 		else if(evt.getSource() == thepanelinstructions.topage2){
 			System.out.println("Trying to go page 2");
+			thepanelinstructions.backtomain.setVisible(false);
+			thepanelinstructions.topage2.setVisible(false);
+			thepanelinstructions.backtopage1.setVisible(true);
+			thepanelinstructions.topage3.setVisible(true);
 			thepanelinstructions.blnpage1 = false;
 			thepanelinstructions.blnpage2 = true;
 			theframe.setContentPane(thepanelinstructions);
 			theframe.setVisible(true);
+
+		}
+		else if(evt.getSource() == thepanelinstructions.backtopage1){
+			System.out.println("Trying to go back to page 1");
+			thepanelinstructions.backtomain.setVisible(true);
+			thepanelinstructions.topage2.setVisible(true);
+			thepanelinstructions.backtopage1.setVisible(false);
+			thepanelinstructions.topage3.setVisible(false);
+			thepanelinstructions.blnpage1 = true;
+			thepanelinstructions.blnpage2 = false;
+			theframe.setContentPane(thepanelinstructions);
+			theframe.setVisible(true);
+		}
+		else if(evt.getSource() == thepanelinstructions.topage3){
+			System.out.println("Trying to go to page 3");
 		}
 		else if(evt.getSource() == ExitButt){
 			System.exit(0);
@@ -87,6 +108,9 @@ public class mainmenu implements ActionListener{
 		//INSTRUCTIONS SCREEN
 		thepanelinstructions.setLayout(null);
 		thepanelinstructions.backtomain.addActionListener(this);
+		thepanelinstructions.topage2.addActionListener(this);
+		thepanelinstructions.backtopage1.addActionListener(this);
+		thepanelinstructions.topage3.addActionListener(this);
 		
 		// PLAY PAGE 1
 		playpage1.setLayout(null); 
@@ -100,6 +124,10 @@ public class mainmenu implements ActionListener{
 		thepanelinstructions.add(thepanelinstructions.backtomain);
 		thepanelinstructions.add(thepanelinstructions.topage2);
 		playpage1.add(playpage1.back); 
+
+		thepanelinstructions.add(thepanelinstructions.backtopage1);
+		thepanelinstructions.add(thepanelinstructions.topage3);
+
  
 		//set frame
 		theframe.setContentPane(thepanel);
