@@ -35,11 +35,8 @@ public class monopolyinstructions extends JPanel{
 		//- back to main menu button
 		backtomain = new JButton("BACK TO MAIN MENU");
 		backtomain.setSize(150,35);
-		backtomain.setLocation(20,20);
-		//backtomain.addActionListener(this);
-		//backtomain.setVisible(false);
+		backtomain.setLocation(15,25);
 		
-		//panel.add(backtomain);
 		//checking whether or not image or font is available
 		try{
 			page1 = ImageIO.read(new File("instructions.jpg"));

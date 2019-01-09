@@ -8,7 +8,7 @@ import java.io.*;
 public class monopolytrial implements ActionListener{
 	//Properties
 	public JFrame theframe; 
-	public JPanel thepanel;
+	public monopolyinstructions thepanel;
 	public Timer thetimer;
 	
 	
@@ -30,6 +30,7 @@ public class monopolytrial implements ActionListener{
 		
 		// set frame
 		theframe.setContentPane(thepanel);
+		thepanel.add(thepanel.backtomain);
 		theframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		theframe.pack();
 		theframe.setVisible(true);

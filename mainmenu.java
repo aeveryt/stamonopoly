@@ -12,24 +12,15 @@ public class mainmenu implements ActionListener{
 	public JButton ExitButt; 
 	public JButton PlayButt;
 	public monopolyinstructions thepanelinstructions;
-	public JButton backtomain;
 
 	
 	//Methods
 	public void actionPerformed(ActionEvent evt){
 		if(evt.getSource() == InstrucButt){
-			
-			
 			theframe.setContentPane(thepanelinstructions);
-			backtomain.setVisible(true);
-			backtomain.repaint();
-			theframe.setVisible(true);
-			
-			//if(evt.getSource() == backtomain){
-				//System.out.println("button is clicked");
-			//}
-		
-		}else if(evt.getSource() == ExitButt){
+			theframe.setVisible(true);	
+		}
+		else if(evt.getSource() == ExitButt){
 			System.exit(0);
 		
 		}else if(evt.getSource() == PlayButt){
@@ -75,19 +66,14 @@ public class mainmenu implements ActionListener{
 		label.setLocation(0,0); 
 		
 		//INSTRUCTIONS SCREEN
-		//- back to main menu button
-		backtomain = new JButton("BACK TO MAIN MENU");
-		backtomain.setSize(150,35);
-		backtomain.setLocation(20,20);
-		backtomain.addActionListener(this);
-		backtomain.setVisible(false);
+		thepanelinstructions.setLayout(null);
 		
 		//add features
 		thepanel.add(InstrucButt);
 		thepanel.add(PlayButt); 
 		thepanel.add(ExitButt);
-		thepanel.add(backtomain); 
 		thepanel.add(label); 
+		thepanelinstructions.add(thepanelinstructions.backtomain);
  
 		//set frame
 		theframe.setContentPane(thepanel);
