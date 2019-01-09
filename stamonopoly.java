@@ -9,12 +9,23 @@ public class stamonopoly implements ActionListener{
 	//Properties
 	JFrame frame = new JFrame("STA MONOPOLY");
 	JPanel panel = new AnimationMonopolyPanel();
+	JTextArea textarea = new JTextArea();
+	JScrollPane scroll = new JScrollPane(textarea);
+	JTextField textfield = new JTextField();
 	Timer timer = new Timer(1000/60,this);
+	
 	
 	//Methods
 	public void actionPerformed(ActionEvent evt){
 		if(evt.getSource() == timer){
 			panel.repaint();
+		}
+		
+		//CHATROOM
+		else if(evt.getSource() == textfield){
+			System.out.println("Going to send this over network: " + textfield.getText());
+	
+			//textarea.append("You: "+textfield.getText()+"\n");
 		}
 	}
 	
@@ -23,7 +34,7 @@ public class stamonopoly implements ActionListener{
 		//Panel 
 		panel.setLayout(null);
 		panel.setPreferredSize(new Dimension(1280,720));
-		
+		timer.start();
 		
 		//Frame
 		frame.setContentPane(panel);
@@ -31,6 +42,16 @@ public class stamonopoly implements ActionListener{
 		frame.pack();
 		frame.setVisible(true);
 		frame.setResizable(false); //prevents windows from being resized
+		
+		//Chatbox
+		textarea.setSize(500,150);
+		textarea.setLocation(750,500);
+		panel.add(textarea);
+		
+		textfield.setSize(500,50);
+		textfield.setLocation(750,655);
+		panel.add(textfield);
+		panel.add(scroll);
 		
 		
 	}
