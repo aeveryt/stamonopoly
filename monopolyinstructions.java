@@ -30,7 +30,9 @@ public class monopolyinstructions extends JPanel{
 		if(blnpage1){
 			g.drawImage(page1,0,0,null);
 		}
-		if(blnpage2){
+		else if(blnpage2){
+			g.setColor(Color.BLACK);
+			g.fillRect(0,0,1280,720);
 			g.drawImage(page2,0,0,null);
 		}
 	}
@@ -53,12 +55,13 @@ public class monopolyinstructions extends JPanel{
 			topage2.setLocation(1100,25);
 		
 		}
-		if(blnpage2){
+		else if(blnpage2){
 			//-back to page 1
 			backtopage1 = new JButton("BACK TO PAGE 1");
 			backtopage1.setSize(150,35);
 			backtopage1.setLocation(15,25);
 		}
+		
 		//checking whether or not image or font is available
 		try{
 			page1 = ImageIO.read(new File("instructions.jpg"));

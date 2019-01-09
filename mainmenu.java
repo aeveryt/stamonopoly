@@ -29,7 +29,7 @@ public class mainmenu implements ActionListener{
 			System.out.println("Trying to go page 2");
 			thepanelinstructions.blnpage1 = false;
 			thepanelinstructions.blnpage2 = true;
-			theframe.setContentPane(thepanel);
+			theframe.setContentPane(thepanelinstructions);
 			theframe.setVisible(true);
 		}
 		else if(evt.getSource() == ExitButt){
