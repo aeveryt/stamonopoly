@@ -12,6 +12,8 @@ public class mainmenu implements ActionListener{
 	public JButton ExitButt; 
 	public JButton PlayButt;
 	public monopolyinstructions thepanelinstructions;
+	public serverpanel playpage1;
+
 
 	
 	//Methods
@@ -36,7 +38,11 @@ public class mainmenu implements ActionListener{
 			System.exit(0);
 		
 		}else if(evt.getSource() == PlayButt){
-	
+			theframe.setContentPane(playpage1); 
+			theframe.setVisible(true);
+		}else if(evt.getSource() == playpage1.back){
+			theframe.setContentPane(thepanel); 
+			theframe.setVisible(true); 
 		}
 	}
 	
@@ -47,6 +53,7 @@ public class mainmenu implements ActionListener{
 		theframe = new JFrame("Main Menu");
 		thepanel = new JPanel(); 
 		thepanelinstructions = new monopolyinstructions();
+		playpage1 = new serverpanel();
 		
 		//set panel
 		thepanel.setPreferredSize(new Dimension(1280,720)); 
@@ -81,6 +88,10 @@ public class mainmenu implements ActionListener{
 		thepanelinstructions.setLayout(null);
 		thepanelinstructions.backtomain.addActionListener(this);
 		
+		// PLAY PAGE 1
+		playpage1.setLayout(null); 
+		playpage1.back.addActionListener(this); 
+		
 		//add features
 		thepanel.add(InstrucButt);
 		thepanel.add(PlayButt); 
@@ -88,6 +99,7 @@ public class mainmenu implements ActionListener{
 		thepanel.add(label); 
 		thepanelinstructions.add(thepanelinstructions.backtomain);
 		thepanelinstructions.add(thepanelinstructions.topage2);
+		playpage1.add(playpage1.back); 
  
 		//set frame
 		theframe.setContentPane(thepanel);

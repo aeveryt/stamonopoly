@@ -1,3 +1,5 @@
+// CHANGE TO MOUSE LISTENER instead of MouseMotionListner!!!
+
 import javax.swing.*; 
 import java.awt.*; 
 import java.awt.event.*; 
