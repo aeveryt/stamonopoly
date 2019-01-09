@@ -13,6 +13,9 @@ public class mainmenu implements ActionListener{
 	public JButton PlayButt;
 	public monopolyinstructions thepanelinstructions;
 	public serverpanel playpage1;
+	public startgame startpage; 
+	public joingame joinpage; 
+	
 
 
 	
@@ -57,14 +60,28 @@ public class mainmenu implements ActionListener{
 		}
 		else if(evt.getSource() == ExitButt){
 			System.exit(0);
-		
+	// PLAY SCREEN
 		}else if(evt.getSource() == PlayButt){
 			theframe.setContentPane(playpage1); 
 			theframe.setVisible(true);
 		}else if(evt.getSource() == playpage1.back){
 			theframe.setContentPane(thepanel); 
 			theframe.setVisible(true); 
+		}else if(evt.getSource() == playpage1.start){
+			System.out.println("started"); 
+			theframe.setContentPane(startpage); 
+			theframe.setVisible(true); 	
+		}else if(evt.getSource() == playpage1.existing){
+			System.out.println("going to exisitng game"); 
+			theframe.setContentPane(joinpage); 
+			theframe.setVisible(true); 
+		}else if(evt.getSource() == startpage.back || evt.getSource() ==joinpage.back){ 
+			theframe.setContentPane(thepanel); 
+			theframe.setVisible(true); 
 		}
+		
+		
+		
 	}
 	
 	//Constructor
@@ -75,6 +92,8 @@ public class mainmenu implements ActionListener{
 		thepanel = new JPanel(); 
 		thepanelinstructions = new monopolyinstructions();
 		playpage1 = new serverpanel();
+		startpage = new startgame(); 
+		joinpage = new joingame(); 
 		
 		//set panel
 		thepanel.setPreferredSize(new Dimension(1280,720)); 
@@ -115,18 +134,40 @@ public class mainmenu implements ActionListener{
 		// PLAY PAGE 1
 		playpage1.setLayout(null); 
 		playpage1.back.addActionListener(this); 
+		playpage1.start.addActionListener(this);
+		playpage1.existing.addActionListener(this);  
+		
+		// Start game: 
+		startpage.setLayout(null); 
+		startpage.back.addActionListener(this); 
+		
+		// Join game: 
+		joinpage.setLayout(null); 
+		joinpage.back.addActionListener(this); 
 		
 		//add features
 		thepanel.add(InstrucButt);
 		thepanel.add(PlayButt); 
 		thepanel.add(ExitButt);
 		thepanel.add(label); 
+		
+		// Add features: instructions
 		thepanelinstructions.add(thepanelinstructions.backtomain);
 		thepanelinstructions.add(thepanelinstructions.topage2);
-		playpage1.add(playpage1.back); 
-
 		thepanelinstructions.add(thepanelinstructions.backtopage1);
 		thepanelinstructions.add(thepanelinstructions.topage3);
+		
+		// Add features: Play page 1 :
+		playpage1.add(playpage1.back); 
+		playpage1.add(playpage1.start); 
+		playpage1.add(playpage1.existing); 
+		
+		// Add features: Join page and start page
+		joinpage.add(joinpage.back); 
+		startpage.add(startpage.back); 
+
+		
+		
 
  
 		//set frame

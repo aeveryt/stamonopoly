@@ -6,13 +6,11 @@ import javax.imageio.*;
 import java.awt.event.*; 
 
 
-public class serverpanel extends JPanel{
+public class joingame extends JPanel{
 	// properties
 	BufferedImage background; 
-	public JButton start;
-	public JButton existing; 
-	public JButton back; 
-	public serverpanel thepanel; 
+	JButton back;
+
 	
 	
 	// methods
@@ -29,28 +27,14 @@ public class serverpanel extends JPanel{
 	// constructor 
 	
 	
-	public serverpanel(){
+	public joingame(){
 		super(); 
 		
-
-		
-		// first button
-		start = new JButton("Start a new game"); 
-		start.setSize(300, 60); 
-		start.setLocation(290, 340); 
-		
-		
-		// second button 
-		existing = new JButton("Join an existing game"); 
-		existing.setSize(300,60); 
-		existing.setLocation(690, 340); 
-		
-		
-		
+				
 		// Exit button
-		back = new JButton("BACK"); 
-		back.setSize(80, 30); 
-		back.setLocation(1200, 0); 
+		back = new JButton("HOMEPAGE"); 
+		back.setSize(140, 30); 
+		back.setLocation(1160, 0); 
 		
 		
 		try{
