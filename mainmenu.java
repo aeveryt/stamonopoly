@@ -21,6 +21,14 @@ public class mainmenu implements ActionListener{
 			theframe.setVisible(true);	
 		}
 		else if(evt.getSource() == thepanelinstructions.backtomain){
+			System.out.println("Trying to go back to main menu");
+			theframe.setContentPane(thepanel);
+			theframe.setVisible(true);
+		}
+		else if(evt.getSource() == thepanelinstructions.topage2){
+			System.out.println("Trying to go page 2");
+			thepanelinstructions.blnpage1 = false;
+			thepanelinstructions.blnpage2 = true;
 			theframe.setContentPane(thepanel);
 			theframe.setVisible(true);
 		}
@@ -79,6 +87,7 @@ public class mainmenu implements ActionListener{
 		thepanel.add(ExitButt);
 		thepanel.add(label); 
 		thepanelinstructions.add(thepanelinstructions.backtomain);
+		thepanelinstructions.add(thepanelinstructions.topage2);
  
 		//set frame
 		theframe.setContentPane(thepanel);
