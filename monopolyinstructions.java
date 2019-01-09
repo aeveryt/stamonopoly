@@ -28,9 +28,6 @@ public class monopolyinstructions extends JPanel{
 		//from JPanel
 		super();
 		
-		//set panel properties
-		//panel = new JPanel();
-		//panel.setPreferredSize(new Dimension(1280,720));
 		//panel.setLayout(null);
 		//- back to main menu button
 		backtomain = new JButton("BACK TO MAIN MENU");

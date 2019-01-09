@@ -20,6 +20,10 @@ public class mainmenu implements ActionListener{
 			theframe.setContentPane(thepanelinstructions);
 			theframe.setVisible(true);	
 		}
+		else if(evt.getSource() == thepanelinstructions.backtomain){
+			theframe.setContentPane(thepanel);
+			theframe.setVisible(true);
+		}
 		else if(evt.getSource() == ExitButt){
 			System.exit(0);
 		
@@ -67,6 +71,7 @@ public class mainmenu implements ActionListener{
 		
 		//INSTRUCTIONS SCREEN
 		thepanelinstructions.setLayout(null);
+		thepanelinstructions.backtomain.addActionListener(this);
 		
 		//add features
 		thepanel.add(InstrucButt);
