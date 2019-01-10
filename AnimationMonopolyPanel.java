@@ -12,7 +12,7 @@ public class AnimationMonopolyPanel extends JPanel{
 	JTextField textfield = new JTextField();
 	Timer timer;
 	JTextArea textarea = new JTextArea();
-	JScrollPane scroll = new JScrollPane(textarea);
+	// JScrollPane scroll = new JScrollPane(textarea);
 	
 	
 	//Methods
@@ -27,8 +27,9 @@ public class AnimationMonopolyPanel extends JPanel{
 		super();
 		
 		// chat box
-		textarea.setSize(500,150);
-		textarea.setLocation(750,500);
+		textarea.setSize(500,150); 
+		textarea.setLocation(750,500); 
+		 
 
 		
 		textfield.setSize(500,50);

@@ -103,6 +103,7 @@ public class mainmenu implements ActionListener{
 		startpage = new startgame(); 
 		joinpage = new joingame(); 
 		monopolypanel = new AnimationMonopolyPanel(); 
+	
 		
 		//set panel
 		thepanel.setPreferredSize(new Dimension(1280,720)); 
@@ -165,11 +166,13 @@ public class mainmenu implements ActionListener{
 		// PLAY PAGE: 
 		monopolypanel.setLayout(null); 
 		monopolypanel.textfield.addActionListener(this);
-	//	monopolypanel.timer.addActionListener(this); 
-	//	monopolypanel.timer.start(); 
+	
+	/*
+		monopolypanel.timer.addActionListener(this); 
+		monopolypanel.timer.start(); 
+		monopolypanel.scroll.addActionListener(this); 
 		
-		//monopolypanel.textarea.addActionListener(this); 
-		//monopolypanel.scroll.addActionListener(this); 
+	*/
 		
 		//add features
 		thepanel.add(InstrucButt);
@@ -195,9 +198,10 @@ public class mainmenu implements ActionListener{
 		startpage.add(startpage.gameplay); 
 
 		// Add features: to play page
-		monopolypanel.add(monopolypanel.scroll); 
+		//monopolypanel.add(monopolypanel.scroll); 
 		monopolypanel.add(monopolypanel.textarea); 
 		monopolypanel.add(monopolypanel.textfield); 
+
 		
 		
 		//set frame
