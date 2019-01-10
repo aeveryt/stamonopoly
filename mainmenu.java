@@ -146,6 +146,7 @@ public class mainmenu implements ActionListener{
 		// Join game: 
 		joinpage.setLayout(null); 
 		joinpage.back.addActionListener(this); 
+		joinpage.TF.addActionListener(this); 
 		
 		// super socket master
 		ssm = new SuperSocketMaster(1337, this);
@@ -175,7 +176,7 @@ public class mainmenu implements ActionListener{
 		// Add features: Join page and start page
 		joinpage.add(joinpage.back); 
 		startpage.add(startpage.back); 
-		
+		joinpage.add(joinpage.TF); 
 		
 
 		

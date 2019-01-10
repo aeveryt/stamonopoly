@@ -23,7 +23,7 @@ public class startgame extends JPanel{
 		g.drawImage(background, 0,0, null); 
 		g.drawString("Your unique code is:", 400,150); 
 		// g.drawString(menu.ssm.getMyAddress(), 0,0); 
-		g.drawString(menu.strAddress,0,0); 
+		// g.drawString(menu.strAddress,0,0); 
 	}
 
 	

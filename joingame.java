@@ -10,6 +10,8 @@ public class joingame extends JPanel{
 	// properties
 	BufferedImage background; 
 	JButton back;
+	JTextField TF; 
+	Font title;
 
 	
 	
@@ -18,9 +20,9 @@ public class joingame extends JPanel{
 	public void paintComponent(Graphics g){
 		g.setColor(Color.WHITE); 
 		g.fillRect(0,0,1280,720); 	
-		
 		g.drawImage(background, 0, 0, null); 
-		
+		g.setFont(title); 
+		g.drawString("Enter game code:", 400,250);
 	}
 
 	
@@ -36,9 +38,16 @@ public class joingame extends JPanel{
 		back.setSize(140, 30); 
 		back.setLocation(1160, 0); 
 		
+		// textfield
+		
+		TF = new JTextField();
+		TF.setSize(500,50); 
+		TF.setLocation(370, 340);
+		
 		
 		try{
 			background = ImageIO.read(new File("monopoly.jpg")); 
+			title = new Font("kabel.ttf", Font.BOLD, 50);
 		}catch(IOException e){
 			System.out.println("Error"); 
 		}
