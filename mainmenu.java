@@ -18,7 +18,7 @@ public class mainmenu implements ActionListener{
 	public SuperSocketMaster ssm; 
 	public AnimationMonopolyPanel monopolypanel; 
 			
-		
+
 
 
 	
@@ -160,6 +160,16 @@ public class mainmenu implements ActionListener{
 		ssm = new SuperSocketMaster(1337, this);
 		startpage.strAddress = ssm.getMyAddress(); 
 		ssm.connect();
+		// startpage.intConnections = clientconnections.get(); 
+		
+		// PLAY PAGE: 
+		monopolypanel.setLayout(null); 
+		monopolypanel.textfield.addActionListener(this);
+	//	monopolypanel.timer.addActionListener(this); 
+	//	monopolypanel.timer.start(); 
+		
+		//monopolypanel.textarea.addActionListener(this); 
+		//monopolypanel.scroll.addActionListener(this); 
 		
 		//add features
 		thepanel.add(InstrucButt);
@@ -184,16 +194,18 @@ public class mainmenu implements ActionListener{
 		joinpage.add(joinpage.TF); 
 		startpage.add(startpage.gameplay); 
 
-
+		// Add features: to play page
+		monopolypanel.add(monopolypanel.scroll); 
+		monopolypanel.add(monopolypanel.textarea); 
+		monopolypanel.add(monopolypanel.textfield); 
 		
 		
-
- 
 		//set frame
 		theframe.setContentPane(thepanel);
 		theframe.pack();
 		theframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
 		theframe.setVisible(true);
+		theframe.setResizable(false); //prevents windows from being resized
 	
 	}
 	
