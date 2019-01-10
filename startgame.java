@@ -11,7 +11,12 @@ public class startgame extends JPanel{
 	BufferedImage background; 
 	JButton back; 
 	Font title;
+	Font bold; 
 	public mainmenu menu; 
+	String strAddress;
+	JButton gameplay; 
+
+	
 	
 	
 	// methods
@@ -22,8 +27,11 @@ public class startgame extends JPanel{
 		g.fillRect(0,0,1280,720); 	
 		g.drawImage(background, 0,0, null); 
 		g.drawString("Your unique code is:", 400,150); 
-		// g.drawString(menu.ssm.getMyAddress(), 0,0); 
-		// g.drawString(menu.strAddress,0,0); 
+		g.setColor(Color.BLUE); 
+		g.setFont(bold); 
+		g.drawString(""+strAddress,375,300); 
+		
+		System.out.println("made it "+strAddress); 
 	}
 
 	
@@ -37,11 +45,17 @@ public class startgame extends JPanel{
 		back = new JButton("HOMEPAGE"); 
 		back.setSize(140, 30); 
 		back.setLocation(1160, 0); 
+		
 
+		// start game
+		gameplay = new JButton("start game"); 
+		gameplay.setSize(140,100); 
+		gameplay.setLocation(1140,620); 
 		
 		try{
 			background = ImageIO.read(new File("monopoly.jpg")); 
 			title = new Font("kabel.ttf", Font.BOLD, 50);
+			bold = new Font("kabel.ttf", Font.BOLD, 100); 
 		}catch(IOException e){
 			System.out.println("Error"); 
 		}

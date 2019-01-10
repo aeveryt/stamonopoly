@@ -16,6 +16,7 @@ public class mainmenu implements ActionListener{
 	public startgame startpage; 
 	public joingame joinpage; 
 	public SuperSocketMaster ssm; 
+	public AnimationMonopolyPanel monopolypanel; 
 			
 		
 
@@ -80,7 +81,12 @@ public class mainmenu implements ActionListener{
 		}else if(evt.getSource() == startpage.back || evt.getSource() ==joinpage.back){ 
 			theframe.setContentPane(thepanel); 
 			theframe.setVisible(true); 
+		}else if(evt.getSource() == startpage.gameplay){
+			theframe.setContentPane(monopolypanel);
+			theframe.setVisible(true); 
 		}
+		
+		
 		
 		
 		
@@ -96,6 +102,7 @@ public class mainmenu implements ActionListener{
 		playpage1 = new serverpanel();
 		startpage = new startgame(); 
 		joinpage = new joingame(); 
+		monopolypanel = new AnimationMonopolyPanel(); 
 		
 		//set panel
 		thepanel.setPreferredSize(new Dimension(1280,720)); 
@@ -142,6 +149,7 @@ public class mainmenu implements ActionListener{
 		// Start game: 
 		startpage.setLayout(null); 
 		startpage.back.addActionListener(this); 
+		startpage.gameplay.addActionListener(this); 
 		
 		// Join game: 
 		joinpage.setLayout(null); 
@@ -150,10 +158,7 @@ public class mainmenu implements ActionListener{
 		
 		// super socket master
 		ssm = new SuperSocketMaster(1337, this);
-		
-		String strAddress; 
-		strAddress = ssm.getMyAddress(); 
-		System.out.println("My server IP is: "+ssm.getMyAddress());
+		startpage.strAddress = ssm.getMyAddress(); 
 		ssm.connect();
 		
 		//add features
@@ -177,7 +182,8 @@ public class mainmenu implements ActionListener{
 		joinpage.add(joinpage.back); 
 		startpage.add(startpage.back); 
 		joinpage.add(joinpage.TF); 
-		
+		startpage.add(startpage.gameplay); 
+
 
 		
 		
