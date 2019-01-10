@@ -15,6 +15,7 @@ public class startgame extends JPanel{
 	public mainmenu menu; 
 	String strAddress;
 	JButton gameplay; 
+	int intConnections; 
 
 	
 	
@@ -30,8 +31,8 @@ public class startgame extends JPanel{
 		g.setColor(Color.BLUE); 
 		g.setFont(bold); 
 		g.drawString(""+strAddress,375,300); 
-		
 		System.out.println("made it "+strAddress); 
+		
 	}
 
 	
