@@ -15,7 +15,9 @@ public class mainmenu implements ActionListener{
 	public serverpanel playpage1;
 	public startgame startpage; 
 	public joingame joinpage; 
-	
+	public SuperSocketMaster ssm; 
+			
+		
 
 
 	
@@ -145,6 +147,14 @@ public class mainmenu implements ActionListener{
 		joinpage.setLayout(null); 
 		joinpage.back.addActionListener(this); 
 		
+		// super socket master
+		ssm = new SuperSocketMaster(1337, this);
+		
+		String strAddress; 
+		strAddress = ssm.getMyAddress(); 
+		System.out.println("My server IP is: "+ssm.getMyAddress());
+		ssm.connect();
+		
 		//add features
 		thepanel.add(InstrucButt);
 		thepanel.add(PlayButt); 
@@ -165,6 +175,8 @@ public class mainmenu implements ActionListener{
 		// Add features: Join page and start page
 		joinpage.add(joinpage.back); 
 		startpage.add(startpage.back); 
+		
+		
 
 		
 		
@@ -177,6 +189,8 @@ public class mainmenu implements ActionListener{
 		theframe.setVisible(true);
 	
 	}
+	
+	
 	
 	public static void main(String []args){
 		new mainmenu(); 
