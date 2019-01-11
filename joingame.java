@@ -12,7 +12,9 @@ public class joingame extends JPanel{
 	JButton back;
 	JTextField TF; 
 	Font title;
-
+	JButton gameplay; 
+	String strCode; 
+	public startgame startpage; 
 	
 	
 	// methods
@@ -23,6 +25,7 @@ public class joingame extends JPanel{
 		g.drawImage(background, 0, 0, null); 
 		g.setFont(title); 
 		g.drawString("Enter game code:", 400,250);
+		
 	}
 
 	
@@ -31,6 +34,7 @@ public class joingame extends JPanel{
 	
 	public joingame(){
 		super(); 
+		startpage = new startgame(); 
 		
 				
 		// Exit button
@@ -44,10 +48,22 @@ public class joingame extends JPanel{
 		TF.setSize(500,50); 
 		TF.setLocation(370, 340);
 		
+		// start game
+		gameplay = new JButton("start game"); 
+		gameplay.setSize(140,100); 
+		gameplay.setLocation(1140,620); 
+		
+		if(strCode.equals(startpage.strAddress)){
+			gameplay.setSelected(true); 
+		}else{
+			gameplay.setSelected(false);  
+		}
+		
 		
 		try{
 			background = ImageIO.read(new File("monopoly.jpg")); 
 			title = new Font("kabel.ttf", Font.BOLD, 50);
+			
 		}catch(IOException e){
 			System.out.println("Error"); 
 		}

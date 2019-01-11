@@ -24,8 +24,8 @@ public class stamonopoly implements ActionListener{
 		//CHATROOM
 		else if(evt.getSource() == textfield){
 			System.out.println("Going to send this over network: " + textfield.getText());
-	
-			//textarea.append("You: "+textfield.getText()+"\n");
+			textarea.append("You: "+textfield.getText()+"\n");
+			textfield.setText("");
 		}
 	}
 	
@@ -46,11 +46,15 @@ public class stamonopoly implements ActionListener{
 		//Chatbox
 		textarea.setSize(500,150);
 		textarea.setLocation(750,500);
+		textarea.setEnabled(false);
 		panel.add(textarea);
 		
 		textfield.setSize(500,50);
 		textfield.setLocation(750,655);
+		textfield.addActionListener(this);
 		panel.add(textfield);
+		
+		
 		panel.add(scroll);
 		
 		
