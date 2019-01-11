@@ -11,6 +11,7 @@ public class monopolyinstructions extends JPanel{
 	BufferedImage page1;
 	BufferedImage page2;
 	BufferedImage page3;
+	BufferedImage page4;
 	public JButton backtomain;
 	public JButton topage2;
 	public JButton backtopage1;
@@ -21,6 +22,7 @@ public class monopolyinstructions extends JPanel{
 	boolean blnpage1 = true;
 	boolean blnpage2 = false;
 	boolean blnpage3 = false;
+	boolean blnpage4 = false;
 	
 	//-initialize
 
@@ -89,6 +91,7 @@ public class monopolyinstructions extends JPanel{
 			page1 = ImageIO.read(new File("instructions.jpg"));
 			page2 = ImageIO.read(new File("instructions2.jpg"));
 			page3 = ImageIO.read(new File("instructions3.jpg"));
+			page4 = ImageIO.read(new File("instructions4.jpg"));
 			title = new Font("kabel.ttf", Font.PLAIN, 12);
 		}
 		catch(IOException e){
