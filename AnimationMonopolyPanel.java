@@ -12,6 +12,8 @@ public class AnimationMonopolyPanel extends JPanel{
 	JTextField textfield = new JTextField();
 	Timer timer;
 	JTextArea textarea = new JTextArea();
+	JScrollPane scroll; 
+	
 	// JScrollPane scroll = new JScrollPane(textarea);
 	
 	
@@ -26,15 +28,15 @@ public class AnimationMonopolyPanel extends JPanel{
 	public AnimationMonopolyPanel(){
 		super();
 		
-		// chat box
-		textarea.setSize(500,150); 
-		textarea.setLocation(750,500); 
-		 
-
 		
 		textfield.setSize(500,50);
 		textfield.setLocation(750,655);
-
+		
+		// scroll
+		scroll = new JScrollPane(textarea); 
+		scroll.setSize(500 ,150);
+		scroll.setLocation(750,500); 
+ 
 		
 		try{
 			monopolyboard = ImageIO.read(new File("MonopolyGameBoard.png"));

@@ -110,10 +110,19 @@ public class mainmenu implements ActionListener{
 		}else if(evt.getSource() == startpage.back || evt.getSource() ==joinpage.back){ 
 			theframe.setContentPane(thepanel); 
 			theframe.setVisible(true); 
-		}else if(evt.getSource() == startpage.gameplay){
+		}else if(evt.getSource() == startpage.gameplay || evt.getSource() == joinpage.gameplay){
 			theframe.setContentPane(monopolypanel);
 			theframe.setVisible(true); 
+		}// Joining a game:
+		else if(evt.getSource() == joinpage.TF){
+			joinpage.strCode = joinpage.TF.getText(); 
+			
+			
+		// Client page:
+		
 		}
+		
+		
 		
 	}
 	
@@ -183,6 +192,7 @@ public class mainmenu implements ActionListener{
 		joinpage.setLayout(null); 
 		joinpage.back.addActionListener(this); 
 		joinpage.TF.addActionListener(this); 
+		joinpage.gameplay.addActionListener(this); 
 		
 		// super socket master
 		ssm = new SuperSocketMaster(1337, this);
@@ -193,13 +203,10 @@ public class mainmenu implements ActionListener{
 		// PLAY PAGE: 
 		monopolypanel.setLayout(null); 
 		monopolypanel.textfield.addActionListener(this);
-	
-	/*
-		monopolypanel.timer.addActionListener(this); 
-		monopolypanel.timer.start(); 
-		monopolypanel.scroll.addActionListener(this); 
 		
-	*/
+		
+		
+	
 		
 		//add features
 		thepanel.add(InstrucButt);
@@ -225,11 +232,16 @@ public class mainmenu implements ActionListener{
 		startpage.add(startpage.back); 
 		joinpage.add(joinpage.TF); 
 		startpage.add(startpage.gameplay); 
+		joinpage.add(joinpage.gameplay); 
 
 		// Add features: to play page
-		//monopolypanel.add(monopolypanel.scroll); 
-		monopolypanel.add(monopolypanel.textarea); 
-		monopolypanel.add(monopolypanel.textfield); 
+		 
+		monopolypanel.add(monopolypanel.scroll); 
+		// monopolypanel.add(monopolypanel.textarea); 
+		monopolypanel.add(monopolypanel.textfield);
+	
+			
+ 
 
 		
 		//set frame
