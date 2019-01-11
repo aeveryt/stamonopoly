@@ -88,8 +88,6 @@ public class mainmenu implements ActionListener{
 		
 		
 		
-		
-		
 	}
 	
 	//Constructor
@@ -202,7 +200,6 @@ public class mainmenu implements ActionListener{
 		monopolypanel.add(monopolypanel.textarea); 
 		monopolypanel.add(monopolypanel.textfield); 
 
-		
 		
 		//set frame
 		theframe.setContentPane(thepanel);
