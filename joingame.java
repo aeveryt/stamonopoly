@@ -53,11 +53,11 @@ public class joingame extends JPanel{
 		gameplay.setSize(140,100); 
 		gameplay.setLocation(1140,620); 
 		
-		if(strCode.equals(startpage.strAddress)){
-			gameplay.setSelected(true); 
-		}else{
-			gameplay.setSelected(false);  
-		}
+		//if(strCode.equals(startpage.strAddress)){
+			//gameplay.setSelected(true); 
+		//}else{
+			//gameplay.setSelected(false);  
+		//}
 		
 		
 		try{

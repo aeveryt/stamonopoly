@@ -18,6 +18,8 @@ public class monopolyinstructions extends JPanel{
 	public JButton topage3;
 	public JButton topage4;
 	public JButton backtopage2;
+	public JButton backtopage3;
+	public JButton topage5;
 	
 	boolean blnpage1 = true;
 	boolean blnpage2 = false;
@@ -45,6 +47,11 @@ public class monopolyinstructions extends JPanel{
 			g.setColor(Color.BLACK);
 			g.fillRect(0,0,1280,720);
 			g.drawImage(page3,0,0,null);
+		}
+		else if(blnpage4){
+			g.setColor(Color.BLACK);
+			g.fillRect(0,0,1280,720);
+			g.drawImage(page4,0,0,null);
 		}
 	}
 	
@@ -85,6 +92,16 @@ public class monopolyinstructions extends JPanel{
 		topage4 = new JButton("NEXT PAGE");
 		topage4.setSize(150,35);
 		topage4.setLocation(1100,25);
+		
+		//INSTRUCTIONS PAGE 4
+		//-back to page 3
+		backtopage3 = new JButton("BACK TO PAGE 3");
+		backtopage3.setSize(150,35);
+		backtopage3.setLocation(15,25);
+		//-to page 5
+		topage5 = new JButton("NEXT PAGE");
+		topage5.setSize(150,35);
+		topage5.setLocation(1100,25);
 		
 		//checking whether or not image or font is available
 		try{
