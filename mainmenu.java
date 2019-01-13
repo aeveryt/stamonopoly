@@ -18,6 +18,8 @@ public class mainmenu implements ActionListener{
 	public SuperSocketMaster ssm; 
 	public SuperSocketMaster ssmclient; 
 	public AnimationMonopolyPanel monopolypanel; 
+	
+	boolean blnServer; 
 			
 
 
@@ -174,27 +176,39 @@ public class mainmenu implements ActionListener{
 				joinpage.gameplay.setSelected(false);  
 			}	
 		}else if(evt.getSource() == joinpage.gameplay){
+		
 			theframe.setContentPane(monopolypanel);
 			theframe.setVisible(true); 
 			ssmclient = new SuperSocketMaster(joinpage.strCode,6112, this); 
 			ssmclient.connect();
-			System.out.println(joinpage.strCode); 
+			System.out.println(joinpage.strCode+"boolean is false"); 
+			blnServer = false; 
+			
 		}
 		// talking to people over server
 		else if(evt.getSource() == monopolypanel.textfield){
 			System.out.println("Going to send this out over network: "+monopolypanel.textfield.getText()); 
-			ssm.sendText("\nSheridan: " +monopolypanel.textfield.getText()); 
-			monopolypanel.textarea.append("\nYou: "+monopolypanel.textfield.getText());
-			monopolypanel.textfield.setText("");
+			
+			if(blnServer = true){
+				ssm.sendText("\nSheridan: " +monopolypanel.textfield.getText()); 
+				monopolypanel.textarea.append("\nYou: "+monopolypanel.textfield.getText());
+				monopolypanel.textfield.setText("");
+			}else if(blnServer = false){
+				ssmclient.sendText("\nSheridan: " +monopolypanel.textfield.getText()); 
+				monopolypanel.textarea.append("\nYou: "+monopolypanel.textfield.getText());
+				monopolypanel.textfield.setText("");
+			}
+			
+			
 		}else if(evt.getSource() == ssm){
 			String strData; 
 			strData = ssm.readText(); 
 			monopolypanel.textarea.append(strData +"\n"); 
+		}else if(evt.getSource() == ssmclient){
+			String strData; 
+			strData = ssmclient.readText(); 
+			monopolypanel.textarea.append(strData +"\n"); 
 		}
-		
-
-		
-		
 		
 	}
 	
