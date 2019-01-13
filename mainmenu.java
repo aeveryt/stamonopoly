@@ -155,6 +155,8 @@ public class mainmenu implements ActionListener{
 		}// Joining a game:
 		else if(evt.getSource() == joinpage.TF){
 			joinpage.strCode = joinpage.TF.getText(); 
+			System.out.println(joinpage.strCode); 
+			System.out.println(startpage.strAddress); 
 			
 			if(joinpage.strCode.equals(startpage.strAddress)){
 				System.out.println("joined game");
@@ -163,10 +165,20 @@ public class mainmenu implements ActionListener{
 			else{
 				System.out.println("could not join game");
 				joinpage.gameplay.setSelected(false);  
-			}		
-			// Client page:
-		
+			}	
+		}// talking to people over server
+		else if(evt.getSource() == monopolypanel.textfield){
+			System.out.println("Going to send this out over network: "+monopolypanel.textfield.getText()); 
+			ssm.sendText("\nSheridan: " +monopolypanel.textfield.getText()); 
+			monopolypanel.textarea.append("\nYou: "+monopolypanel.textfield.getText());
+			monopolypanel.textfield.setText("");
+		}else if(evt.getSource() == ssm){
+			String strData; 
+			strData = ssm.readText(); 
+			monopolypanel.textarea.append(strData +"\n"); 
 		}
+		
+
 		
 		
 		
