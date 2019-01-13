@@ -13,7 +13,7 @@ public class joingame extends JPanel{
 	JTextField TF; 
 	Font title;
 	JButton gameplay; 
-	String strCode; 
+	String strCode = "132"; 
 	public startgame startpage; 
 	
 	
@@ -53,11 +53,14 @@ public class joingame extends JPanel{
 		gameplay.setSize(140,100); 
 		gameplay.setLocation(1140,620); 
 		
+		
 		if(strCode.equals(startpage.strAddress)){
-			gameplay.setSelected(true); 
+			gameplay.setEnabled(true); 
 		}else{
-			gameplay.setSelected(false);  
+			gameplay.setEnabled(false);  
 		}
+		
+		
 		
 		
 		try{

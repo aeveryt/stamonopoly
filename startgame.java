@@ -13,10 +13,10 @@ public class startgame extends JPanel{
 	Font title;
 	Font bold; 
 	public mainmenu menu; 
-	String strAddress;
+	String strAddress = "1345";
 	JButton gameplay; 
-	int intConnections; 
-
+	int intConnections;
+	 
 	
 	
 	
@@ -41,7 +41,8 @@ public class startgame extends JPanel{
 	
 	public startgame(){
 		super(); 
-				
+		strAddress = "12345"; 
+		
 		// Exit button
 		back = new JButton("HOMEPAGE"); 
 		back.setSize(140, 30); 
