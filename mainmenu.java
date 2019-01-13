@@ -179,6 +179,7 @@ public class mainmenu implements ActionListener{
 			}	
 			
 			*/
+			
 		}else if(evt.getSource() == joinpage.gameplay){
 			blnServer = false; 
 			theframe.setContentPane(monopolypanel);
