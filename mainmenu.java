@@ -146,7 +146,7 @@ public class mainmenu implements ActionListener{
 			theframe.setContentPane(startpage); 
 			theframe.setVisible(true); 
 			// opens super socket master if decides to start game	
-			ssm = new SuperSocketMaster(5354, this);
+			ssm = new SuperSocketMaster(1969, this);
 			startpage.strAddress = ssm.getMyAddress(); 
 			ssm.connect();
 			
@@ -168,6 +168,7 @@ public class mainmenu implements ActionListener{
 			System.out.println(joinpage.strCode); 
 			System.out.println(startpage.strAddress); 
 			
+			/*
 			if(joinpage.strCode.equals(startpage.strAddress)){
 				System.out.println("joined game");
 				joinpage.gameplay.setSelected(true); 
@@ -176,14 +177,18 @@ public class mainmenu implements ActionListener{
 				System.out.println("could not join game");
 				joinpage.gameplay.setSelected(false);  
 			}	
+			
+			*/
 		}else if(evt.getSource() == joinpage.gameplay){
-		
+			blnServer = false; 
 			theframe.setContentPane(monopolypanel);
 			theframe.setVisible(true); 
 			
-			// SOMETHING TO DO WITH SOCKET OBJECT I BELIEVE THE SECOND CODE, NOT EXACTLY SURE!!! 
-			ssmclient = new SuperSocketMaster(joinpage.strCode,5354, this); 
-			ssmclient.connect();
+			// SOMETHING TO DO WITH SOCKET OBJECT I BELIEVE THE SECOND CODE, NOT EXACTLY SURE how to check TCP Port
+			ssmclient = new SuperSocketMaster(joinpage.strCode,1969, this); 
+			if(blnServer == false){
+				ssmclient.connect();
+			}
 			System.out.println(joinpage.strCode); 
 		
 			blnServer = false; 
