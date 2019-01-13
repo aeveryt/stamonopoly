@@ -155,10 +155,18 @@ public class mainmenu implements ActionListener{
 		}else if(evt.getSource() == startpage.back || evt.getSource() ==joinpage.back){ 
 			theframe.setContentPane(thepanel); 
 			theframe.setVisible(true); 
-		}else if(evt.getSource() == startpage.gameplay || evt.getSource() == joinpage.gameplay){
+		}else if(evt.getSource() == startpage.gameplay){
 			theframe.setContentPane(monopolypanel);
 			theframe.setVisible(true); 
-		}// Joining a game:
+		}else if(evt.getSource() == joinpage.gameplay){
+			theframe.setContentPane(monopolypanel);
+			theframe.setVisible(true); 
+			ssmclient = new SuperSocketMaster(joinpage.strCode,6112, this); 
+			ssmclient.connect();
+			System.out.println(joinpage.strCode); 
+		}
+		
+		// Joining a game:
 		else if(evt.getSource() == joinpage.TF){
 			joinpage.strCode = joinpage.TF.getText(); 
 			System.out.println(joinpage.strCode); 
@@ -270,8 +278,11 @@ public class mainmenu implements ActionListener{
 		*/
 		
 		// User connects to super socket master
-		ssmclient = new SuperSocketMaster(joinpage.strCode,6112, this); 
+		
+		/*ssmclient = new SuperSocketMaster(joinpage.strCode,6112, this); 
 		ssmclient.connect();
+		System.out.println(joinpage.strCode); 
+		*/
 		
 		
 		// PLAY PAGE: 
