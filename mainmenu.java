@@ -146,7 +146,7 @@ public class mainmenu implements ActionListener{
 			theframe.setContentPane(startpage); 
 			theframe.setVisible(true); 
 			// opens super socket master if decides to start game	
-			ssm = new SuperSocketMaster(1337, this);
+			ssm = new SuperSocketMaster(5354, this);
 			startpage.strAddress = ssm.getMyAddress(); 
 			ssm.connect();
 			
@@ -182,7 +182,7 @@ public class mainmenu implements ActionListener{
 			theframe.setVisible(true); 
 			
 			// SOMETHING TO DO WITH SOCKET OBJECT I BELIEVE THE SECOND CODE, NOT EXACTLY SURE!!! 
-			ssmclient = new SuperSocketMaster(joinpage.strCode,1337, this); 
+			ssmclient = new SuperSocketMaster(joinpage.strCode,5354, this); 
 			ssmclient.connect();
 			System.out.println(joinpage.strCode); 
 		
