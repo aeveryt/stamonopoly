@@ -181,19 +181,22 @@ public class mainmenu implements ActionListener{
 			theframe.setVisible(true); 
 			ssmclient = new SuperSocketMaster(joinpage.strCode,6112, this); 
 			ssmclient.connect();
-			System.out.println(joinpage.strCode+"boolean is false"); 
+		
 			blnServer = false; 
+			// System.out.println(blnServer); 
 			
 		}
 		// talking to people over server
 		else if(evt.getSource() == monopolypanel.textfield){
 			System.out.println("Going to send this out over network: "+monopolypanel.textfield.getText()); 
 			
-			if(blnServer = true){
+		
+			if(blnServer == true){
+				
 				ssm.sendText("\nSheridan: " +monopolypanel.textfield.getText()); 
 				monopolypanel.textarea.append("\nYou: "+monopolypanel.textfield.getText());
 				monopolypanel.textfield.setText("");
-			}else if(blnServer = false){
+			}else if(blnServer == false){
 				ssmclient.sendText("\nSheridan: " +monopolypanel.textfield.getText()); 
 				monopolypanel.textarea.append("\nYou: "+monopolypanel.textfield.getText());
 				monopolypanel.textfield.setText("");
