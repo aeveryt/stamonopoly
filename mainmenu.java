@@ -158,14 +158,7 @@ public class mainmenu implements ActionListener{
 		}else if(evt.getSource() == startpage.gameplay){
 			theframe.setContentPane(monopolypanel);
 			theframe.setVisible(true); 
-		}else if(evt.getSource() == joinpage.gameplay){
-			theframe.setContentPane(monopolypanel);
-			theframe.setVisible(true); 
-			ssmclient = new SuperSocketMaster(joinpage.strCode,6112, this); 
-			ssmclient.connect();
-			System.out.println(joinpage.strCode); 
 		}
-		
 		// Joining a game:
 		else if(evt.getSource() == joinpage.TF){
 			joinpage.strCode = joinpage.TF.getText(); 
@@ -180,7 +173,14 @@ public class mainmenu implements ActionListener{
 				System.out.println("could not join game");
 				joinpage.gameplay.setSelected(false);  
 			}	
-		}// talking to people over server
+		}else if(evt.getSource() == joinpage.gameplay){
+			theframe.setContentPane(monopolypanel);
+			theframe.setVisible(true); 
+			ssmclient = new SuperSocketMaster(joinpage.strCode,6112, this); 
+			ssmclient.connect();
+			System.out.println(joinpage.strCode); 
+		}
+		// talking to people over server
 		else if(evt.getSource() == monopolypanel.textfield){
 			System.out.println("Going to send this out over network: "+monopolypanel.textfield.getText()); 
 			ssm.sendText("\nSheridan: " +monopolypanel.textfield.getText()); 
