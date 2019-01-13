@@ -179,8 +179,11 @@ public class mainmenu implements ActionListener{
 		
 			theframe.setContentPane(monopolypanel);
 			theframe.setVisible(true); 
+			
+			// SOMETHING TO DO WITH SOCKET OBJECT I BELIEVE THE SECOND CODE, NOT EXACTLY SURE!!! 
 			ssmclient = new SuperSocketMaster(joinpage.strCode,6112, this); 
 			ssmclient.connect();
+			System.out.println(joinpage.strCode); 
 		
 			blnServer = false; 
 			// System.out.println(blnServer); 
