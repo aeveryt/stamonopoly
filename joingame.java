@@ -53,17 +53,6 @@ public class joingame extends JPanel{
 		gameplay.setSize(140,100); 
 		gameplay.setLocation(1140,620); 
 		
-
-		/*
-		if(strCode.equals(startpage.strAddress)){
-			gameplay.setEnabled(true); 
-		}else{
-			gameplay.setEnabled(false);  
-		}
-
-		*/
-		
-		
 		
 		try{
 			background = ImageIO.read(new File("monopoly.jpg")); 

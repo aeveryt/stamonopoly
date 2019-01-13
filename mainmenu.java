@@ -16,6 +16,7 @@ public class mainmenu implements ActionListener{
 	public startgame startpage; 
 	public joingame joinpage; 
 	public SuperSocketMaster ssm; 
+	public SuperSocketMaster ssmclient; 
 	public AnimationMonopolyPanel monopolypanel; 
 			
 
@@ -141,7 +142,12 @@ public class mainmenu implements ActionListener{
 		}else if(evt.getSource() == playpage1.start){
 			System.out.println("started"); 
 			theframe.setContentPane(startpage); 
-			theframe.setVisible(true); 	
+			theframe.setVisible(true); 
+			// opens super socket master if decides to start game	
+			ssm = new SuperSocketMaster(1337, this);
+			startpage.strAddress = ssm.getMyAddress(); 
+			ssm.connect();
+			
 		}else if(evt.getSource() == playpage1.existing){
 			System.out.println("going to exisitng game"); 
 			theframe.setContentPane(joinpage); 
@@ -255,10 +261,18 @@ public class mainmenu implements ActionListener{
 		joinpage.gameplay.addActionListener(this); 
 		
 		// super socket master
+		
+		/*
 		ssm = new SuperSocketMaster(1337, this);
 		startpage.strAddress = ssm.getMyAddress(); 
 		ssm.connect();
-		// startpage.intConnections = clientconnections.get(); 
+		// startpage.intConnections = clientconnections.get();
+		*/
+		
+		// User connects to super socket master
+		ssmclient = new SuperSocketMaster(joinpage.strCode,6112, this); 
+		ssmclient.connect();
+		
 		
 		// PLAY PAGE: 
 		monopolypanel.setLayout(null); 
