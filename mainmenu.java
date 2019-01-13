@@ -181,7 +181,7 @@ public class mainmenu implements ActionListener{
 			theframe.setVisible(true); 
 			
 			// SOMETHING TO DO WITH SOCKET OBJECT I BELIEVE THE SECOND CODE, NOT EXACTLY SURE!!! 
-			ssmclient = new SuperSocketMaster(joinpage.strCode,6112, this); 
+			ssmclient = new SuperSocketMaster(joinpage.strCode,1337, this); 
 			ssmclient.connect();
 			System.out.println(joinpage.strCode); 
 		
