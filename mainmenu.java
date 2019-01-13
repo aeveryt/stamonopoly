@@ -160,6 +160,7 @@ public class mainmenu implements ActionListener{
 		}else if(evt.getSource() == startpage.gameplay){
 			theframe.setContentPane(monopolypanel);
 			theframe.setVisible(true); 
+			blnServer = true; 
 		}
 		// Joining a game:
 		else if(evt.getSource() == joinpage.TF){
@@ -195,11 +196,12 @@ public class mainmenu implements ActionListener{
 			
 		
 			if(blnServer == true){
-				
+				System.out.println("I am the server"); 
 				ssm.sendText("\nSheridan: " +monopolypanel.textfield.getText()); 
 				monopolypanel.textarea.append("\nYou: "+monopolypanel.textfield.getText());
 				monopolypanel.textfield.setText("");
 			}else if(blnServer == false){
+				System.out.println("I am the client"); 
 				ssmclient.sendText("\nSheridan: " +monopolypanel.textfield.getText()); 
 				monopolypanel.textarea.append("\nYou: "+monopolypanel.textfield.getText());
 				monopolypanel.textfield.setText("");
@@ -287,23 +289,6 @@ public class mainmenu implements ActionListener{
 		joinpage.back.addActionListener(this); 
 		joinpage.TF.addActionListener(this); 
 		joinpage.gameplay.addActionListener(this); 
-		
-		// super socket master
-		
-		/*
-		ssm = new SuperSocketMaster(1337, this);
-		startpage.strAddress = ssm.getMyAddress(); 
-		ssm.connect();
-		// startpage.intConnections = clientconnections.get();
-		*/
-		
-		// User connects to super socket master
-		
-		/*ssmclient = new SuperSocketMaster(joinpage.strCode,6112, this); 
-		ssmclient.connect();
-		System.out.println(joinpage.strCode); 
-		*/
-		
 		
 		// PLAY PAGE: 
 		monopolypanel.setLayout(null); 
