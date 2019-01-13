@@ -12,6 +12,7 @@ public class monopolyinstructions extends JPanel{
 	BufferedImage page2;
 	BufferedImage page3;
 	BufferedImage page4;
+	BufferedImage page5;
 	public JButton backtomain;
 	public JButton topage2;
 	public JButton backtopage1;
@@ -20,11 +21,13 @@ public class monopolyinstructions extends JPanel{
 	public JButton backtopage2;
 	public JButton backtopage3;
 	public JButton topage5;
+	public JButton backtopage4;
 	
 	boolean blnpage1 = true;
 	boolean blnpage2 = false;
 	boolean blnpage3 = false;
 	boolean blnpage4 = false;
+	boolean blnpage5 = false;
 	
 	//-initialize
 
@@ -52,6 +55,11 @@ public class monopolyinstructions extends JPanel{
 			g.setColor(Color.BLACK);
 			g.fillRect(0,0,1280,720);
 			g.drawImage(page4,0,0,null);
+		}
+		else if(blnpage5){
+			g.setColor(Color.BLACK);
+			g.fillRect(0,0,1280,720);
+			g.drawImage(page5,0,0,null);
 		}
 	}
 	
@@ -103,12 +111,19 @@ public class monopolyinstructions extends JPanel{
 		topage5.setSize(150,35);
 		topage5.setLocation(1100,25);
 		
+		//-INSTRUCTION PAGE 5
+		//-back to page 4
+		backtopage4 = new JButton("BACK TO PAGE 4");
+		backtopage4.setSize(150,35);
+		backtopage4.setLocation(15,25);
+		
 		//checking whether or not image or font is available
 		try{
 			page1 = ImageIO.read(new File("instructions.jpg"));
 			page2 = ImageIO.read(new File("instructions2.jpg"));
 			page3 = ImageIO.read(new File("instructions3.jpg"));
 			page4 = ImageIO.read(new File("instructions4.jpg"));
+			page5 = ImageIO.read(new File("instructions5.jpg"));
 			title = new Font("kabel.ttf", Font.PLAIN, 12);
 		}
 		catch(IOException e){
