@@ -33,7 +33,7 @@ public class AnimationMonopolyPanel extends JPanel{
 		g.fillRect(795,36,60,60);
 		
 		//status bar
-		g.fillRect(867,3,400,103);
+		g.fillRect(867,3,405,100);
 		
 	}
 
@@ -47,16 +47,16 @@ public class AnimationMonopolyPanel extends JPanel{
 		textfield.setLocation(750,655);
 		//-scroll
 		scroll = new JScrollPane(textarea); 
-		scroll.setSize(500 ,150);
+		scroll.setSize(500,150);
 		scroll.setLocation(750,500); 
 		
 		//buttons
 		buy = new JButton("Buy");
-		buy.setSize(100,30);
+		buy.setSize(100,40);
 		buy.setLocation(720,110);
 		
 		dontbuy = new JButton("Don't buy");
-		dontbuy.setSize(100,30);
+		dontbuy.setSize(100,40);
 		dontbuy.setLocation(720,145);
 		
 		try{
