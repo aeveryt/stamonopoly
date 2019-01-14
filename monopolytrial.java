@@ -8,21 +8,21 @@ import java.io.*;
 public class monopolytrial implements ActionListener{
 	//Properties
 	public JFrame theframe; 
-	public monopolyinstructions thepanel;
+	public stamonopolycharacters thepanel;
 	public Timer thetimer;
-	
 	
 	//Method
 	public void actionPerformed (ActionEvent evt){
-		//if(evt.getSource() == thetimer){
-		//}
+		if(evt.getSource() == thetimer){
+			
+		}
 	}
 	
 	//Constructor
 	public monopolytrial(){
 		
 		theframe = new JFrame("test screen");
-		thepanel = new monopolyinstructions(); 
+		thepanel = new stamonopolycharacters(); 
 		
 		//set panel
 		thepanel.setPreferredSize(new Dimension(1280,720)); 
@@ -30,14 +30,20 @@ public class monopolytrial implements ActionListener{
 		
 		// set frame
 		theframe.setContentPane(thepanel);
-		thepanel.add(thepanel.backtomain);
 		theframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		theframe.pack();
 		theframe.setVisible(true);
 		
+		//buttons
+		thepanel.add(thepanel.select1);
+		thepanel.add(thepanel.select2);
+		thepanel.add(thepanel.select3);
+		thepanel.add(thepanel.select4);
+		
+		
 		//set timer
-		//thetimer = new Timer (1000/60,this);
-		//thetimer.start();
+		thetimer = new Timer (1000/60,this);
+		thetimer.start();
 	}
 	//Main Method
 	public static void main(String [] args){
