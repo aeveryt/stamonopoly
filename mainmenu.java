@@ -195,7 +195,16 @@ public class mainmenu implements ActionListener{
 			blnServer = false; 
 			// System.out.println(blnServer); 
 			
+		}// Entering name
+		else if(evt.getSource() == startpage.TFname){
+			startpage.strName = startpage.TFname.getText(); 
+			System.out.println(startpage.TFname); 
+			
+		}else if(evt.getSource() == joinpage.TFname){
+			joinpage.strName = joinpage.TFname.getText(); 
+			System.out.println(joinpage.TFname); 
 		}
+		
 		// talking to people over server
 		else if(evt.getSource() == monopolypanel.textfield){
 			System.out.println("Going to send this out over network: "+monopolypanel.textfield.getText()); 
@@ -203,12 +212,12 @@ public class mainmenu implements ActionListener{
 		
 			if(blnServer == true){
 				System.out.println("I am the server"); 
-				ssm.sendText("\nSheridan: " +monopolypanel.textfield.getText()); 
+				ssm.sendText("\n"+startpage.strName+" :"+monopolypanel.textfield.getText()); 
 				monopolypanel.textarea.append("\nYou: "+monopolypanel.textfield.getText());
 				monopolypanel.textfield.setText("");
 			}else if(blnServer == false){
 				System.out.println("I am the client"); 
-				ssmclient.sendText("\nSheridan: " +monopolypanel.textfield.getText()); 
+				ssmclient.sendText("\n"+joinpage.strName+" :"+monopolypanel.textfield.getText()); 
 				monopolypanel.textarea.append("\nYou: "+monopolypanel.textfield.getText());
 				monopolypanel.textfield.setText("");
 			}
@@ -285,16 +294,19 @@ public class mainmenu implements ActionListener{
 		playpage1.start.addActionListener(this);
 		playpage1.existing.addActionListener(this);  
 		
+		
 		// Start game: 
 		startpage.setLayout(null); 
 		startpage.back.addActionListener(this); 
 		startpage.gameplay.addActionListener(this); 
+		startpage.TFname.addActionListener(this); 
 		
 		// Join game: 
 		joinpage.setLayout(null); 
 		joinpage.back.addActionListener(this); 
 		joinpage.TF.addActionListener(this); 
 		joinpage.gameplay.addActionListener(this); 
+		joinpage.TFname.addActionListener(this); 
 		
 		// PLAY PAGE: 
 		monopolypanel.setLayout(null); 
@@ -327,6 +339,8 @@ public class mainmenu implements ActionListener{
 		joinpage.add(joinpage.TF); 
 		startpage.add(startpage.gameplay); 
 		joinpage.add(joinpage.gameplay); 
+		startpage.add(startpage.TFname); 
+		joinpage.add(joinpage.TFname); 
 
 		// Add features: to play page (ACTUAL GAMEPLAY)
 		monopolypanel.add(monopolypanel.scroll); 
