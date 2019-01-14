@@ -187,9 +187,9 @@ public class mainmenu implements ActionListener{
 			
 			// SOMETHING TO DO WITH SOCKET OBJECT I BELIEVE THE SECOND CODE, NOT EXACTLY SURE how to check TCP Port
 			ssmclient = new SuperSocketMaster(joinpage.strCode,1969, this); 
-			if(blnServer == false){
+			
 				ssmclient.connect();
-			}
+		
 			System.out.println(joinpage.strCode); 
 		
 			blnServer = false; 
