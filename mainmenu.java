@@ -146,7 +146,7 @@ public class mainmenu implements ActionListener{
 			theframe.setContentPane(startpage); 
 			theframe.setVisible(true); 
 			// opens super socket master if decides to start game	
-			ssm = new SuperSocketMaster(5354, this);
+			ssm = new SuperSocketMaster(1969, this);
 			startpage.strAddress = ssm.getMyAddress(); 
 			ssm.connect();
 			
@@ -168,6 +168,7 @@ public class mainmenu implements ActionListener{
 			System.out.println(joinpage.strCode); 
 			System.out.println(startpage.strAddress); 
 			
+			/*
 			if(joinpage.strCode.equals(startpage.strAddress)){
 				System.out.println("joined game");
 				joinpage.gameplay.setSelected(true); 
@@ -176,20 +177,34 @@ public class mainmenu implements ActionListener{
 				System.out.println("could not join game");
 				joinpage.gameplay.setSelected(false);  
 			}	
+			
+			*/
+			
 		}else if(evt.getSource() == joinpage.gameplay){
-		
+			blnServer = false; 
 			theframe.setContentPane(monopolypanel);
 			theframe.setVisible(true); 
 			
-			// SOMETHING TO DO WITH SOCKET OBJECT I BELIEVE THE SECOND CODE, NOT EXACTLY SURE!!! 
-			ssmclient = new SuperSocketMaster(joinpage.strCode,5354, this); 
-			ssmclient.connect();
+			// SOMETHING TO DO WITH SOCKET OBJECT I BELIEVE THE SECOND CODE, NOT EXACTLY SURE how to check TCP Port
+			ssmclient = new SuperSocketMaster(joinpage.strCode,1969, this); 
+			
+				ssmclient.connect();
+		
 			System.out.println(joinpage.strCode); 
 		
 			blnServer = false; 
 			// System.out.println(blnServer); 
 			
+		}// Entering name
+		else if(evt.getSource() == startpage.TFname){
+			startpage.strName = startpage.TFname.getText(); 
+			System.out.println(startpage.TFname); 
+			
+		}else if(evt.getSource() == joinpage.TFname){
+			joinpage.strName = joinpage.TFname.getText(); 
+			System.out.println(joinpage.TFname); 
 		}
+		
 		// talking to people over server
 		else if(evt.getSource() == monopolypanel.textfield){
 			System.out.println("Going to send this out over network: "+monopolypanel.textfield.getText()); 
@@ -197,12 +212,12 @@ public class mainmenu implements ActionListener{
 		
 			if(blnServer == true){
 				System.out.println("I am the server"); 
-				ssm.sendText("\nSheridan: " +monopolypanel.textfield.getText()); 
+				ssm.sendText("\n"+startpage.strName+" :"+monopolypanel.textfield.getText()); 
 				monopolypanel.textarea.append("\nYou: "+monopolypanel.textfield.getText());
 				monopolypanel.textfield.setText("");
 			}else if(blnServer == false){
 				System.out.println("I am the client"); 
-				ssmclient.sendText("\nSheridan: " +monopolypanel.textfield.getText()); 
+				ssmclient.sendText("\n"+joinpage.strName+" :"+monopolypanel.textfield.getText()); 
 				monopolypanel.textarea.append("\nYou: "+monopolypanel.textfield.getText());
 				monopolypanel.textfield.setText("");
 			}
@@ -279,16 +294,19 @@ public class mainmenu implements ActionListener{
 		playpage1.start.addActionListener(this);
 		playpage1.existing.addActionListener(this);  
 		
+		
 		// Start game: 
 		startpage.setLayout(null); 
 		startpage.back.addActionListener(this); 
 		startpage.gameplay.addActionListener(this); 
+		startpage.TFname.addActionListener(this); 
 		
 		// Join game: 
 		joinpage.setLayout(null); 
 		joinpage.back.addActionListener(this); 
 		joinpage.TF.addActionListener(this); 
 		joinpage.gameplay.addActionListener(this); 
+		joinpage.TFname.addActionListener(this); 
 		
 		// PLAY PAGE: 
 		monopolypanel.setLayout(null); 
@@ -321,11 +339,14 @@ public class mainmenu implements ActionListener{
 		joinpage.add(joinpage.TF); 
 		startpage.add(startpage.gameplay); 
 		joinpage.add(joinpage.gameplay); 
+		startpage.add(startpage.TFname); 
+		joinpage.add(joinpage.TFname); 
 
-		// Add features: to play page 
+		// Add features: to play page (ACTUAL GAMEPLAY)
 		monopolypanel.add(monopolypanel.scroll); 
-		// monopolypanel.add(monopolypanel.textarea); 
 		monopolypanel.add(monopolypanel.textfield);
+		monopolypanel.add(monopolypanel.buy);
+		monopolypanel.add(monopolypanel.dontbuy);
 		
 		//set frame
 		theframe.setContentPane(thepanel);
