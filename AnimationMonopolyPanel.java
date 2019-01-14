@@ -22,6 +22,16 @@ public class AnimationMonopolyPanel extends JPanel{
 		g.setColor(Color.GRAY); 
 		g.fillRect(0,0,1280,720); 
 		g.drawImage(monopolyboard,-260,-3,null);
+		
+		//DRAWING DIE
+		g.setColor(Color.BLACK);
+		g.fillRect(720,3,205,100);
+		g.setColor(Color.WHITE);
+		g.fillRect(725,3,80,80);
+		g.fillRect(830,3,80,80);
+		
+		//status bar
+		g.fillRect(930,3,300,100);
 	}
 
 	//Constructor

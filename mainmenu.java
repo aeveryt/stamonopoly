@@ -328,9 +328,8 @@ public class mainmenu implements ActionListener{
 		startpage.add(startpage.gameplay); 
 		joinpage.add(joinpage.gameplay); 
 
-		// Add features: to play page 
+		// Add features: to play page (ACTUAL GAMEPLAY)
 		monopolypanel.add(monopolypanel.scroll); 
-		// monopolypanel.add(monopolypanel.textarea); 
 		monopolypanel.add(monopolypanel.textfield);
 		
 		//set frame
