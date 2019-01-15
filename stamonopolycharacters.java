@@ -38,19 +38,19 @@ public class stamonopolycharacters extends JPanel{
 		
 		//Select 1;
 		select1.setSize(100,50);
-		select1.setLocation(120,430);
+		select1.setLocation(100,480);
 		
 		//Select 2;
 		select2.setSize(100,50);
-		select2.setLocation(440,430);
+		select2.setLocation(400,480);
 		
 		//Select 3;
 		select3.setSize(100,50);
-		select3.setLocation(780,430);
+		select3.setLocation(740,480);
 		
 		//Select 4
 		select4.setSize(100,50);
-		select4.setLocation(1100,430);
+		select4.setLocation(1060,480);
 		
 		//Reading Image
 		
