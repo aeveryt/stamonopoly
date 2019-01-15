@@ -52,12 +52,12 @@ public class AnimationMonopolyPanel extends JPanel{
 		
 		//buttons
 		buy = new JButton("Buy");
-		buy.setSize(100,40);
+		buy.setSize(150,60);
 		buy.setLocation(720,110);
 		
 		dontbuy = new JButton("Don't buy");
-		dontbuy.setSize(100,40);
-		dontbuy.setLocation(720,145);
+		dontbuy.setSize(150,60);
+		dontbuy.setLocation(720,175);
 		
 		try{
 			monopolyboard = ImageIO.read(new File("MonopolyGameBoard.png"));
