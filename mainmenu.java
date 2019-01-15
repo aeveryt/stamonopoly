@@ -20,9 +20,9 @@ public class mainmenu implements ActionListener{
 	public AnimationMonopolyPanel monopolypanel; 
 	
 	boolean blnServer; 
-			
-
-
+	int intdice1;
+	int intdice2;
+	int intdiesum;
 
 	
 	//Methods
@@ -212,12 +212,12 @@ public class mainmenu implements ActionListener{
 		
 			if(blnServer == true){
 				System.out.println("I am the server"); 
-				ssm.sendText("\n"+startpage.strName+" :"+monopolypanel.textfield.getText()); 
+				ssm.sendText(startpage.strName+" :"+monopolypanel.textfield.getText()); 
 				monopolypanel.textarea.append("\nYou: "+monopolypanel.textfield.getText());
 				monopolypanel.textfield.setText("");
 			}else if(blnServer == false){
 				System.out.println("I am the client"); 
-				ssmclient.sendText("\n"+joinpage.strName+" :"+monopolypanel.textfield.getText()); 
+				ssmclient.sendText(joinpage.strName+" :"+monopolypanel.textfield.getText()); 
 				monopolypanel.textarea.append("\nYou: "+monopolypanel.textfield.getText());
 				monopolypanel.textfield.setText("");
 			}
@@ -231,6 +231,14 @@ public class mainmenu implements ActionListener{
 			String strData; 
 			strData = ssmclient.readText(); 
 			monopolypanel.textarea.append(strData +"\n"); 
+		}
+		
+		//Rolling the Die
+		else if(evt.getSource() == monopolypanel.rolldie){
+			intdice1 = (int) (Math.random() *6+1);
+			intdice2 = (int) (Math.random() *6+1);
+			intdiesum = intdice1 + intdice2;
+			System.out.println(intdice1+ " + " + intdice2);
 		}
 		
 	}
@@ -347,6 +355,13 @@ public class mainmenu implements ActionListener{
 		monopolypanel.add(monopolypanel.textfield);
 		monopolypanel.add(monopolypanel.buy);
 		monopolypanel.add(monopolypanel.dontbuy);
+		monopolypanel.add(monopolypanel.rolldie);
+		
+		// Add features: to play page (ACTTION LISTENER)
+		monopolypanel.textfield.addActionListener(this);
+		monopolypanel.buy.addActionListener(this);
+		monopolypanel.dontbuy.addActionListener(this);
+		monopolypanel.rolldie.addActionListener(this);
 		
 		//set frame
 		theframe.setContentPane(thepanel);
