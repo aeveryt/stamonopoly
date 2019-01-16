@@ -1,7 +1,7 @@
 import javax.swing.*; 
 import java.awt.*; 
 import java.awt.event.*; 
-import java.awt.Font; 
+import java.awt.Font;
 
 public class mainmenu implements ActionListener{
 
@@ -20,9 +20,9 @@ public class mainmenu implements ActionListener{
 	public AnimationMonopolyPanel monopolypanel; 
 	
 	boolean blnServer; 
-	int intdice1;
-	int intdice2;
-	int intdiesum;
+			
+
+
 
 	
 	//Methods
@@ -198,26 +198,27 @@ public class mainmenu implements ActionListener{
 		}// Entering name
 		else if(evt.getSource() == startpage.TFname){
 			startpage.strName = startpage.TFname.getText(); 
-			System.out.println(startpage.strName); 
+			System.out.println(startpage.TFname); 
 			
 		}else if(evt.getSource() == joinpage.TFname){
 			joinpage.strName = joinpage.TFname.getText(); 
-			System.out.println(joinpage.strName); 
+			System.out.println(joinpage.TFname); 
 		}
 		
 		// talking to people over server
 		else if(evt.getSource() == monopolypanel.textfield){
 			System.out.println("Going to send this out over network: "+monopolypanel.textfield.getText()); 
 			
+		
 			if(blnServer == true){
 				System.out.println("I am the server"); 
-				ssm.sendText("Sheridan: " +monopolypanel.textfield.getText()+"\n"); 
-				monopolypanel.textarea.append("You: "+monopolypanel.textfield.getText()+"\n");
+				ssm.sendText("\n"+startpage.strName+" :"+monopolypanel.textfield.getText()); 
+				monopolypanel.textarea.append("\nYou: "+monopolypanel.textfield.getText());
 				monopolypanel.textfield.setText("");
 			}else if(blnServer == false){
 				System.out.println("I am the client"); 
-				ssmclient.sendText("Sheridan: " +monopolypanel.textfield.getText()+"\n"); 
-				monopolypanel.textarea.append("You: "+monopolypanel.textfield.getText()+"\n");
+				ssmclient.sendText("\n"+joinpage.strName+" :"+monopolypanel.textfield.getText()); 
+				monopolypanel.textarea.append("\nYou: "+monopolypanel.textfield.getText());
 				monopolypanel.textfield.setText("");
 			}
 			
@@ -225,20 +226,11 @@ public class mainmenu implements ActionListener{
 		}else if(evt.getSource() == ssm){
 			String strData; 
 			strData = ssm.readText(); 
-			monopolypanel.textarea.append("\n"+strData); 
+			monopolypanel.textarea.append(strData +"\n"); 
 		}else if(evt.getSource() == ssmclient){
 			String strData; 
 			strData = ssmclient.readText(); 
-			monopolypanel.textarea.append("\n"strData); 
-		}
-
-		
-		//Rolling the Die
-		else if(evt.getSource() == monopolypanel.rolldie){
-			intdice1 = (int) (Math.random() *6+1);
-			intdice2 = (int) (Math.random() *6+1);
-			intdiesum = intdice1 + intdice2;
-			System.out.println(intdice1+ " + " + intdice2);
+			monopolypanel.textarea.append(strData +"\n"); 
 		}
 		
 	}
@@ -355,13 +347,6 @@ public class mainmenu implements ActionListener{
 		monopolypanel.add(monopolypanel.textfield);
 		monopolypanel.add(monopolypanel.buy);
 		monopolypanel.add(monopolypanel.dontbuy);
-		monopolypanel.add(monopolypanel.rolldie);
-		
-		// Add features: to play page (ACTTION LISTENER)
-		monopolypanel.textfield.addActionListener(this);
-		monopolypanel.buy.addActionListener(this);
-		monopolypanel.dontbuy.addActionListener(this);
-		monopolypanel.rolldie.addActionListener(this);
 		
 		//set frame
 		theframe.setContentPane(thepanel);
