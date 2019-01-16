@@ -160,6 +160,14 @@ public class mainmenu implements ActionListener{
 			theframe.setContentPane(joinpage); 
 			blnServer = false; 
 			theframe.setVisible(true); 
+			
+			ssmclient = new SuperSocketMaster(joinpage.strCode,1969, this); 
+			ssmclient.connect();
+			System.out.println(joinpage.strCode); 
+		
+			
+			// System.out.println(blnServer); 
+			
 		}else if(evt.getSource() == startpage.back || evt.getSource() ==joinpage.back){ 
 			theframe.setContentPane(thepanel); 
 			theframe.setVisible(true); 
@@ -179,15 +187,7 @@ public class mainmenu implements ActionListener{
 			theframe.setContentPane(monopolypanel);
 			theframe.setVisible(true); 
 			
-			// SOMETHING TO DO WITH SOCKET OBJECT I BELIEVE THE SECOND CODE, NOT EXACTLY SURE how to check TCP Port
-			ssmclient = new SuperSocketMaster(joinpage.strCode,1969, this); 
-			
-				ssmclient.connect();
-		
-			System.out.println(joinpage.strCode); 
-		
-			blnServer = false; 
-			// System.out.println(blnServer); 
+
 			
 		}// Entering name
 		else if(evt.getSource() == startpage.TFname){
@@ -202,13 +202,25 @@ public class mainmenu implements ActionListener{
 		else if(evt.getSource() == startpage.gameplay || evt.getSource() == joinpage.gameplay){
 			theframe.setContentPane(characterspanel);
 			theframe.setVisible(true); 
+		}else if(evt.getSource() == characterspanel.select1){
+			if(blnServer == true){
+				ssm.sendText("select1");
+			}else if(blnServer == false){
+				ssmclient.sendText("select1"); 
+			}
+
+			if(blnServer == true){
+				characterspanel.strData = ssm.readText(); 
+			}else if(blnServer == false){
+				characterspanel.strData = ssmclient.readText(); 
+			}
+			
 		}
 		
-		// talking to people over server
+		// talking to people over server (SUPERSOCKETMASTER)
 		else if(evt.getSource() == monopolypanel.textfield){
 			System.out.println("Going to send this out over network: "+monopolypanel.textfield.getText()); 
-			
-		
+
 			if(blnServer == true){
 				System.out.println("I am the server"); 
 				ssm.sendText(startpage.strName+" :"+monopolypanel.textfield.getText()); 
@@ -219,9 +231,7 @@ public class mainmenu implements ActionListener{
 				ssmclient.sendText(joinpage.strName+" :"+monopolypanel.textfield.getText()); 
 				monopolypanel.textarea.append("\nYou: "+monopolypanel.textfield.getText());
 				monopolypanel.textfield.setText("");
-			}
-			
-			
+			}			
 		}else if(evt.getSource() == ssm){
 			String strData; 
 			strData = ssm.readText(); 
@@ -231,8 +241,8 @@ public class mainmenu implements ActionListener{
 			strData = ssmclient.readText(); 
 			monopolypanel.textarea.append("\n"+strData); 
 		}
-		// Rolling the dice: 
 		
+		// Rolling the dice: 
 		else if(evt.getSource() == monopolypanel.rolldie){
 			intdice1 = (int)(Math.random() *6+1); 
 			intdice2 = (int)(Math.random()*6+1); 
@@ -375,6 +385,14 @@ public class mainmenu implements ActionListener{
 		monopolypanel.add(monopolypanel.textfield);
 		monopolypanel.add(monopolypanel.buy);
 		monopolypanel.add(monopolypanel.dontbuy);
+		monopolypanel.add(monopolypanel.rolldie);
+		monopolypanel.add(monopolypanel.next);
+		monopolypanel.add(monopolypanel.back);
+		
+		// Game play - ACTION LISTENER
+		monopolypanel.rolldie.addActionListener(this);
+		monopolypanel.next.addActionListener(this);
+		monopolypanel.back.addActionListener(this);
 		
 		//set frame
 		theframe.setContentPane(thepanel);

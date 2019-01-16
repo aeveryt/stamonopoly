@@ -43,10 +43,16 @@ public class AnimationMonopolyPanel extends JPanel{
 		g.fillRect(867,3,407,99);
 		
 		//turn display
-		g.fillRect(725,233,547,40);
+		g.fillRect(724,229,374,40);
+		
+		//cards
+		g.fillRect(844,108,255,115);
 		
 		//profile
-		//g.fillRect();
+		g.fillRect(1104,108,170,160);
+		
+		//properties outline
+		g.fillRect(725,331,282,315);
 		
 	}
 
@@ -56,12 +62,14 @@ public class AnimationMonopolyPanel extends JPanel{
 		
 		//CHAT FEATURE
 		//-chatbox
-		textfield.setSize(250,80);
-		textfield.setLocation(1010,635);
+		textfield.setLocation(1020,635);
+		textfield.setSize(255,80);
+		
 		//-scroll
 		scroll = new JScrollPane(textarea); 
-		scroll.setSize(250,290);
-		scroll.setLocation(1010,330); 
+		scroll.setLocation(1020,330);
+		scroll.setSize(255,297);
+		textarea.setEnabled(false);
 		
 		//buttons
 		buy = new JButton("Buy");
@@ -75,6 +83,14 @@ public class AnimationMonopolyPanel extends JPanel{
 		rolldie = new JButton("Roll the die!");
 		rolldie.setSize(130,20);
 		rolldie.setLocation(727,10);
+		
+		next = new JButton("Next");
+		next.setLocation(723,655);
+		next.setSize(141,60);
+		
+		back = new JButton("Back");
+		back.setLocation(867,655);
+		back.setSize(141,60);
 		
 		text = new Font("kabel.ttf", Font.PLAIN, 12);
 		try{
