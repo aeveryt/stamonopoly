@@ -21,7 +21,9 @@ public class mainmenu implements ActionListener{
 	public AnimationMonopolyPanel monopolypanel; 
 	
 	boolean blnServer; 
-			
+	int intdice1; 
+	int intdice2;
+	int intdiesum; 
 
 
 
@@ -233,6 +235,15 @@ public class mainmenu implements ActionListener{
 			strData = ssmclient.readText(); 
 			monopolypanel.textarea.append(strData +"\n"); 
 		}
+		// Rolling the dice: 
+		
+		else if(evt.getSource() == monopolypanel.rolldie){
+			intdice1 = (int)(Math.random() *6+1); 
+			intdice2 = (int)(Math.random()*6+1); 
+			intdiesum = intdice1 + intdice2; 
+			System.out.println(intdice1+" + " +intdice2); 
+		}
+		
 		
 	}
 	
