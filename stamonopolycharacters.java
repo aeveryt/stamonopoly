@@ -17,6 +17,7 @@ public class stamonopolycharacters extends JPanel{
 	public JButton select2 = new JButton("Select");
 	public JButton select3 = new JButton("Select");
 	public JButton select4 = new JButton("Select");
+	public JButton gameplay = new JButton("Play"); 
 	
 	boolean blnsta1;
 	boolean blnsta2;
@@ -69,6 +70,11 @@ public class stamonopolycharacters extends JPanel{
 		select4.setLocation(1060,480);
 		
 		//Reading Image
+		
+		
+		// gameplay
+		gameplay.setSize(140,100); 
+		gameplay.setLocation(1140,620); 
 		
 		try{
 			student1 = ImageIO.read(new File("student1.jpg"));

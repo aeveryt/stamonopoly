@@ -19,6 +19,7 @@ public class mainmenu implements ActionListener{
 	public SuperSocketMaster ssm; 
 	public SuperSocketMaster ssmclient; 
 	public AnimationMonopolyPanel monopolypanel; 
+	public stamonopolycharacters characterspanel;
 	
 	boolean blnServer; 
 	int intdice1; 
@@ -152,18 +153,20 @@ public class mainmenu implements ActionListener{
 			ssm = new SuperSocketMaster(1969, this);
 			startpage.strAddress = ssm.getMyAddress(); 
 			ssm.connect();
+			blnServer = true; 
 			
 		}else if(evt.getSource() == playpage1.existing){
 			System.out.println("going to exisitng game"); 
 			theframe.setContentPane(joinpage); 
+			blnServer = false; 
 			theframe.setVisible(true); 
 		}else if(evt.getSource() == startpage.back || evt.getSource() ==joinpage.back){ 
 			theframe.setContentPane(thepanel); 
 			theframe.setVisible(true); 
-		}else if(evt.getSource() == startpage.gameplay){
+		}else if(evt.getSource() == characterspanel.gameplay){
 			theframe.setContentPane(monopolypanel);
 			theframe.setVisible(true); 
-			blnServer = true; 
+			
 		}
 		// Joining a game:
 		else if(evt.getSource() == joinpage.TF){
@@ -171,20 +174,8 @@ public class mainmenu implements ActionListener{
 			System.out.println(joinpage.strCode); 
 			System.out.println(startpage.strAddress); 
 			
-			/*
-			if(joinpage.strCode.equals(startpage.strAddress)){
-				System.out.println("joined game");
-				joinpage.gameplay.setSelected(true); 
-			}
-			else{
-				System.out.println("could not join game");
-				joinpage.gameplay.setSelected(false);  
-			}	
 			
-			*/
-			
-		}else if(evt.getSource() == joinpage.gameplay){
-			blnServer = false; 
+		}else if(evt.getSource() == characterspanel.gameplay){
 			theframe.setContentPane(monopolypanel);
 			theframe.setVisible(true); 
 			
@@ -200,12 +191,17 @@ public class mainmenu implements ActionListener{
 			
 		}// Entering name
 		else if(evt.getSource() == startpage.TFname){
-			startpage.strName = startpage.TFname.getText(); 
-			//System.out.println(startpage.TFname); 
+			startpage.strName = startpage.TFname.getText();  
 			
 		}else if(evt.getSource() == joinpage.TFname){
 			joinpage.strName = joinpage.TFname.getText(); 
-			//System.out.println(joinpage.TFname); 
+			
+		}
+		
+		// chosing characters page: 
+		else if(evt.getSource() == startpage.gameplay || evt.getSource() == joinpage.gameplay){
+			theframe.setContentPane(characterspanel);
+			theframe.setVisible(true); 
 		}
 		
 		// talking to people over server
@@ -257,7 +253,8 @@ public class mainmenu implements ActionListener{
 		playpage1 = new serverpanel();
 		startpage = new startgame(); 
 		joinpage = new joingame(); 
-		monopolypanel = new AnimationMonopolyPanel(); 
+		monopolypanel = new AnimationMonopolyPanel();
+		characterspanel = new stamonopolycharacters();  
 	
 		
 		//set panel
@@ -320,9 +317,19 @@ public class mainmenu implements ActionListener{
 		joinpage.gameplay.addActionListener(this); 
 		joinpage.TFname.addActionListener(this); 
 		
+		// characters panel:
+		characterspanel.setLayout(null); 
+		characterspanel.select1.addActionListener(this); 
+		characterspanel.select2.addActionListener(this); 
+		characterspanel.select3.addActionListener(this); 
+		characterspanel.select4.addActionListener(this); 
+		characterspanel.gameplay.addActionListener(this); 
+		
 		// PLAY PAGE: 
 		monopolypanel.setLayout(null); 
 		monopolypanel.textfield.addActionListener(this);
+		
+		
 		
 		//add features
 		thepanel.add(InstrucButt);
@@ -353,6 +360,15 @@ public class mainmenu implements ActionListener{
 		joinpage.add(joinpage.gameplay); 
 		startpage.add(startpage.TFname); 
 		joinpage.add(joinpage.TFname); 
+		
+		//add features: to character page
+		characterspanel.add(characterspanel.select1); 
+		characterspanel.add(characterspanel.select2); 
+		characterspanel.add(characterspanel.select3); 
+		characterspanel.add(characterspanel.select4); 
+		characterspanel.add(characterspanel.gameplay); 
+		
+		
 
 		// Add features: to play page (ACTUAL GAMEPLAY)
 		monopolypanel.add(monopolypanel.scroll); 
