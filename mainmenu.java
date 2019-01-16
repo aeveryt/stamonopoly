@@ -395,6 +395,12 @@ public class mainmenu implements ActionListener{
 		monopolypanel.add(monopolypanel.rolldie);
 		monopolypanel.add(monopolypanel.next);
 		monopolypanel.add(monopolypanel.back);
+		
+		// Game play - ACTION LISTENER
+		monopolypanel.rolldie.addActionListener(this);
+		monopolypanel.next.addActionListener(this);
+		monopolypanel.back.addActionListener(this);
+		
 		//set frame
 		theframe.setContentPane(thepanel);
 		theframe.pack();
