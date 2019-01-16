@@ -12,7 +12,8 @@ public class stamonopoly implements ActionListener{
 	JTextArea textarea = new JTextArea();
 	JScrollPane scroll = new JScrollPane(textarea);
 	JTextField textfield = new JTextField();
-	Timer timer = new Timer(1000/60,this);
+	Timer timer = new Timer(1000/60,this);		
+
 	
 	
 	//Methods
@@ -21,12 +22,16 @@ public class stamonopoly implements ActionListener{
 			panel.repaint();
 		}
 		
-		//CHATROOM
+		
+		//CHATROOm
+		/*
 		else if(evt.getSource() == textfield){
 			System.out.println("Going to send this over network: " + textfield.getText());
-			textarea.append("You: "+textfield.getText()+"\n");
+			textarea.append("\nYou: "+textfield.getText());
 			textfield.setText("");
 		}
+		*/
+		
 	}
 	
 	//Constructor

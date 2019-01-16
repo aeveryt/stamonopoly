@@ -198,27 +198,26 @@ public class mainmenu implements ActionListener{
 		}// Entering name
 		else if(evt.getSource() == startpage.TFname){
 			startpage.strName = startpage.TFname.getText(); 
-			System.out.println(startpage.TFname); 
+			System.out.println(startpage.strName); 
 			
 		}else if(evt.getSource() == joinpage.TFname){
 			joinpage.strName = joinpage.TFname.getText(); 
-			System.out.println(joinpage.TFname); 
+			System.out.println(joinpage.strName); 
 		}
 		
 		// talking to people over server
 		else if(evt.getSource() == monopolypanel.textfield){
 			System.out.println("Going to send this out over network: "+monopolypanel.textfield.getText()); 
 			
-		
 			if(blnServer == true){
 				System.out.println("I am the server"); 
-				ssm.sendText(startpage.strName+" :"+monopolypanel.textfield.getText()); 
-				monopolypanel.textarea.append("\nYou: "+monopolypanel.textfield.getText());
+				ssm.sendText("Sheridan: " +monopolypanel.textfield.getText()+"\n"); 
+				monopolypanel.textarea.append("You: "+monopolypanel.textfield.getText()+"\n");
 				monopolypanel.textfield.setText("");
 			}else if(blnServer == false){
 				System.out.println("I am the client"); 
-				ssmclient.sendText(joinpage.strName+" :"+monopolypanel.textfield.getText()); 
-				monopolypanel.textarea.append("\nYou: "+monopolypanel.textfield.getText());
+				ssmclient.sendText("Sheridan: " +monopolypanel.textfield.getText()+"\n"); 
+				monopolypanel.textarea.append("You: "+monopolypanel.textfield.getText()+"\n");
 				monopolypanel.textfield.setText("");
 			}
 			
@@ -226,12 +225,13 @@ public class mainmenu implements ActionListener{
 		}else if(evt.getSource() == ssm){
 			String strData; 
 			strData = ssm.readText(); 
-			monopolypanel.textarea.append(strData +"\n"); 
+			monopolypanel.textarea.append("\n"+strData); 
 		}else if(evt.getSource() == ssmclient){
 			String strData; 
 			strData = ssmclient.readText(); 
-			monopolypanel.textarea.append(strData +"\n"); 
+			monopolypanel.textarea.append("\n"strData); 
 		}
+
 		
 		//Rolling the Die
 		else if(evt.getSource() == monopolypanel.rolldie){
