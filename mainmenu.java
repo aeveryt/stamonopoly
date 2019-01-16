@@ -201,11 +201,11 @@ public class mainmenu implements ActionListener{
 		}// Entering name
 		else if(evt.getSource() == startpage.TFname){
 			startpage.strName = startpage.TFname.getText(); 
-			System.out.println(startpage.TFname); 
+			//System.out.println(startpage.TFname); 
 			
 		}else if(evt.getSource() == joinpage.TFname){
 			joinpage.strName = joinpage.TFname.getText(); 
-			System.out.println(joinpage.TFname); 
+			//System.out.println(joinpage.TFname); 
 		}
 		
 		// talking to people over server
@@ -215,12 +215,12 @@ public class mainmenu implements ActionListener{
 		
 			if(blnServer == true){
 				System.out.println("I am the server"); 
-				ssm.sendText("\n"+startpage.strName+" :"+monopolypanel.textfield.getText()); 
+				ssm.sendText(startpage.strName+" :"+monopolypanel.textfield.getText()); 
 				monopolypanel.textarea.append("\nYou: "+monopolypanel.textfield.getText());
 				monopolypanel.textfield.setText("");
 			}else if(blnServer == false){
 				System.out.println("I am the client"); 
-				ssmclient.sendText("\n"+joinpage.strName+" :"+monopolypanel.textfield.getText()); 
+				ssmclient.sendText(joinpage.strName+" :"+monopolypanel.textfield.getText()); 
 				monopolypanel.textarea.append("\nYou: "+monopolypanel.textfield.getText());
 				monopolypanel.textfield.setText("");
 			}
@@ -229,11 +229,11 @@ public class mainmenu implements ActionListener{
 		}else if(evt.getSource() == ssm){
 			String strData; 
 			strData = ssm.readText(); 
-			monopolypanel.textarea.append(strData +"\n"); 
+			monopolypanel.textarea.append("\n"+strData); 
 		}else if(evt.getSource() == ssmclient){
 			String strData; 
 			strData = ssmclient.readText(); 
-			monopolypanel.textarea.append(strData +"\n"); 
+			monopolypanel.textarea.append("\n"+strData); 
 		}
 		// Rolling the dice: 
 		
