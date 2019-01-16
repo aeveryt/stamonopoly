@@ -217,15 +217,10 @@ public class mainmenu implements ActionListener{
 			
 		}
 		
-		
-		
-		
-		
-		// talking to people over server
+		// talking to people over server (SUPERSOCKETMASTER)
 		else if(evt.getSource() == monopolypanel.textfield){
 			System.out.println("Going to send this out over network: "+monopolypanel.textfield.getText()); 
-			
-		
+
 			if(blnServer == true){
 				System.out.println("I am the server"); 
 				ssm.sendText(startpage.strName+" :"+monopolypanel.textfield.getText()); 
@@ -236,9 +231,7 @@ public class mainmenu implements ActionListener{
 				ssmclient.sendText(joinpage.strName+" :"+monopolypanel.textfield.getText()); 
 				monopolypanel.textarea.append("\nYou: "+monopolypanel.textfield.getText());
 				monopolypanel.textfield.setText("");
-			}
-			
-			
+			}			
 		}else if(evt.getSource() == ssm){
 			String strData; 
 			strData = ssm.readText(); 
@@ -248,8 +241,8 @@ public class mainmenu implements ActionListener{
 			strData = ssmclient.readText(); 
 			monopolypanel.textarea.append("\n"+strData); 
 		}
-		// Rolling the dice: 
 		
+		// Rolling the dice: 
 		else if(evt.getSource() == monopolypanel.rolldie){
 			intdice1 = (int)(Math.random() *6+1); 
 			intdice2 = (int)(Math.random()*6+1); 
