@@ -28,6 +28,22 @@ public class stamonopolycharacters extends JPanel{
 		g.setFont(title);
 		g.setColor(Color.BLACK);
 		g.fillRect(0,0,1280,720);
+	//Character 1
+		g.setColor(Color.RED);
+		g.fillRect(140,400,25,25);
+	//Character 2
+		g.setColor(Color.BLUE);
+		g.fillRect(440,400,25,25);
+	//Character 3	
+		
+		g.setColor(Color.YELLOW);
+		g.fillRect(780,400,25,25);
+	//Character 4
+		g.setColor(Color.GREEN);
+		g.fillRect(1100,400,25,25);
+		
+		
+		
 		
 	}
 	
