@@ -44,6 +44,9 @@ public class stamonopolycharacters extends JPanel{
 		g.setColor(Color.GREEN);
 		g.fillRect(1100,400,25,25);
 		
+		if(strData.equals("select1")){
+			select1.setEnabled(false); 
+		}
 		
 		
 		
@@ -58,9 +61,7 @@ public class stamonopolycharacters extends JPanel{
 		select1.setSize(100,50);
 		select1.setLocation(100,480);
 		
-		if(strData.equals("select1")){
-			select1.setEnabled(false); 
-		}
+	
 		
 		//Select 2;
 		select2.setSize(100,50);
