@@ -160,6 +160,14 @@ public class mainmenu implements ActionListener{
 			theframe.setContentPane(joinpage); 
 			blnServer = false; 
 			theframe.setVisible(true); 
+			
+			ssmclient = new SuperSocketMaster(joinpage.strCode,1969, this); 
+			ssmclient.connect();
+			System.out.println(joinpage.strCode); 
+		
+			
+			// System.out.println(blnServer); 
+			
 		}else if(evt.getSource() == startpage.back || evt.getSource() ==joinpage.back){ 
 			theframe.setContentPane(thepanel); 
 			theframe.setVisible(true); 
@@ -179,15 +187,7 @@ public class mainmenu implements ActionListener{
 			theframe.setContentPane(monopolypanel);
 			theframe.setVisible(true); 
 			
-			// SOMETHING TO DO WITH SOCKET OBJECT I BELIEVE THE SECOND CODE, NOT EXACTLY SURE how to check TCP Port
-			ssmclient = new SuperSocketMaster(joinpage.strCode,1969, this); 
-			
-				ssmclient.connect();
-		
-			System.out.println(joinpage.strCode); 
-		
-			blnServer = false; 
-			// System.out.println(blnServer); 
+
 			
 		}// Entering name
 		else if(evt.getSource() == startpage.TFname){
