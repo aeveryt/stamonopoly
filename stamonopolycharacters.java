@@ -23,6 +23,7 @@ public class stamonopolycharacters extends JPanel{
 	boolean blnsta2;
 	boolean blnsta3;
 	boolean blnsta4;
+	String strData = "";
 	
 	//Methods
 	public void paintComponent(Graphics g){
@@ -56,6 +57,10 @@ public class stamonopolycharacters extends JPanel{
 		//Select 1;
 		select1.setSize(100,50);
 		select1.setLocation(100,480);
+		
+		if(strData.equals("select1")){
+			select1.setEnabled(false); 
+		}
 		
 		//Select 2;
 		select2.setSize(100,50);

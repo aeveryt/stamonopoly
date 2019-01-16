@@ -202,7 +202,24 @@ public class mainmenu implements ActionListener{
 		else if(evt.getSource() == startpage.gameplay || evt.getSource() == joinpage.gameplay){
 			theframe.setContentPane(characterspanel);
 			theframe.setVisible(true); 
+		}else if(evt.getSource() == characterspanel.select1){
+			if(blnServer == true){
+				ssm.sendText("select1");
+			}else if(blnServer == false){
+				ssmclient.sendText("select1"); 
+			}
+
+			if(blnServer == true){
+				characterspanel.strData = ssm.readText(); 
+			}else if(blnServer == false){
+				characterspanel.strData = ssmclient.readText(); 
+			}
+			
 		}
+		
+		
+		
+		
 		
 		// talking to people over server
 		else if(evt.getSource() == monopolypanel.textfield){
