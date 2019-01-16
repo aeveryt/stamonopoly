@@ -43,16 +43,16 @@ public class AnimationMonopolyPanel extends JPanel{
 		g.fillRect(867,3,407,99);
 		
 		//turn display
-		g.fillRect(725,229,360,40);
+		g.fillRect(724,229,374,40);
 		
 		//cards
-		g.fillRect(844,108,255,116);
+		g.fillRect(844,108,255,115);
 		
 		//profile
 		g.fillRect(1104,108,170,160);
 		
 		//properties outline
-		g.fillRect(725,330,280,310);
+		g.fillRect(725,331,282,315);
 		
 	}
 
@@ -62,12 +62,13 @@ public class AnimationMonopolyPanel extends JPanel{
 		
 		//CHAT FEATURE
 		//-chatbox
-		textfield.setSize(255,80);
 		textfield.setLocation(1020,635);
+		textfield.setSize(255,80);
+		
 		//-scroll
 		scroll = new JScrollPane(textarea); 
-		scroll.setSize(255,295);
-		scroll.setLocation(1020,330); 
+		scroll.setLocation(1020,330);
+		scroll.setSize(255,297);
 		textarea.setEnabled(false);
 		
 		//buttons
@@ -84,10 +85,13 @@ public class AnimationMonopolyPanel extends JPanel{
 		rolldie.setLocation(727,10);
 		
 		next = new JButton("Next");
-		next.setLocation(725,650);
-		next.setSize(280,60);
+		next.setLocation(723,655);
+		next.setSize(141,60);
 		
 		back = new JButton("Back");
+		back.setLocation(867,655);
+		back.setSize(141,60);
+		
 		text = new Font("kabel.ttf", Font.PLAIN, 12);
 		try{
 			monopolyboard = ImageIO.read(new File("MonopolyGameBoard.png"));
