@@ -375,7 +375,9 @@ public class mainmenu implements ActionListener{
 		monopolypanel.add(monopolypanel.textfield);
 		monopolypanel.add(monopolypanel.buy);
 		monopolypanel.add(monopolypanel.dontbuy);
-		
+		monopolypanel.add(monopolypanel.rolldie);
+		monopolypanel.add(monopolypanel.next);
+		monopolypanel.add(monopolypanel.back);
 		//set frame
 		theframe.setContentPane(thepanel);
 		theframe.pack();
