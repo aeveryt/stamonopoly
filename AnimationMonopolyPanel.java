@@ -16,7 +16,10 @@ public class AnimationMonopolyPanel extends JPanel{
 	JButton buy;
 	JButton dontbuy;
 	JButton rolldie;
-	Font text;
+	JButton next;
+	JButton back;
+	Font text = null;
+	
 	
 	// JScrollPane scroll = new JScrollPane(textarea);
 	
@@ -37,10 +40,10 @@ public class AnimationMonopolyPanel extends JPanel{
 		g.fillRect(795,36,60,60);
 		
 		//status bar
-		g.fillRect(867,3,405,100);
+		g.fillRect(867,3,407,99);
 		
 		//turn display
-		g.fillRect(720,250,60,40);
+		g.fillRect(725,233,547,40);
 		
 		//profile
 		//g.fillRect();
@@ -54,28 +57,28 @@ public class AnimationMonopolyPanel extends JPanel{
 		//CHAT FEATURE
 		//-chatbox
 		textfield.setSize(250,80);
-		textfield.setLocation(1000,655);
+		textfield.setLocation(1010,635);
 		//-scroll
 		scroll = new JScrollPane(textarea); 
-		scroll.setSize(250,300);
-		scroll.setLocation(1000,350); 
+		scroll.setSize(250,290);
+		scroll.setLocation(1010,330); 
 		
 		//buttons
 		buy = new JButton("Buy");
-		buy.setSize(150,60);
-		buy.setLocation(720,110);
+		buy.setSize(120,60);
+		buy.setLocation(720,105);
 		
 		dontbuy = new JButton("Don't buy");
-		dontbuy.setSize(150,60);
-		dontbuy.setLocation(720,175);
+		dontbuy.setSize(120,60);
+		dontbuy.setLocation(720,166);
 		
 		rolldie = new JButton("Roll the die!");
 		rolldie.setSize(130,20);
 		rolldie.setLocation(727,10);
 		
+		text = new Font("kabel.ttf", Font.PLAIN, 12);
 		try{
 			monopolyboard = ImageIO.read(new File("MonopolyGameBoard.png"));
-			text = new Font("kabel.ttf", Font.PLAIN, 12);
 		}catch(IOException e){
 			System.out.println("Unable to upload image");
 		}
