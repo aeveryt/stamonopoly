@@ -149,22 +149,14 @@ public class mainmenu implements ActionListener{
 			System.out.println("started"); 
 			theframe.setContentPane(startpage); 
 			theframe.setVisible(true); 
-			// opens super socket master if decides to start game	
-			ssm = new SuperSocketMaster(1969, this);
-			startpage.strAddress = ssm.getMyAddress(); 
-			ssm.connect();
-			blnServer = true; 
+
 			
 		}else if(evt.getSource() == playpage1.existing){
 			System.out.println("going to exisitng game"); 
 			theframe.setContentPane(joinpage); 
-			blnServer = false; 
 			theframe.setVisible(true); 
 			
-			ssmclient = new SuperSocketMaster(joinpage.strCode,1969, this); 
-			ssmclient.connect();
-			System.out.println(joinpage.strCode); 
-		
+				
 			
 			// System.out.println(blnServer); 
 			
@@ -199,10 +191,26 @@ public class mainmenu implements ActionListener{
 		}
 		
 		// chosing characters page: 
-		else if(evt.getSource() == startpage.gameplay || evt.getSource() == joinpage.gameplay){
+		else if(evt.getSource() == startpage.gameplay){
+			// opens super socket master if decides to start game	
+			ssm = new SuperSocketMaster(1969, this);
+			startpage.strAddress = ssm.getMyAddress(); 
+			ssm.connect();
+			blnServer = true;
 			theframe.setContentPane(characterspanel);
 			theframe.setVisible(true); 
-		}else if(evt.getSource() == characterspanel.select1){
+		}else if(evt.getSource() == joinpage.gameplay){
+			theframe.setContentPane(characterspanel); 
+			theframe.setVisible(true); 
+			//sets up client server
+			ssmclient = new SuperSocketMaster(joinpage.strCode,1969, this); 
+			ssmclient.connect();
+			blnServer = false;
+			System.out.println(joinpage.strCode); 
+		
+		}
+		
+		else if(evt.getSource() == characterspanel.select1){
 			if(blnServer == true){
 				ssm.sendText("select1");
 			}else if(blnServer == false){
