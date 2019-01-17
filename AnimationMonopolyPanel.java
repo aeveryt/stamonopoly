@@ -19,6 +19,7 @@ public class AnimationMonopolyPanel extends JPanel{
 	JButton next;
 	JButton back;
 	Font text = null;
+	String strColor; 
 	
 	
 	// JScrollPane scroll = new JScrollPane(textarea);
@@ -53,6 +54,14 @@ public class AnimationMonopolyPanel extends JPanel{
 		
 		//properties outline
 		g.fillRect(725,331,282,315);
+		
+		if(strColor.equals("red")){
+			g.setColor(Color.red);
+		}
+		
+		// draw that box in:
+		
+		g.fillRect(1104,108,30,30); 
 		
 	}
 

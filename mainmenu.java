@@ -214,6 +214,7 @@ public class mainmenu implements ActionListener{
 		else if(evt.getSource() == characterspanel.select1){
 			System.out.println(blnServer); 
 			// If you are the server send this text.
+			monopolypanel.strColor = "red";
 			if(blnServer){ 
 				ssm.sendText("select1");
 				System.out.println("Server sent"); 
