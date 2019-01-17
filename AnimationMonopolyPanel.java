@@ -36,7 +36,6 @@ public class AnimationMonopolyPanel extends JPanel{
 		g.fillRect(720,3,142,100);
 		g.setFont(text);
 		g.drawString("CHATBOX",1000,300);
-		g.drawString("ICON:",1104,115);
 		g.setColor(Color.WHITE);
 		g.fillRect(727,36,60,60);
 		g.fillRect(795,36,60,60);
@@ -56,6 +55,10 @@ public class AnimationMonopolyPanel extends JPanel{
 		
 		//properties outline
 		g.fillRect(725,331,282,315);
+		
+		//Icon header
+		g.setColor(Color.BLACK); 
+		g.drawString("ICON:",1104,1125);
 		
 		if(strColor.equals("red")){
 			g.setColor(Color.red);
