@@ -27,9 +27,6 @@ public class mainmenu implements ActionListener{
 	int intdice1; 
 	int intdice2;
 	int intdiesum; 
-
-
-
 	
 	//Methods
 	public void actionPerformed(ActionEvent evt){
@@ -478,21 +475,21 @@ public class mainmenu implements ActionListener{
 		
 		//Properties
 	
-	boolean GoSpace = true;
-	boolean Geo = false;
-	boolean blnFileFail = false;
-	FileReader thefile = null;
-	FileReader chancefile = null;
-	FileReader communityfile = null;
-	BufferedReader properties = null;
-	BufferedReader community = null;
-	BufferedReader chance = null;
+		boolean GoSpace = true;
+		boolean Geo = false;
+		boolean blnFileFail = false;
+		FileReader thefile = null;
+		FileReader chancefile = null;
+		FileReader communityfile = null;
+		BufferedReader properties = null;
+		BufferedReader community = null;
+		BufferedReader chance = null;
 	
-	//Split Data
-	String strSplit[];
-	String strProperties[][] = new String[31][10];
-	String strCommunity [][] = new String[30][3];
-	String strChance [][] = new String[30][3];
+		//Split Data
+		String strSplit[];
+		String strProperties[][] = new String[31][10];
+		String strCommunity [][] = new String[30][3];
+		String strChance [][] = new String[30][3];
 	
 	//Methods	
 		try{
