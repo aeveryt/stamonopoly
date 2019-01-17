@@ -213,14 +213,28 @@ public class mainmenu implements ActionListener{
 		else if(evt.getSource() == characterspanel.select1){
 			if(blnServer == true){
 				ssm.sendText("select1");
+				System.out.println("sent"); 
 			}else if(blnServer == false){
 				ssmclient.sendText("select1"); 
+				System.out.println("sent"); 
 			}
 
 			if(blnServer == true){
 				characterspanel.strData = ssm.readText(); 
+				System.out.println(characterspanel.strData); 
+				// set button to false;
+				if(characterspanel.strData.equals("select1")){
+					characterspanel.select1.setEnabled(false); 
+				} 
+				
 			}else if(blnServer == false){
 				characterspanel.strData = ssmclient.readText(); 
+				System.out.println(characterspanel.strData);
+				// set to false;
+				if(characterspanel.strData.equals("select1")){
+					characterspanel.select1.setEnabled(false); 
+				} 
+				
 			}
 			
 		}

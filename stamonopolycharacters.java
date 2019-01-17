@@ -46,6 +46,7 @@ public class stamonopolycharacters extends JPanel{
 		
 		if(strData.equals("select1")){
 			select1.setEnabled(false); 
+			System.out.println("here"); 
 		}
 		
 		
