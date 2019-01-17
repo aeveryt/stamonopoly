@@ -251,27 +251,29 @@ public class mainmenu implements ActionListener{
 	
 		}
 		
-		// talking to people over server (SUPERSOCKETMASTER)
+		//CHATTING: talking to people over server (SUPERSOCKETMASTER)
 		else if(evt.getSource() == monopolypanel.textfield){
 			String strChat;
 			System.out.println("Going to send this out over network: "+monopolypanel.textfield.getText()); 
 
 			if(blnServer == true){
 				System.out.println("I am the server"); 
-				
 				ssm.sendText(startpage.strName+" :"+monopolypanel.textfield.getText()); 
 				strChat = monopolypanel.textfield.getText();
+				System.out.println(strChat);
 				monopolypanel.textarea.append("\nYou: "+strChat);
 				monopolypanel.textfield.setText("");
 			}else if(blnServer == false){
 				System.out.println("I am the client"); 
 				strChat = monopolypanel.textfield.getText();
+				System.out.println(strChat);
 				ssmclient.sendText(joinpage.strName+" :"+strChat); 
 				monopolypanel.textarea.append("\nYou: "+strChat);
 				monopolypanel.textfield.setText("");
-			}			
+			}		
+		
+		//CHARACTERS SERVER PAGE	
 		}else if(evt.getSource() == ssm){
-			
 			// If you are the server and you didn't send anything this statement will run.
 			if(blnServer == true && blnSent == false){
 				characterspanel.strData = ssm.readText(); 
@@ -287,6 +289,8 @@ public class mainmenu implements ActionListener{
 			//System.out.println(blnServer); 
 			String strData; 
 			strData = ssm.readText(); 
+			//
+			monopolypanel.textarea.append(strData);
 			
 		}else if(evt.getSource() == ssmclient){
 			
@@ -304,6 +308,8 @@ public class mainmenu implements ActionListener{
 			
 			String strData; 
 			strData = ssmclient.readText(); 
+			//
+			monopolypanel.textarea.append(strData);
 		}
 		
 		// Rolling the dice: 

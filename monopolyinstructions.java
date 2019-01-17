@@ -22,6 +22,7 @@ public class monopolyinstructions extends JPanel{
 	public JButton backtopage3;
 	public JButton topage5;
 	public JButton backtopage4;
+	public JButton tomain5;
 	
 	boolean blnpage1 = true;
 	boolean blnpage2 = false;
@@ -116,6 +117,11 @@ public class monopolyinstructions extends JPanel{
 		backtopage4 = new JButton("BACK TO PAGE 4");
 		backtopage4.setSize(150,35);
 		backtopage4.setLocation(15,25);
+		//-to main menu from page 5
+		tomain5 = new JButton ("TO MAIN MENU");
+		topage5.setSize(150,35);
+		topage5.setLocation(1100,25);
+		
 		
 		//checking whether or not image or font is available
 		try{
