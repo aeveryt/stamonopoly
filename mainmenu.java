@@ -22,6 +22,7 @@ public class mainmenu implements ActionListener{
 	public stamonopolycharacters characterspanel;
 	
 	boolean blnServer; 
+	boolean blnSent;
 	int intdice1; 
 	int intdice2;
 	int intdiesum; 
@@ -153,18 +154,18 @@ public class mainmenu implements ActionListener{
 			ssm = new SuperSocketMaster(1969, this);
 			startpage.strAddress = ssm.getMyAddress(); 
 			ssm.connect();
-			blnServer = true; 
+			blnServer = true;
+			System.out.println(blnServer); 
+
 			
 		}else if(evt.getSource() == playpage1.existing){
 			System.out.println("going to exisitng game"); 
 			theframe.setContentPane(joinpage); 
-			blnServer = false; 
 			theframe.setVisible(true); 
+			//sets up client server
+
 			
-			ssmclient = new SuperSocketMaster(joinpage.strCode,1969, this); 
-			ssmclient.connect();
-			System.out.println(joinpage.strCode); 
-		
+				
 			
 			// System.out.println(blnServer); 
 			
@@ -199,20 +200,49 @@ public class mainmenu implements ActionListener{
 		}
 		
 		// chosing characters page: 
-		else if(evt.getSource() == startpage.gameplay || evt.getSource() == joinpage.gameplay){
+		else if(evt.getSource() == startpage.gameplay){
 			theframe.setContentPane(characterspanel);
 			theframe.setVisible(true); 
-		}else if(evt.getSource() == characterspanel.select1){
-			if(blnServer == true){
+		}else if(evt.getSource() == joinpage.gameplay){
+			theframe.setContentPane(characterspanel); 
+			theframe.setVisible(true); 
+			ssmclient = new SuperSocketMaster(joinpage.strCode,1969, this); 
+			ssmclient.connect();
+			blnServer = false;
+			System.out.println(joinpage.strCode); 
+		}
+		
+		else if(evt.getSource() == characterspanel.select1){
+			System.out.println(blnServer); 
+			if(blnServer){ 
 				ssm.sendText("select1");
+				System.out.println("Server sent"); 
+				characterspanel.select1.setEnabled(false); 
+				blnSent = false; 
 			}else if(blnServer == false){
 				ssmclient.sendText("select1"); 
+				System.out.println("client sent"); 
+				characterspanel.select1.setEnabled(false); 
+				blnSent = false; 
 			}
 
-			if(blnServer == true){
+			if(blnServer && blnSent == false){
 				characterspanel.strData = ssm.readText(); 
-			}else if(blnServer == false){
+				System.out.println(characterspanel.strData); 
+				//Set button to false;
+				if(characterspanel.strData.equals("select1")){
+					characterspanel.select1.setEnabled(false); 
+				} 
+			
+				
+			}else if(blnServer == false && blnSent == false){
 				characterspanel.strData = ssmclient.readText(); 
+				System.out.println(characterspanel.strData);
+				// set to false;
+				if(characterspanel.strData.equals("select1")){
+					characterspanel.select1.setEnabled(false); 
+				} 
+				
 			}
 			
 		}
@@ -233,6 +263,7 @@ public class mainmenu implements ActionListener{
 				monopolypanel.textfield.setText("");
 			}			
 		}else if(evt.getSource() == ssm){
+			System.out.println(blnServer); 
 			String strData; 
 			strData = ssm.readText(); 
 			monopolypanel.textarea.append("\n"+strData); 
