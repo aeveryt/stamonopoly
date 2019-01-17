@@ -137,9 +137,11 @@ public class mainmenu implements ActionListener{
 			theframe.setContentPane(thepanelinstructions);
 			theframe.setVisible(true);
 		}
+		
 	//TO LEAVE GAME
 		else if(evt.getSource() == ExitButt){
 			System.exit(0);
+			
 	// PLAY SCREEN
 		}else if(evt.getSource() == PlayButt){
 			theframe.setContentPane(playpage1); 
