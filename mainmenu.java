@@ -18,7 +18,7 @@ public class mainmenu implements ActionListener{
 	public startgame startpage; 
 	public joingame joinpage; 
 	public SuperSocketMaster ssm; 
-	public SuperSocketMaster ssmclient; 
+	// public SuperSocketMaster ssmclient; 
 	public AnimationMonopolyPanel monopolypanel; 
 	public stamonopolycharacters characterspanel;
 	Timer thetimer; 
@@ -203,8 +203,8 @@ public class mainmenu implements ActionListener{
 			theframe.setContentPane(characterspanel); 
 			theframe.setVisible(true); 
 			
-			ssmclient = new SuperSocketMaster(joinpage.strCode,1969, this); 
-			ssmclient.connect();
+			ssm = new SuperSocketMaster(joinpage.strCode,1969, this); 
+			ssm.connect();
 			blnServer = false;
 			System.out.println(joinpage.strCode); 
 		}
@@ -222,7 +222,7 @@ public class mainmenu implements ActionListener{
 				blnSent = true; 
 			}// If you are not the server use the client ssm to send text. 
 			else if(blnServer == false){
-				ssmclient.sendText("select1"); 
+				ssm.sendText("select1"); 
 				System.out.println("client sent"); 
 				characterspanel.select1.setEnabled(false); 
 			// Symbolized that you sent the message
@@ -240,7 +240,7 @@ public class mainmenu implements ActionListener{
 				blnSent = true; 
 			}// If you are not the server use the client ssm to send text. 
 			else if(blnServer == false){
-				ssmclient.sendText("select2"); 
+				ssm.sendText("select2"); 
 				System.out.println("client sent"); 
 				characterspanel.select2.setEnabled(false); 
 			// Symbolized that you sent the message
@@ -265,7 +265,7 @@ public class mainmenu implements ActionListener{
 				System.out.println("I am the client"); 
 				strChat = monopolypanel.textfield.getText();
 				System.out.println(strChat);
-				ssmclient.sendText("\n"+joinpage.strName+" :"+strChat); 
+				ssm.sendText("\n"+joinpage.strName+" :"+strChat); 
 				monopolypanel.textarea.append("\nYou: "+strChat);
 				monopolypanel.textfield.setText("");
 			}		
@@ -283,18 +283,10 @@ public class mainmenu implements ActionListener{
 					characterspanel.select2.setEnabled(false); 
 				}
 			} 
-		
-			//System.out.println(blnServer); 
-			String strData; 
-			strData = ssm.readText(); 
-			//
-			monopolypanel.textarea.append(strData);
-			
-		}else if(evt.getSource() == ssmclient){
 			
 			// If you are not the server and did not send the message about shutting the button off, this code should run.
 			if(blnServer == false && blnSent == false){
-				characterspanel.strData = ssmclient.readText(); 
+				characterspanel.strData = ssm.readText(); 
 				System.out.println("CLIENT received this:"+characterspanel.strData); 
 				// set to false;
 				if(characterspanel.strData.equals("select1")){
@@ -303,11 +295,13 @@ public class mainmenu implements ActionListener{
 					characterspanel.select2.setEnabled(false); 
 				}
 			} 
-			
+		
+			//System.out.println(blnServer); 
 			String strData; 
-			strData = ssmclient.readText(); 
+			strData = ssm.readText(); 
 			//
 			monopolypanel.textarea.append(strData);
+			
 		}
 		
 		// Rolling the dice: 
