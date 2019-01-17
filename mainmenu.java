@@ -221,7 +221,7 @@ public class mainmenu implements ActionListener{
 				blnSent = true; 
 			}// If you are not the server use the client ssm to send text. 
 			else if(blnServer == false){
-				ssmclient.sendText("select1"); 
+				ssmclient.sendText("g.select1"); 
 				System.out.println("client sent"); 
 				characterspanel.select1.setEnabled(false); 
 			// Symbolized that you sent the message
@@ -256,11 +256,11 @@ public class mainmenu implements ActionListener{
 				}
 			} 
 		
-		
 			//System.out.println(blnServer); 
 			String strData; 
 			strData = ssm.readText(); 
 			monopolypanel.textarea.append("\n"+strData); 
+			
 		}else if(evt.getSource() == ssmclient){
 			
 			// If you are not the server and did not send the message about shutting the button off, this code should run.
