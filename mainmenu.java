@@ -242,6 +242,7 @@ public class mainmenu implements ActionListener{
 			if(blnServer == true && blnSent == false){
 				characterspanel.strData = ssm.readText(); 
 				System.out.println(characterspanel.strData); 
+				System.out.println("hi"); 
 				//Set button to false;
 				if(characterspanel.strData.equals("select1")){
 					characterspanel.select1.setEnabled(false); 
@@ -249,7 +250,7 @@ public class mainmenu implements ActionListener{
 			} 
 		
 		
-			System.out.println(blnServer); 
+			//System.out.println(blnServer); 
 			String strData; 
 			strData = ssm.readText(); 
 			monopolypanel.textarea.append("\n"+strData); 
@@ -257,7 +258,7 @@ public class mainmenu implements ActionListener{
 			
 			if(blnServer == false && blnSent == false){
 				characterspanel.strData = ssmclient.readText(); 
-				System.out.println(characterspanel.strData);
+				System.out.println(characterspanel.strData); 
 				// set to false;
 				if(characterspanel.strData.equals("select1")){
 					characterspanel.select1.setEnabled(false); 
