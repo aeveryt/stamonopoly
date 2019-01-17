@@ -22,7 +22,7 @@ public class mainmenu implements ActionListener{
 	public stamonopolycharacters characterspanel;
 	
 	boolean blnServer; 
-	boolean blnSent;
+	boolean blnSent = false;
 	int intdice1; 
 	int intdice2;
 	int intdiesum; 
@@ -162,12 +162,7 @@ public class mainmenu implements ActionListener{
 			System.out.println("going to exisitng game"); 
 			theframe.setContentPane(joinpage); 
 			theframe.setVisible(true); 
-			//sets up client server
 
-			
-				
-			
-			// System.out.println(blnServer); 
 			
 		}else if(evt.getSource() == startpage.back || evt.getSource() ==joinpage.back){ 
 			theframe.setContentPane(thepanel); 
@@ -217,34 +212,14 @@ public class mainmenu implements ActionListener{
 			if(blnServer){ 
 				ssm.sendText("select1");
 				System.out.println("Server sent"); 
-				characterspanel.select1.setEnabled(false); 
-				blnSent = false; 
+				//characterspanel.select1.setEnabled(false); 
+				blnSent = true; 
 			}else if(blnServer == false){
 				ssmclient.sendText("select1"); 
 				System.out.println("client sent"); 
-				characterspanel.select1.setEnabled(false); 
-				blnSent = false; 
+				//characterspanel.select1.setEnabled(false); 
+				blnSent = true; 
 			}
-
-			if(blnServer && blnSent == false){
-				characterspanel.strData = ssm.readText(); 
-				System.out.println(characterspanel.strData); 
-				//Set button to false;
-				if(characterspanel.strData.equals("select1")){
-					characterspanel.select1.setEnabled(false); 
-				} 
-			
-				
-			}else if(blnServer == false && blnSent == false){
-				characterspanel.strData = ssmclient.readText(); 
-				System.out.println(characterspanel.strData);
-				// set to false;
-				if(characterspanel.strData.equals("select1")){
-					characterspanel.select1.setEnabled(false); 
-				} 
-				
-			}
-			
 		}
 		
 		// talking to people over server (SUPERSOCKETMASTER)
@@ -263,11 +238,33 @@ public class mainmenu implements ActionListener{
 				monopolypanel.textfield.setText("");
 			}			
 		}else if(evt.getSource() == ssm){
+		
+			if(blnServer == true && blnSent == false){
+				characterspanel.strData = ssm.readText(); 
+				System.out.println(characterspanel.strData); 
+				//Set button to false;
+				if(characterspanel.strData.equals("select1")){
+					characterspanel.select1.setEnabled(false); 
+				}
+			} 
+		
+		
 			System.out.println(blnServer); 
 			String strData; 
 			strData = ssm.readText(); 
 			monopolypanel.textarea.append("\n"+strData); 
 		}else if(evt.getSource() == ssmclient){
+			
+			if(blnServer == false && blnSent == false){
+				characterspanel.strData = ssmclient.readText(); 
+				System.out.println(characterspanel.strData);
+				// set to false;
+				if(characterspanel.strData.equals("select1")){
+					characterspanel.select1.setEnabled(false); 
+				}
+			} 
+		
+		
 			String strData; 
 			strData = ssmclient.readText(); 
 			monopolypanel.textarea.append("\n"+strData); 
