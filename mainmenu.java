@@ -258,7 +258,7 @@ public class mainmenu implements ActionListener{
 			if(blnServer == true){
 				System.out.println("I am the server"); 
 				strChat = monopolypanel.textfield.getText();
-				ssm.sendText(startpage.strName+" :"+strChat); 
+				ssm.sendText("\n"+startpage.strName+" :"+strChat); 
 				System.out.println(strChat);
 				monopolypanel.textarea.append("\nYou: "+strChat);
 				monopolypanel.textfield.setText("");
@@ -266,7 +266,7 @@ public class mainmenu implements ActionListener{
 				System.out.println("I am the client"); 
 				strChat = monopolypanel.textfield.getText();
 				System.out.println(strChat);
-				ssmclient.sendText(joinpage.strName+" :"+strChat); 
+				ssmclient.sendText("\n"+joinpage.strName+" :"+strChat); 
 				monopolypanel.textarea.append("\nYou: "+strChat);
 				monopolypanel.textfield.setText("");
 			}		
