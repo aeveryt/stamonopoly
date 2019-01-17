@@ -233,18 +233,17 @@ public class mainmenu implements ActionListener{
 			System.out.println(blnServer); 
 			monopolypanel.strColor = "blue"; 
 			// If you are the server send this text.
-			monopolypanel.strColor = "red";
 			if(blnServer){ 
 				ssm.sendText("select2");
 				System.out.println("Server sent"); 
-				characterspanel.select1.setEnabled(false); 
+				characterspanel.select2.setEnabled(false); 
 			// Symbolized that you sent the message. 
 				blnSent = true; 
 			}// If you are not the server use the client ssm to send text. 
 			else if(blnServer == false){
 				ssmclient.sendText("select2"); 
 				System.out.println("client sent"); 
-				characterspanel.select1.setEnabled(false); 
+				characterspanel.select2.setEnabled(false); 
 			// Symbolized that you sent the message
 				blnSent = true; 
 			}

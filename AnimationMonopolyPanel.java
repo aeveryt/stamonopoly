@@ -36,9 +36,11 @@ public class AnimationMonopolyPanel extends JPanel{
 		g.fillRect(720,3,142,100);
 		g.setFont(text);
 		g.drawString("CHATBOX",1000,300);
+		g.drawString("ICON:",1104,115);
 		g.setColor(Color.WHITE);
 		g.fillRect(727,36,60,60);
 		g.fillRect(795,36,60,60);
+	
 		
 		//status bar
 		g.fillRect(867,3,407,99);
@@ -63,7 +65,7 @@ public class AnimationMonopolyPanel extends JPanel{
 		
 		// draw that box in:
 		
-		g.fillRect(1104,108,30,30); 
+		g.fillRect(1164,163,50,50); 
 		
 	}
 
