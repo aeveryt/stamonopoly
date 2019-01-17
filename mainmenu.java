@@ -229,6 +229,26 @@ public class mainmenu implements ActionListener{
 			// Symbolized that you sent the message
 				blnSent = true; 
 			}
+		}else if(evt.getSource() == characterspanel.select2){
+			System.out.println(blnServer); 
+			monopolypanel.strColor = "blue"; 
+			// If you are the server send this text.
+			monopolypanel.strColor = "red";
+			if(blnServer){ 
+				ssm.sendText("select2");
+				System.out.println("Server sent"); 
+				characterspanel.select1.setEnabled(false); 
+			// Symbolized that you sent the message. 
+				blnSent = true; 
+			}// If you are not the server use the client ssm to send text. 
+			else if(blnServer == false){
+				ssmclient.sendText("select2"); 
+				System.out.println("client sent"); 
+				characterspanel.select1.setEnabled(false); 
+			// Symbolized that you sent the message
+				blnSent = true; 
+			}
+	
 		}
 		
 		// talking to people over server (SUPERSOCKETMASTER)
@@ -259,6 +279,8 @@ public class mainmenu implements ActionListener{
 				//Set button to false;
 				if(characterspanel.strData.equals("select1")){
 					characterspanel.select1.setEnabled(false); 
+				}else if(characterspanel.strData.equals("select2")){
+					characterspanel.select2.setEnabled(false); 
 				}
 			} 
 		
@@ -275,6 +297,8 @@ public class mainmenu implements ActionListener{
 				// set to false;
 				if(characterspanel.strData.equals("select1")){
 					characterspanel.select1.setEnabled(false); 
+				}else if(characterspanel.strData.equals("select2")){
+					characterspanel.select2.setEnabled(false); 
 				}
 			} 
 			

@@ -57,6 +57,8 @@ public class AnimationMonopolyPanel extends JPanel{
 		
 		if(strColor.equals("red")){
 			g.setColor(Color.red);
+		}else if(strColor.equals("blue")){
+			g.setColor(Color.BLUE); 
 		}
 		
 		// draw that box in:
