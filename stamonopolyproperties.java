@@ -24,13 +24,11 @@ public class stamonopolyproperties{
 	String strCommunity [][] = new String[30][3];
 	String strChance [][] = new String[30][3];
 	
-	//Methods
-	
-
-		//reading the Properties file
+	//Methods	
 		try{
+			// Reading files 
 			thefile = new FileReader("properties.csv");
-			communityfile = new FileReader("community.csv");
+			communityfile = new FileReader("community.csv");	
 			//chancefile = new FileReader("chance.csv");
 		}catch(FileNotFoundException e){
 			System.out.println("Unable to read File");

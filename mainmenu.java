@@ -371,7 +371,6 @@ public class mainmenu implements ActionListener{
 		monopolypanel.textfield.addActionListener(this);
 		
 		
-		
 		//add features
 		thepanel.add(InstrucButt);
 		thepanel.add(PlayButt); 
