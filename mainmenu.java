@@ -21,6 +21,7 @@ public class mainmenu implements ActionListener{
 	public SuperSocketMaster ssmclient; 
 	public AnimationMonopolyPanel monopolypanel; 
 	public stamonopolycharacters characterspanel;
+	Timer thetimer; 
 	
 	boolean blnServer; 
 	boolean blnSent = false;
@@ -204,6 +205,7 @@ public class mainmenu implements ActionListener{
 		}else if(evt.getSource() == joinpage.gameplay){
 			theframe.setContentPane(characterspanel); 
 			theframe.setVisible(true); 
+			
 			ssmclient = new SuperSocketMaster(joinpage.strCode,1969, this); 
 			ssmclient.connect();
 			blnServer = false;
@@ -317,6 +319,16 @@ public class mainmenu implements ActionListener{
 			intdice2 = (int)(Math.random()*6+1); 
 			intdiesum = intdice1 + intdice2; 
 			System.out.println(intdice1+" + " +intdice2); 
+			String strDice1; 
+			String strDice2; 
+			strDice1 = (intdice1+""); 
+			strDice2 = (intdice2+""); 
+			monopolypanel.strDice1 = strDice1;
+			monopolypanel.strDice2 = strDice2;
+		}// updating the animation panel using a timer
+		else if(evt.getSource() == thetimer){
+			monopolypanel.repaint(); 
+		
 		}
 		
 		
@@ -461,6 +473,10 @@ public class mainmenu implements ActionListener{
 		monopolypanel.rolldie.addActionListener(this);
 		monopolypanel.next.addActionListener(this);
 		monopolypanel.back.addActionListener(this);
+		
+		// timer: 
+		thetimer = new Timer(1000/60, this);
+		thetimer.start(); 
 		
 		//set frame
 		theframe.setContentPane(thepanel);
