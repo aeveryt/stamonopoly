@@ -149,6 +149,11 @@ public class mainmenu implements ActionListener{
 			System.out.println("started"); 
 			theframe.setContentPane(startpage); 
 			theframe.setVisible(true); 
+			// opens super socket master if decides to start game	
+			ssm = new SuperSocketMaster(1969, this);
+			startpage.strAddress = ssm.getMyAddress(); 
+			ssm.connect();
+			blnServer = true;
 
 			
 		}else if(evt.getSource() == playpage1.existing){
@@ -192,11 +197,6 @@ public class mainmenu implements ActionListener{
 		
 		// chosing characters page: 
 		else if(evt.getSource() == startpage.gameplay){
-			// opens super socket master if decides to start game	
-			ssm = new SuperSocketMaster(1969, this);
-			startpage.strAddress = ssm.getMyAddress(); 
-			ssm.connect();
-			blnServer = true;
 			theframe.setContentPane(characterspanel);
 			theframe.setVisible(true); 
 		}else if(evt.getSource() == joinpage.gameplay){
