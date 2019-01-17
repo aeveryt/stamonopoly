@@ -259,7 +259,6 @@ public class mainmenu implements ActionListener{
 			//System.out.println(blnServer); 
 			String strData; 
 			strData = ssm.readText(); 
-			monopolypanel.textarea.append("\n"+strData); 
 			
 		}else if(evt.getSource() == ssmclient){
 			
@@ -276,7 +275,6 @@ public class mainmenu implements ActionListener{
 		
 			String strData; 
 			strData = ssmclient.readText(); 
-			monopolypanel.textarea.append("\n"+strData); 
 		}
 		
 		// Rolling the dice: 
