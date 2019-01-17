@@ -197,7 +197,7 @@ public class mainmenu implements ActionListener{
 			
 		}
 		
-		// chosing characters page: 
+		//CHARACTERS PAGE 
 		else if(evt.getSource() == startpage.gameplay){
 			theframe.setContentPane(characterspanel);
 			theframe.setVisible(true); 
@@ -210,6 +210,7 @@ public class mainmenu implements ActionListener{
 			System.out.println(joinpage.strCode); 
 		}
 		
+		//CHOOSING CHARACTER 1
 		else if(evt.getSource() == characterspanel.select1){
 			System.out.println(blnServer); 
 			// If you are the server send this text.
@@ -221,7 +222,7 @@ public class mainmenu implements ActionListener{
 				blnSent = true; 
 			}// If you are not the server use the client ssm to send text. 
 			else if(blnServer == false){
-				ssmclient.sendText("g.select1"); 
+				ssmclient.sendText("select1"); 
 				System.out.println("client sent"); 
 				characterspanel.select1.setEnabled(false); 
 			// Symbolized that you sent the message
@@ -231,17 +232,21 @@ public class mainmenu implements ActionListener{
 		
 		// talking to people over server (SUPERSOCKETMASTER)
 		else if(evt.getSource() == monopolypanel.textfield){
+			String strChat;
 			System.out.println("Going to send this out over network: "+monopolypanel.textfield.getText()); 
 
 			if(blnServer == true){
 				System.out.println("I am the server"); 
+				
 				ssm.sendText(startpage.strName+" :"+monopolypanel.textfield.getText()); 
-				monopolypanel.textarea.append("\nYou: "+monopolypanel.textfield.getText());
+				strChat = monopolypanel.textfield.getText();
+				monopolypanel.textarea.append("\nYou: "+strChat);
 				monopolypanel.textfield.setText("");
 			}else if(blnServer == false){
 				System.out.println("I am the client"); 
-				ssmclient.sendText(joinpage.strName+" :"+monopolypanel.textfield.getText()); 
-				monopolypanel.textarea.append("\nYou: "+monopolypanel.textfield.getText());
+				strChat = monopolypanel.textfield.getText();
+				ssmclient.sendText(joinpage.strName+" :"+strChat); 
+				monopolypanel.textarea.append("\nYou: "+strChat);
 				monopolypanel.textfield.setText("");
 			}			
 		}else if(evt.getSource() == ssm){
@@ -271,8 +276,7 @@ public class mainmenu implements ActionListener{
 					characterspanel.select1.setEnabled(false); 
 				}
 			} 
-		
-		
+			
 			String strData; 
 			strData = ssmclient.readText(); 
 		}
