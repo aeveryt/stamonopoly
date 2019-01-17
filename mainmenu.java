@@ -210,15 +210,19 @@ public class mainmenu implements ActionListener{
 		
 		else if(evt.getSource() == characterspanel.select1){
 			System.out.println(blnServer); 
+			// If you are the server send this text.
 			if(blnServer){ 
 				ssm.sendText("select1");
 				System.out.println("Server sent"); 
-				//characterspanel.select1.setEnabled(false); 
+				characterspanel.select1.setEnabled(false); 
+			// Symbolized that you sent the message. 
 				blnSent = true; 
-			}else if(blnServer == false){
+			}// If you are not the server use the client ssm to send text. 
+			else if(blnServer == false){
 				ssmclient.sendText("select1"); 
 				System.out.println("client sent"); 
-				//characterspanel.select1.setEnabled(false); 
+				characterspanel.select1.setEnabled(false); 
+			// Symbolized that you sent the message
 				blnSent = true; 
 			}
 		}
@@ -239,11 +243,11 @@ public class mainmenu implements ActionListener{
 				monopolypanel.textfield.setText("");
 			}			
 		}else if(evt.getSource() == ssm){
-		
+			
+			// If you are the server and you didn't send anything this statement will run.
 			if(blnServer == true && blnSent == false){
 				characterspanel.strData = ssm.readText(); 
 				System.out.println(characterspanel.strData); 
-				System.out.println("hi"); 
 				//Set button to false;
 				if(characterspanel.strData.equals("select1")){
 					characterspanel.select1.setEnabled(false); 
@@ -257,6 +261,7 @@ public class mainmenu implements ActionListener{
 			monopolypanel.textarea.append("\n"+strData); 
 		}else if(evt.getSource() == ssmclient){
 			
+			// If you are not the server and did not send the message about shutting the button off, this code should run.
 			if(blnServer == false && blnSent == false){
 				characterspanel.strData = ssmclient.readText(); 
 				System.out.println(characterspanel.strData); 
