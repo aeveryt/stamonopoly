@@ -22,6 +22,7 @@ public class mainmenu implements ActionListener{
 	public stamonopolycharacters characterspanel;
 	
 	boolean blnServer; 
+	boolean blnSent;
 	int intdice1; 
 	int intdice2;
 	int intdiesum; 
@@ -215,15 +216,17 @@ public class mainmenu implements ActionListener{
 			System.out.println(blnServer); 
 			if(blnServer){ 
 				ssm.sendText("select1");
-				System.out.println("sent"); 
+				System.out.println("Server sent"); 
 				characterspanel.select1.setEnabled(false); 
+				blnSent = false; 
 			}else if(blnServer == false){
 				ssmclient.sendText("select1"); 
-				System.out.println("sent"); 
+				System.out.println("client sent"); 
 				characterspanel.select1.setEnabled(false); 
+				blnSent = false; 
 			}
 
-			if(blnServer){
+			if(blnServer && blnSent == false){
 				characterspanel.strData = ssm.readText(); 
 				System.out.println(characterspanel.strData); 
 				//Set button to false;
@@ -232,7 +235,7 @@ public class mainmenu implements ActionListener{
 				} 
 			
 				
-			}else if(blnServer == false){
+			}else if(blnServer == false && blnSent == false){
 				characterspanel.strData = ssmclient.readText(); 
 				System.out.println(characterspanel.strData);
 				// set to false;
