@@ -276,7 +276,7 @@ public class mainmenu implements ActionListener{
 			// If you are the server and you didn't send anything this statement will run.
 			if(blnServer == true && blnSent == false){
 				characterspanel.strData = ssm.readText(); 
-				System.out.println(characterspanel.strData); 
+				System.out.println("SERVER RECIEVED THIS: "+characterspanel.strData); 
 				//Set button to false;
 				if(characterspanel.strData.equals("select1")){
 					characterspanel.select1.setEnabled(false); 
@@ -296,7 +296,7 @@ public class mainmenu implements ActionListener{
 			// If you are not the server and did not send the message about shutting the button off, this code should run.
 			if(blnServer == false && blnSent == false){
 				characterspanel.strData = ssmclient.readText(); 
-				System.out.println(characterspanel.strData); 
+				System.out.println("CLIENT received this:"+characterspanel.strData); 
 				// set to false;
 				if(characterspanel.strData.equals("select1")){
 					characterspanel.select1.setEnabled(false); 
