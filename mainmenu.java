@@ -154,6 +154,7 @@ public class mainmenu implements ActionListener{
 			startpage.strAddress = ssm.getMyAddress(); 
 			ssm.connect();
 			blnServer = true;
+			System.out.println(blnServer); 
 
 			
 		}else if(evt.getSource() == playpage1.existing){
@@ -211,21 +212,25 @@ public class mainmenu implements ActionListener{
 		}
 		
 		else if(evt.getSource() == characterspanel.select1){
-			if(blnServer == true){
+			System.out.println(blnServer); 
+			if(blnServer){ 
 				ssm.sendText("select1");
 				System.out.println("sent"); 
+				characterspanel.select1.setEnabled(false); 
 			}else if(blnServer == false){
 				ssmclient.sendText("select1"); 
 				System.out.println("sent"); 
+				characterspanel.select1.setEnabled(false); 
 			}
 
-			if(blnServer == true){
+			if(blnServer){
 				characterspanel.strData = ssm.readText(); 
 				System.out.println(characterspanel.strData); 
-				// set button to false;
+				//Set button to false;
 				if(characterspanel.strData.equals("select1")){
 					characterspanel.select1.setEnabled(false); 
 				} 
+			
 				
 			}else if(blnServer == false){
 				characterspanel.strData = ssmclient.readText(); 
@@ -255,6 +260,7 @@ public class mainmenu implements ActionListener{
 				monopolypanel.textfield.setText("");
 			}			
 		}else if(evt.getSource() == ssm){
+			System.out.println(blnServer); 
 			String strData; 
 			strData = ssm.readText(); 
 			monopolypanel.textarea.append("\n"+strData); 
