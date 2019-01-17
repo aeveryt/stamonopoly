@@ -6,6 +6,7 @@ import java.awt.Font.*;
 
 public class stamonopolyproperties{
 		public static void main (String[] args){
+	
 	//Properties
 	
 	boolean GoSpace = true;
@@ -29,7 +30,7 @@ public class stamonopolyproperties{
 			// Reading files 
 			thefile = new FileReader("properties.csv");
 			communityfile = new FileReader("community.csv");	
-			//chancefile = new FileReader("chance.csv");
+			chancefile = new FileReader("chance.csv");
 		}catch(FileNotFoundException e){
 			System.out.println("Unable to read File");
 			blnFileFail = true;
@@ -37,6 +38,7 @@ public class stamonopolyproperties{
 	
 		properties = new BufferedReader(thefile);
 		community = new BufferedReader(communityfile);
+		chance = new BufferedReader(chancefile);
 		
 		
 		String strLine = "";
@@ -74,11 +76,31 @@ public class stamonopolyproperties{
 			}
 		}
 		
+		//Chance
+		//Organized as Card Number, Statement, Money Given or Owed
+		
+		for (intRow = 0; intRow < 30; intRow ++){
+				try{
+					strLine = chance.readLine();
+				}catch(IOException e){
+					System.out.println("false");
+			}
+				strSplit = strLine.split(",");
+			for (intCol = 0; intCol < 3; intCol++){
+				
+				strChance[intRow][intCol] = strSplit[intCol];
+				System.out.println(strChance[intRow][intCol]);
+			}
+		}
+		
+		
+		
 		//Closing file
 		
 		try{
 			thefile.close();
 			communityfile.close();
+			chance.close();
 		
 		}catch(IOException e){
 			System.out.println("CANNOT CLOSE FILE");
