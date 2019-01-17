@@ -23,11 +23,13 @@ public class mainmenu implements ActionListener{
 	public stamonopolycharacters characterspanel;
 	Timer thetimer; 
 	
+	
 	boolean blnServer; 
 	boolean blnSent = false;
 	int intdice1; 
 	int intdice2;
 	int intdiesum; 
+	int intCount; 
 	
 	//Methods
 	public void actionPerformed(ActionEvent evt){
@@ -309,6 +311,24 @@ public class mainmenu implements ActionListener{
 			intdice1 = (int)(Math.random() *6+1); 
 			intdice2 = (int)(Math.random()*6+1); 
 			intdiesum = intdice1 + intdice2; 
+			
+			//send stuff to update location of your character 
+			// make if you get to a certain point the intYOUy is changed instead. 
+				
+			for(intCount = 1; intCount <= intdiesum; intCount++){
+				if(monopolypanel.intYOUx <= 650 && monopolypanel.intYOUx >= 50){
+					System.out.println(intCount); 
+					monopolypanel.intYOUx = monopolypanel.intYOUx - 60; 
+				}else if(monopolypanel.intYOUy == 650 || monopolypanel.intYOUy < 650){
+					System.out.println("got here"); 
+					monopolypanel.intYOUy = monopolypanel.intYOUy - 60; 
+				}else if(monopolypanel.intYOUy == 50){
+					monopolypanel.intYOUx =monopolypanel.intYOUx + 60; 
+				}else if(monopolypanel.intYOUx == 650 && monopolypanel.intYOUy >= 50){
+					monopolypanel.intYOUy = monopolypanel.intYOUy - 60; 
+				}
+			}
+			
 			System.out.println(intdice1+" + " +intdice2); 
 			String strDice1; 
 			String strDice2; 

@@ -80,9 +80,9 @@ public class AnimationMonopolyPanel extends JPanel{
 		g.fillRect(1164,163,50,50); 
 		
 
-		// set up your character?
+		// set up your character
 		g.fillRect(intYOUx, intYOUy, 25,25);
-		 
+		
 		
 		
 	}
