@@ -3,7 +3,6 @@ import javax.swing.*;
 import java.awt.*; 
 import java.awt.event.*; 
 import java.awt.Font;
-import java.io.*;
 
 public class mainmenu implements ActionListener{
 
@@ -163,7 +162,12 @@ public class mainmenu implements ActionListener{
 			System.out.println("going to exisitng game"); 
 			theframe.setContentPane(joinpage); 
 			theframe.setVisible(true); 
+			//sets up client server
 
+			
+				
+			
+			// System.out.println(blnServer); 
 			
 		}else if(evt.getSource() == startpage.back || evt.getSource() ==joinpage.back){ 
 			theframe.setContentPane(thepanel); 
@@ -221,6 +225,26 @@ public class mainmenu implements ActionListener{
 				//characterspanel.select1.setEnabled(false); 
 				blnSent = true; 
 			}
+
+			if(blnServer == true && blnSent == false){
+				characterspanel.strData = ssm.readText(); 
+				System.out.println(characterspanel.strData); 
+				//Set button to false;
+				if(characterspanel.strData.equals("select1")){
+					characterspanel.select1.setEnabled(false); 
+				} 
+			
+				
+			}else if(blnServer == false && blnSent == false){
+				characterspanel.strData = ssmclient.readText(); 
+				System.out.println(characterspanel.strData);
+				// set to false;
+				if(characterspanel.strData.equals("select1")){
+					characterspanel.select1.setEnabled(false); 
+				} 
+				
+			}
+			
 		}
 		
 		// talking to people over server (SUPERSOCKETMASTER)
@@ -239,34 +263,11 @@ public class mainmenu implements ActionListener{
 				monopolypanel.textfield.setText("");
 			}			
 		}else if(evt.getSource() == ssm){
-		
-			if(blnServer == true && blnSent == false){
-				characterspanel.strData = ssm.readText(); 
-				System.out.println(characterspanel.strData); 
-				System.out.println("hi"); 
-				//Set button to false;
-				if(characterspanel.strData.equals("select1")){
-					characterspanel.select1.setEnabled(false); 
-				}
-			} 
-		
-		
-			//System.out.println(blnServer); 
+			System.out.println(blnServer); 
 			String strData; 
 			strData = ssm.readText(); 
 			monopolypanel.textarea.append("\n"+strData); 
 		}else if(evt.getSource() == ssmclient){
-			
-			if(blnServer == false && blnSent == false){
-				characterspanel.strData = ssmclient.readText(); 
-				System.out.println(characterspanel.strData); 
-				// set to false;
-				if(characterspanel.strData.equals("select1")){
-					characterspanel.select1.setEnabled(false); 
-				}
-			} 
-		
-		
 			String strData; 
 			strData = ssmclient.readText(); 
 			monopolypanel.textarea.append("\n"+strData); 
@@ -370,6 +371,7 @@ public class mainmenu implements ActionListener{
 		monopolypanel.textfield.addActionListener(this);
 		
 		
+		
 		//add features
 		thepanel.add(InstrucButt);
 		thepanel.add(PlayButt); 
@@ -436,102 +438,12 @@ public class mainmenu implements ActionListener{
 	
 	public static void main(String []args){
 		new mainmenu(); 
-		
-		//Properties
 	
-	boolean GoSpace = true;
-	boolean Geo = false;
-	boolean blnFileFail = false;
-	FileReader thefile = null;
-	FileReader chancefile = null;
-	FileReader communityfile = null;
-	BufferedReader properties = null;
-	BufferedReader community = null;
-	BufferedReader chance = null;
-	
-	//Split Data
-	String strSplit[];
-	String strProperties[][] = new String[31][10];
-	String strCommunity [][] = new String[30][3];
-	String strChance [][] = new String[30][3];
-	
-	//Methods	
-		try{
-			// Reading files 
-			thefile = new FileReader("properties.csv");
-			communityfile = new FileReader("community.csv");	
-			chancefile = new FileReader("chance.csv");
-		}catch(FileNotFoundException e){
-			System.out.println("Unable to read File");
-			blnFileFail = true;
-		}
-	
-	//Reading Files
-		properties = new BufferedReader(thefile);
-		community = new BufferedReader(communityfile);
-		chance = new BufferedReader(chancefile);
 		
-		
-		String strLine = "";
-		int intRow;
-		int intCol;
-		
-		
-		//Properties File
-			for (intRow = 0; intRow < 31; intRow ++){
-				try{	
-					strLine = properties.readLine();
-				}catch(IOException e){
-					System.out.println("false");
-			}
-				strSplit = strLine.split(",");
-			for (intCol = 0; intCol < 10; intCol++){	
-				strProperties[intRow][intCol] = strSplit[intCol];				
-				System.out.println(strProperties[intRow][intCol]);
-			}
-		}
-		//Community Files
-		//Organized as Card Number, Statement, Money Given or Owed
-		
-		for (intRow = 0; intRow < 30; intRow ++){
-				try{
-					strLine = community.readLine();
-				}catch(IOException e){
-					System.out.println("false");
-			}
-				strSplit = strLine.split(",");
-			for (intCol = 0; intCol < 3; intCol++){
-				
-				strCommunity[intRow][intCol] = strSplit[intCol];
-				System.out.println(strCommunity[intRow][intCol]);
-			}
-		}
-		
-		//Chance
-		//Organized as Card Number, Statement, Money Given or Owed
-		
-		for (intRow = 0; intRow < 30; intRow ++){
-				try{
-					strLine = chance.readLine();
-				}catch(IOException e){
-					System.out.println("false");
-			}
-				strSplit = strLine.split(",");
-			for (intCol = 0; intCol < 3; intCol++){
-				strChance[intRow][intCol] = strSplit[intCol];
-				System.out.println(strChance[intRow][intCol]);
-			}
-		}
-
-		//Closing file
-		
-		try{
-			thefile.close();
-			communityfile.close();
-			chance.close();
-		
-		}catch(IOException e){
-			System.out.println("CANNOT CLOSE FILE");
-		}
 	}
+	
+	
+
+
+
 }
