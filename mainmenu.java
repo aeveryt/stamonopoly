@@ -160,6 +160,8 @@ public class mainmenu implements ActionListener{
 			System.out.println("going to exisitng game"); 
 			theframe.setContentPane(joinpage); 
 			theframe.setVisible(true); 
+			//sets up client server
+
 			
 				
 			
@@ -202,12 +204,10 @@ public class mainmenu implements ActionListener{
 		}else if(evt.getSource() == joinpage.gameplay){
 			theframe.setContentPane(characterspanel); 
 			theframe.setVisible(true); 
-			//sets up client server
 			ssmclient = new SuperSocketMaster(joinpage.strCode,1969, this); 
 			ssmclient.connect();
 			blnServer = false;
 			System.out.println(joinpage.strCode); 
-		
 		}
 		
 		else if(evt.getSource() == characterspanel.select1){
