@@ -54,7 +54,9 @@ public class mainmenu implements ActionListener{
 	//Methods
 	
 	public void actionPerformed(ActionEvent evt){
-		//TO INSTRUCTIONS SCREEN
+		
+		//INSTRUCTIONS SCREEN
+		//-to instructions screen
 		if(evt.getSource() == InstrucButt){
 			thepanelinstructions.blnpage1 = true;
 			thepanelinstructions.blnpage2 = false;
@@ -68,7 +70,6 @@ public class mainmenu implements ActionListener{
 			theframe.setContentPane(thepanelinstructions);
 			theframe.setVisible(true);	
 		}
-		//INSTRUCTIONS SCREEN
 		//-page 1
 		else if(evt.getSource() == thepanelinstructions.backtomain){
 			System.out.println("Trying to go back to main menu");
@@ -246,11 +247,11 @@ public class mainmenu implements ActionListener{
 			theframe.setVisible(true);
 		}
 		
-	//TO LEAVE GAME
+		//TO LEAVE GAME
 		else if(evt.getSource() == ExitButt){
 			System.exit(0);
 			
-	// PLAY SCREEN
+		// PLAY SCREEN
 		}else if(evt.getSource() == PlayButt){
 			theframe.setContentPane(playpage1); 
 			theframe.setVisible(true);
@@ -283,7 +284,8 @@ public class mainmenu implements ActionListener{
 			theframe.setVisible(true); 
 			
 		}
-		// Joining a game:
+		
+		//JOINING A GAME
 		else if(evt.getSource() == joinpage.TF){
 			joinpage.strCode = joinpage.TF.getText(); 
 			System.out.println(joinpage.strCode); 
@@ -298,12 +300,12 @@ public class mainmenu implements ActionListener{
 			
 		}// Entering name
 		else if(evt.getSource() == startpage.TFname){
-			startpage.strName = startpage.TFname.getText();  
-			
-		}else if(evt.getSource() == joinpage.TFname){
-			joinpage.strName = joinpage.TFname.getText(); 
-			
+			startpage.strName = startpage.TFname.getText();  	
 		}
+		else if(evt.getSource() == joinpage.TFname){
+			joinpage.strName = joinpage.TFname.getText(); 	
+		}
+		
 		
 		//CHARACTERS PAGE 
 		else if(evt.getSource() == startpage.gameplay){
@@ -318,8 +320,7 @@ public class mainmenu implements ActionListener{
 			blnServer = false;
 			System.out.println(joinpage.strCode); 
 		}
-		
-		//CHOOSING CHARACTER 1
+		//-choosing character 1
 		else if(evt.getSource() == characterspanel.select1){
 			System.out.println(blnServer); 
 			// If you are the server send this text.
@@ -338,7 +339,8 @@ public class mainmenu implements ActionListener{
 			// Symbolized that you sent the message
 				blnSent = true; 
 			}
-		} // choosing character 2
+		} 
+		//-choosing character 2
 		else if(evt.getSource() == characterspanel.select2){
 			System.out.println(blnServer); 
 			monopolypanel.strColor = "blue"; 
@@ -357,8 +359,8 @@ public class mainmenu implements ActionListener{
 			// Symbolized that you sent the message
 				blnSent = true; 
 			}
-	
-		}// choosing character 3
+		}
+		//-choosing character 3
 		else if(evt.getSource() == characterspanel.select3){
 			System.out.println(blnServer); 
 			monopolypanel.strColor = "yellow"; 
@@ -377,10 +379,8 @@ public class mainmenu implements ActionListener{
 			// Symbolized that you sent the message
 				blnSent = true; 
 			}
-		
-		
-		
-		} // choosing character 4
+		} 
+		//-choosing character 4
 		else if(evt.getSource() == characterspanel.select4){
 			monopolypanel.strColor = "green"; 
 			// If you are the server send this text.
@@ -400,13 +400,8 @@ public class mainmenu implements ActionListener{
 			}
 		}
 		
-		
-		
-		
-		
-		
-		
-		//CHATTING: talking to people over server (SUPERSOCKETMASTER)
+		//CHATBOX (SUPERSOCKETMASTER)
+		//-talking to people over server 
 		else if(evt.getSource() == monopolypanel.textfield){
 			String strChat;
 			System.out.println("Going to send this out over network: "+monopolypanel.textfield.getText()); 
@@ -470,8 +465,9 @@ public class mainmenu implements ActionListener{
 			
 		}
 		
-		// Rolling the dice: 
+		//ROLLING THE DICE
 		else if(evt.getSource() == monopolypanel.rolldie){
+			//- random die rolling
 			intdice1 = (int)(Math.random() *6+1); 
 			intdice2 = (int)(Math.random()*6+1); 
 			intdiesum = intdice1 + intdice2; 
@@ -484,27 +480,29 @@ public class mainmenu implements ActionListener{
 				//System.out.println(intCount); 
 				if(monopolypanel.intYOUx <= 650 && monopolypanel.intYOUx > 50 && monopolypanel.intYOUy >= 650){
 					System.out.println("going to the left"); 
-					monopolypanel.intYOUx = monopolypanel.intYOUx - 60; 
-					
-				}else if(monopolypanel.intYOUy > 50 && monopolypanel.intYOUy > 40 && monopolypanel.intYOUx == 50){
+					monopolypanel.intYOUx = monopolypanel.intYOUx - 60; 	
+				}
+				else if(monopolypanel.intYOUy > 50 && monopolypanel.intYOUy > 40 && monopolypanel.intYOUx == 50){
 					System.out.println("going up");
 					System.out.println(monopolypanel.intYOUx); 
 					System.out.println(monopolypanel.intYOUy);  
 					//monopolypanel.intYOUx = 30;
 					monopolypanel.intYOUy = monopolypanel.intYOUy - 60; 
-				}else if(monopolypanel.intYOUy < 51 && monopolypanel.intYOUx < 650){
+				}
+				else if(monopolypanel.intYOUy < 51 && monopolypanel.intYOUx < 650){
 					System.out.println("going right");
 					System.out.println(monopolypanel.intYOUx); 
 					System.out.println(monopolypanel.intYOUy);
 					//monopolypanel.intYOUy = 30; 
 					monopolypanel.intYOUx =monopolypanel.intYOUx + 60; 
-				}else if(monopolypanel.intYOUy < 650 && monopolypanel.intYOUx == 650){
-					
+				}
+				else if(monopolypanel.intYOUy < 650 && monopolypanel.intYOUx == 650){
 					System.out.println("going down"); 
 					monopolypanel.intYOUy = monopolypanel.intYOUy + 60; 
 				}
 			}
 			
+			//-printing out to animation monopoly panel
 			System.out.println(intdice1+" + " +intdice2); 
 			String strDice1; 
 			String strDice2; 
@@ -516,18 +514,15 @@ public class mainmenu implements ActionListener{
 			monopolypanel.strDice2 = strDice2;
 			monopolypanel.strDiceSum = strDiceSum;
 			monopolypanel.intPropertyN = monopolypanel.intPropertyN + intdiesum; 
-			
-			// Trying to load property names in:
-			
-			monopolypanel.strPropertyN = strProperties[monopolypanel.intPropertyN][0]; 
-		
-			
-		}// updating the animation panel using a timer
-		else if(evt.getSource() == thetimer){
-			monopolypanel.repaint(); 
+			//-Trying to load property names in:
+			monopolypanel.strPropertyN = strProperties[monopolypanel.intPropertyN][0]; 	
 		}
 		
-		
+		//TIMER (REPAINT)
+		//updating the animation panel using a timer
+		else if(evt.getSource() == thetimer){
+			monopolypanel.repaint(); 
+		}	
 	}
 	
 	
@@ -751,6 +746,8 @@ public class mainmenu implements ActionListener{
 		monopolypanel.rolldie.addActionListener(this);
 		monopolypanel.next.addActionListener(this);
 		monopolypanel.back.addActionListener(this);
+		monopolypanel.buy.addActionListener(this);
+		monopolypanel.dontbuy.addActionListener(this);
 		
 		// timer: 
 		thetimer = new Timer(1000/60, this);
