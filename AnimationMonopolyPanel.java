@@ -23,6 +23,8 @@ public class AnimationMonopolyPanel extends JPanel{
 	String strColor; 
 	String strDice1 = "";
 	String strDice2 = ""; 
+	String strDiceSum = "";
+	String strMoney = "$";
 	int intPropertyN = 0; 
 	String strPropertyN = ""; 
 	int intYOUx =  650; 
@@ -68,19 +70,19 @@ public class AnimationMonopolyPanel extends JPanel{
 		// load the rolled number into the dice area
 		g.setFont(title);
 		g.setColor(Color.BLACK); 
-		g.drawString(strDice1, 740,60); 
-		g.drawString(strDice2, 810, 60);
+		g.drawString(strDice1, 740,65); 
+		g.drawString(strDice2, 810, 65);
 		
 		// Update the status bar: 
 		g.setFont(text);
-		g.drawString("You rolled a: ", 875,20);
+		g.drawString("You rolled a: " +strDiceSum, 875,20);
 		g.drawString("You landed on: ",875, 36);  
 		
 		//Icon header
 		g.setFont(text);
 		g.setColor(Color.BLACK); 
 		g.drawString("ICON:",1110,130);
-		g.drawString("MONEY:",1110,260);
+		g.drawString("MONEY:" + strMoney,1110,260);
 		
 		if(strColor.equals("red")){
 			g.setColor(Color.red);
@@ -146,7 +148,7 @@ public class AnimationMonopolyPanel extends JPanel{
 		}
 		
 		//fixing fonts
-		//TEXT FONT
+		//-text font
 		try{
 			text = Font.createFont(Font.TRUETYPE_FONT, this.getClass().getResourceAsStream("kabel.ttf")); 
 			text = text.deriveFont(Font.PLAIN, 14);
@@ -162,15 +164,7 @@ public class AnimationMonopolyPanel extends JPanel{
 			//System.out.println(e.toString());
 			System.out.println("Unable to load font file kabel.ttf. Setting default font"); 
 		}
-		try{
-			text = Font.createFont(Font.TRUETYPE_FONT, this.getClass().getResourceAsStream("Hack-Regular.ttf")); 
-			text = text.deriveFont(Font.PLAIN, 14);
-			
-		}catch(Exception e){
-			//System.out.println(e.toString());
-			System.out.println("Unable to load default font file \"Hack-Regular.tff\".  Will default to Java's native font for your OS");
-		}
-		//TITLE FONT
+		//-title font
 		try{
 			title = Font.createFont(Font.TRUETYPE_FONT, this.getClass().getResourceAsStream("kabel.ttf")); 
 			title = text.deriveFont(Font.PLAIN, 30);
@@ -185,14 +179,6 @@ public class AnimationMonopolyPanel extends JPanel{
 		catch(Exception e){
 			//System.out.println(e.toString());
 			System.out.println("Unable to load font file kabel.ttf. Setting default font"); 
-		}
-		try{
-			title = Font.createFont(Font.TRUETYPE_FONT, this.getClass().getResourceAsStream("Hack-Regular.ttf")); 
-			title = text.deriveFont(Font.PLAIN, 30);
-			
-		}catch(Exception e){
-			//System.out.println(e.toString());
-			System.out.println("Unable to load default font file \"Hack-Regular.tff\".  Will default to Java's native font for your OS");
 		}
 	}	
 }

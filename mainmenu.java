@@ -508,10 +508,13 @@ public class mainmenu implements ActionListener{
 			System.out.println(intdice1+" + " +intdice2); 
 			String strDice1; 
 			String strDice2; 
+			String strDiceSum;
 			strDice1 = (intdice1+""); 
 			strDice2 = (intdice2+""); 
+			strDiceSum = (intdiesum+"");
 			monopolypanel.strDice1 = strDice1;
 			monopolypanel.strDice2 = strDice2;
+			monopolypanel.strDiceSum = strDiceSum;
 			monopolypanel.intPropertyN = monopolypanel.intPropertyN + intdiesum; 
 			// Trying to load property names in:
 			
