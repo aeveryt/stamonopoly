@@ -354,7 +354,7 @@ public class mainmenu implements ActionListener{
 				System.out.println("I am the client"); 
 				strChat = monopolypanel.textfield.getText();
 				System.out.println(strChat);
-				ssm.sendText("\n"+joinpage.strName+" :"+strChat); 
+				ssm.sendText(joinpage.strName+" :"+strChat); 
 				monopolypanel.textarea.append("\nYou: "+strChat);
 				monopolypanel.textfield.setText("");
 			}
@@ -363,7 +363,7 @@ public class mainmenu implements ActionListener{
 		//CHARACTERS SERVER PAGE	
 		else if(evt.getSource() == ssm){
 			// If you are the server and you didn't send anything this statement will run.
-			if(blnServer == true && blnSent == false){
+			if(blnServer == true){
 				characterspanel.strData = ssm.readText(); 
 				System.out.println("SERVER RECIEVED THIS: "+characterspanel.strData); 
 				//Set button to false;
@@ -375,7 +375,7 @@ public class mainmenu implements ActionListener{
 			} 
 			
 			// If you are not the server and did not send the message about shutting the button off, this code should run.
-			if(blnServer == false && blnSent == false){
+			if(blnServer == false){
 				characterspanel.strData = ssm.readText(); 
 				System.out.println("CLIENT received this:"+characterspanel.strData); 
 				// set to false;
@@ -390,7 +390,7 @@ public class mainmenu implements ActionListener{
 			//System.out.println(blnServer); 
 			String strData; 
 			strData = ssm.readText(); 
-			monopolypanel.textarea.append(strData);
+			monopolypanel.textarea.append("\n"+strData);
 			
 		}
 		
