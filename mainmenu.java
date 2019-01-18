@@ -1,4 +1,4 @@
-// This is mainmenu for game 
+// This is mainmenu and gameplay for game 
 import javax.swing.*; 
 import java.awt.*; 
 import java.awt.event.*; 
@@ -25,24 +25,25 @@ public class mainmenu implements ActionListener{
 	
 	//DATA
 	//Properties
-		boolean GoSpace = true;
-		boolean Geo = false;
-		boolean blnFileFail = false;
-		FileReader thefile = null;
-		FileReader chancefile = null;
-		FileReader communityfile = null;
-		BufferedReader properties = null;
-		BufferedReader community = null;
-		BufferedReader chance = null;
-	
-		//Split Data
-		String strSplit[];
-		String strProperties[][] = new String[40][10];
-		String strCommunity [][] = new String[30][3];
-		String strChance [][] = new String[30][3];
-	
-	
-	
+	//-players
+	int intMoney = 1500;
+	int intPropertyCost=0;
+	//-board
+	boolean GoSpace = true;
+	boolean Geo = false;
+	boolean blnFileFail = false;
+	FileReader thefile = null;
+	FileReader chancefile = null;
+	FileReader communityfile = null;
+	BufferedReader properties = null;
+	BufferedReader community = null;
+	BufferedReader chance = null;
+
+	//Split Data
+	String strSplit[];
+	String strProperties[][] = new String[40][10];
+	String strCommunity [][] = new String[30][3];
+	String strChance [][] = new String[30][3];	
 	
 	boolean blnServer; 
 	boolean blnSent = false;
@@ -51,8 +52,7 @@ public class mainmenu implements ActionListener{
 	int intdiesum; 
 	int intCount; 
 	
-	//Methods
-	
+	//*METHODS*
 	public void actionPerformed(ActionEvent evt){
 		
 		//INSTRUCTIONS SCREEN
@@ -290,22 +290,19 @@ public class mainmenu implements ActionListener{
 			joinpage.strCode = joinpage.TF.getText(); 
 			System.out.println(joinpage.strCode); 
 			System.out.println(startpage.strAddress); 
-			
-			
+		
+		//CHARACTER PANEL		
 		}else if(evt.getSource() == characterspanel.gameplay){
 			theframe.setContentPane(monopolypanel);
 			theframe.setVisible(true); 
 			
-
-			
-		}// Entering name
+		}//ENTERING NAME
 		else if(evt.getSource() == startpage.TFname){
 			startpage.strName = startpage.TFname.getText();  	
 		}
 		else if(evt.getSource() == joinpage.TFname){
 			joinpage.strName = joinpage.TFname.getText(); 	
 		}
-		
 		
 		//CHARACTERS PAGE 
 		else if(evt.getSource() == startpage.gameplay){
@@ -314,7 +311,7 @@ public class mainmenu implements ActionListener{
 		}else if(evt.getSource() == joinpage.gameplay){
 			theframe.setContentPane(characterspanel); 
 			theframe.setVisible(true); 
-			
+			//-supersocket master
 			ssm = new SuperSocketMaster(joinpage.strCode,1969, this); 
 			ssm.connect();
 			blnServer = false;
@@ -522,6 +519,12 @@ public class mainmenu implements ActionListener{
 		//updating the animation panel using a timer
 		else if(evt.getSource() == thetimer){
 			monopolypanel.repaint(); 
+		}
+		
+		//BUYING PROPERTIES
+		else if(evt.getSource()== monopolypanel.buy){
+			intMoney = intMoney-intPropertyCost;
+			monopolypanel.strMoney = (intMoney+"");
 		}	
 	}
 	
@@ -758,12 +761,8 @@ public class mainmenu implements ActionListener{
 		theframe.pack();
 		theframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
 		theframe.setVisible(true);
-		theframe.setResizable(false); //prevents windows from being resized
-		
-		
-		
-		
-		
+		//prevents windows from being resized
+		theframe.setResizable(false); 	
 	
 	}
 	
