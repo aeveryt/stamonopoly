@@ -589,6 +589,19 @@ public class mainmenu implements ActionListener{
 		
 		
 		//Properties File
+		
+		/* [0] Subject
+		 * [1] Teacher
+		 * [2] Price
+		 * [3] Rent
+		 * [4] Rent with 1 houses
+		 * [5] Rent with 2 houses
+		 * [6] Rent with 3 houses
+		 * [7] Rent with hotel 
+		 * [8] Mortgage
+		 * [9] Boolean (if you landed on it)
+		 * */
+		
 			for (intRow = 0; intRow < 40; intRow ++){
 				try{	
 					strLine = properties.readLine();
@@ -602,7 +615,10 @@ public class mainmenu implements ActionListener{
 		}
 		
 		//Community Files
-		//Organized as Card Number, Statement, Money Given or Owed
+		/* [0] - Card Number
+		 * [1] - Statement 
+		 * [2] - Money Given or Owed
+		 * */
 		for (intRow = 0; intRow < 30; intRow ++){
 				try{
 					strLine = community.readLine();
@@ -618,6 +634,10 @@ public class mainmenu implements ActionListener{
 		
 		//Chance
 		//Organized as Card Number, Statement, Money given or owed.
+		/* [0] - Card Number
+		 * [1] - Statement 
+		 * [2] - Effect of the card
+		 * */
 		for (intRow = 0; intRow < 30; intRow ++){
 				try{
 					strLine = chance.readLine();
