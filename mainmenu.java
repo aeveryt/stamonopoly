@@ -185,7 +185,7 @@ public class mainmenu implements ActionListener{
 		}
 		//-page 5
 		else if(evt.getSource() == thepanelinstructions.backtopage4){
-			System.out.println("Trying to go to page 4");
+			System.out.println("Trying to go back to page 4");
 			thepanelinstructions.backtomain.setVisible(false);
 			thepanelinstructions.topage2.setVisible(false);
 			thepanelinstructions.backtopage1.setVisible(false);
@@ -357,10 +357,11 @@ public class mainmenu implements ActionListener{
 				ssm.sendText("\n"+joinpage.strName+" :"+strChat); 
 				monopolypanel.textarea.append("\nYou: "+strChat);
 				monopolypanel.textfield.setText("");
-			}		
+			}
+		}		
 		
 		//CHARACTERS SERVER PAGE	
-		}else if(evt.getSource() == ssm){
+		else if(evt.getSource() == ssm){
 			// If you are the server and you didn't send anything this statement will run.
 			if(blnServer == true && blnSent == false){
 				characterspanel.strData = ssm.readText(); 
@@ -380,7 +381,8 @@ public class mainmenu implements ActionListener{
 				// set to false;
 				if(characterspanel.strData.equals("select1")){
 					characterspanel.select1.setEnabled(false); 
-				}else if(characterspanel.strData.equals("select2")){
+				}
+				else if(characterspanel.strData.equals("select2")){
 					characterspanel.select2.setEnabled(false); 
 				}
 			} 
@@ -388,7 +390,6 @@ public class mainmenu implements ActionListener{
 			//System.out.println(blnServer); 
 			String strData; 
 			strData = ssm.readText(); 
-			//
 			monopolypanel.textarea.append(strData);
 			
 		}
@@ -443,9 +444,7 @@ public class mainmenu implements ActionListener{
 		}// updating the animation panel using a timer
 		else if(evt.getSource() == thetimer){
 			monopolypanel.repaint(); 
-		
 		}
-		
 		
 	}
 	
@@ -461,7 +460,6 @@ public class mainmenu implements ActionListener{
 		joinpage = new joingame(); 
 		monopolypanel = new AnimationMonopolyPanel();
 		characterspanel = new stamonopolycharacters();  
-	
 		
 		//set panel
 		thepanel.setPreferredSize(new Dimension(1280,720)); 
@@ -511,7 +509,6 @@ public class mainmenu implements ActionListener{
 		playpage1.start.addActionListener(this);
 		playpage1.existing.addActionListener(this);  
 		
-		
 		// Start game: 
 		startpage.setLayout(null); 
 		startpage.back.addActionListener(this); 
@@ -536,7 +533,6 @@ public class mainmenu implements ActionListener{
 		// PLAY PAGE: 
 		monopolypanel.setLayout(null); 
 		monopolypanel.textfield.addActionListener(this);
-		
 		
 		//add features
 		thepanel.add(InstrucButt);
@@ -577,8 +573,6 @@ public class mainmenu implements ActionListener{
 		characterspanel.add(characterspanel.select4); 
 		characterspanel.add(characterspanel.gameplay); 
 		
-		
-
 		// Add features: to play page (ACTUAL GAMEPLAY)
 		monopolypanel.add(monopolypanel.scroll); 
 		monopolypanel.add(monopolypanel.textfield);
@@ -612,7 +606,6 @@ public class mainmenu implements ActionListener{
 		new mainmenu(); 
 		
 		//Properties
-	
 		boolean GoSpace = true;
 		boolean Geo = false;
 		boolean blnFileFail = false;
@@ -641,10 +634,10 @@ public class mainmenu implements ActionListener{
 		}
 	
 	//Reading Files
+		//Variables and Initialize
 		properties = new BufferedReader(thefile);
 		community = new BufferedReader(communityfile);
 		chance = new BufferedReader(chancefile);
-		
 		
 		String strLine = "";
 		int intRow;
@@ -664,9 +657,9 @@ public class mainmenu implements ActionListener{
 				System.out.println(strProperties[intRow][intCol]);
 			}
 		}
+		
 		//Community Files
 		//Organized as Card Number, Statement, Money Given or Owed
-		
 		for (intRow = 0; intRow < 30; intRow ++){
 				try{
 					strLine = community.readLine();
@@ -683,7 +676,6 @@ public class mainmenu implements ActionListener{
 		
 		//Chance
 		//Organized as Card Number, Statement, Money Given or Owed
-		
 		for (intRow = 0; intRow < 30; intRow ++){
 				try{
 					strLine = chance.readLine();
@@ -698,7 +690,6 @@ public class mainmenu implements ActionListener{
 		}
 
 		//Closing file
-		
 		try{
 			thefile.close();
 			communityfile.close();
