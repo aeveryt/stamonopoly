@@ -22,6 +22,8 @@ public class AnimationMonopolyPanel extends JPanel{
 	String strColor; 
 	String strDice1 = "";
 	String strDice2 = ""; 
+	int intPropertyN = 0; 
+	String strPropertyN = ""; 
 	int intYOUx =  650; 
 	int intYOUy = 650;
 	
@@ -65,6 +67,9 @@ public class AnimationMonopolyPanel extends JPanel{
 		g.setColor(Color.BLACK); 
 		g.drawString(strDice1, 740,50); 
 		g.drawString(strDice2, 810, 50);
+		
+		// Update the status bar: 
+		g.drawString("You landed on: ",875, 15);  
 		
 		//Icon header
 		g.setColor(Color.BLACK); 

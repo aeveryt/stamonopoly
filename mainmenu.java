@@ -348,6 +348,11 @@ public class mainmenu implements ActionListener{
 			strDice2 = (intdice2+""); 
 			monopolypanel.strDice1 = strDice1;
 			monopolypanel.strDice2 = strDice2;
+			monopolypanel.intPropertyN = monopolypanel.intPropertyN + intdiesum; 
+			// Trying to load property names in:
+			
+			//monopolypanel.strPropertyN = strProperties[monopolypanel.intPropertyN][0]; 
+			
 		}// updating the animation panel using a timer
 		else if(evt.getSource() == thetimer){
 			monopolypanel.repaint(); 
