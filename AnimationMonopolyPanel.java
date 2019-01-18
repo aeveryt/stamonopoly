@@ -19,6 +19,7 @@ public class AnimationMonopolyPanel extends JPanel{
 	JButton next;
 	JButton back;
 	Font text = null;
+	Font title = null;
 	String strColor; 
 	String strDice1 = "";
 	String strDice2 = ""; 
@@ -41,8 +42,9 @@ public class AnimationMonopolyPanel extends JPanel{
 		//DRAWING DIE
 		g.setColor(Color.BLACK);
 		g.fillRect(720,3,142,100);
-		g.setFont(text);
-		g.drawString("CHATBOX",1000,300);
+		g.setFont(title);
+		g.drawString("CHATBOX",1050,300);
+		g.drawString("PROPERTIES",730,300);
 		g.setColor(Color.WHITE);
 		g.fillRect(727,36,60,60);
 		g.fillRect(795,36,60,60);
@@ -64,16 +66,21 @@ public class AnimationMonopolyPanel extends JPanel{
 		g.fillRect(725,331,282,315);
 		
 		// load the rolled number into the dice area
+		g.setFont(title);
 		g.setColor(Color.BLACK); 
-		g.drawString(strDice1, 740,50); 
-		g.drawString(strDice2, 810, 50);
+		g.drawString(strDice1, 740,60); 
+		g.drawString(strDice2, 810, 60);
 		
 		// Update the status bar: 
-		g.drawString("You landed on: ",875, 15);  
+		g.setFont(text);
+		g.drawString("You rolled a: ", 875,20);
+		g.drawString("You landed on: ",875, 36);  
 		
 		//Icon header
+		g.setFont(text);
 		g.setColor(Color.BLACK); 
-		g.drawString("ICON:",1104,130);
+		g.drawString("ICON:",1110,130);
+		g.drawString("MONEY:",1110,260);
 		
 		if(strColor.equals("red")){
 			g.setColor(Color.red);
@@ -128,12 +135,60 @@ public class AnimationMonopolyPanel extends JPanel{
 		back.setLocation(867,655);
 		back.setSize(141,60);
 		
-		text = new Font("kabel.ttf", Font.PLAIN, 12);
 		try{
 			monopolyboard = ImageIO.read(new File("MonopolyGameBoard.png"));
 		}catch(IOException e){
 			System.out.println("Unable to upload image");
 		}
-	}
-	
+		
+		//fixing fonts
+		//TEXT FONT
+		try{
+			text = Font.createFont(Font.TRUETYPE_FONT, this.getClass().getResourceAsStream("kabel.ttf")); 
+			text = text.deriveFont(Font.PLAIN, 14);
+		}
+		catch(Exception e){
+			//System.out.println(e.toString());
+		}
+		try{
+			text = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("kabel.ttf")); 
+			text = text.deriveFont(Font.PLAIN, 14);
+		}
+		catch(Exception e){
+			//System.out.println(e.toString());
+			System.out.println("Unable to load font file kabel.ttf. Setting default font"); 
+		}
+		try{
+			text = Font.createFont(Font.TRUETYPE_FONT, this.getClass().getResourceAsStream("Hack-Regular.ttf")); 
+			text = text.deriveFont(Font.PLAIN, 14);
+			
+		}catch(Exception e){
+			//System.out.println(e.toString());
+			System.out.println("Unable to load default font file \"Hack-Regular.tff\".  Will default to Java's native font for your OS");
+		}
+		//TITLE FONT
+		try{
+			title = Font.createFont(Font.TRUETYPE_FONT, this.getClass().getResourceAsStream("kabel.ttf")); 
+			title = text.deriveFont(Font.PLAIN, 30);
+		}
+		catch(Exception e){
+			//System.out.println(e.toString());
+		}
+		try{
+			title = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("kabel.ttf")); 
+			title = text.deriveFont(Font.PLAIN, 30);
+		}
+		catch(Exception e){
+			//System.out.println(e.toString());
+			System.out.println("Unable to load font file kabel.ttf. Setting default font"); 
+		}
+		try{
+			title = Font.createFont(Font.TRUETYPE_FONT, this.getClass().getResourceAsStream("Hack-Regular.ttf")); 
+			title = text.deriveFont(Font.PLAIN, 30);
+			
+		}catch(Exception e){
+			//System.out.println(e.toString());
+			System.out.println("Unable to load default font file \"Hack-Regular.tff\".  Will default to Java's native font for your OS");
+		}
+	}	
 }
