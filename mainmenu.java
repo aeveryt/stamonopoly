@@ -35,12 +35,20 @@ public class mainmenu implements ActionListener{
 	public void actionPerformed(ActionEvent evt){
 		//TO INSTRUCTIONS SCREEN
 		if(evt.getSource() == InstrucButt){
+			thepanelinstructions.blnpage1 = true;
+			thepanelinstructions.blnpage2 = false;
+			thepanelinstructions.blnpage3 = false;
+			thepanelinstructions.blnpage4 = false;
+			thepanelinstructions.blnpage5 = false;
+			thepanelinstructions.backtomain.setVisible(true);
+			thepanelinstructions.topage2.setVisible(true);
 			thepanelinstructions.backtopage1.setVisible(false);
 			thepanelinstructions.topage3.setVisible(false);
 			theframe.setContentPane(thepanelinstructions);
 			theframe.setVisible(true);	
 		}
 		//INSTRUCTIONS SCREEN
+		//-page 1
 		else if(evt.getSource() == thepanelinstructions.backtomain){
 			System.out.println("Trying to go back to main menu");
 			theframe.setContentPane(thepanel);
@@ -56,10 +64,11 @@ public class mainmenu implements ActionListener{
 			thepanelinstructions.blnpage2 = true;
 			thepanelinstructions.blnpage3 = false;
 			thepanelinstructions.blnpage4 = false;
+			thepanelinstructions.blnpage5 = false;
 			theframe.setContentPane(thepanelinstructions);
 			theframe.setVisible(true);
-
 		}
+		//-page 2
 		else if(evt.getSource() == thepanelinstructions.backtopage1){
 			System.out.println("Trying to go back to page 1");
 			thepanelinstructions.backtomain.setVisible(true);
@@ -70,6 +79,7 @@ public class mainmenu implements ActionListener{
 			thepanelinstructions.blnpage2 = false;
 			thepanelinstructions.blnpage3 = false;
 			thepanelinstructions.blnpage4 = false;
+			thepanelinstructions.blnpage5 = false;
 			theframe.setContentPane(thepanelinstructions);
 			theframe.setVisible(true);
 		}
@@ -81,13 +91,17 @@ public class mainmenu implements ActionListener{
 			thepanelinstructions.topage3.setVisible(false);
 			thepanelinstructions.backtopage2.setVisible(true);
 			thepanelinstructions.topage4.setVisible(true);
+			thepanelinstructions.backtopage3.setVisible(false);
+			thepanelinstructions.topage5.setVisible(false);
 			thepanelinstructions.blnpage1 = false;
 			thepanelinstructions.blnpage2 = false;
 			thepanelinstructions.blnpage3 = true;
 			thepanelinstructions.blnpage4 = false;
+			thepanelinstructions.blnpage5 = false;
 			theframe.setContentPane(thepanelinstructions);
 			theframe.setVisible(true);
 		}
+		//-page 3
 		else if(evt.getSource() == thepanelinstructions.backtopage2){
 			System.out.println("Trying to go to page 2");
 			thepanelinstructions.backtomain.setVisible(false);
@@ -96,10 +110,15 @@ public class mainmenu implements ActionListener{
 			thepanelinstructions.topage3.setVisible(true);
 			thepanelinstructions.backtopage2.setVisible(false);
 			thepanelinstructions.topage4.setVisible(false);
+			thepanelinstructions.backtopage3.setVisible(false);
+			thepanelinstructions.topage5.setVisible(false);
+			thepanelinstructions.tomain5.setVisible(false);
+			thepanelinstructions.backtopage4.setVisible(false);
 			thepanelinstructions.blnpage1 = false;
 			thepanelinstructions.blnpage2 = true;
 			thepanelinstructions.blnpage3 = false;
 			thepanelinstructions.blnpage4 = false;
+			thepanelinstructions.blnpage5 = false;
 			theframe.setContentPane(thepanelinstructions);
 			theframe.setVisible(true);
 		}
@@ -113,13 +132,17 @@ public class mainmenu implements ActionListener{
 			thepanelinstructions.topage4.setVisible(false);
 			thepanelinstructions.backtopage3.setVisible(true);
 			thepanelinstructions.topage5.setVisible(true);
+			thepanelinstructions.tomain5.setVisible(false);
+			thepanelinstructions.backtopage4.setVisible(false);
 			thepanelinstructions.blnpage1 = false;
 			thepanelinstructions.blnpage2 = false;
 			thepanelinstructions.blnpage3 = false;
 			thepanelinstructions.blnpage4 = true;
+			thepanelinstructions.blnpage5 = false;
 			theframe.setContentPane(thepanelinstructions);
 			theframe.setVisible(true);
 		}
+		//-page 4
 		else if(evt.getSource() == thepanelinstructions.backtopage3){
 			System.out.println("Trying to go back to page 3");
 			thepanelinstructions.backtomain.setVisible(false);
@@ -130,11 +153,75 @@ public class mainmenu implements ActionListener{
 			thepanelinstructions.topage4.setVisible(true);
 			thepanelinstructions.backtopage3.setVisible(false);
 			thepanelinstructions.topage5.setVisible(false);
+			thepanelinstructions.tomain5.setVisible(false);
+			thepanelinstructions.backtopage4.setVisible(false);
 			thepanelinstructions.blnpage1 = false;
 			thepanelinstructions.blnpage2 = false;
 			thepanelinstructions.blnpage3 = true;
 			thepanelinstructions.blnpage4 = false;
+			thepanelinstructions.blnpage5 = false;
 			theframe.setContentPane(thepanelinstructions);
+			theframe.setVisible(true);
+		}
+		else if(evt.getSource() == thepanelinstructions.topage5){
+			System.out.println("Trying to go to page 5");
+			thepanelinstructions.backtomain.setVisible(false);
+			thepanelinstructions.topage2.setVisible(false);
+			thepanelinstructions.backtopage1.setVisible(false);
+			thepanelinstructions.topage3.setVisible(false);
+			thepanelinstructions.backtopage2.setVisible(false);
+			thepanelinstructions.topage4.setVisible(false);
+			thepanelinstructions.backtopage3.setVisible(false);
+			thepanelinstructions.topage5.setVisible(false);
+			thepanelinstructions.tomain5.setVisible(true);
+			thepanelinstructions.backtopage4.setVisible(true);
+			thepanelinstructions.blnpage1 = false;
+			thepanelinstructions.blnpage2 = false;
+			thepanelinstructions.blnpage3 = false;
+			thepanelinstructions.blnpage4 = false;
+			thepanelinstructions.blnpage5 = true;
+			theframe.setContentPane(thepanelinstructions);
+			theframe.setVisible(true);
+		}
+		//-page 5
+		else if(evt.getSource() == thepanelinstructions.backtopage4){
+			System.out.println("Trying to go to page 4");
+			thepanelinstructions.backtomain.setVisible(false);
+			thepanelinstructions.topage2.setVisible(false);
+			thepanelinstructions.backtopage1.setVisible(false);
+			thepanelinstructions.topage3.setVisible(false);
+			thepanelinstructions.backtopage2.setVisible(false);
+			thepanelinstructions.topage4.setVisible(false);
+			thepanelinstructions.backtopage3.setVisible(true);
+			thepanelinstructions.topage5.setVisible(true);
+			thepanelinstructions.tomain5.setVisible(false);
+			thepanelinstructions.backtopage4.setVisible(false);
+			thepanelinstructions.blnpage1 = false;
+			thepanelinstructions.blnpage2 = false;
+			thepanelinstructions.blnpage3 = false;
+			thepanelinstructions.blnpage4 = true;
+			thepanelinstructions.blnpage5 = false;
+			theframe.setContentPane(thepanelinstructions);
+			theframe.setVisible(true);
+		}
+		else if(evt.getSource() == thepanelinstructions.tomain5){
+			System.out.println("Trying to go back to main menu");
+			thepanelinstructions.backtomain.setVisible(false);
+			thepanelinstructions.topage2.setVisible(false);
+			thepanelinstructions.backtopage1.setVisible(false);
+			thepanelinstructions.topage3.setVisible(false);
+			thepanelinstructions.backtopage2.setVisible(false);
+			thepanelinstructions.topage4.setVisible(false);
+			thepanelinstructions.backtopage3.setVisible(false);
+			thepanelinstructions.topage5.setVisible(false);
+			thepanelinstructions.tomain5.setVisible(false);
+			thepanelinstructions.backtopage4.setVisible(false);
+			thepanelinstructions.blnpage1 = false;
+			thepanelinstructions.blnpage2 = false;
+			thepanelinstructions.blnpage3 = false;
+			thepanelinstructions.blnpage4 = false;
+			thepanelinstructions.blnpage5 = false;
+			theframe.setContentPane(thepanel);
 			theframe.setVisible(true);
 		}
 		
@@ -415,6 +502,8 @@ public class mainmenu implements ActionListener{
 		thepanelinstructions.topage4.addActionListener(this);
 		thepanelinstructions.backtopage3.addActionListener(this);
 		thepanelinstructions.topage5.addActionListener(this);
+		thepanelinstructions.backtopage4.addActionListener(this);
+		thepanelinstructions.tomain5.addActionListener(this);
 		
 		// PLAY PAGE 1
 		playpage1.setLayout(null); 
@@ -464,6 +553,8 @@ public class mainmenu implements ActionListener{
 		thepanelinstructions.add(thepanelinstructions.topage4);
 		thepanelinstructions.add(thepanelinstructions.backtopage3);
 		thepanelinstructions.add(thepanelinstructions.topage5);
+		thepanelinstructions.add(thepanelinstructions.backtopage4);
+		thepanelinstructions.add(thepanelinstructions.tomain5);
 		
 		// Add features: Play page 1 :
 		playpage1.add(playpage1.back); 
