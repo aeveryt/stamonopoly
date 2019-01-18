@@ -505,7 +505,7 @@ public class mainmenu implements ActionListener{
 				}
 			}
 			
-			//-printing out to animation monopoly panel
+			//- printing out dice to animation monopoly panel
 			System.out.println(intdice1+" + " +intdice2); 
 			String strDice1; 
 			String strDice2; 
@@ -525,17 +525,23 @@ public class mainmenu implements ActionListener{
 			//-Landing on chance or community cards
 			
 			String strCard;
+			String strNum;
 			int intCard;
+			int intNum;
 			
 			 strCard = strProperties[monopolypanel.intPropertyN][0];
 			if (strCard.equalsIgnoreCase("community")){
 				intCard = (int) (Math.random()*30+1);
 				strCard = strCommunity[intCard][1];
-				//System.out.println(strCommunity[intCard][1]); prints out what the community card says (it works hehe)
+				System.out.println(strCommunity[intCard][1]);// prints out what the community card says
+				
+				strNum = strCommunity[intCard][0];
+				System.out.println(strNum);
+				
 			}else if (strCard.equalsIgnoreCase("chance")){
 				intCard = (int) (Math.random()*30+1);
 				strCard = strChance[intCard][1];
-				//System.out.println(strChance[intCard][1]); prints out what chance card says
+				System.out.println(strChance[intCard][1]); //prints out what chance card says
 			}
 			
 		}
@@ -588,7 +594,6 @@ public class mainmenu implements ActionListener{
 				strSplit = strLine.split(",");
 			for (intCol = 0; intCol < 10; intCol++){	
 				strProperties[intRow][intCol] = strSplit[intCol];				
-				System.out.println(strProperties[intRow][intCol]);
 			}
 		}
 		
@@ -604,7 +609,6 @@ public class mainmenu implements ActionListener{
 			for (intCol = 0; intCol < 3; intCol++){
 				
 				strCommunity[intRow][intCol] = strSplit[intCol];
-				System.out.println(strCommunity[intRow][intCol]);
 			}
 		}
 		
@@ -619,7 +623,6 @@ public class mainmenu implements ActionListener{
 				strSplit = strLine.split(",");
 			for (intCol = 0; intCol < 3; intCol++){
 				strChance[intRow][intCol] = strSplit[intCol];
-				System.out.println(strChance[intRow][intCol]);
 			}
 		}
 
