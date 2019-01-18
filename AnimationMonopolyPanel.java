@@ -24,6 +24,7 @@ public class AnimationMonopolyPanel extends JPanel{
 	String strDice1 = "";
 	String strDice2 = ""; 
 	String strDiceSum = "";
+	int intMoney = 1500;
 	String strMoney = "$";
 	int intPropertyN = 0; 
 	String strPropertyN = ""; 
