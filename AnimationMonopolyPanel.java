@@ -20,6 +20,13 @@ public class AnimationMonopolyPanel extends JPanel{
 	JButton back;
 	Font text = null;
 	String strColor; 
+	String strDice1 = "";
+	String strDice2 = ""; 
+	int intPropertyN = 0; 
+	String strPropertyN = ""; 
+	int intYOUx =  650; 
+	int intYOUy = 650;
+	
 	
 	
 	// JScrollPane scroll = new JScrollPane(textarea);
@@ -39,6 +46,7 @@ public class AnimationMonopolyPanel extends JPanel{
 		g.setColor(Color.WHITE);
 		g.fillRect(727,36,60,60);
 		g.fillRect(795,36,60,60);
+	
 		
 		//status bar
 		g.fillRect(867,3,407,99);
@@ -55,15 +63,32 @@ public class AnimationMonopolyPanel extends JPanel{
 		//properties outline
 		g.fillRect(725,331,282,315);
 		
+		// load the rolled number into the dice area
+		g.setColor(Color.BLACK); 
+		g.drawString(strDice1, 740,50); 
+		g.drawString(strDice2, 810, 50);
+		
+		// Update the status bar: 
+		g.drawString("You landed on: ",875, 15);  
+		
+		//Icon header
+		g.setColor(Color.BLACK); 
+		g.drawString("ICON:",1104,130);
+		
 		if(strColor.equals("red")){
 			g.setColor(Color.red);
 		}else if(strColor.equals("blue")){
 			g.setColor(Color.BLUE); 
 		}
 		
-		// draw that box in:
+		// draw the profile box in:
+		g.fillRect(1164,163,50,50); 
 		
-		g.fillRect(1104,108,30,30); 
+
+		// set up your character
+		g.fillRect(intYOUx, intYOUy, 25,25);
+		
+		
 		
 	}
 

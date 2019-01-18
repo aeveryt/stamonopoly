@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.*; 
 import java.awt.Font;
 
-public class mainmenu implements ActionListener{
+public class mainmenutrial implements ActionListener{
 
 	//Properties
 	public JFrame theframe; 
@@ -285,7 +285,7 @@ public class mainmenu implements ActionListener{
 	}
 	
 	//Constructor
-	public mainmenu(){
+	public mainmenutrial(){
 	
 		//set variables
 		theframe = new JFrame("Main Menu");
@@ -437,7 +437,7 @@ public class mainmenu implements ActionListener{
 	
 	
 	public static void main(String []args){
-		new mainmenu(); 
+		new mainmenutrial(); 
 	
 		
 	}
