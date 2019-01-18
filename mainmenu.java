@@ -313,19 +313,31 @@ public class mainmenu implements ActionListener{
 			intdiesum = intdice1 + intdice2; 
 			
 			//send stuff to update location of your character 
-			// make if you get to a certain point the intYOUy is changed instead. 
+			// make if you get to a certain point the intYOUy is changed instead.
+			// it is not going up 
 				
 			for(intCount = 1; intCount <= intdiesum; intCount++){
-				if(monopolypanel.intYOUx <= 650 && monopolypanel.intYOUx >= 50){
-					System.out.println(intCount); 
+				//System.out.println(intCount); 
+				if(monopolypanel.intYOUx <= 650 && monopolypanel.intYOUx > 50 && monopolypanel.intYOUy >= 650){
+					System.out.println("going to the left"); 
 					monopolypanel.intYOUx = monopolypanel.intYOUx - 60; 
-				}else if(monopolypanel.intYOUy == 650 || monopolypanel.intYOUy < 650){
-					System.out.println("got here"); 
+					
+				}else if(monopolypanel.intYOUy > 50 && monopolypanel.intYOUy > 40 && monopolypanel.intYOUx == 50){
+					System.out.println("going up");
+					System.out.println(monopolypanel.intYOUx); 
+					System.out.println(monopolypanel.intYOUy);  
+					//monopolypanel.intYOUx = 30;
 					monopolypanel.intYOUy = monopolypanel.intYOUy - 60; 
-				}else if(monopolypanel.intYOUy == 50){
+				}else if(monopolypanel.intYOUy < 51 && monopolypanel.intYOUx < 650){
+					System.out.println("going right");
+					System.out.println(monopolypanel.intYOUx); 
+					System.out.println(monopolypanel.intYOUy);
+					//monopolypanel.intYOUy = 30; 
 					monopolypanel.intYOUx =monopolypanel.intYOUx + 60; 
-				}else if(monopolypanel.intYOUx == 650 && monopolypanel.intYOUy >= 50){
-					monopolypanel.intYOUy = monopolypanel.intYOUy - 60; 
+				}else if(monopolypanel.intYOUy < 650 && monopolypanel.intYOUx == 650){
+					
+					System.out.println("going down"); 
+					monopolypanel.intYOUy = monopolypanel.intYOUy + 60; 
 				}
 			}
 			
