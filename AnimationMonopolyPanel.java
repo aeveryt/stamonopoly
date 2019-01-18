@@ -76,8 +76,7 @@ public class AnimationMonopolyPanel extends JPanel{
 		// Update the status bar: 
 		g.setFont(text);
 		g.drawString("You rolled a: " +strDiceSum, 875,20);
-		g.drawString("You landed on: ",875, 36);  
-		g.drawString(strPropertyN, 875, 60);
+		g.drawString("You landed on: "+strPropertyN,875, 36);  
 		
 		//Icon header
 		g.setFont(text);
