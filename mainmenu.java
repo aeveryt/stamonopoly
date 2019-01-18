@@ -515,7 +515,7 @@ public class mainmenu implements ActionListener{
 			monopolypanel.strDice1 = strDice1;
 			monopolypanel.strDice2 = strDice2;
 			monopolypanel.strDiceSum = strDiceSum;
-			monopolypanel.intPropertyN = monopolypanel.intPropertyN + intdiesum -1; 
+			monopolypanel.intPropertyN = monopolypanel.intPropertyN + intdiesum; 
 			// Trying to load property names in:
 			
 			monopolypanel.strPropertyN = strProperties[monopolypanel.intPropertyN][0]; 
