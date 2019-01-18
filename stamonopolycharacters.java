@@ -56,8 +56,7 @@ public class stamonopolycharacters extends JPanel{
 		//Select 1;
 		select1.setSize(100,50);
 		select1.setLocation(100,480);
-		
-	
+
 		
 		//Select 2;
 		select2.setSize(100,50);

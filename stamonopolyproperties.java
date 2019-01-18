@@ -1,4 +1,6 @@
 //Properties File 
+
+// Missing tiles, Jail, free parking, chance and community 
 import java.io.*;
 import java.awt.*;
 import java.awt.image.*;
@@ -6,7 +8,6 @@ import java.awt.Font.*;
 
 public class stamonopolyproperties{
 		public static void main (String[] args){
-	
 	//Properties
 	
 	boolean GoSpace = true;
@@ -92,8 +93,6 @@ public class stamonopolyproperties{
 				System.out.println(strChance[intRow][intCol]);
 			}
 		}
-		
-		
 		
 		//Closing file
 		
