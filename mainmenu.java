@@ -338,7 +338,8 @@ public class mainmenu implements ActionListener{
 			// Symbolized that you sent the message
 				blnSent = true; 
 			}
-		}else if(evt.getSource() == characterspanel.select2){
+		} // choosing character 2
+		else if(evt.getSource() == characterspanel.select2){
 			System.out.println(blnServer); 
 			monopolypanel.strColor = "blue"; 
 			// If you are the server send this text.
@@ -357,7 +358,53 @@ public class mainmenu implements ActionListener{
 				blnSent = true; 
 			}
 	
+		}// choosing character 3
+		else if(evt.getSource() == characterspanel.select3){
+			System.out.println(blnServer); 
+			monopolypanel.strColor = "yellow"; 
+			// If you are the server send this text.
+			if(blnServer){ 
+				ssm.sendText("select3");
+				System.out.println("Server sent"); 
+				characterspanel.select3.setEnabled(false); 
+			// Symbolized that you sent the message. 
+				blnSent = true; 
+			}// If you are not the server use the client ssm to send text. 
+			else if(blnServer == false){
+				ssm.sendText("select3"); 
+				System.out.println("client sent"); 
+				characterspanel.select3.setEnabled(false); 
+			// Symbolized that you sent the message
+				blnSent = true; 
+			}
+		
+		
+		
+		} // choosing character 4
+		else if(evt.getSource() == characterspanel.select4){
+			monopolypanel.strColor = "green"; 
+			// If you are the server send this text.
+			if(blnServer){ 
+				ssm.sendText("select4");
+				System.out.println("Server sent"); 
+				characterspanel.select4.setEnabled(false); 
+			// Symbolized that you sent the message. 
+				blnSent = true; 
+			}// If you are not the server use the client ssm to send text. 
+			else if(blnServer == false){
+				ssm.sendText("select4"); 
+				System.out.println("client sent"); 
+				characterspanel.select4.setEnabled(false); 
+			// Symbolized that you sent the message
+				blnSent = true; 
+			}
 		}
+		
+		
+		
+		
+		
+		
 		
 		//CHATTING: talking to people over server (SUPERSOCKETMASTER)
 		else if(evt.getSource() == monopolypanel.textfield){
@@ -392,6 +439,10 @@ public class mainmenu implements ActionListener{
 					characterspanel.select1.setEnabled(false); 
 				}else if(characterspanel.strData.equals("select2")){
 					characterspanel.select2.setEnabled(false); 
+				}else if(characterspanel.strData.equals("select3")){
+					characterspanel.select3.setEnabled(false); 
+				}else if(characterspanel.strData.equals("select4")){
+					characterspanel.select4.setEnabled(false); 
 				}
 			} 
 			
@@ -405,6 +456,10 @@ public class mainmenu implements ActionListener{
 				}
 				else if(characterspanel.strData.equals("select2")){
 					characterspanel.select2.setEnabled(false); 
+				}else if(characterspanel.strData.equals("select3")){
+					characterspanel.select3.setEnabled(false); 
+				}else if(characterspanel.strData.equals("select4")){
+					characterspanel.select4.setEnabled(false); 
 				}
 			} 
 		
@@ -460,7 +515,7 @@ public class mainmenu implements ActionListener{
 			monopolypanel.intPropertyN = monopolypanel.intPropertyN + intdiesum; 
 			// Trying to load property names in:
 			
-			//monopolypanel.strPropertyN = strProperties[monopolypanel.intPropertyN][0]; 
+			monopolypanel.strPropertyN = strProperties[monopolypanel.intPropertyN][0]; 
 			
 		}// updating the animation panel using a timer
 		else if(evt.getSource() == thetimer){

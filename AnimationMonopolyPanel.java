@@ -86,6 +86,10 @@ public class AnimationMonopolyPanel extends JPanel{
 			g.setColor(Color.red);
 		}else if(strColor.equals("blue")){
 			g.setColor(Color.BLUE); 
+		}else if(strColor.equals("yellow")){
+			g.setColor(Color.YELLOW); 
+		}else if(strColor.equals("green")){
+			g.setColor(Color.GREEN); 
 		}
 		
 		// draw the profile box in:
