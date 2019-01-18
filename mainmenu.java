@@ -515,10 +515,13 @@ public class mainmenu implements ActionListener{
 			monopolypanel.strDice1 = strDice1;
 			monopolypanel.strDice2 = strDice2;
 			monopolypanel.strDiceSum = strDiceSum;
-			monopolypanel.intPropertyN = monopolypanel.intPropertyN + intdiesum; 
+			monopolypanel.intPropertyN = monopolypanel.intPropertyN + intdiesum -1; 
 			// Trying to load property names in:
 			
 			monopolypanel.strPropertyN = strProperties[monopolypanel.intPropertyN][0]; 
+			
+		
+			
 			
 		}// updating the animation panel using a timer
 		else if(evt.getSource() == thetimer){

@@ -77,6 +77,7 @@ public class AnimationMonopolyPanel extends JPanel{
 		g.setFont(text);
 		g.drawString("You rolled a: " +strDiceSum, 875,20);
 		g.drawString("You landed on: ",875, 36);  
+		g.drawString(strPropertyN, 875, 60);
 		
 		//Icon header
 		g.setFont(text);
