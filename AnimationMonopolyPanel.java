@@ -101,7 +101,10 @@ public class AnimationMonopolyPanel extends JPanel{
 		// set up your character
 		g.fillRect(intYOUx, intYOUy, 25,25);
 		
-		
+		//position
+		if(intPropertyN>39){
+			intPropertyN = intPropertyN - 40;
+		}
 		
 	}
 

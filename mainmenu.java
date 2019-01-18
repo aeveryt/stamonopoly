@@ -37,7 +37,7 @@ public class mainmenu implements ActionListener{
 	
 		//Split Data
 		String strSplit[];
-		String strProperties[][] = new String[31][10];
+		String strProperties[][] = new String[40][10];
 		String strCommunity [][] = new String[30][3];
 		String strChance [][] = new String[30][3];
 	
@@ -516,17 +516,17 @@ public class mainmenu implements ActionListener{
 			monopolypanel.strDice2 = strDice2;
 			monopolypanel.strDiceSum = strDiceSum;
 			monopolypanel.intPropertyN = monopolypanel.intPropertyN + intdiesum; 
+			
 			// Trying to load property names in:
 			
 			monopolypanel.strPropertyN = strProperties[monopolypanel.intPropertyN][0]; 
-			
 		
-			
 			
 		}// updating the animation panel using a timer
 		else if(evt.getSource() == thetimer){
 			monopolypanel.repaint(); 
 		}
+		
 		
 	}
 	
@@ -559,7 +559,7 @@ public class mainmenu implements ActionListener{
 		
 		
 		//Properties File
-			for (intRow = 0; intRow < 31; intRow ++){
+			for (intRow = 0; intRow < 40; intRow ++){
 				try{	
 					strLine = properties.readLine();
 				}catch(IOException e){
