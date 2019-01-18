@@ -517,8 +517,27 @@ public class mainmenu implements ActionListener{
 			monopolypanel.strDice2 = strDice2;
 			monopolypanel.strDiceSum = strDiceSum;
 			monopolypanel.intPropertyN = monopolypanel.intPropertyN + intdiesum; 
+			
 			//-Trying to load property names in:
+			
 			monopolypanel.strPropertyN = strProperties[monopolypanel.intPropertyN][0]; 	
+			
+			//-Landing on chance or community cards
+			
+			String strCard;
+			int intCard;
+			
+			 strCard = strProperties[monopolypanel.intPropertyN][0];
+			if (strCard.equalsIgnoreCase("community")){
+				intCard = (int) (Math.random()*30+1);
+				strCard = strCommunity[intCard][1];
+				//System.out.println(strCommunity[intCard][1]); prints out what the community card says (it works hehe)
+			}else if (strCard.equalsIgnoreCase("chance")){
+				intCard = (int) (Math.random()*30+1);
+				strCard = strChance[intCard][1];
+				//System.out.println(strChance[intCard][1]); prints out what chance card says
+			}
+			
 		}
 		
 		//TIMER (REPAINT)
