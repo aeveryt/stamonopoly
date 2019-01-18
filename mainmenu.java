@@ -7,7 +7,7 @@ import java.io.*;
 
 public class mainmenu implements ActionListener{
 
-	//Properties
+	//*****PROPERTIES*****
 	public JFrame theframe; 
 	public JPanel thepanel;
 	public JButton InstrucButt;
@@ -23,13 +23,13 @@ public class mainmenu implements ActionListener{
 	public stamonopolycharacters characterspanel;
 	Timer thetimer;
 	
-	//Properties
 	
-	//-players
+	//-Players
 	int intMoney = 1500;
+	String strPropertyCost = "";
 	int intPropertyCost = 0;
 	
-	//File Variables 
+	//-File Variables 
 		
 		//-board
 		boolean GoSpace = true;
@@ -41,24 +41,24 @@ public class mainmenu implements ActionListener{
 		BufferedReader community = null;
 		BufferedReader chance = null;
 
-	//Data Array
+	//-Data Array
 		String strSplit[];
 		String strProperties[][] = new String[40][10];
 		String strCommunity [][] = new String[30][3];
 		String strChance [][] = new String[30][3];	
 	
 	
-	//Server 
+	//-Server 
 	boolean blnServer; 
 	boolean blnSent = false;
 	
-	//Dice 
+	//-Dice 
 	int intdice1; 
 	int intdice2;
 	int intdiesum; 
 	int intCount; 
 	
-	//*METHODS*
+	//*****METHODS*****
 	public void actionPerformed(ActionEvent evt){
 		
 		//INSTRUCTIONS SCREEN
@@ -558,6 +558,7 @@ public class mainmenu implements ActionListener{
 		
 		//BUYING PROPERTIES
 		else if(evt.getSource()== monopolypanel.buy){
+			strPropertyCost = strProperties[monopolypanel.intPropertyN][10];
 			intMoney = intMoney-intPropertyCost;
 			monopolypanel.strMoney = intMoney+"";
 		}	
