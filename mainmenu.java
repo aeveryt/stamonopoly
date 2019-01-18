@@ -21,32 +21,38 @@ public class mainmenu implements ActionListener{
 	// public SuperSocketMaster ssmclient; 
 	public AnimationMonopolyPanel monopolypanel; 
 	public stamonopolycharacters characterspanel;
-	Timer thetimer; 
+	Timer thetimer;
 	
-	//DATA
 	//Properties
+	
 	//-players
 	int intMoney = 1500;
-	int intPropertyCost=0;
-	//-board
-	boolean GoSpace = true;
-	boolean Geo = false;
-	boolean blnFileFail = false;
-	FileReader thefile = null;
-	FileReader chancefile = null;
-	FileReader communityfile = null;
-	BufferedReader properties = null;
-	BufferedReader community = null;
-	BufferedReader chance = null;
-
-	//Split Data
-	String strSplit[];
-	String strProperties[][] = new String[40][10];
-	String strCommunity [][] = new String[30][3];
-	String strChance [][] = new String[30][3];	
+	int intPropertyCost = 0;
 	
+	//File Variables 
+		
+		//-board
+		boolean GoSpace = true;
+		boolean blnFileFail = false;
+		FileReader thefile = null;
+		FileReader chancefile = null;
+		FileReader communityfile = null;
+		BufferedReader properties = null;
+		BufferedReader community = null;
+		BufferedReader chance = null;
+
+	//Data Array
+		String strSplit[];
+		String strProperties[][] = new String[40][10];
+		String strCommunity [][] = new String[30][3];
+		String strChance [][] = new String[30][3];	
+	
+	
+	//Server 
 	boolean blnServer; 
 	boolean blnSent = false;
+	
+	//Dice 
 	int intdice1; 
 	int intdice2;
 	int intdiesum; 
@@ -529,14 +535,11 @@ public class mainmenu implements ActionListener{
 	}
 	
 	
-	
-	
 	//Constructor
 	public mainmenu(){
-		
-		
+	
+	//Reading CSV files	
 		try{
-			// Reading files 
 			thefile = new FileReader("properties.csv");
 			communityfile = new FileReader("community.csv");	
 			chancefile = new FileReader("chance.csv");
@@ -545,7 +548,7 @@ public class mainmenu implements ActionListener{
 			blnFileFail = true;
 		}
 	
-	//Reading Files
+	
 		//Variables and Initialize
 		properties = new BufferedReader(thefile);
 		community = new BufferedReader(communityfile);
@@ -587,7 +590,7 @@ public class mainmenu implements ActionListener{
 		}
 		
 		//Chance
-		//Organized as Card Number, Statement, Money Given or Owed
+		//Organized as Card Number, Statement, Money given or owed.
 		for (intRow = 0; intRow < 30; intRow ++){
 				try{
 					strLine = chance.readLine();
