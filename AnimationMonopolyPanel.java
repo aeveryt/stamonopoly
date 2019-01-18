@@ -25,7 +25,7 @@ public class AnimationMonopolyPanel extends JPanel{
 	String strDice2 = ""; 
 	String strDiceSum = "";
 	int intMoney = 1500;
-	String strMoney = "$";
+	String strMoney = "$"+intMoney;
 	int intPropertyN = 0; 
 	String strPropertyN = ""; 
 	int intYOUx =  650; 
@@ -46,13 +46,12 @@ public class AnimationMonopolyPanel extends JPanel{
 		g.setColor(Color.BLACK);
 		g.fillRect(720,3,142,100);
 		g.setFont(title);
-		g.drawString("CHATBOX",1050,300);
-		g.drawString("PROPERTIES",730,300);
+		g.drawString("CHATBOX",1050,310);
+		g.drawString("PROPERTIES",730,310);
 		g.setColor(Color.WHITE);
 		g.fillRect(727,36,60,60);
 		g.fillRect(795,36,60,60);
 	
-		
 		//status bar
 		g.fillRect(867,3,407,99);
 		
@@ -71,8 +70,8 @@ public class AnimationMonopolyPanel extends JPanel{
 		// load the rolled number into the dice area
 		g.setFont(title);
 		g.setColor(Color.BLACK); 
-		g.drawString(strDice1, 740,65); 
-		g.drawString(strDice2, 810, 65);
+		g.drawString(strDice1, 740,73); 
+		g.drawString(strDice2, 810, 73);
 		
 		// Update the status bar: 
 		g.setFont(text);
@@ -101,11 +100,6 @@ public class AnimationMonopolyPanel extends JPanel{
 
 		// set up your character
 		g.fillRect(intYOUx, intYOUy, 25,25);
-		
-		//position
-		if(intPropertyN>39){
-			intPropertyN = intPropertyN - 40;
-		}
 		
 	}
 

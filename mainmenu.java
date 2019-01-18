@@ -519,9 +519,13 @@ public class mainmenu implements ActionListener{
 			monopolypanel.intPropertyN = monopolypanel.intPropertyN + intdiesum; 
 			
 			//-Trying to load property names in:
-			
+			//position
+			if(monopolypanel.intPropertyN>39){
+				monopolypanel.intPropertyN = monopolypanel.intPropertyN - 40;
+				intMoney = intMoney+200;
+			}
 			monopolypanel.strPropertyN = strProperties[monopolypanel.intPropertyN][0]; 	
-			
+			monopolypanel.strMoney = intMoney+"";
 			//-Landing on chance or community cards
 			
 			String strCard;
@@ -555,7 +559,7 @@ public class mainmenu implements ActionListener{
 		//BUYING PROPERTIES
 		else if(evt.getSource()== monopolypanel.buy){
 			intMoney = intMoney-intPropertyCost;
-			monopolypanel.strMoney = (intMoney+"");
+			monopolypanel.strMoney = intMoney+"";
 		}	
 	}
 	
