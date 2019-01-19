@@ -41,7 +41,7 @@ public class AnimationMonopolyPanel extends JPanel{
 	boolean blnRed; 
 	
 	// Player one: 
-	String strColor1 = "green";  
+	String strColor1 = "";  
 	int intPlayerX1 = -50;
 	int intPlayerY1 = -50; 
 	

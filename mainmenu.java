@@ -25,7 +25,7 @@ public class mainmenu implements ActionListener{
 	
 	// Sending information over network variable 
 	int intPiece = 1; 
-	int intRoll = 1;  
+	int intRoll = 2;  
 	
 	
 	//-Players
