@@ -665,9 +665,13 @@ public class mainmenu implements ActionListener{
 		
 		//BUYING PROPERTIES
 		else if(evt.getSource()== monopolypanel.buy){
-			strPropertyCost = strProperties[monopolypanel.intPropertyN][10];
+			strPropertyCost = strProperties[monopolypanel.intPropertyN][2];
+			System.out.println("buying stuff"+strProperties[monopolypanel.intPropertyN][2]);
+			//strPropertyCost = strProperties[monopolypanel.intPropertyN][10];
+			intPropertyCost = Integer.parseInt(strProperties[monopolypanel.intPropertyN][2]);
 			intMoney = intMoney-intPropertyCost;
 			monopolypanel.strMoney = intMoney+"";
+			monopolypanel.intMoney = intMoney;
 		}	
 	}
 	

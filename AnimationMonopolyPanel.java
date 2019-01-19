@@ -25,7 +25,7 @@ public class AnimationMonopolyPanel extends JPanel{
 	String strDice2 = ""; 
 	String strDiceSum = "";
 	int intMoney = 1500;
-	String strMoney = "$"+intMoney;
+	String strMoney = ""+intMoney;
 	int intPropertyN = 0; 
 	String strPropertyN = ""; 
 	int intYOUx =  650; 
@@ -97,7 +97,7 @@ public class AnimationMonopolyPanel extends JPanel{
 		g.setFont(text);
 		g.setColor(Color.BLACK); 
 		g.drawString("ICON:",1110,130);
-		g.drawString("MONEY:" + strMoney,1110,260);
+		g.drawString("MONEY: $" + strMoney,1110,260);
 		
 		if(strColor.equals("red1") || strColor.equals("red")){
 			g.setColor(Color.red);
