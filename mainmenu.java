@@ -331,7 +331,7 @@ public class mainmenu implements ActionListener{
 		else if(evt.getSource() == characterspanel.select1){ 
 			monopolypanel.intPlayerCount = monopolypanel.intPlayerCount + 1;
 			// If you are the server send this text.
-			monopolypanel.strColor = "red"; 
+			monopolypanel.strColor = "red1"; 
 			monopolypanel.intPlayer = monopolypanel.intPlayerCount;
 			System.out.println("you're player number:"+monopolypanel.intPlayer); 
 			System.out.println("this is the turn number: "+monopolypanel.intTurn); 
@@ -350,7 +350,7 @@ public class mainmenu implements ActionListener{
 		else if(evt.getSource() == characterspanel.select2){ 
 			monopolypanel.intPlayerCount = monopolypanel.intPlayerCount + 1;
 			monopolypanel.intPlayer = monopolypanel.intPlayerCount;
-			monopolypanel.strColor = "blue";  
+			monopolypanel.strColor = "blue1";  
 			System.out.println(monopolypanel.intPlayer); 
 			// If you are the server send this text.
 			if(blnServer){ 
@@ -373,7 +373,7 @@ public class mainmenu implements ActionListener{
 			monopolypanel.intPlayerCount = monopolypanel.intPlayerCount + 1;
 			monopolypanel.intPlayer = monopolypanel.intPlayerCount;
 			System.out.println(monopolypanel.intPlayer);
-			monopolypanel.strColor = "yellow"; 
+			monopolypanel.strColor = "yellow1"; 
 			// If you are the server send this text.
 			if(blnServer){ 
 				ssm.sendText("select3");
@@ -392,7 +392,7 @@ public class mainmenu implements ActionListener{
 		} 
 		//-choosing character 4
 		else if(evt.getSource() == characterspanel.select4){
-			monopolypanel.strColor = "green"; 
+			monopolypanel.strColor = "green1"; 
 			monopolypanel.intPlayerCount = monopolypanel.intPlayerCount + 1; 
 			monopolypanel.intPlayer = monopolypanel.intPlayerCount;
 			System.out.println(monopolypanel.intPlayer);

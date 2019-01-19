@@ -98,13 +98,17 @@ public class AnimationMonopolyPanel extends JPanel{
 		g.drawString("ICON:",1110,130);
 		g.drawString("MONEY:" + strMoney,1110,260);
 		
-		if(strColor.equals("red")){
+		if(strColor.equals("red1")){
 			g.setColor(Color.red);
-		}else if(strColor.equals("blue")){
+			strColor = "red"; 
+		}else if(strColor.equals("blue1")){
 			g.setColor(Color.BLUE); 
-		}else if(strColor.equals("yellow")){
+			strColor = "blue"; 
+		}else if(strColor.equals("yellow1")){
+			strColor = "yellow"; 
 			g.setColor(Color.YELLOW); 
-		}else if(strColor.equals("green")){
+		}else if(strColor.equals("green1")){
+			strColor = "green"; 
 			g.setColor(Color.GREEN); 
 		}
 		
