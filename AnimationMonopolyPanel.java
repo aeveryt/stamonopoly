@@ -30,6 +30,8 @@ public class AnimationMonopolyPanel extends JPanel{
 	String strPropertyN = ""; 
 	int intYOUx =  650; 
 	int intYOUy = 650;
+	int intPlayerCount =1; 
+	
 	
 	
 	

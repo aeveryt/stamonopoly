@@ -428,20 +428,32 @@ public class mainmenu implements ActionListener{
 		
 		//CHARACTERS SERVER PAGE	
 		else if(evt.getSource() == ssm){
-			// If you are the server and you didn't send anything this statement will run.
+			// If you are the server 
 			if(blnServer == true){
 				characterspanel.strData = ssm.readText(); 
 				System.out.println("SERVER RECIEVED THIS: "+characterspanel.strData); 
 				//Set button to false;
 				if(characterspanel.strData.equals("select1")){
-					characterspanel.select1.setEnabled(false); 
+					characterspanel.select1.setEnabled(false);
+					monopolypanel.intPlayerCount = monopolypanel.intPlayerCount + 1;
+					characterspanel.repaint();   
 				}else if(characterspanel.strData.equals("select2")){
+					monopolypanel.intPlayerCount = monopolypanel.intPlayerCount + 1;  
 					characterspanel.select2.setEnabled(false); 
+					characterspanel.repaint(); 
 				}else if(characterspanel.strData.equals("select3")){
 					characterspanel.select3.setEnabled(false); 
+					characterspanel.repaint(); 
+					monopolypanel.intPlayerCount = monopolypanel.intPlayerCount + 1;  
 				}else if(characterspanel.strData.equals("select4")){
 					characterspanel.select4.setEnabled(false); 
+					monopolypanel.intPlayerCount = monopolypanel.intPlayerCount + 1;  
+					characterspanel.repaint(); 
 				}
+				System.out.println("number of players: "+monopolypanel.intPlayerCount); 
+				characterspanel.intPlayerN = monopolypanel.intPlayerCount; 
+				System.out.println(characterspanel.intPlayerN);
+				characterspanel.repaint(); 
 			} 
 			
 			// If you are not the server and did not send the message about shutting the button off, this code should run.
@@ -451,14 +463,26 @@ public class mainmenu implements ActionListener{
 				// set to false;
 				if(characterspanel.strData.equals("select1")){
 					characterspanel.select1.setEnabled(false); 
+					monopolypanel.intPlayerCount = monopolypanel.intPlayerCount + 1; 
+					characterspanel.repaint(); 
 				}
 				else if(characterspanel.strData.equals("select2")){
+					monopolypanel.intPlayerCount = monopolypanel.intPlayerCount + 1; 
 					characterspanel.select2.setEnabled(false); 
+					characterspanel.repaint(); 
 				}else if(characterspanel.strData.equals("select3")){
+					monopolypanel.intPlayerCount = monopolypanel.intPlayerCount + 1;
+					characterspanel.repaint();  	
 					characterspanel.select3.setEnabled(false); 
 				}else if(characterspanel.strData.equals("select4")){
+					monopolypanel.intPlayerCount = monopolypanel.intPlayerCount + 1; 
+					characterspanel.repaint(); 
 					characterspanel.select4.setEnabled(false); 
 				}
+				// make the player count equal 
+				characterspanel.intPlayerN = monopolypanel.intPlayerCount; 
+				System.out.println(characterspanel.intPlayerN); 
+				characterspanel.repaint(); 
 			} 
 		
 			//System.out.println(blnServer); 

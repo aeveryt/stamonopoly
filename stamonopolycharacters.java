@@ -23,6 +23,8 @@ public class stamonopolycharacters extends JPanel{
 	boolean blnsta2;
 	boolean blnsta3;
 	boolean blnsta4;
+	int intPlayerN; 
+	Font text; 
 	String strData = "";
 	
 	//Methods
@@ -44,6 +46,9 @@ public class stamonopolycharacters extends JPanel{
 		g.setColor(Color.GREEN);
 		g.fillRect(1100,400,25,25);
 		
+	// lISTS THE NUMBER OF PLAYERS: 
+		g.setColor(Color.WHITE); 
+		g.drawString("Number of players: "+intPlayerN+"", 1150, 25); 
 		
 		
 	}
@@ -83,6 +88,18 @@ public class stamonopolycharacters extends JPanel{
 		}catch(IOException e){
 			System.out.println("unable to load image ");
 		}
+		
+		// font
+		try{
+			text = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("kabel.ttf")); 
+			text = text.deriveFont(Font.BOLD, 35);
+		}
+		catch(Exception e){
+			//System.out.println(e.toString());
+			System.out.println("Unable to load font file kabel.ttf. Setting default font"); 
+		}
+		
+		
 	}
 
 }
