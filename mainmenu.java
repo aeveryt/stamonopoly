@@ -26,6 +26,8 @@ public class mainmenu implements ActionListener{
 	// Sending information over network variable 
 	int intPiece = 1; 
 	int intRoll = 2;  
+	boolean blnPlay = false; 
+	boolean blnDice = false; 
 	
 	
 	//-Players
@@ -290,6 +292,7 @@ public class mainmenu implements ActionListener{
 			theframe.setContentPane(thepanel); 
 			theframe.setVisible(true); 
 		}else if(evt.getSource() == characterspanel.gameplay){
+			blnPlay = true; 
 			theframe.setContentPane(monopolypanel);
 			theframe.setVisible(true); 
 			
@@ -351,7 +354,8 @@ public class mainmenu implements ActionListener{
 			monopolypanel.intPlayerCount = monopolypanel.intPlayerCount + 1;
 			monopolypanel.intPlayer = monopolypanel.intPlayerCount;
 			monopolypanel.strColor = "blue1";  
-			System.out.println(monopolypanel.intPlayer); 
+			System.out.println("you're player number:"+monopolypanel.intPlayer); 
+			System.out.println("this is the turn number: "+monopolypanel.intTurn);  
 			// If you are the server send this text.
 			if(blnServer){ 
 				ssm.sendText("select2");
@@ -373,6 +377,8 @@ public class mainmenu implements ActionListener{
 			monopolypanel.intPlayerCount = monopolypanel.intPlayerCount + 1;
 			monopolypanel.intPlayer = monopolypanel.intPlayerCount;
 			System.out.println(monopolypanel.intPlayer);
+			System.out.println("you're player number:"+monopolypanel.intPlayer); 
+			System.out.println("this is the turn number: "+monopolypanel.intTurn); 
 			monopolypanel.strColor = "yellow1"; 
 			// If you are the server send this text.
 			if(blnServer){ 
@@ -395,7 +401,8 @@ public class mainmenu implements ActionListener{
 			monopolypanel.strColor = "green1"; 
 			monopolypanel.intPlayerCount = monopolypanel.intPlayerCount + 1; 
 			monopolypanel.intPlayer = monopolypanel.intPlayerCount;
-			System.out.println(monopolypanel.intPlayer);
+			System.out.println("you're player number:"+monopolypanel.intPlayer); 
+			System.out.println("this is the turn number: "+monopolypanel.intTurn); 
 			// If you are the server send this text.
 			if(blnServer){ 
 				ssm.sendText("select4");
@@ -537,6 +544,7 @@ public class mainmenu implements ActionListener{
 			intdice1 = (int)(Math.random() *6+1); 
 			intdice2 = (int)(Math.random()*6+1); 
 			intdiesum = intdice1 + intdice2; 
+			blnDice = true; 
 			
 			// make it even number
 			intRoll = intRoll*2; 
@@ -633,7 +641,7 @@ public class mainmenu implements ActionListener{
 				// sending y - coordinate
 				ssm.sendText(monopolypanel.intYOUy+""); 
 				// sending out text to say to change intTurn variable
-				if(intRoll%2 == 0){
+				if(intRoll%2 == 0 && blnPlay == true && blnDice == true){
 					System.out.println("I got here"); 
 					monopolypanel.intTurn = monopolypanel.intTurn +1; 
 					System.out.println(monopolypanel.intTurn); 

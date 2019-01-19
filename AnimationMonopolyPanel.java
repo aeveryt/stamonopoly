@@ -33,6 +33,7 @@ public class AnimationMonopolyPanel extends JPanel{
 	int intPlayerCount =0; 
 	int intPlayer = 0; 
 	int intTurn = 1; 
+	String strYourColor; 
 	
 	// indicate which colours were selected
 	boolean blnBlue;
@@ -98,17 +99,21 @@ public class AnimationMonopolyPanel extends JPanel{
 		g.drawString("ICON:",1110,130);
 		g.drawString("MONEY:" + strMoney,1110,260);
 		
-		if(strColor.equals("red1")){
+		if(strColor.equals("red1") || strColor.equals("red")){
 			g.setColor(Color.red);
 			strColor = "red"; 
-		}else if(strColor.equals("blue1")){
+			strYourColor = "red"; 
+		}else if(strColor.equals("blue1") || strYourColor.equals("blue")){
 			g.setColor(Color.BLUE); 
 			strColor = "blue"; 
-		}else if(strColor.equals("yellow1")){
+			strYourColor = "blue"; 
+		}else if(strColor.equals("yellow1") || strYourColor.equals("yellow")){
 			strColor = "yellow"; 
+			strYourColor = "yellow"; 
 			g.setColor(Color.YELLOW); 
-		}else if(strColor.equals("green1")){
+		}else if(strColor.equals("green1") || strYourColor.equals("green")){
 			strColor = "green"; 
+			strYourColor = "green"; 
 			g.setColor(Color.GREEN); 
 		}
 		
