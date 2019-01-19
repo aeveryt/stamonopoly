@@ -262,15 +262,18 @@ public class mainmenu implements ActionListener{
 		//TO LEAVE GAME
 		else if(evt.getSource() == ExitButt){
 			System.exit(0);
+		}
 			
 		// PLAY SCREEN
-		}else if(evt.getSource() == PlayButt){
+		else if(evt.getSource() == PlayButt){
 			theframe.setContentPane(playpage1); 
 			theframe.setVisible(true);
-		}else if(evt.getSource() == playpage1.back){
+		}
+		else if(evt.getSource() == playpage1.back){
 			theframe.setContentPane(thepanel); 
 			theframe.setVisible(true); 
-		}else if(evt.getSource() == playpage1.start){
+		}
+		else if(evt.getSource() == playpage1.start){
 			System.out.println("started"); 
 			theframe.setContentPane(startpage); 
 			theframe.setVisible(true); 
@@ -279,23 +282,24 @@ public class mainmenu implements ActionListener{
 			startpage.strAddress = ssm.getMyAddress(); 
 			ssm.connect();
 			blnServer = true;
-			System.out.println(blnServer); 
-
-			
-		}else if(evt.getSource() == playpage1.existing){
+			System.out.println(blnServer); 	
+		}
+		
+		else if(evt.getSource() == playpage1.existing){
 			System.out.println("going to exisitng game"); 
 			theframe.setContentPane(joinpage); 
-			theframe.setVisible(true); 
-
-			
-		}else if(evt.getSource() == startpage.back || evt.getSource() ==joinpage.back){ 
+			theframe.setVisible(true); 	
+		}
+		
+		else if(evt.getSource() == startpage.back || evt.getSource() ==joinpage.back){ 
 			theframe.setContentPane(thepanel); 
 			theframe.setVisible(true); 
-		}else if(evt.getSource() == characterspanel.gameplay){
+		}
+		
+		else if(evt.getSource() == characterspanel.gameplay){
 			blnPlay = true; 
 			theframe.setContentPane(monopolypanel);
-			theframe.setVisible(true); 
-			
+			theframe.setVisible(true); 	
 		}
 		
 		//JOINING A GAME
@@ -303,13 +307,15 @@ public class mainmenu implements ActionListener{
 			joinpage.strCode = joinpage.TF.getText(); 
 			System.out.println(joinpage.strCode); 
 			System.out.println(startpage.strAddress); 
+		}
 		
 		//CHARACTER PANEL		
-		}else if(evt.getSource() == characterspanel.gameplay){
+		else if(evt.getSource() == characterspanel.gameplay){
 			theframe.setContentPane(monopolypanel);
-			theframe.setVisible(true); 
-			
-		}//ENTERING NAME
+			theframe.setVisible(true); 	
+		}
+		
+		//ENTERING NAME
 		else if(evt.getSource() == startpage.TFname){
 			startpage.strName = startpage.TFname.getText();  	
 		}
@@ -321,7 +327,8 @@ public class mainmenu implements ActionListener{
 		else if(evt.getSource() == startpage.gameplay){
 			theframe.setContentPane(characterspanel);
 			theframe.setVisible(true); 
-		}else if(evt.getSource() == joinpage.gameplay){
+		}
+		else if(evt.getSource() == joinpage.gameplay){
 			theframe.setContentPane(characterspanel); 
 			theframe.setVisible(true); 
 			//-supersocket master
@@ -387,7 +394,8 @@ public class mainmenu implements ActionListener{
 				characterspanel.select3.setEnabled(false); 
 			// Symbolized that you sent the message. 
 				blnSent = true; 
-			}// If you are not the server use the client ssm to send text. 
+			}
+			// If you are not the server use the client ssm to send text. 
 			else if(blnServer == false){
 				ssm.sendText("select3"); 
 				System.out.println("client sent"); 
@@ -433,7 +441,8 @@ public class mainmenu implements ActionListener{
 				System.out.println(strChat);
 				monopolypanel.textarea.append("\nYou: "+strChat);
 				monopolypanel.textfield.setText("");
-			}else if(blnServer == false){
+			}
+			else if(blnServer == false){
 				System.out.println("I am the client"); 
 				strChat = monopolypanel.textfield.getText();
 				System.out.println(strChat);
@@ -454,15 +463,18 @@ public class mainmenu implements ActionListener{
 					characterspanel.select1.setEnabled(false); 
 					monopolypanel.intPlayerCount = monopolypanel.intPlayerCount + 1;
 					characterspanel.repaint();   
-				}else if(characterspanel.strData.equals("select2")){
+				}
+				else if(characterspanel.strData.equals("select2")){
 					monopolypanel.intPlayerCount = monopolypanel.intPlayerCount + 1;  
 					characterspanel.select2.setEnabled(false); 
 					characterspanel.repaint(); 
-				}else if(characterspanel.strData.equals("select3")){
+				}
+				else if(characterspanel.strData.equals("select3")){
 					characterspanel.select3.setEnabled(false); 
 					characterspanel.repaint(); 
 					monopolypanel.intPlayerCount = monopolypanel.intPlayerCount + 1;  
-				}else if(characterspanel.strData.equals("select4")){
+				}
+				else if(characterspanel.strData.equals("select4")){
 					characterspanel.select4.setEnabled(false); 
 					monopolypanel.intPlayerCount = monopolypanel.intPlayerCount + 1;  
 					characterspanel.repaint(); 
@@ -487,11 +499,13 @@ public class mainmenu implements ActionListener{
 					monopolypanel.intPlayerCount = monopolypanel.intPlayerCount + 1; 
 					characterspanel.select2.setEnabled(false); 
 					characterspanel.repaint(); 
-				}else if(characterspanel.strData.equals("select3")){
+				}
+				else if(characterspanel.strData.equals("select3")){
 					monopolypanel.intPlayerCount = monopolypanel.intPlayerCount + 1;
 					characterspanel.repaint();  	
 					characterspanel.select3.setEnabled(false); 
-				}else if(characterspanel.strData.equals("select4")){
+				}
+				else if(characterspanel.strData.equals("select4")){
 					monopolypanel.intPlayerCount = monopolypanel.intPlayerCount + 1; 
 					characterspanel.repaint(); 
 					characterspanel.select4.setEnabled(false); 
@@ -503,24 +517,26 @@ public class mainmenu implements ActionListener{
 			}
 			
 			// Check who is going : Reset compared to the number of players?
-			
 			if(monopolypanel.intTurn == 1 && intPiece == 1){
 				// how to know which information is being received?! 
 				monopolypanel.strColor = ssm.readText(); 
 				if(monopolypanel.strColor.equals("red") || monopolypanel.strColor.equals("blue") || monopolypanel.strColor.equals("yellow") || monopolypanel.strColor.equals("green")) {
 					intPiece = intPiece + 1; 
 				}
-			}else if(monopolypanel.intTurn == 1 && intPiece == 2){
+			}
+			else if(monopolypanel.intTurn == 1 && intPiece == 2){
 				String strPlayerX; 
 				strPlayerX = ssm.readText(); 
 				monopolypanel.intPlayerX1 = Integer.parseInt(strPlayerX); 
 				intPiece = intPiece + 1; 
-			}else if(monopolypanel.intTurn == 1 && intPiece == 3){
+			}
+			else if(monopolypanel.intTurn == 1 && intPiece == 3){
 				String strPlayerY; 
 				strPlayerY = ssm.readText(); 
 				monopolypanel.intPlayerY1 = Integer.parseInt(strPlayerY); 
 				intPiece = intPiece +1; 
-			}else if(monopolypanel.intTurn == 1 && intPiece == 4){
+			}
+			else if(monopolypanel.intTurn == 1 && intPiece == 4){
 				// updates whos turn it is. 
 				String strTurn; 
 				strTurn = ssm.readText(); 
@@ -609,7 +625,10 @@ public class mainmenu implements ActionListener{
 			int intCard;
 			int intNum;
 			
-			 strCard = strProperties[monopolypanel.intPropertyN][0];
+			//initialize
+			strCard = strProperties[monopolypanel.intPropertyN][0];
+			
+			//community chest
 			if (strCard.equalsIgnoreCase("community")){
 				intCard = (int) (Math.random()*30+1);
 				strCard = strCommunity[intCard][1];
@@ -617,7 +636,8 @@ public class mainmenu implements ActionListener{
 				
 				strNum = strCommunity[intCard][0];
 				System.out.println(strNum);
-				
+			
+			//chance	
 			}else if (strCard.equalsIgnoreCase("chance")){
 				intCard = (int) (Math.random()*30+1);
 				strCard = strChance[intCard][1];
@@ -630,7 +650,6 @@ public class mainmenu implements ActionListener{
 		//updating the animation panel using a timer
 		else if(evt.getSource() == thetimer){
 			monopolypanel.repaint(); 
-			
 			// determining whose turn it is!
 			if(monopolypanel.intPlayer == monopolypanel.intTurn){
 				monopolypanel.rolldie.setEnabled(true); 
@@ -650,17 +669,11 @@ public class mainmenu implements ActionListener{
 					// set button to false after rolling:
 					monopolypanel.rolldie.setEnabled(false); 
 				}
-			}else{
+			}
+			else{
 				//System.out.println("hehe false"); 
 				monopolypanel.rolldie.setEnabled(false); 
-			}
-			
-				
-			
-			
-			
-			
-			
+			}	
 		}
 		
 		//BUYING PROPERTIES
@@ -672,7 +685,8 @@ public class mainmenu implements ActionListener{
 			intMoney = intMoney-intPropertyCost;
 			monopolypanel.strMoney = intMoney+"";
 			monopolypanel.intMoney = intMoney;
-		}	
+		}
+			
 	}
 	
 	
