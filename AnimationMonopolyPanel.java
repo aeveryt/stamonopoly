@@ -32,13 +32,18 @@ public class AnimationMonopolyPanel extends JPanel{
 	int intYOUy = 650;
 	int intPlayerCount =0; 
 	int intPlayer = 0; 
-	int intCount; 
+	int intTurn = 1; 
 	
 	// indicate which colours were selected
 	boolean blnBlue;
 	boolean blnGreen; 
 	boolean blnYellow; 
 	boolean blnRed; 
+	
+	// Player one: 
+	String strColor1 = "green";  
+	int intPlayerX1 = -50;
+	int intPlayerY1 = -50; 
 	
 	
 	
@@ -111,7 +116,25 @@ public class AnimationMonopolyPanel extends JPanel{
 		// set up your character
 		g.fillRect(intYOUx, intYOUy, 25,25);
 		
-		// Dictate whose turn it is: While loop to keep this going? for rolling dice: 
+		// Other peoples characters: 
+		
+		// Player one set up: 
+		if(strColor1.equals("red")){
+			g.setColor(Color.red);
+		}else if(strColor1.equals("blue")){
+			g.setColor(Color.BLUE); 
+		}else if(strColor1.equals("yellow")){
+			g.setColor(Color.YELLOW); 
+		}else if(strColor1.equals("green")){
+			g.setColor(Color.GREEN); 
+		}
+		g.fillRect(intPlayerX1, intPlayerY1, 25,25);
+		
+		// Player two set up: 
+		
+		
+		
+		
 		
 		
 		

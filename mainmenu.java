@@ -23,6 +23,10 @@ public class mainmenu implements ActionListener{
 	public stamonopolycharacters characterspanel;
 	Timer thetimer;
 	
+	// Sending information over network variable 
+	int intPiece = 1; 
+	int intRoll = 1;  
+	
 	
 	//-Players
 	int intMoney = 1500;
@@ -330,19 +334,16 @@ public class mainmenu implements ActionListener{
 			monopolypanel.strColor = "red"; 
 			monopolypanel.intPlayer = monopolypanel.intPlayerCount;
 			System.out.println("you're player number:"+monopolypanel.intPlayer); 
+			System.out.println("this is the turn number: "+monopolypanel.intTurn); 
 			if(blnServer){ 
 				ssm.sendText("select1");
 				System.out.println("Server sent"); 
 				characterspanel.select1.setEnabled(false); 
-			// Symbolized that you sent the message. 
-				blnSent = true; 
 			}// If you are not the server use the client ssm to send text. 
 			else if(blnServer == false){
 				ssm.sendText("select1"); 
 				System.out.println("client sent"); 
 				characterspanel.select1.setEnabled(false); 
-			// Symbolized that you sent the message
-				blnSent = true; 
 			}
 		} 
 		//-choosing character 2
@@ -492,7 +493,36 @@ public class mainmenu implements ActionListener{
 				characterspanel.intPlayerN = monopolypanel.intPlayerCount; 
 				System.out.println(characterspanel.intPlayerN); 
 				characterspanel.repaint(); 
-			} 
+			}
+			
+			// Check who is going : Reset compared to the number of players?
+			
+			if(monopolypanel.intTurn == 1 && intPiece == 1){
+				// how to know which information is being received?! 
+				monopolypanel.strColor = ssm.readText(); 
+				if(monopolypanel.strColor.equals("red") || monopolypanel.strColor.equals("blue") || monopolypanel.strColor.equals("yellow") || monopolypanel.strColor.equals("green")) {
+					intPiece = intPiece + 1; 
+				}
+			}else if(monopolypanel.intTurn == 1 && intPiece == 2){
+				String strPlayerX; 
+				strPlayerX = ssm.readText(); 
+				monopolypanel.intPlayerX1 = Integer.parseInt(strPlayerX); 
+				intPiece = intPiece + 1; 
+			}else if(monopolypanel.intTurn == 1 && intPiece == 3){
+				String strPlayerY; 
+				strPlayerY = ssm.readText(); 
+				monopolypanel.intPlayerY1 = Integer.parseInt(strPlayerY); 
+				intPiece = intPiece +1; 
+			}else if(monopolypanel.intTurn == 1 && intPiece == 4){
+				// updates whos turn it is. 
+				String strTurn; 
+				strTurn = ssm.readText(); 
+				monopolypanel.intTurn = Integer.parseInt(strTurn); 
+			}
+			
+			
+			
+			 
 		
 			//System.out.println(blnServer); 
 			String strData; 
@@ -508,6 +538,8 @@ public class mainmenu implements ActionListener{
 			intdice2 = (int)(Math.random()*6+1); 
 			intdiesum = intdice1 + intdice2; 
 			
+			// make it even number
+			intRoll = intRoll*2; 
 			//send stuff to update location of your character 
 			// make if you get to a certain point the intYOUy is changed instead.
 			// it is not going up 
@@ -590,6 +622,37 @@ public class mainmenu implements ActionListener{
 		//updating the animation panel using a timer
 		else if(evt.getSource() == thetimer){
 			monopolypanel.repaint(); 
+			
+			// determining whose turn it is!
+			if(monopolypanel.intPlayer == monopolypanel.intTurn){
+				monopolypanel.rolldie.setEnabled(true); 
+				// sending colour
+				ssm.sendText(monopolypanel.strColor); 
+				// sending x-coordinate
+				ssm.sendText(monopolypanel.intYOUx+""); 
+				// sending y - coordinate
+				ssm.sendText(monopolypanel.intYOUy+""); 
+				// sending out text to say to change intTurn variable
+				if(intRoll%2 == 0){
+					System.out.println("I got here"); 
+					monopolypanel.intTurn = monopolypanel.intTurn +1; 
+					System.out.println(monopolypanel.intTurn); 
+					ssm.sendText(monopolypanel.intTurn+""); 
+					intRoll = intRoll + 1; 
+					// set button to false after rolling:
+					monopolypanel.rolldie.setEnabled(false); 
+				}
+			}else{
+				//System.out.println("hehe false"); 
+				monopolypanel.rolldie.setEnabled(false); 
+			}
+			
+				
+			
+			
+			
+			
+			
 		}
 		
 		//BUYING PROPERTIES
