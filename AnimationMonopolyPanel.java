@@ -33,7 +33,7 @@ public class AnimationMonopolyPanel extends JPanel{
 	int intPlayerCount =0; 
 	int intPlayer = 0; 
 	int intTurn = 1; 
-	String strYourColor; 
+	String strYourColor = ""; 
 	
 	// indicate which colours were selected
 	boolean blnBlue;

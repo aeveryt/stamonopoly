@@ -387,6 +387,7 @@ public class mainmenu implements ActionListener{
 			System.out.println("you're player number:"+monopolypanel.intPlayer); 
 			System.out.println("this is the turn number: "+monopolypanel.intTurn); 
 			monopolypanel.strColor = "yellow1"; 
+			System.out.println(monopolypanel.strColor); 
 			// If you are the server send this text.
 			if(blnServer){ 
 				ssm.sendText("select3");
