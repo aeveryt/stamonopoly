@@ -30,8 +30,15 @@ public class AnimationMonopolyPanel extends JPanel{
 	String strPropertyN = ""; 
 	int intYOUx =  650; 
 	int intYOUy = 650;
-	int intPlayerCount =1; 
+	int intPlayerCount =0; 
+	int intPlayer = 0; 
+	int intCount; 
 	
+	// indicate which colours were selected
+	boolean blnBlue;
+	boolean blnGreen; 
+	boolean blnYellow; 
+	boolean blnRed; 
 	
 	
 	
@@ -96,6 +103,7 @@ public class AnimationMonopolyPanel extends JPanel{
 			g.setColor(Color.GREEN); 
 		}
 		
+		
 		// draw the profile box in:
 		g.fillRect(1164,163,50,50); 
 		
@@ -103,7 +111,12 @@ public class AnimationMonopolyPanel extends JPanel{
 		// set up your character
 		g.fillRect(intYOUx, intYOUy, 25,25);
 		
+		// Dictate whose turn it is: While loop to keep this going? for rolling dice: 
+		
+		
+		
 	}
+	
 
 	//Constructor
 	public AnimationMonopolyPanel(){
@@ -140,6 +153,7 @@ public class AnimationMonopolyPanel extends JPanel{
 		back = new JButton("Back");
 		back.setLocation(867,655);
 		back.setSize(141,60);
+		
 		
 		try{
 			monopolyboard = ImageIO.read(new File("MonopolyGameBoard.png"));
