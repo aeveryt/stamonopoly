@@ -46,12 +46,22 @@ public class mainmenu implements ActionListener{
 		BufferedReader properties = null;
 		BufferedReader community = null;
 		BufferedReader chance = null;
+		
+		
 
 	//-Data Array
 		String strSplit[];
 		String strProperties[][] = new String[40][10];
 		String strCommunity [][] = new String[30][3];
 		String strChance [][] = new String[30][3];	
+		
+		
+		String strLine = "";
+		int intRow;
+		int intCol;
+		
+		int intChance;
+		int intCommunity;
 	
 	
 	//-Server 
@@ -768,7 +778,12 @@ public class mainmenu implements ActionListener{
 			monopolypanel.intPropertyN = monopolypanel.intPropertyN + intdiesum; 
 			
 			
-			
+			//Converting String into int 
+		for(intRow = 0; intRow < 30; intRow++){
+			//(amount of money a player may gain or lose)
+			intCommunity = Integer.parseInt(strCommunity[intRow][2]); 
+			intChance = Integer.parseInt(strChance[intRow][2]);
+		}
 			
 			//-Trying to load property names in:
 			//position
@@ -788,81 +803,79 @@ public class mainmenu implements ActionListener{
 			
 			
 			
-			
 			//initialize
 			strCard = strProperties[monopolypanel.intPropertyN][0];
 			
 			//community chest
 			if (strCard.equalsIgnoreCase("community")){
-				intNum = (int) (Math.random()*30+1);
+				intNum = (int) (Math.random()*29+0);
 				strCard = strCommunity[intNum][1];
 				
-				System.out.println(strCommunity[intNum][1]);// prints out what the community card says
+				//System.out.println(strCommunity[intNum][1]);// prints out what the community card says
 				
 				strNum = strCommunity[intNum][0];
 				intCard = Integer.parseInt(strNum);
-				System.out.println(intNum);
 				
 				if (intCard ==1){
-					intMoney = intMoney + 10;
+					intMoney = intMoney + intCommunity;
 				}else if(intCard == 2){
 					
 				}else if(intCard == 3){
-					intMoney = intMoney + 25;
+					intMoney = intMoney + intCommunity;
 				}else if(intCard == 4){
-					intMoney = intMoney + 50;
+					intMoney = intMoney + intCommunity;
 				}else if(intCard == 5){
-					
+					intMoney = intMoney + intCommunity;
 				}else if(intCard == 6){
-					
+					intMoney = intMoney + intCommunity;
 				}else if(intCard == 7){
-					
+					intMoney = intMoney + intCommunity;
 				}else if(intCard == 8){
-					
+					intMoney = intMoney + intCommunity;
 				}else if(intCard == 9){
-					
+					intMoney = intMoney + intCommunity;
 				}else if(intCard == 10){
-					
+					intMoney = intMoney + intCommunity;
 				}else if(intCard == 11){
-					
+					intMoney = intMoney + intCommunity;
 				}else if(intCard == 12){
-					
+					intMoney = intMoney + intCommunity;
 				}else if(intCard == 13){
-					
+					intMoney = intMoney + intCommunity;
 				}else if(intCard == 14){
-					
+					intMoney = intMoney + intCommunity;
 				}else if(intCard == 15){
-					
+					intMoney = intMoney + intCommunity;
 				}else if(intCard == 16){
-					
+					intMoney = intMoney + intCommunity;
 				}else if(intCard == 17){
-					
+					intMoney = intMoney + intCommunity;
 				}else if(intCard == 18){
-					
+					intMoney = intMoney + intCommunity;
 				}else if(intCard == 19){
-					
+					intMoney = intMoney + intCommunity;
 				}else if(intCard == 20){
-					
+					intMoney = intMoney + intCommunity;
 				}else if(intCard == 21){
-					
+					intMoney = intMoney + intCommunity;
 				}else if(intCard == 22){
-					
+					intMoney = intMoney + intCommunity;
 				}else if(intCard == 23){
-					
+					intMoney = intMoney + intCommunity;
 				}else if(intCard == 24){
-					
+					intMoney = intMoney + intCommunity;
 				}else if(intCard == 25){
-					
+					intMoney = intMoney + intCommunity;
 				}else if(intCard == 26){
-					
+					intMoney = intMoney + intCommunity;
 				}else if(intCard == 27){
-					
+					intMoney = intMoney + intCommunity;
 				}else if(intCard == 28){
-					
+					intMoney = intMoney + intCommunity;
 				}else if(intCard == 29){
-					
+					intMoney = intMoney + intCommunity;
 				}else if(intCard == 30){
-					
+					intMoney = intMoney + intCommunity;
 				}
 			
 			//chance	
@@ -1020,15 +1033,7 @@ public class mainmenu implements ActionListener{
 		//Variables and Initialize
 		properties = new BufferedReader(thefile);
 		community = new BufferedReader(communityfile);
-		chance = new BufferedReader(chancefile);
-		
-		String strLine = "";
-		int intRow;
-		int intCol;
-		
-		int intChance;
-		int intCommunity;
-		
+		chance = new BufferedReader(chancefile);	
 		
 		//Properties File
 		
@@ -1091,15 +1096,6 @@ public class mainmenu implements ActionListener{
 				strChance[intRow][intCol] = strSplit[intCol];
 			}
 		}
-		
-		//Converting String into int 
-		for(intRow = 0; intRow < 30; intRow++){
-			intCommunity = Integer.parseInt(strChance[intRow][2]);
-			intChance = Integer.parseInt(strChance[intRow][2]);
-			System.out.println(intChance);
-		}
-			
-			
 			
 
 		//Closing file
