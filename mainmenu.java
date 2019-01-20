@@ -53,7 +53,7 @@ public class mainmenu implements ActionListener{
 		String strSplit[];
 		String strProperties[][] = new String[40][10];
 		String strCommunity [][] = new String[30][3];
-		String strChance [][] = new String[30][3];	
+		String strChance [][] = new String[30][4];	
 		
 		
 		String strLine = "";
@@ -777,14 +777,15 @@ public class mainmenu implements ActionListener{
 			monopolypanel.strDiceSum = strDiceSum;
 			monopolypanel.intPropertyN = monopolypanel.intPropertyN + intdiesum; 
 			
-			int Array[] = new int[30];
+			int Array[] = new int[30]; //community
+			int Array2[] = new int[30]; // chance
 			//Converting String into int 
 		for(intRow = 0; intRow < 30; intRow++){
 			//(amount of money a player may gain or lose)
 			intCommunity = Integer.parseInt(strCommunity[intRow][2]); 
-			intChance = Integer.parseInt(strChance[intRow][2]);
+			intChance = Integer.parseInt(strChance[intRow][3]);
 			Array[intRow] = intCommunity;
-			
+			Array2[intRow] = intChance;
 		}
 			
 			//-Trying to load property names in:
@@ -1096,7 +1097,7 @@ public class mainmenu implements ActionListener{
 					System.out.println("false");
 			}
 				strSplit = strLine.split(",");
-			for (intCol = 0; intCol < 3; intCol++){
+			for (intCol = 0; intCol < 4; intCol++){
 				strChance[intRow][intCol] = strSplit[intCol];
 			}
 		}
@@ -1111,8 +1112,6 @@ public class mainmenu implements ActionListener{
 		}catch(IOException e){
 			System.out.println("CANNOT CLOSE FILE");
 		}
-		
-		
 		
 	
 		//set variables
