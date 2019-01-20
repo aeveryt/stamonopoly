@@ -546,6 +546,17 @@ public class mainmenu implements ActionListener{
 				monopolypanel.intTurn = Integer.parseInt(strTurn); 
 				System.out.println("This is the turn number: "+monopolypanel.intTurn); 
 				intPiece = 1; 
+				
+				// Resets turn number allowing a loop to form, if playercount = player turn number
+				if(monopolypanel.intPlayerCount == monopolypanel.intTurn){
+					ssm.sendText(""); 
+					ssm.sendText("-50"); 
+					ssm.sendText("-50"); 
+					ssm.sendText("1"); 
+				
+				}
+				
+				
 			}
 			
 			// code for second player: 
@@ -577,7 +588,108 @@ public class mainmenu implements ActionListener{
 				System.out.println("This is the turn number: "+monopolypanel.intTurn); 
 				intPiece = 1; 
 				
+				// Resets turn number allowing a loop to form, if playercount = player turn number
+				if(monopolypanel.intPlayerCount == monopolypanel.intTurn){
+					ssm.sendText(""); 
+					ssm.sendText("-50"); 
+					ssm.sendText("-50"); 
+					ssm.sendText("1"); 
+				
+				}
+				
+				
 			}
+			
+			
+			// code for third player: 
+			if(monopolypanel.intTurn == 3 && intPiece == 1){
+			System.out.println("testing" +monopolypanel.strColor); 
+				// how to know which information is being received?! 
+				if(monopolypanel.strColor.equals("red") || monopolypanel.strColor.equals("blue") || monopolypanel.strColor.equals("yellow") || monopolypanel.strColor.equals("green")) {
+					monopolypanel.strColor3 = ssm.readText(); 
+					intPiece = intPiece + 1; 
+				}
+			}
+			else if(monopolypanel.intTurn == 3 && intPiece == 2){
+				String strPlayerX; 
+				strPlayerX = ssm.readText(); 
+				monopolypanel.intPlayerX3 = Integer.parseInt(strPlayerX); 
+				intPiece = intPiece + 1; 
+			}
+			else if(monopolypanel.intTurn == 3 && intPiece == 3){
+				String strPlayerY; 
+				strPlayerY = ssm.readText(); 
+				monopolypanel.intPlayerY3 = Integer.parseInt(strPlayerY); 
+				intPiece = intPiece +1; 
+			}
+			else if(monopolypanel.intTurn == 3 && intPiece == 4){
+				// updates whos turn it is. 
+				String strTurn; 
+				strTurn = ssm.readText(); 
+				monopolypanel.intTurn = Integer.parseInt(strTurn); 
+				System.out.println("This is the turn number: "+monopolypanel.intTurn); 
+				intPiece = 1; 
+				
+				// Resets turn number allowing a loop to form, if playercount = player turn number
+				if(monopolypanel.intPlayerCount == monopolypanel.intTurn){
+					ssm.sendText(""); 
+					ssm.sendText("-50"); 
+					ssm.sendText("-50"); 
+					ssm.sendText("1"); 
+				
+				}
+				
+				
+			}
+			
+			// code for player four: 
+			if(monopolypanel.intTurn == 4 && intPiece == 1){
+			System.out.println("testing" +monopolypanel.strColor); 
+				// how to know which information is being received?! 
+				if(monopolypanel.strColor.equals("red") || monopolypanel.strColor.equals("blue") || monopolypanel.strColor.equals("yellow") || monopolypanel.strColor.equals("green")) {
+					monopolypanel.strColor4 = ssm.readText(); 
+					intPiece = intPiece + 1; 
+				}
+			}
+			else if(monopolypanel.intTurn == 4 && intPiece == 2){
+				String strPlayerX; 
+				strPlayerX = ssm.readText(); 
+				monopolypanel.intPlayerX4 = Integer.parseInt(strPlayerX); 
+				intPiece = intPiece + 1; 
+			}
+			else if(monopolypanel.intTurn == 4 && intPiece == 3){
+				String strPlayerY; 
+				strPlayerY = ssm.readText(); 
+				monopolypanel.intPlayerY4 = Integer.parseInt(strPlayerY); 
+				intPiece = intPiece +1; 
+			}
+			else if(monopolypanel.intTurn == 4 && intPiece == 4){
+				// updates whos turn it is. 
+				String strTurn; 
+				strTurn = ssm.readText(); 
+				monopolypanel.intTurn = Integer.parseInt(strTurn); 
+				System.out.println("This is the turn number: "+monopolypanel.intTurn); 
+				intPiece = 1; 
+				
+				// Resets turn number allowing a loop to form, if playercount = player turn number
+				if(monopolypanel.intPlayerCount == monopolypanel.intTurn){
+					ssm.sendText(""); 
+					ssm.sendText("-50"); 
+					ssm.sendText("-50"); 
+					ssm.sendText("1"); 
+				
+				}
+				
+			}
+			
+			// fifth code to reset the turn number if there are four players playing, the turn number will turn to this and reset the code
+			if(monopolypanel.intTurn == 5 && intPiece == 1){
+				monopolypanel.intTurn = 1; 
+				intPiece = 1;
+				// allowing button to reset
+				
+			}
+			
 			
 			
 			

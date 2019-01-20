@@ -51,6 +51,16 @@ public class AnimationMonopolyPanel extends JPanel{
 	int intPlayerX2 = -50; 
 	int intPlayerY2 = -50; 
 	
+	// Player 3: 
+	String strColor3 = ""; 
+	int intPlayerX3 = -50; 
+	int intPlayerY3 = -50; 
+	
+	// Player 4: 
+	String strColor4 = ""; 
+	int intPlayerX4 = -50; 
+	int intPlayerY4 = -50; 
+	
 	
 	
 	// JScrollPane scroll = new JScrollPane(textarea);
@@ -147,7 +157,6 @@ public class AnimationMonopolyPanel extends JPanel{
 		
 		// Player two set up: 
 		if(strColor2.equals("red")){
-			System.out.println("I'm supposed to be red"); 
 			g.setColor(Color.red);
 		}else if(strColor2.equals("blue")){
 			g.setColor(Color.BLUE); 
@@ -159,6 +168,31 @@ public class AnimationMonopolyPanel extends JPanel{
 		
 		g.fillRect(intPlayerX2, intPlayerY2, 25,25);
 		
+		// Player three set up: 
+		if(strColor3.equals("red")){
+			g.setColor(Color.red);
+		}else if(strColor3.equals("blue")){
+			g.setColor(Color.BLUE); 
+		}else if(strColor3.equals("yellow")){
+			g.setColor(Color.YELLOW); 
+		}else if(strColor3.equals("green")){
+			g.setColor(Color.GREEN); 
+		}
+		
+		g.fillRect(intPlayerX3, intPlayerY3, 25,25); 
+		
+		// Player four set up: 
+		if(strColor4.equals("red")){
+			g.setColor(Color.red);
+		}else if(strColor4.equals("blue")){
+			g.setColor(Color.BLUE); 
+		}else if(strColor4.equals("yellow")){
+			g.setColor(Color.YELLOW); 
+		}else if(strColor4.equals("green")){
+			g.setColor(Color.GREEN); 
+		}
+		
+		g.fillRect(intPlayerX4, intPlayerY4, 25,25); 
 	
 		
 		
