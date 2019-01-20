@@ -548,7 +548,7 @@ public class mainmenu implements ActionListener{
 				intPiece = 1; 
 				
 				// Resets turn number allowing a loop to form, if playercount = player turn number
-				if(monopolypanel.intPlayerCount == monopolypanel.intTurn){
+				if(monopolypanel.intPlayerCount > monopolypanel.intTurn){
 					ssm.sendText(""); 
 					ssm.sendText("-50"); 
 					ssm.sendText("-50"); 
@@ -589,7 +589,7 @@ public class mainmenu implements ActionListener{
 				intPiece = 1; 
 				
 				// Resets turn number allowing a loop to form, if playercount = player turn number
-				if(monopolypanel.intPlayerCount == monopolypanel.intTurn){
+				if(monopolypanel.intPlayerCount > monopolypanel.intTurn){
 					ssm.sendText(""); 
 					ssm.sendText("-50"); 
 					ssm.sendText("-50"); 
@@ -631,7 +631,7 @@ public class mainmenu implements ActionListener{
 				intPiece = 1; 
 				
 				// Resets turn number allowing a loop to form, if playercount = player turn number
-				if(monopolypanel.intPlayerCount == monopolypanel.intTurn){
+				if(monopolypanel.intPlayerCount > monopolypanel.intTurn){
 					ssm.sendText(""); 
 					ssm.sendText("-50"); 
 					ssm.sendText("-50"); 
@@ -672,7 +672,7 @@ public class mainmenu implements ActionListener{
 				intPiece = 1; 
 				
 				// Resets turn number allowing a loop to form, if playercount = player turn number
-				if(monopolypanel.intPlayerCount == monopolypanel.intTurn){
+				if(monopolypanel.intPlayerCount > monopolypanel.intTurn){
 					ssm.sendText(""); 
 					ssm.sendText("-50"); 
 					ssm.sendText("-50"); 
@@ -805,10 +805,8 @@ public class mainmenu implements ActionListener{
 				monopolypanel.rolldie.setEnabled(true); 
 			//	System.out.println("This is your colour" +monopolypanel.strColor); 
 				if(blnDice == true){
-					System.out.println("sent code over"); 
 					// sending colour
 					ssm.sendText(monopolypanel.strColor); 
-					System.out.println("sending colour as: "+monopolypanel.strColor); 
 					// sending x-coordinate
 					ssm.sendText(monopolypanel.intYOUx+""); 
 					// sending y - coordinate
