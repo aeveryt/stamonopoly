@@ -793,7 +793,7 @@ public class mainmenu implements ActionListener{
 		for(intRow = 0; intRow < 30; intRow++){
 			//(amount of money a player may gain or lose)
 			intCommunity = Integer.parseInt(strCommunity[intRow][2]); 
-			//intChance = Integer.parseInt(strChance[intRow][3]);
+			intChance = Integer.parseInt(strChance[intRow][3]);
 			Array[intRow] = intCommunity;
 			//Array2[intRow] = intChance;
 		}
@@ -1034,6 +1034,7 @@ public class mainmenu implements ActionListener{
 			for (intCol = 0; intCol < 3; intCol++){
 				
 				strCommunity[intRow][intCol] = strSplit[intCol];
+				
 			}
 		}
 		
@@ -1052,6 +1053,7 @@ public class mainmenu implements ActionListener{
 				strSplit = strLine.split(",");
 			for (intCol = 0; intCol < 4; intCol++){
 				strChance[intRow][intCol] = strSplit[intCol];
+				//System.out.println(strChance[intRow][intCol] = strSplit[intCol]);
 			}
 		}
 			
