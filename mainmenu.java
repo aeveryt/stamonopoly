@@ -345,6 +345,7 @@ public class mainmenu implements ActionListener{
 			monopolypanel.intPlayer = monopolypanel.intPlayerCount;
 			System.out.println("you're player number:"+monopolypanel.intPlayer); 
 			System.out.println("this is the turn number: "+monopolypanel.intTurn); 
+			System.out.println("this is your colour: "+monopolypanel.strColor); 
 			if(blnServer){ 
 				ssm.sendText("select1");
 				System.out.println("Server sent"); 
@@ -520,8 +521,8 @@ public class mainmenu implements ActionListener{
 			// Check who is going : Reset compared to the number of players?
 			if(monopolypanel.intTurn == 1 && intPiece == 1){
 				// how to know which information is being received?! 
-				monopolypanel.strColor = ssm.readText(); 
 				if(monopolypanel.strColor.equals("red") || monopolypanel.strColor.equals("blue") || monopolypanel.strColor.equals("yellow") || monopolypanel.strColor.equals("green")) {
+					monopolypanel.strColor = ssm.readText(); 
 					intPiece = intPiece + 1; 
 				}
 			}
@@ -542,6 +543,7 @@ public class mainmenu implements ActionListener{
 				String strTurn; 
 				strTurn = ssm.readText(); 
 				monopolypanel.intTurn = Integer.parseInt(strTurn); 
+				System.out.println("This is the turn number: "+monopolypanel.intTurn); 
 			}
 			
 			
@@ -654,10 +656,12 @@ public class mainmenu implements ActionListener{
 			// determining whose turn it is!
 			if(monopolypanel.intPlayer == monopolypanel.intTurn){
 				monopolypanel.rolldie.setEnabled(true); 
-				if(blnDice = true){
+			//	System.out.println("This is your colour" +monopolypanel.strColor); 
+				if(blnDice == true){
 					System.out.println("sent code over"); 
 					// sending colour
 					ssm.sendText(monopolypanel.strColor); 
+					System.out.println("sending colour as: "+monopolypanel.strColor); 
 					// sending x-coordinate
 					ssm.sendText(monopolypanel.intYOUx+""); 
 					// sending y - coordinate

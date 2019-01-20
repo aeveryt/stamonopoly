@@ -99,7 +99,7 @@ public class AnimationMonopolyPanel extends JPanel{
 		g.drawString("ICON:",1110,130);
 		g.drawString("MONEY: $" + strMoney,1110,260);
 		
-		if(strColor.equals("red1") || strColor.equals("red")){
+		if(strColor.equals("red1") || strYourColor.equals("red")){
 			g.setColor(Color.red);
 			strColor = "red"; 
 			strYourColor = "red"; 
@@ -137,6 +137,7 @@ public class AnimationMonopolyPanel extends JPanel{
 		}else if(strColor1.equals("green")){
 			g.setColor(Color.GREEN); 
 		}
+		
 		g.fillRect(intPlayerX1, intPlayerY1, 25,25);
 		
 		// Player two set up: 
