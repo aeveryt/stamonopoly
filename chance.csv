@@ -1,30 +1,30 @@
-1,Changed courses to take Advance functions. Advance to Data management.,0
-2,Titan of the Month pass GO and collect $200,200
-3,Congratulations! You made Honour Roll. Collect $50,50
-4,You won a free Breakfast from HEART collect $50,50
-5,Changed courses to take History. Advance to Iorio’s class,0
-6,Raised money for Terry Fox Run. Collect $100,100
-7,Went to the Arts Tour field trip. This card may be kept until needed or sold (free pass),0
-8,Went to look at artworks done by students. Advance to Fabora’s Class.,0
-9,Changed courses to take Chemistry. move to Freda’s class,0
-10,Changed Courses to take Com Sci. Move to Cadawas’ Class,0
-11,Got a letter from your teacher. Use this card to get out of the principal’s office!,0
-12,Finished your semester! Advance to Go.,0
-13,Take a walk to Ms. Lee’s Physics class. You may have the option to buy this property if unowned.,0
-14,Helped stacked the chairs after class. Collect $50 from each player!,50
-15,Walked to Ms Salvino’s English class. if passed Go Collect $200,0
-16,Late to school pay $25,25
-17,Handed in an assignment three days late and received a 0% pay a $50 fine,50
-18,Forgot to wear black shoes to school pay $25,25
-19,Didn’t bring money for civvies day pay $30,30
-20,Skipped more than 10 classes pay $50,50
-21,Cheated on a test and got caught! Pay $100,100
-22,Caught running in the hallways. pay a $30 fine,30
-23,Broke chemistry lab equipment pay $50,50
-24,Lost your math textbook pay $50,50
-25,Cellphone went off during an exam pay $30,30
-26,Skipped class pay $10,10
-27,Failed to hand in an assignment pay $15,15
-28,Forgot to use pen when writing out a physics lab pay $30,30
-29,Didn’t throw out garbage at lunch pay $30,30
-30,Got caught eating lunch in a stairway pay $20,20
+1,Changed courses to take Advance functions. Advance to Data management.,l,0
+2,Titan of the Month pass GO and collect $200,l,0
+3,Congratulations! You made Honour Roll. Collect $50,m,50
+4,You won a free Breakfast from HEART collect $50,m,50
+5,Changed courses to take History. Advance to Iorio’s class,l,0
+6,Raised money for Terry Fox Run. Collect $100,m,100
+7,Went to the Arts Tour field trip. This card may be kept until needed or sold (free pass),c,0
+8,Went to look at artworks done by students. Advance to Fabora’s Class.,l,0
+9,Changed courses to take Chemistry. move to Freda’s class,l,0
+10,Changed Courses to take Com Sci. Move to Cadawas’ Class,l,0
+11,Got a letter from your teacher. Use this card to get out of the principal’s office!,c,0
+12,Finished your semester! Advance to Go.,l,0
+13,Take a walk to Ms. Lee’s Physics class. You may have the option to buy this property if unowned.,l,0
+14,Helped stacked the chairs after class. Collect $50 from each player!,mp,50
+15,Walked to Ms Salvino’s English class. if passed Go Collect $200,l,0
+16,Late to school pay $25,m,25
+17,Handed in an assignment three days late and received a 0% pay a $50 fine,m,50
+18,Forgot to wear black shoes to school pay $25,m,25
+19,Didn’t bring money for civvies day pay $30,m,30
+20,Skipped more than 10 classes pay $50,m,50
+21,Cheated on a test and got caught! Pay $100,m,
+22,Caught running in the hallways. pay a $30 fine,m,30
+23,Broke chemistry lab equipment pay $50,m,50
+24,Lost your math textbook pay $50,m,50
+25,Cellphone went off during an exam pay $30,m,30
+26,Skipped class pay $10,m,10
+27,Failed to hand in an assignment pay $15,m,15
+28,Forgot to use pen when writing out a physics lab pay $30,m,30
+29,Didn’t throw out garbage at lunch pay $30,m,30
+30,Got caught eating lunch in a stairway pay $20,m,20
