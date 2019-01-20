@@ -548,7 +548,7 @@ public class mainmenu implements ActionListener{
 				intPiece = 1; 
 				
 				// Resets turn number allowing a loop to form, if playercount = player turn number
-				if(monopolypanel.intPlayerCount + 1 == monopolypanel.intTurn){
+				/*if(monopolypanel.intPlayerCount + 1 == monopolypanel.intTurn){
 					System.out.println("This is the statement to say i am or am not the server : "+blnServer); 
 					ssm.sendText("red"); 
 					ssm.sendText("50"); 
@@ -556,7 +556,7 @@ public class mainmenu implements ActionListener{
 					ssm.sendText("1"); 
 				
 				}
-				
+				*/
 				
 			}
 			
@@ -590,14 +590,14 @@ public class mainmenu implements ActionListener{
 				intPiece = 1; 
 				
 				// Resets turn number allowing a loop to form, if playercount = player turn number
-				if(monopolypanel.intPlayerCount +1 == monopolypanel.intTurn){
-					ssm.sendText("red"); 
-					ssm.sendText("50"); 
-					ssm.sendText("50"); 
+				/*if(monopolypanel.intPlayerCount +1 == monopolypanel.intTurn){
+					ssm.sendText(monopolypanel.strColor1); 
+					ssm.sendText(monopolypanel.intPlayerX1+""); 
+					ssm.sendText(monopolypanel.intPlayerY1+""); 
 					ssm.sendText("1"); 
 				
 				}
-				
+				*/
 				
 			}
 			
@@ -632,6 +632,7 @@ public class mainmenu implements ActionListener{
 				intPiece = 1; 
 				
 				// Resets turn number allowing a loop to form, if playercount = player turn number
+				/*
 				if(monopolypanel.intPlayerCount + 1 == monopolypanel.intTurn){
 					ssm.sendText("red"); 
 					ssm.sendText("50"); 
@@ -639,6 +640,7 @@ public class mainmenu implements ActionListener{
 					ssm.sendText("1"); 
 				
 				}
+				*/
 				
 				
 			}
@@ -673,14 +675,14 @@ public class mainmenu implements ActionListener{
 				intPiece = 1; 
 				
 				// Resets turn number allowing a loop to form, if playercount = player turn number
-				if(monopolypanel.intPlayerCount +1 == monopolypanel.intTurn){
+				/*if(monopolypanel.intPlayerCount +1 == monopolypanel.intTurn){
 					ssm.sendText("red"); 
 					ssm.sendText("50"); 
 					ssm.sendText("50"); 
 					ssm.sendText("1"); 
 				
 				}
-				
+				*/
 			}
 			
 			// fifth code to reset the turn number if there are four players playing, the turn number will turn to this and reset the code
@@ -800,7 +802,7 @@ public class mainmenu implements ActionListener{
 				}else if(intCard == 3){
 					intMoney = intMoney + 25;
 				}else if(intCard == 4){
-					intMoney = intmoney + 50;
+					intMoney = intMoney + 50;
 				}else if(intCard == 5){
 					
 				}else if(intCard == 6){
@@ -952,8 +954,16 @@ public class mainmenu implements ActionListener{
 						System.out.println("I got here"); 
 						monopolypanel.intTurn = monopolypanel.intTurn +1; 
 						System.out.println(monopolypanel.intTurn); 
-						ssm.sendText(monopolypanel.intTurn+""); 
-						intRoll = intRoll + 1; 
+						
+						
+						if(monopolypanel.intTurn < monopolypanel.intPlayerCount){
+							ssm.sendText(monopolypanel.intTurn+""); 
+							intRoll = intRoll + 1; 
+						}else if(monopolypanel.intTurn == monopolypanel.intPlayerCount){
+							ssm.sendText("1");
+							monopolypanel.intTurn = 1; 
+						}
+						
 						// set button to false after rolling:
 						monopolypanel.rolldie.setEnabled(false); 
 					}
