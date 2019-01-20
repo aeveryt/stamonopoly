@@ -46,6 +46,11 @@ public class AnimationMonopolyPanel extends JPanel{
 	int intPlayerX1 = -50;
 	int intPlayerY1 = -50; 
 	
+	// Player 2:
+	String strColor2 = "";
+	int intPlayerX2 = -50; 
+	int intPlayerY2 = -50; 
+	
 	
 	
 	// JScrollPane scroll = new JScrollPane(textarea);
@@ -141,11 +146,20 @@ public class AnimationMonopolyPanel extends JPanel{
 		g.fillRect(intPlayerX1, intPlayerY1, 25,25);
 		
 		// Player two set up: 
+		if(strColor2.equals("red")){
+			System.out.println("I'm supposed to be red"); 
+			g.setColor(Color.red);
+		}else if(strColor2.equals("blue")){
+			g.setColor(Color.BLUE); 
+		}else if(strColor2.equals("yellow")){
+			g.setColor(Color.YELLOW); 
+		}else if(strColor2.equals("green")){
+			g.setColor(Color.GREEN); 
+		}
 		
+		g.fillRect(intPlayerX2, intPlayerY2, 25,25);
 		
-		
-		
-		
+	
 		
 		
 	}

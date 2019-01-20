@@ -523,7 +523,7 @@ public class mainmenu implements ActionListener{
 			System.out.println("testing" +monopolypanel.strColor); 
 				// how to know which information is being received?! 
 				if(monopolypanel.strColor.equals("red") || monopolypanel.strColor.equals("blue") || monopolypanel.strColor.equals("yellow") || monopolypanel.strColor.equals("green")) {
-					monopolypanel.strColor = ssm.readText(); 
+					monopolypanel.strColor1 = ssm.readText(); 
 					intPiece = intPiece + 1; 
 				}
 			}
@@ -545,7 +545,40 @@ public class mainmenu implements ActionListener{
 				strTurn = ssm.readText(); 
 				monopolypanel.intTurn = Integer.parseInt(strTurn); 
 				System.out.println("This is the turn number: "+monopolypanel.intTurn); 
+				intPiece = 1; 
 			}
+			
+			// code for second player: 
+			if(monopolypanel.intTurn == 2 && intPiece == 1){
+			System.out.println("testing" +monopolypanel.strColor); 
+				// how to know which information is being received?! 
+				if(monopolypanel.strColor.equals("red") || monopolypanel.strColor.equals("blue") || monopolypanel.strColor.equals("yellow") || monopolypanel.strColor.equals("green")) {
+					monopolypanel.strColor2 = ssm.readText(); 
+					intPiece = intPiece + 1; 
+				}
+			}
+			else if(monopolypanel.intTurn == 2 && intPiece == 2){
+				String strPlayerX; 
+				strPlayerX = ssm.readText(); 
+				monopolypanel.intPlayerX2 = Integer.parseInt(strPlayerX); 
+				intPiece = intPiece + 1; 
+			}
+			else if(monopolypanel.intTurn == 2 && intPiece == 3){
+				String strPlayerY; 
+				strPlayerY = ssm.readText(); 
+				monopolypanel.intPlayerY2 = Integer.parseInt(strPlayerY); 
+				intPiece = intPiece +1; 
+			}
+			else if(monopolypanel.intTurn == 2 && intPiece == 4){
+				// updates whos turn it is. 
+				String strTurn; 
+				strTurn = ssm.readText(); 
+				monopolypanel.intTurn = Integer.parseInt(strTurn); 
+				System.out.println("This is the turn number: "+monopolypanel.intTurn); 
+				intPiece = 1; 
+				
+			}
+			
 			
 			
 			
@@ -655,6 +688,7 @@ public class mainmenu implements ActionListener{
 		else if(evt.getSource() == thetimer){
 			monopolypanel.repaint(); 
 			// determining whose turn it is!
+			
 			if(monopolypanel.intPlayer == monopolypanel.intTurn){
 				monopolypanel.rolldie.setEnabled(true); 
 			//	System.out.println("This is your colour" +monopolypanel.strColor); 
