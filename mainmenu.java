@@ -806,6 +806,7 @@ public class mainmenu implements ActionListener{
 			int intMoneyChance; //money affected from chance
 			int intCard; // card that is randomly chosen
 			int intNum; // random num generated.
+			int intLength; // measure the number of letters in a string
 
 			
 			//initialize
@@ -813,12 +814,17 @@ public class mainmenu implements ActionListener{
 			
 			//community chest
 			if (strCard.equalsIgnoreCase("community")){
+				monopolypanel.strCard = "community card";
 				intNum = (int) (Math.random()*29+0);
 				strCard = strCommunity[intNum][1];
 				
 				System.out.println(strCommunity[intNum][1]);// prints out what the community card says
 				
-				monopolypanel.strCommunityCard = strCommunity[intNum][1];
+				monopolypanel.strCardinfo = strCommunity[intNum][1];
+				intLength = monopolypanel.strCardinfo.length();
+				
+				System.out.println("The number of substrings in this card is "+ intLength);
+				
 				
 				strNum = strCommunity[intNum][0];
 				intCard = Integer.parseInt(strNum);
@@ -888,15 +894,17 @@ public class mainmenu implements ActionListener{
 			
 			//chance	
 			}else if (strCard.equalsIgnoreCase("chance")){
+				monopolypanel.strCard = "chance";
 				// generates random card number
 				intNum = (int) (Math.random()*30+1);
 				// prints out what the community card says
 				strCard = strChance[intNum][1];
-				monopolypanel.strChanceCard = strCard;
+				monopolypanel.strCardinfo = strCard;
 				System.out.println(strChance[intNum][1]);
 				//check if it affects money or location
 				strCheck = strChance[intNum][2].substring(0,1);
 				System.out.println(strCheck);
+				
 				//if statements
 				//-money
 				if(strCheck.equalsIgnoreCase("l")){
@@ -909,6 +917,11 @@ public class mainmenu implements ActionListener{
 					intMoney = intMoney + intMoneyChance;
 					monopolypanel.intMoney = intMoney;
 				}
+				
+				monopolypanel.strCardinfo = strChance[intNum][1];
+				intLength = monopolypanel.strCardinfo.length();
+				
+				System.out.println("The number of substrings in this card is "+ intLength);
 			}
 			
 		}
