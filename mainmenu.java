@@ -339,6 +339,7 @@ public class mainmenu implements ActionListener{
 		}
 		//-choosing character 1
 		else if(evt.getSource() == characterspanel.select1){ 
+			characterspanel.gameplay.setEnabled(true); 
 			monopolypanel.intPlayerCount = monopolypanel.intPlayerCount + 1;
 			// If you are the server send this text.
 			monopolypanel.strColor = "red1"; 
@@ -359,6 +360,7 @@ public class mainmenu implements ActionListener{
 		} 
 		//-choosing character 2
 		else if(evt.getSource() == characterspanel.select2){ 
+			characterspanel.gameplay.setEnabled(true); 
 			monopolypanel.intPlayerCount = monopolypanel.intPlayerCount + 1;
 			monopolypanel.intPlayer = monopolypanel.intPlayerCount;
 			monopolypanel.strColor = "blue1";  
@@ -382,6 +384,7 @@ public class mainmenu implements ActionListener{
 		}
 		//-choosing character 3
 		else if(evt.getSource() == characterspanel.select3){ 
+			characterspanel.gameplay.setEnabled(true); 
 			monopolypanel.intPlayerCount = monopolypanel.intPlayerCount + 1;
 			monopolypanel.intPlayer = monopolypanel.intPlayerCount;
 			System.out.println(monopolypanel.intPlayer);
@@ -409,6 +412,7 @@ public class mainmenu implements ActionListener{
 		//-choosing character 4
 		else if(evt.getSource() == characterspanel.select4){
 			monopolypanel.strColor = "green1"; 
+			characterspanel.gameplay.setEnabled(true); 
 			monopolypanel.intPlayerCount = monopolypanel.intPlayerCount + 1; 
 			monopolypanel.intPlayer = monopolypanel.intPlayerCount;
 			System.out.println("you're player number:"+monopolypanel.intPlayer); 
@@ -1151,6 +1155,7 @@ public class mainmenu implements ActionListener{
 		characterspanel.select3.addActionListener(this); 
 		characterspanel.select4.addActionListener(this); 
 		characterspanel.gameplay.addActionListener(this); 
+		characterspanel.gameplay.setEnabled(false); 
 		
 		// PLAY PAGE: 
 		monopolypanel.setLayout(null); 
