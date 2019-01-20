@@ -94,7 +94,7 @@ public class AnimationMonopolyPanel extends JPanel{
 		g.fillRect(724,229,374,40);
 		g.setFont(text);
 		g.setColor(Color.BLACK);
-		g.drawString("it is " + strPlayerTurn + " Turn",725,248);
+		g.drawString("it is " + strPlayerTurn + "'s Turn",725,248);
 		g.setColor(Color.WHITE);
 		
 		//cards

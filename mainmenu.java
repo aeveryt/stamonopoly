@@ -317,10 +317,14 @@ public class mainmenu implements ActionListener{
 		
 		//ENTERING NAME
 		else if(evt.getSource() == startpage.TFname){
-			startpage.strName = startpage.TFname.getText();  	
+			startpage.strName = startpage.TFname.getText();  
+			monopolypanel.strPlayerTurn = startpage.strName;
+				
 		}
 		else if(evt.getSource() == joinpage.TFname){
-			joinpage.strName = joinpage.TFname.getText(); 	
+			joinpage.strName = joinpage.TFname.getText();
+			monopolypanel.strPlayerTurn = joinpage.strName;
+			 	
 		}
 		
 		//CHARACTERS PAGE 
@@ -344,8 +348,6 @@ public class mainmenu implements ActionListener{
 			// If you are the server send this text.
 			monopolypanel.strColor = "red1"; 
 			monopolypanel.intPlayer = monopolypanel.intPlayerCount;
-			monopolypanel.strPlayerTurn = startpage.strName;
-			System.out.println(monopolypanel.strPlayerTurn);
 			System.out.println("you're player number:"+monopolypanel.intPlayer); 
 			System.out.println("this is the turn number: "+monopolypanel.intTurn); 
 			System.out.println("this is your colour: "+monopolypanel.strColor); 
