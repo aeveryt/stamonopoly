@@ -1,26 +1,26 @@
-Go Space,null,0,200,0,0,0,0,0,false
+Go Space,null,0,200,0,0,0,0,0,true
 Geography,Chalmers,60,2,20,60,180,450,30,false
-Community Chest,null,0,0,0,0,0,0,0,false
+Community Chest,null,0,0,0,0,0,0,0,true
 History,Iorio,60,4,20,60,180,450,50,false
-Course Selection,null,80,0,0,0,0,0,0,false
+Course Selection,null,80,0,0,0,0,0,0,true
 Guidance,Aranha,200,25,50,100,200,100,0,false
 Visual Arts,Fabroa,100,6,30,90,270,550,50,false
-Chance,null,0,0,0,0,0,0,0,false
+Chance,null,0,0,0,0,0,0,0,true
 Music,Pezzelato,100,6,30,90,270,550,59,false
 Drama,Devlin-Foley,120,8,40,100,300,600,60,false
-Principal's Office,null,0,0,0,0,0,0,0,false
+Principal's Office,null,0,0,0,0,0,0,0,true
 Accounting,Adorante,140,10,50,150,450,750,70,false
 Student Council,null,150,4,0,10,0,0,75,false
 Marketing,Brizzi,140,10,50,150,450,750,70,false
 Business Leadership,Giantonnio,160,12,60,260,500,900,80,false
 Guidance,Tucci,200,25,50,100,200,100,0,false
 Religion,Fitzsimmons,180,14,70,200,550,950,90,false
-Community Chest,0,0,0,0,0,0,0,0,0,false
+Community Chest,0,0,0,0,0,0,0,0,0,true
 World Religions,LaBarbara,180,14,70,200,550,950,90,false
 Philosphy,Hoffman,200,16,80,220,600,800,100,false
-Free Parking,null,0,0,0,0,0,0,0,false
+Free Parking,null,0,0,0,0,0,0,0,true
 Indigenous Studies,Pirrello,220,18,90,250,700,1050,110,false
-Chance,null,0,0,0,0,0,0,0,false
+Chance,null,0,0,0,0,0,0,0,true
 Writer's Craft,Ratchford,220,18,90,250,700,875,110,false
 English,Salvino,240,20,100,300,750,1100,120,false
 Guidance,Pilleggi,200,25,50,100,200,100,0,false
@@ -28,13 +28,13 @@ Advanced Functions,Lee,260,22,110,330,800,1150,130,false
 Data Management,DiDonato,260,22,110,330,800,1150,130,false
 Athletic Council,null,150,4,0,10,0,0,75,false
 Calculus and Vectors,Burchat,280,24,120,350,850,1025,140,false
-Go To Principal's Office,null,0,0,0,0,0,0,0,false
+Go To Principal's Office,null,0,0,0,0,0,0,0,true
 Biology,Coletta,300,26,130,390,900,1275,150,false
 Chemistry,Freda,300,26,130,390,900,1275,150,false
-Community,null,0,0,0,0,0,0,0,false
+Community,null,0,0,0,0,0,0,0,true
 Physics,Lee,320,28,150,450,1000,1400,160,false
 Guidance,Ms.Lowe,200,25,50,100,200,100,0,false
-Chance,null,0,0,0,0,0,0,0,false
+Chance,null,0,0,0,0,0,0,0,true
 Tech Design,Ciampa,350,35,175,500,110,1500,175,false
-Uniform Fees,null,75,0,0,0,0,0,0,false
+Uniform Fees,null,75,0,0,0,0,0,0,true
 Computer Science,Cadawas,400,50,200,600,1400,2000,200,false
