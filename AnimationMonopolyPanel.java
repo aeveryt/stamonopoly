@@ -68,7 +68,7 @@ public class AnimationMonopolyPanel extends JPanel{
 	
 	//Methods
 	public void paintComponent(Graphics g){
-		g.setColor(Color.GRAY); 
+		g.setColor(new Color(192,225,175)); 
 		g.fillRect(0,0,1280,720); 
 		g.drawImage(monopolyboard,-260,-3,null);
 		
