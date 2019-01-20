@@ -550,7 +550,7 @@ public class mainmenu implements ActionListener{
 				// Resets turn number allowing a loop to form, if playercount = player turn number
 				if(monopolypanel.intPlayerCount + 1 == monopolypanel.intTurn){
 					System.out.println("This is the statement to say i am or am not the server : "+blnServer); 
-					ssm.sendText("unicorn"); 
+					ssm.sendText("red"); 
 					ssm.sendText("50"); 
 					ssm.sendText("50"); 
 					ssm.sendText("1"); 
@@ -591,7 +591,7 @@ public class mainmenu implements ActionListener{
 				
 				// Resets turn number allowing a loop to form, if playercount = player turn number
 				if(monopolypanel.intPlayerCount +1 == monopolypanel.intTurn){
-					ssm.sendText("sparkly"); 
+					ssm.sendText("red"); 
 					ssm.sendText("50"); 
 					ssm.sendText("50"); 
 					ssm.sendText("1"); 
@@ -633,7 +633,7 @@ public class mainmenu implements ActionListener{
 				
 				// Resets turn number allowing a loop to form, if playercount = player turn number
 				if(monopolypanel.intPlayerCount + 1 == monopolypanel.intTurn){
-					ssm.sendText(""); 
+					ssm.sendText("red"); 
 					ssm.sendText("50"); 
 					ssm.sendText("50"); 
 					ssm.sendText("1"); 
@@ -674,7 +674,7 @@ public class mainmenu implements ActionListener{
 				
 				// Resets turn number allowing a loop to form, if playercount = player turn number
 				if(monopolypanel.intPlayerCount +1 == monopolypanel.intTurn){
-					ssm.sendText(""); 
+					ssm.sendText("red"); 
 					ssm.sendText("50"); 
 					ssm.sendText("50"); 
 					ssm.sendText("1"); 
