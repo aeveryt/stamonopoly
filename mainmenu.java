@@ -654,21 +654,24 @@ public class mainmenu implements ActionListener{
 			// determining whose turn it is!
 			if(monopolypanel.intPlayer == monopolypanel.intTurn){
 				monopolypanel.rolldie.setEnabled(true); 
-				// sending colour
-				ssm.sendText(monopolypanel.strColor); 
-				// sending x-coordinate
-				ssm.sendText(monopolypanel.intYOUx+""); 
-				// sending y - coordinate
-				ssm.sendText(monopolypanel.intYOUy+""); 
-				// sending out text to say to change intTurn variable
-				if(intRoll%2 == 0 && blnPlay == true && blnDice == true){
-					System.out.println("I got here"); 
-					monopolypanel.intTurn = monopolypanel.intTurn +1; 
-					System.out.println(monopolypanel.intTurn); 
-					ssm.sendText(monopolypanel.intTurn+""); 
-					intRoll = intRoll + 1; 
-					// set button to false after rolling:
-					monopolypanel.rolldie.setEnabled(false); 
+				if(blnDice = true){
+					System.out.println("sent code over"); 
+					// sending colour
+					ssm.sendText(monopolypanel.strColor); 
+					// sending x-coordinate
+					ssm.sendText(monopolypanel.intYOUx+""); 
+					// sending y - coordinate
+					ssm.sendText(monopolypanel.intYOUy+""); 
+					// sending out text to say to change intTurn variable
+					if(intRoll%2 == 0 && blnPlay == true && blnDice == true){
+						System.out.println("I got here"); 
+						monopolypanel.intTurn = monopolypanel.intTurn +1; 
+						System.out.println(monopolypanel.intTurn); 
+						ssm.sendText(monopolypanel.intTurn+""); 
+						intRoll = intRoll + 1; 
+						// set button to false after rolling:
+						monopolypanel.rolldie.setEnabled(false); 
+					}
 				}
 			}
 			else{
