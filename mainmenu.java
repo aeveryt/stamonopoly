@@ -951,15 +951,17 @@ public class mainmenu implements ActionListener{
 					ssm.sendText(monopolypanel.intYOUy+""); 
 					// sending out text to say to change intTurn variable
 					if(intRoll%2 == 0 && blnPlay == true && blnDice == true){
-						System.out.println("I got here"); 
+						 
 						monopolypanel.intTurn = monopolypanel.intTurn +1; 
-						System.out.println(monopolypanel.intTurn); 
+						System.out.println("Turn number before change over: "+monopolypanel.intTurn); 
+						System.out.println("Player count: "+monopolypanel.intPlayerCount); 
 						
 						
-						if(monopolypanel.intTurn < monopolypanel.intPlayerCount){
+						if(monopolypanel.intTurn < monopolypanel.intPlayerCount+1){
 							ssm.sendText(monopolypanel.intTurn+""); 
 							intRoll = intRoll + 1; 
-						}else if(monopolypanel.intTurn == monopolypanel.intPlayerCount){
+							System.out.println("I got here");
+						}else if(monopolypanel.intTurn == monopolypanel.intPlayerCount +1){
 							ssm.sendText("1");
 							monopolypanel.intTurn = 1; 
 						}
