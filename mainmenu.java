@@ -574,8 +574,6 @@ public class mainmenu implements ActionListener{
 				
 			}
 			
-			
-			
 			// code for second player: 
 			if(monopolypanel.intTurn == 2 && intPiece == 1){
 			System.out.println("testing" +monopolypanel.strColor); 
@@ -801,6 +799,7 @@ public class mainmenu implements ActionListener{
 			String strCard;
 			String strNum;
 			String strCheck; //check if the card affects the location or money
+		
 			int intLocation; //if it affects location
 			int intMoneyChance; //money affected from chance
 			int intCard; // card that is randomly chosen
@@ -821,6 +820,13 @@ public class mainmenu implements ActionListener{
 				
 				monopolypanel.strCardinfo = strCommunity[intNum][1];
 				intLength = monopolypanel.strCardinfo.length();
+				
+				monopolypanel.strDisplayLength = monopolypanel.strCardinfo.substring(0,intLength - 10);
+				System.out.println(monopolypanel.strDisplayLength);
+					
+				/*
+				 * 
+				 */
 				
 				System.out.println("The number of substrings in this card is "+ intLength);
 				
@@ -919,6 +925,9 @@ public class mainmenu implements ActionListener{
 				
 				monopolypanel.strCardinfo = strChance[intNum][1];
 				intLength = monopolypanel.strCardinfo.length();
+				
+				monopolypanel.strDisplayLength = monopolypanel.strCardinfo.substring(0,intLength - 10);
+				System.out.println(monopolypanel.strDisplayLength);
 				
 				System.out.println("The number of substrings in this card is "+ intLength);
 			}
