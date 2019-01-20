@@ -102,8 +102,8 @@ public class AnimationMonopolyPanel extends JPanel{
 		g.fillRect(844,108,255,115);
 		g.setFont(text);
 		g.setColor(Color.BLACK);
-		g.drawString (strCard,855,125);
-		g.drawString(strDisplayLength,855,145);
+		g.drawString (strCard,850,125);
+		g.drawString(strDisplayLength,850,145);
 		
 		g.setColor(Color.WHITE);
 		

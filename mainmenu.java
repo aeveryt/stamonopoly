@@ -818,10 +818,9 @@ public class mainmenu implements ActionListener{
 				
 				System.out.println(strCommunity[intNum][1]);// prints out what the community card says
 				
-				monopolypanel.strCardinfo = strCommunity[intNum][1];
-				intLength = monopolypanel.strCardinfo.length();
+				intLength = strCommunity[intNum][1].length();
 				
-				monopolypanel.strDisplayLength = monopolypanel.strCardinfo.substring(0,intLength - 10);
+				monopolypanel.strDisplayLength = strCommunity[intNum][1].substring(0,intLength - 25);
 				System.out.println(monopolypanel.strDisplayLength);
 					
 				/*
@@ -923,10 +922,9 @@ public class mainmenu implements ActionListener{
 					monopolypanel.intMoney = intMoney;
 				}
 				
-				monopolypanel.strCardinfo = strChance[intNum][1];
-				intLength = monopolypanel.strCardinfo.length();
+				intLength = strChance[intNum][1].length();
 				
-				monopolypanel.strDisplayLength = monopolypanel.strCardinfo.substring(0,intLength - 10);
+				monopolypanel.strDisplayLength = strChance[intNum][1].substring(0,intLength - 30);
 				System.out.println(monopolypanel.strDisplayLength);
 				
 				System.out.println("The number of substrings in this card is "+ intLength);
