@@ -814,6 +814,8 @@ public class mainmenu implements ActionListener{
 				
 				System.out.println(strCommunity[intNum][1]);// prints out what the community card says
 				
+				monopolypanel.strCommunityCard = strCommunity[intNum][1];
+				
 				strNum = strCommunity[intNum][0];
 				intCard = Integer.parseInt(strNum);
 				

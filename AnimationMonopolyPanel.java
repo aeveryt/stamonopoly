@@ -9,6 +9,8 @@ public class AnimationMonopolyPanel extends JPanel{
 	//Properties
 	
 	BufferedImage monopolyboard;
+	BufferedImage communitycard;
+	BufferedImage chancecard;
 	JTextField textfield = new JTextField();
 	Timer timer;
 	JTextArea textarea = new JTextArea();
@@ -24,6 +26,8 @@ public class AnimationMonopolyPanel extends JPanel{
 	String strDice1 = "";
 	String strDice2 = ""; 
 	String strDiceSum = "";
+	String strCommunityCard = "";
+	String strChanceCard = "";
 	int intMoney = 1500;
 	String strMoney = ""+intMoney;
 	int intPropertyN = 0; 
@@ -90,6 +94,11 @@ public class AnimationMonopolyPanel extends JPanel{
 		
 		//cards
 		g.fillRect(844,108,255,115);
+		g.setFont(text);
+		g.setColor(Color.BLACK);
+		g.drawString(strCommunityCard,850,125);
+		
+		g.setColor(Color.WHITE);
 		
 		//profile
 		g.fillRect(1104,108,170,160);
