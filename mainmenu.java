@@ -36,7 +36,6 @@ public class mainmenu implements ActionListener{
 	int intPropertyCost = 0;
 	
 	//-File Variables 
-		
 		//-board
 		boolean GoSpace = true;
 		boolean blnFileFail = false;
@@ -46,28 +45,19 @@ public class mainmenu implements ActionListener{
 		BufferedReader properties = null;
 		BufferedReader community = null;
 		BufferedReader chance = null;
-		
-		
-
-	//-Data Array
+		//-Data Array
 		String strSplit[];
 		String strProperties[][] = new String[40][10];
 		String strCommunity [][] = new String[30][3];
 		String strChance [][] = new String[30][4];	
-		
-		
 		String strLine = "";
 		int intRow;
 		int intCol;
-		
 		int intChance;
 		int intCommunity;
-	
-	
 	//-Server 
 	boolean blnServer; 
 	boolean blnSent = false;
-	
 	//-Dice 
 	int intdice1; 
 	int intdice2;
@@ -1008,7 +998,6 @@ public class mainmenu implements ActionListener{
 		chance = new BufferedReader(chancefile);	
 		
 		//Properties File
-		
 		/* [0] Subject
 		 * [1] Teacher
 		 * [2] Price
@@ -1056,7 +1045,8 @@ public class mainmenu implements ActionListener{
 		//Organized as Card Number, Statement, Money given or owed.
 		/* [0] - Card Number
 		 * [1] - Statement 
-		 * [2] - Effect of the card
+		 * [2] - Effect of the card (location/money check)
+		 * [3] - Money or Location effect (cost/location)
 		 * */
 		for (intRow = 0; intRow < 30; intRow ++){
 				try{
