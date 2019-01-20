@@ -768,30 +768,165 @@ public class mainmenu implements ActionListener{
 			}
 			monopolypanel.strPropertyN = strProperties[monopolypanel.intPropertyN][0]; 	
 			monopolypanel.strMoney = intMoney+"";
+			
 			//-Landing on chance or community cards
 			
 			String strCard;
 			String strNum;
-			int intCard;
-			int intNum;
+			int intCard; // card that is randomly chosen
+			int intNum; // random num generated.
+			
+			
+			
 			
 			//initialize
 			strCard = strProperties[monopolypanel.intPropertyN][0];
 			
 			//community chest
 			if (strCard.equalsIgnoreCase("community")){
-				intCard = (int) (Math.random()*30+1);
-				strCard = strCommunity[intCard][1];
-				System.out.println(strCommunity[intCard][1]);// prints out what the community card says
+				intNum = (int) (Math.random()*30+1);
+				strCard = strCommunity[intNum][1];
 				
-				strNum = strCommunity[intCard][0];
-				System.out.println(strNum);
+				System.out.println(strCommunity[intNum][1]);// prints out what the community card says
+				
+				strNum = strCommunity[intNum][0];
+				intCard = Integer.parseInt(strNum);
+				System.out.println(intNum);
+				
+				if (intCard ==1){
+					intMoney = intMoney + 10;
+				}else if(intCard == 2){
+					
+				}else if(intCard == 3){
+					intMoney = intMoney + 25;
+				}else if(intCard == 4){
+					intMoney = intmoney + 50;
+				}else if(intCard == 5){
+					
+				}else if(intCard == 6){
+					
+				}else if(intCard == 7){
+					
+				}else if(intCard == 8){
+					
+				}else if(intCard == 9){
+					
+				}else if(intCard == 10){
+					
+				}else if(intCard == 11){
+					
+				}else if(intCard == 12){
+					
+				}else if(intCard == 13){
+					
+				}else if(intCard == 14){
+					
+				}else if(intCard == 15){
+					
+				}else if(intCard == 16){
+					
+				}else if(intCard == 17){
+					
+				}else if(intCard == 18){
+					
+				}else if(intCard == 19){
+					
+				}else if(intCard == 20){
+					
+				}else if(intCard == 21){
+					
+				}else if(intCard == 22){
+					
+				}else if(intCard == 23){
+					
+				}else if(intCard == 24){
+					
+				}else if(intCard == 25){
+					
+				}else if(intCard == 26){
+					
+				}else if(intCard == 27){
+					
+				}else if(intCard == 28){
+					
+				}else if(intCard == 29){
+					
+				}else if(intCard == 30){
+					
+				}
 			
 			//chance	
 			}else if (strCard.equalsIgnoreCase("chance")){
-				intCard = (int) (Math.random()*30+1);
-				strCard = strChance[intCard][1];
-				System.out.println(strChance[intCard][1]); //prints out what chance card says
+				intNum = (int) (Math.random()*30+1);
+				strCard = strChance[intNum][1];
+				
+				System.out.println(strChance[intNum][1]);// prints out what the community card says
+				
+				strNum = strChance[intNum][0];
+				intCard = Integer.parseInt(strNum);
+				System.out.println(intNum);
+				
+				if (intCard ==1){
+					intMoney = intMoney + 10;
+				}else if(intCard == 2){
+					
+				}else if(intCard == 3){
+					
+				}else if(intCard == 4){
+					
+				}else if(intCard == 5){
+					
+				}else if(intCard == 6){
+					
+				}else if(intCard == 7){
+					
+				}else if(intCard == 8){
+					
+				}else if(intCard == 9){
+					
+				}else if(intCard == 10){
+					
+				}else if(intCard == 11){
+					
+				}else if(intCard == 12){
+					
+				}else if(intCard == 13){
+					
+				}else if(intCard == 14){
+					
+				}else if(intCard == 15){
+					
+				}else if(intCard == 16){
+					
+				}else if(intCard == 17){
+					
+				}else if(intCard == 18){
+					
+				}else if(intCard == 19){
+					
+				}else if(intCard == 20){
+					
+				}else if(intCard == 21){
+					
+				}else if(intCard == 22){
+					
+				}else if(intCard == 23){
+					
+				}else if(intCard == 24){
+					
+				}else if(intCard == 25){
+					
+				}else if(intCard == 26){
+					
+				}else if(intCard == 27){
+					
+				}else if(intCard == 28){
+					
+				}else if(intCard == 29){
+					
+				}else if(intCard == 30){
+					
+				}
 			}
 			
 		}
@@ -867,6 +1002,9 @@ public class mainmenu implements ActionListener{
 		int intRow;
 		int intCol;
 		
+		int intChance;
+		int intCommunity;
+		
 		
 		//Properties File
 		
@@ -929,6 +1067,16 @@ public class mainmenu implements ActionListener{
 				strChance[intRow][intCol] = strSplit[intCol];
 			}
 		}
+		
+		//Converting String into int 
+		for(intRow = 0; intRow < 30; intRow++){
+			intCommunity = Integer.parseInt(strChance[intRow][2]);
+			intChance = Integer.parseInt(strChance[intRow][2]);
+			System.out.println(intChance);
+		}
+			
+			
+			
 
 		//Closing file
 		try{
