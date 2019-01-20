@@ -344,6 +344,8 @@ public class mainmenu implements ActionListener{
 			// If you are the server send this text.
 			monopolypanel.strColor = "red1"; 
 			monopolypanel.intPlayer = monopolypanel.intPlayerCount;
+			monopolypanel.strPlayerTurn = startpage.strName;
+			System.out.println(monopolypanel.strPlayerTurn);
 			System.out.println("you're player number:"+monopolypanel.intPlayer); 
 			System.out.println("this is the turn number: "+monopolypanel.intTurn); 
 			System.out.println("this is your colour: "+monopolypanel.strColor); 
@@ -529,6 +531,7 @@ public class mainmenu implements ActionListener{
 			// Check who is going : Reset compared to the number of players?
 			if(monopolypanel.intTurn == 1 && intPiece == 1){
 			System.out.println("testing" +monopolypanel.strColor); 
+			
 				// how to know which information is being received?! 
 				if(monopolypanel.strColor.equals("red") || monopolypanel.strColor.equals("blue") || monopolypanel.strColor.equals("yellow") || monopolypanel.strColor.equals("green")) {
 					System.out.println("i'm back in here"); 
@@ -963,7 +966,6 @@ public class mainmenu implements ActionListener{
 				}
 			}
 			else{
-				//System.out.println("hehe false"); 
 				monopolypanel.rolldie.setEnabled(false); 
 			}	
 		}
