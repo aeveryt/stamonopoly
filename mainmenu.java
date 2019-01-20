@@ -518,11 +518,16 @@ public class mainmenu implements ActionListener{
 				characterspanel.repaint(); 
 			}
 			
+			System.out.println("This is the turn number: "+monopolypanel.intTurn); 
+			System.out.println("this is the piece number: "+intPiece); 
+			
+			
 			// Check who is going : Reset compared to the number of players?
 			if(monopolypanel.intTurn == 1 && intPiece == 1){
 			System.out.println("testing" +monopolypanel.strColor); 
 				// how to know which information is being received?! 
 				if(monopolypanel.strColor.equals("red") || monopolypanel.strColor.equals("blue") || monopolypanel.strColor.equals("yellow") || monopolypanel.strColor.equals("green")) {
+					System.out.println("i'm back in here"); 
 					monopolypanel.strColor1 = ssm.readText(); 
 					intPiece = intPiece + 1; 
 				}
@@ -560,11 +565,14 @@ public class mainmenu implements ActionListener{
 				
 			}
 			
+			
+			
 			// code for second player: 
 			if(monopolypanel.intTurn == 2 && intPiece == 1){
 			System.out.println("testing" +monopolypanel.strColor); 
 				// how to know which information is being received?! 
 				if(monopolypanel.strColor.equals("red") || monopolypanel.strColor.equals("blue") || monopolypanel.strColor.equals("yellow") || monopolypanel.strColor.equals("green")) {
+					System.out.println("I'm receiving it here"); 
 					monopolypanel.strColor2 = ssm.readText(); 
 					intPiece = intPiece + 1; 
 				}
@@ -961,13 +969,17 @@ public class mainmenu implements ActionListener{
 							ssm.sendText(monopolypanel.intTurn+""); 
 							intRoll = intRoll + 1; 
 							System.out.println("I got here");
+							intPiece = 1; 
 						}else if(monopolypanel.intTurn == monopolypanel.intPlayerCount +1){
+							System.out.println("hereee you go"); 
 							ssm.sendText("1");
 							monopolypanel.intTurn = 1; 
+							intPiece = 1; 
 						}
 						
 						// set button to false after rolling:
-						monopolypanel.rolldie.setEnabled(false); 
+						monopolypanel.rolldie.setEnabled(false);
+						blnDice = false; 
 					}
 				}
 			}
