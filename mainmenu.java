@@ -892,6 +892,7 @@ public class mainmenu implements ActionListener{
 				intNum = (int) (Math.random()*30+1);
 				// prints out what the community card says
 				strCard = strChance[intNum][1];
+				monopolypanel.strChanceCard = strCard;
 				System.out.println(strChance[intNum][1]);
 				//check if it affects money or location
 				strCheck = strChance[intNum][2].substring(0,1);

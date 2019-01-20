@@ -97,6 +97,7 @@ public class AnimationMonopolyPanel extends JPanel{
 		g.setFont(text);
 		g.setColor(Color.BLACK);
 		g.drawString(strCommunityCard,850,125);
+		g.drawString(strChanceCard,850,125);
 		
 		g.setColor(Color.WHITE);
 		
