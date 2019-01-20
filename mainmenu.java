@@ -777,12 +777,14 @@ public class mainmenu implements ActionListener{
 			monopolypanel.strDiceSum = strDiceSum;
 			monopolypanel.intPropertyN = monopolypanel.intPropertyN + intdiesum; 
 			
-			
+			int Array[] = new int[30];
 			//Converting String into int 
 		for(intRow = 0; intRow < 30; intRow++){
 			//(amount of money a player may gain or lose)
 			intCommunity = Integer.parseInt(strCommunity[intRow][2]); 
 			intChance = Integer.parseInt(strChance[intRow][2]);
+			Array[intRow] = intCommunity;
+			
 		}
 			
 			//-Trying to load property names in:
@@ -800,8 +802,7 @@ public class mainmenu implements ActionListener{
 			String strNum;
 			int intCard; // card that is randomly chosen
 			int intNum; // random num generated.
-			
-			
+
 			
 			//initialize
 			strCard = strProperties[monopolypanel.intPropertyN][0];
@@ -811,72 +812,73 @@ public class mainmenu implements ActionListener{
 				intNum = (int) (Math.random()*29+0);
 				strCard = strCommunity[intNum][1];
 				
-				//System.out.println(strCommunity[intNum][1]);// prints out what the community card says
+				System.out.println(strCommunity[intNum][1]);// prints out what the community card says
 				
 				strNum = strCommunity[intNum][0];
 				intCard = Integer.parseInt(strNum);
 				
 				if (intCard ==1){
-					intMoney = intMoney + intCommunity;
+					intMoney = intMoney + Array[0];
 				}else if(intCard == 2){
 					
 				}else if(intCard == 3){
-					intMoney = intMoney + intCommunity;
+					intMoney = intMoney + Array[1];
 				}else if(intCard == 4){
-					intMoney = intMoney + intCommunity;
+					intMoney = intMoney + Array[3];
 				}else if(intCard == 5){
-					intMoney = intMoney + intCommunity;
+					intMoney = intMoney + Array[4];
 				}else if(intCard == 6){
-					intMoney = intMoney + intCommunity;
+					intMoney = intMoney + Array[5];
 				}else if(intCard == 7){
-					intMoney = intMoney + intCommunity;
+					intMoney = intMoney + Array[6];
 				}else if(intCard == 8){
-					intMoney = intMoney + intCommunity;
+					intMoney = intMoney + Array[7];
 				}else if(intCard == 9){
-					intMoney = intMoney + intCommunity;
+					intMoney = intMoney + Array[8];
 				}else if(intCard == 10){
-					intMoney = intMoney + intCommunity;
+					intMoney = intMoney + Array[9];
 				}else if(intCard == 11){
-					intMoney = intMoney + intCommunity;
+					intMoney = intMoney + Array[10];
 				}else if(intCard == 12){
-					intMoney = intMoney + intCommunity;
+					intMoney = intMoney + Array[11];
 				}else if(intCard == 13){
-					intMoney = intMoney + intCommunity;
+					intMoney = intMoney + Array[12];
 				}else if(intCard == 14){
-					intMoney = intMoney + intCommunity;
+					intMoney = intMoney + Array[13];
 				}else if(intCard == 15){
-					intMoney = intMoney + intCommunity;
+					intMoney = intMoney + Array[14];
 				}else if(intCard == 16){
-					intMoney = intMoney + intCommunity;
+					intMoney = intMoney + Array[15];
 				}else if(intCard == 17){
-					intMoney = intMoney + intCommunity;
+					intMoney = intMoney + Array[16];
 				}else if(intCard == 18){
-					intMoney = intMoney + intCommunity;
+					intMoney = intMoney + Array[17];
 				}else if(intCard == 19){
-					intMoney = intMoney + intCommunity;
+					intMoney = intMoney + Array[18];
 				}else if(intCard == 20){
-					intMoney = intMoney + intCommunity;
+					intMoney = intMoney + Array[19];
 				}else if(intCard == 21){
-					intMoney = intMoney + intCommunity;
+					intMoney = intMoney + Array[20];
 				}else if(intCard == 22){
-					intMoney = intMoney + intCommunity;
+					intMoney = intMoney + Array[21];
 				}else if(intCard == 23){
-					intMoney = intMoney + intCommunity;
+					intMoney = intMoney + Array[22];
 				}else if(intCard == 24){
-					intMoney = intMoney + intCommunity;
+					intMoney = intMoney + Array[23];
 				}else if(intCard == 25){
-					intMoney = intMoney + intCommunity;
+					intMoney = intMoney + Array[24];
 				}else if(intCard == 26){
-					intMoney = intMoney + intCommunity;
+					intMoney = intMoney + Array[25];
 				}else if(intCard == 27){
-					intMoney = intMoney + intCommunity;
+					intMoney = intMoney + Array[26];
 				}else if(intCard == 28){
-					intMoney = intMoney + intCommunity;
+					intMoney = intMoney + Array[27];
 				}else if(intCard == 29){
-					intMoney = intMoney + intCommunity;
+					intMoney = intMoney + Array[28];
 				}else if(intCard == 30){
-					intMoney = intMoney + intCommunity;
+					intMoney = intMoney + Array[29];
 				}
+				
 			
 			//chance	
 			}else if (strCard.equalsIgnoreCase("chance")){
