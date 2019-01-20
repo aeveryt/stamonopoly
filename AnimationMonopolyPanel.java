@@ -20,7 +20,7 @@ public class AnimationMonopolyPanel extends JPanel{
 	JButton back;
 	Font text = null;
 	Font title = null;
-	String strColor; 
+	String strColor = ""; 
 	String strDice1 = "";
 	String strDice2 = ""; 
 	String strDiceSum = "";

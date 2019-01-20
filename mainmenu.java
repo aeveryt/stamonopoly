@@ -520,6 +520,7 @@ public class mainmenu implements ActionListener{
 			
 			// Check who is going : Reset compared to the number of players?
 			if(monopolypanel.intTurn == 1 && intPiece == 1){
+			System.out.println("testing" +monopolypanel.strColor); 
 				// how to know which information is being received?! 
 				if(monopolypanel.strColor.equals("red") || monopolypanel.strColor.equals("blue") || monopolypanel.strColor.equals("yellow") || monopolypanel.strColor.equals("green")) {
 					monopolypanel.strColor = ssm.readText(); 
