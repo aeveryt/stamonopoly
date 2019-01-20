@@ -777,17 +777,6 @@ public class mainmenu implements ActionListener{
 			monopolypanel.strDiceSum = strDiceSum;
 			monopolypanel.intPropertyN = monopolypanel.intPropertyN + intdiesum; 
 			
-			int Array[] = new int[30]; //community
-			int Array2[] = new int[30]; // chance
-			//Converting String into int 
-		for(intRow = 0; intRow < 30; intRow++){
-			//(amount of money a player may gain or lose)
-			intCommunity = Integer.parseInt(strCommunity[intRow][2]); 
-			intChance = Integer.parseInt(strChance[intRow][3]);
-			Array[intRow] = intCommunity;
-			Array2[intRow] = intChance;
-		}
-			
 			//-Trying to load property names in:
 			//position
 			if(monopolypanel.intPropertyN>39){
@@ -797,10 +786,24 @@ public class mainmenu implements ActionListener{
 			monopolypanel.strPropertyN = strProperties[monopolypanel.intPropertyN][0]; 	
 			monopolypanel.strMoney = intMoney+"";
 			
-			//-Landing on chance or community cards
+					
+			int Array[] = new int[30]; //community
+			//int Array2[] = new int[30]; // chance
+			//Converting String into int 
+		for(intRow = 0; intRow < 30; intRow++){
+			//(amount of money a player may gain or lose)
+			intCommunity = Integer.parseInt(strCommunity[intRow][2]); 
+			//intChance = Integer.parseInt(strChance[intRow][3]);
+			Array[intRow] = intCommunity;
+			//Array2[intRow] = intChance;
+		}
 			
+			//-Landing on chance or community cards
 			String strCard;
 			String strNum;
+			String strCheck; //check if the card affects the location or money
+			int intLocation; //if it affects location
+			int intMoneyChance; //money affected from chance
 			int intCard; // card that is randomly chosen
 			int intNum; // random num generated.
 
@@ -885,75 +888,25 @@ public class mainmenu implements ActionListener{
 			
 			//chance	
 			}else if (strCard.equalsIgnoreCase("chance")){
+				// generates random card number
 				intNum = (int) (Math.random()*30+1);
+				// prints out what the community card says
 				strCard = strChance[intNum][1];
-				
-				System.out.println(strChance[intNum][1]);// prints out what the community card says
-				
-				strNum = strChance[intNum][0];
-				intCard = Integer.parseInt(strNum);
-				System.out.println(intNum);
-				
-				if (intCard ==1){
-					intMoney = intMoney + intChance;
-				}else if(intCard == 2){
-					intMoney = intMoney + intChance; // need's tile movment advance to go
-				}else if(intCard == 3){
-					intMoney = intMoney + intChance; 
-				}else if(intCard == 4){
-					intMoney = intMoney + intChance;
-				}else if(intCard == 5){
-					intMoney = intMoney + intChance; // move to iorio's class
-				}else if(intCard == 6){ 
-					intMoney = intMoney + intChance;
-				}else if(intCard == 7){
-					intMoney = intMoney + intChance; // free pass
-				}else if(intCard == 8){
-					intMoney = intMoney + intChance;// move to fabora's class
-				}else if(intCard == 9){
-					intMoney = intMoney + intChance;// move to freda's class
-				}else if(intCard == 10){
-					intMoney = intMoney + intChance;// move to cadawa's glass
-				}else if(intCard == 11){
-					intMoney = intMoney + intChance;// free pass!!!111
-				}else if(intCard == 12){
-					intMoney = intMoney + intChance;
-				}else if(intCard == 13){
-					intMoney = intMoney + intChance; // move to physics class
-				}else if(intCard == 14){
-					intMoney = intMoney + intChance; // collect 50 from each PLAYER
-				}else if(intCard == 15){
-					intMoney = intMoney + intChance;// go to salvino's class
-				}else if(intCard == 16){
-					intMoney = intMoney - intChance;
-				}else if(intCard == 17){
-					intMoney = intMoney - intChance;
-				}else if(intCard == 18){
-					intMoney = intMoney - intChance;
-				}else if(intCard == 19){
-					intMoney = intMoney - intChance;
-				}else if(intCard == 20){
-					intMoney = intMoney - intChance;
-				}else if(intCard == 21){
-					intMoney = intMoney - intChance;
-				}else if(intCard == 22){
-					intMoney = intMoney - intChance;
-				}else if(intCard == 23){
-					intMoney = intMoney - intChance;
-				}else if(intCard == 24){
-					intMoney = intMoney - intChance;
-				}else if(intCard == 25){
-					intMoney = intMoney - intChance;
-				}else if(intCard == 26){
-					intMoney = intMoney - intChance;
-				}else if(intCard == 27){
-					intMoney = intMoney - intChance;
-				}else if(intCard == 28){
-					intMoney = intMoney - intChance;
-				}else if(intCard == 29){
-					intMoney = intMoney - intChance;
-				}else if(intCard == 30){
-					intMoney = intMoney - intChance;
+				System.out.println(strChance[intNum][1]);
+				//check if it affects money or location
+				strCheck = strChance[intNum][2].substring(0,1);
+				System.out.println(strCheck);
+				//if statements
+				//-money
+				if(strCheck.equalsIgnoreCase("l")){
+					intLocation = Integer.parseInt(strChance[intNum][3]);
+					monopolypanel.intPropertyN = intLocation;
+				}
+				//-location
+				else if(strCheck.equalsIgnoreCase("m")){
+					intMoneyChance = Integer.parseInt(strChance[intNum][3]);
+					intMoney = intMoney + intMoneyChance;
+					monopolypanel.intMoney = intMoney;
 				}
 			}
 			
