@@ -65,7 +65,7 @@ public class mainmenu implements ActionListener{
 	BufferedReader chance = null;
 	//--Data Array
 	String strSplit[];
-	String strProperties[][] = new String[40][12];
+	String strProperties[][] = new String[40][13];
 	String strPropertiesOwned[]; //properties that you own
 	String strCommunity [][] = new String[30][3];
 	String strChance [][] = new String[30][4];	
@@ -1332,6 +1332,12 @@ public class mainmenu implements ActionListener{
 		
 		System.out.println(monopolypanel.strPropertyN); 
 		System.out.println(monopolypanel.intPlayer); 
+		// to load in that you bought the property
+		strProperties[monopolypanel.intPropertyN][9] = "t"; 
+		strProperties[monopolypanel.intPropertyN][12] = monopolypanel.intPlayer+""; 
+		System.out.println("This is what is inserted into the CSV: "); 
+		System.out.println(strProperties[monopolypanel.intPropertyN][9]); 
+		System.out.println(strProperties[monopolypanel.intPropertyN][12]); 
 			
 			
 			
