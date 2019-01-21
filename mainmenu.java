@@ -852,7 +852,7 @@ public class mainmenu implements ActionListener{
 			}
 			
 			//check if property is owned
-			if(strProperties[monopolypanel.intPropertyN][9].equalsIgnoreCase("false")){
+			if(strProperties[monopolypanel.intPropertyN][9].equalsIgnoreCase("f")){
 				if(intMoney>0){
 					monopolypanel.buy.setEnabled(true);
 					monopolypanel.dontbuy.setEnabled(true);
@@ -862,7 +862,7 @@ public class mainmenu implements ActionListener{
 					monopolypanel.dontbuy.setEnabled(true);
 				}
 			}
-			else if(strProperties[monopolypanel.intPropertyN][9].equalsIgnoreCase("true")){
+			else if(strProperties[monopolypanel.intPropertyN][9].equalsIgnoreCase("t")){
 				monopolypanel.buy.setEnabled(false);
 				monopolypanel.dontbuy.setEnabled(false);
 			}
@@ -932,7 +932,7 @@ public class mainmenu implements ActionListener{
 			monopolypanel.intHouse2 = Integer.parseInt(strProperties[monopolypanel.intPropertyN][5]);
 			monopolypanel.intHouse3 = Integer.parseInt(strProperties[monopolypanel.intPropertyN][6]);
 			monopolypanel.intHotel = Integer.parseInt(strProperties[monopolypanel.intPropertyN][7]);
-			strProperties[monopolypanel.intPropertyN][9]= "true";
+			strProperties[monopolypanel.intPropertyN][9]= "t";
 			//what is this code for?????
 			//for(intCol = 1; intCol <8; intCol++){
 				monopolypanel.strPropertyOwned = strProperties[monopolypanel.intPropertyN][0];
@@ -940,6 +940,7 @@ public class mainmenu implements ActionListener{
 		}
 		
 		else if(evt.getSource()==monopolypanel.next){
+			
 		}
 		else if(evt.getSource() == monopolypanel.back){
 		}
