@@ -18,17 +18,15 @@ public class mainmenu implements ActionListener{
 	public startgame startpage; 
 	public joingame joinpage; 
 	public SuperSocketMaster ssm; 
-	// public SuperSocketMaster ssmclient; 
 	public AnimationMonopolyPanel monopolypanel; 
 	public stamonopolycharacters characterspanel;
 	Timer thetimer;
 	
-	// Sending information over network variable 
+	//-Sending information over network variable 
 	int intPiece = 1; 
 	int intRoll = 2;  
 	boolean blnPlay = false; 
 	boolean blnDice = false; 
-	
 	
 	//-Players
 	int intMoney = 1500;
@@ -36,28 +34,30 @@ public class mainmenu implements ActionListener{
 	int intPropertyCost = 0;
 	
 	//-File Variables 
-		//-board
-		boolean GoSpace = true;
-		boolean blnFileFail = false;
-		FileReader thefile = null;
-		FileReader chancefile = null;
-		FileReader communityfile = null;
-		BufferedReader properties = null;
-		BufferedReader community = null;
-		BufferedReader chance = null;
-		//-Data Array
-		String strSplit[];
-		String strProperties[][] = new String[40][10];
-		String strCommunity [][] = new String[30][3];
-		String strChance [][] = new String[30][4];	
-		String strLine = "";
-		int intRow;
-		int intCol;
-		int intChance;
-		int intCommunity;
+	//--board
+	boolean GoSpace = true;
+	boolean blnFileFail = false;
+	FileReader thefile = null;
+	FileReader chancefile = null;
+	FileReader communityfile = null;
+	BufferedReader properties = null;
+	BufferedReader community = null;
+	BufferedReader chance = null;
+	//--Data Array
+	String strSplit[];
+	String strProperties[][] = new String[40][10];
+	String strCommunity [][] = new String[30][3];
+	String strChance [][] = new String[30][4];	
+	String strLine = "";
+	int intRow;
+	int intCol;
+	int intChance;
+	int intCommunity;
+	
 	//-Server 
 	boolean blnServer; 
 	boolean blnSent = false;
+	
 	//-Dice 
 	int intdice1; 
 	int intdice2;
@@ -264,7 +264,7 @@ public class mainmenu implements ActionListener{
 			System.exit(0);
 		}
 			
-		// PLAY SCREEN
+		//PLAY SCREEN
 		else if(evt.getSource() == PlayButt){
 			theframe.setContentPane(playpage1); 
 			theframe.setVisible(true);
@@ -315,23 +315,25 @@ public class mainmenu implements ActionListener{
 			theframe.setVisible(true); 	
 		}
 		
-		//ENTERING NAME
+		//ENTERING NAME (starting game)
 		else if(evt.getSource() == startpage.TFname){
 			startpage.strName = startpage.TFname.getText();  
-			monopolypanel.strPlayerTurn = startpage.strName;
-				
+			monopolypanel.strPlayerTurn = startpage.strName;		
 		}
+		//ENTERING NAME (joining game)
 		else if(evt.getSource() == joinpage.TFname){
 			joinpage.strName = joinpage.TFname.getText();
-			monopolypanel.strPlayerTurn = joinpage.strName;
-			 	
+			monopolypanel.strPlayerTurn = joinpage.strName;	
 		}
 		
-		//CHARACTERS PAGE 
+		//CHARACTERS PAGE
+		//-starting game
 		else if(evt.getSource() == startpage.gameplay){
 			theframe.setContentPane(characterspanel);
 			theframe.setVisible(true); 
 		}
+		//CHARACTERS PAGE
+		//-joining game
 		else if(evt.getSource() == joinpage.gameplay){
 			theframe.setContentPane(characterspanel); 
 			theframe.setVisible(true); 
@@ -341,7 +343,7 @@ public class mainmenu implements ActionListener{
 			blnServer = false;
 			System.out.println(joinpage.strCode); 
 		}
-		//-choosing character 1
+		//--choosing character 1
 		else if(evt.getSource() == characterspanel.select1){ 
 			characterspanel.gameplay.setEnabled(true); 
 			monopolypanel.intPlayerCount = monopolypanel.intPlayerCount + 1;
@@ -362,7 +364,7 @@ public class mainmenu implements ActionListener{
 				characterspanel.select1.setEnabled(false); 
 			}
 		} 
-		//-choosing character 2
+		//--choosing character 2
 		else if(evt.getSource() == characterspanel.select2){ 
 			characterspanel.gameplay.setEnabled(true); 
 			monopolypanel.intPlayerCount = monopolypanel.intPlayerCount + 1;
@@ -386,7 +388,7 @@ public class mainmenu implements ActionListener{
 				blnSent = true; 
 			}
 		}
-		//-choosing character 3
+		//--choosing character 3
 		else if(evt.getSource() == characterspanel.select3){ 
 			characterspanel.gameplay.setEnabled(true); 
 			monopolypanel.intPlayerCount = monopolypanel.intPlayerCount + 1;
@@ -413,7 +415,7 @@ public class mainmenu implements ActionListener{
 				blnSent = true; 
 			}
 		} 
-		//-choosing character 4
+		//--choosing character 4
 		else if(evt.getSource() == characterspanel.select4){
 			monopolypanel.strColor = "green1"; 
 			characterspanel.gameplay.setEnabled(true); 
