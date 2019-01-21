@@ -938,6 +938,11 @@ public class mainmenu implements ActionListener{
 				monopolypanel.strPropertyOwned = strProperties[monopolypanel.intPropertyN][0];
 			//}
 		}
+		
+		else if(evt.getSource()==monopolypanel.next){
+		}
+		else if(evt.getSource() == monopolypanel.back){
+		}
 			
 		
 	}
