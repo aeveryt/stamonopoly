@@ -62,7 +62,7 @@ public class mainmenu implements ActionListener{
 	BufferedReader chance = null;
 	//--Data Array
 	String strSplit[];
-	String strProperties[][] = new String[40][10];
+	String strProperties[][] = new String[40][11];
 	String strPropertiesOwned[]; //properties that you own
 	String strCommunity [][] = new String[30][3];
 	String strChance [][] = new String[30][4];	
@@ -1046,39 +1046,39 @@ public class mainmenu implements ActionListener{
 				monopolypanel.blnOwned = false;
 			}
 			//-------------------------- Checking if you have the option to buy a house --------------
-			if(strProperties[intPlayerOwned][10].equalsIgnoreCase("br")){
+			if(strProperties[monopolypanel.intPropertyN][10].equalsIgnoreCase("br")){
 				System.out.println("bought brown");
 				intBrown = intBrown + 1;
 			}
-			else if(strProperties[intPlayerOwned][10].equalsIgnoreCase("rail")){
+			else if(strProperties[monopolypanel.intPropertyN][10].equalsIgnoreCase("rail")){
 				System.out.println("bought rail");
 				intRailRoad = intRailRoad + 1;
 			}
-			else if(strProperties[intPlayerOwned][10].equalsIgnoreCase("lb")){
+			else if(strProperties[monopolypanel.intPropertyN][10].equalsIgnoreCase("lb")){
 				System.out.println("bought lb");
 				intLightBlue = intLightBlue	+ 1;
 			}
-			else if(strProperties[intPlayerOwned][10].equalsIgnoreCase("pur")){
+			else if(strProperties[monopolypanel.intPropertyN][10].equalsIgnoreCase("pur")){
 				System.out.println("bought purple");
 				intPurple = intPurple + 1;
 			}
-			else if(strProperties[intPlayerOwned][10].equalsIgnoreCase("or")){
+			else if(strProperties[monopolypanel.intPropertyN][10].equalsIgnoreCase("or")){
 				System.out.println("bought orange");
 				intOrange = intOrange + 1;
 			}
-			else if(strProperties[intPlayerOwned][10].equalsIgnoreCase("red")){
+			else if(strProperties[monopolypanel.intPropertyN][10].equalsIgnoreCase("red")){
 				System.out.println("bought red");
 				intRed = intRed + 1;
 			}
-			else if(strProperties[intPlayerOwned][10].equalsIgnoreCase("yel")){
+			else if(strProperties[monopolypanel.intPropertyN][10].equalsIgnoreCase("yel")){
 				System.out.println("bought yellow");
 				intYellow = intYellow + 1;
 			}
-			else if(strProperties[intPlayerOwned][10].equalsIgnoreCase("gre")){
+			else if(strProperties[monopolypanel.intPropertyN][10].equalsIgnoreCase("gre")){
 				System.out.println("bought green");
 				intGreen = intGreen + 1;
 			}
-			else if(strProperties[intPlayerOwned][10].equalsIgnoreCase("db")){
+			else if(strProperties[monopolypanel.intPropertyN][10].equalsIgnoreCase("db")){
 				System.out.println("bought dark blue");
 				intDarkBlue = intDarkBlue + 1;
 			}
@@ -1165,7 +1165,7 @@ public class mainmenu implements ActionListener{
 					System.out.println("false");
 			}
 				strSplit = strLine.split(",");
-			for (intCol = 0; intCol < 10; intCol++){	
+			for (intCol = 0; intCol < 11; intCol++){	
 				strProperties[intRow][intCol] = strSplit[intCol];				
 			}
 		}
