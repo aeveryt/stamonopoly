@@ -10,7 +10,7 @@ Music,Pezzelato,100,6,30,90,270,550,59,f,lb
 Drama,Devlin-Foley,120,8,40,100,300,600,60,f,lb
 Principal's Office,null,0,0,0,0,0,0,0,t,null
 Accounting,Adorante,140,10,50,150,450,750,70,f,pur
-Student Council,null,150,4,0,10,0,0,75,f,u
+Student Council,null,150,4,10,0,0,0,75,f,u
 Marketing,Brizzi,140,10,50,150,450,750,70,f,pur
 Business Leadership,Giantonnio,160,12,60,260,500,900,80,f,pur
 Guidance,Tucci,200,25,50,100,200,100,0,f,rail
@@ -26,7 +26,7 @@ English,Salvino,240,20,100,300,750,1100,120,f,red
 Guidance,Pilleggi,200,25,50,100,200,100,0,f,rail
 Advanced Functions,Lee,260,22,110,330,800,1150,130,f,yel
 Data Management,DiDonato,260,22,110,330,800,1150,130,f,yel
-Athletic Council,null,150,4,0,10,0,0,75,f,u
+Athletic Council,null,150,4,10,0,0,0,75,f,u
 Calculus and Vectors,Burchat,280,24,120,350,850,1025,140,f,yel
 Go To Principal's Office,null,0,0,0,0,0,0,0,t,null
 Biology,Coletta,300,26,130,390,900,1275,150,f,gre

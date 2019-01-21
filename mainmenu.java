@@ -652,7 +652,6 @@ public class mainmenu implements ActionListener{
 				}
 				*/
 				
-				
 			}
 			
 			// code for player four: 
@@ -901,6 +900,7 @@ public class mainmenu implements ActionListener{
 				//if utilities owned
 				if(monopolypanel.intPropertyN == 12 || monopolypanel.intPropertyN == 28){
 					intLandedRent = intdiesum*intLandedRent;
+					//System.out.println(intdiesum + "x4="+ intLandedRent);
 				}
 
 				intMoney = intMoney - intLandedRent;
@@ -998,7 +998,6 @@ public class mainmenu implements ActionListener{
 			monopolypanel.blnOwned = true;
 			//When property is bought
 			strPropertyCost = strProperties[monopolypanel.intPropertyN][2]; // cost of property
-			System.out.println("buying stuff $"+strProperties[monopolypanel.intPropertyN][2]);
 			intPropertyCost = Integer.parseInt(strProperties[monopolypanel.intPropertyN][2]); // converting int to string
 			intMoney = intMoney-intPropertyCost; // subtracting
 			
@@ -1018,7 +1017,7 @@ public class mainmenu implements ActionListener{
 			monopolypanel.intHouse2 = Integer.parseInt(strProperties[monopolypanel.intPropertyN][5]);
 			monopolypanel.intHouse3 = Integer.parseInt(strProperties[monopolypanel.intPropertyN][6]);
 			monopolypanel.intHotel = Integer.parseInt(strProperties[monopolypanel.intPropertyN][7]);
-			strProperties[monopolypanel.intPropertyN][9]= "t";
+			strProperties[monopolypanel.intPropertyN][9]= "t"+monopolypanel.intPlayer;
 			monopolypanel.strPropertyOwned = strProperties[monopolypanel.intPropertyN][0];
 			
 			//---------------------------- Trying to make player pay for jail--------------------------
