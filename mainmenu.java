@@ -602,8 +602,7 @@ public class mainmenu implements ActionListener{
 				strPlayerX = ssm.readText(); 
 				monopolypanel.intPlayerX2 = Integer.parseInt(strPlayerX); 
 				intPiece = intPiece + 1; 
-			}
-			else if(monopolypanel.intTurn == 2 && intPiece == 3){
+			}else if(monopolypanel.intTurn == 2 && intPiece == 3){
 				String strPlayerY; 
 				strPlayerY = ssm.readText(); 
 				monopolypanel.intPlayerY2 = Integer.parseInt(strPlayerY); 
@@ -829,11 +828,19 @@ public class mainmenu implements ActionListener{
 				monopolypanel.strCardinfo = strCard;
 				System.out.println(strCommunity[intNum][2]);
 
-				//System.out.println(strCommunity[intNum][1]);// prints out what the community card says
+				System.out.println(strCommunity[intNum][1]);// prints out what the community card says
 				intLength = strCommunity[intNum][1].length();
-				monopolypanel.strDisplayLength = strCommunity[intNum][1].substring(0,intLength - (intLength - 25));
-				//System.out.println(monopolypanel.strDisplayLength);
-				//System.out.println("The number of substrings in this card is "+ intLength);
+				
+				// must divide intlength with a certain amount of substring characters
+				intLength = intLength - (intLength/25);
+				System.out.println(intLength);
+					while(intLength > 25){
+						intLength = intLength - (intLength/25);
+						System.out.println(intLength);
+					}
+				monopolypanel.strDisplayLength = strCommunity[intNum][1].substring(0,intLength);
+	
+				System.out.println("The number of substrings in this card is "+ intLength);
 				//strNum = strCommunity[intNum][0];
 				intMoneyCommunity = Integer.parseInt(strCommunity[intNum][2]);
 				intMoney = intMoney + intMoneyCommunity;
@@ -889,10 +896,17 @@ public class mainmenu implements ActionListener{
 					intMoney = intMoney + intMoneyChance;
 					monopolypanel.intMoney = intMoney;
 				}
-				
+				// if intlenght is graer than 25, then chop it and count 25, then substract the amount chopped and place it under. 
 				intLength = strChance[intNum][1].length();
 				
-				monopolypanel.strDisplayLength = strChance[intNum][1].substring(0,intLength - (intLength- 25));
+				intLength = intLength - (intLength/5);
+				System.out.println(intLength);
+					while(intLength > 20){
+						intLength = intLength - (intLength/5);
+						System.out.println(intLength);
+					}
+				
+				monopolypanel.strDisplayLength = strChance[intNum][1].substring(0,intLength);
 				System.out.println(monopolypanel.strDisplayLength);
 				
 				System.out.println("The number of substrings in this card is "+ intLength);
