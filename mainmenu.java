@@ -85,6 +85,9 @@ public class mainmenu implements ActionListener{
 	int intdiesum; 
 	int intCount; 
 	
+	// Properties purchased: 
+	boolean blnPropertyBought = false; 
+	
 	//*****METHODS*****
 	public void actionPerformed(ActionEvent evt){
 		
@@ -543,7 +546,7 @@ public class mainmenu implements ActionListener{
 			System.out.println("this is the piece number: "+intPiece); 
 			
 			
-			// Check who is going : Reset compared to the number of players?
+			// Update other players scren: 
 			if(monopolypanel.intTurn == 1 && intPiece == 1){
 			System.out.println("testing" +monopolypanel.strColor); 
 			
@@ -574,16 +577,6 @@ public class mainmenu implements ActionListener{
 				System.out.println("This is the turn number: "+monopolypanel.intTurn); 
 				intPiece = 1; 
 				
-				// Resets turn number allowing a loop to form, if playercount = player turn number
-				/*if(monopolypanel.intPlayerCount + 1 == monopolypanel.intTurn){
-					System.out.println("This is the statement to say i am or am not the server : "+blnServer); 
-					ssm.sendText("red"); 
-					ssm.sendText("50"); 
-					ssm.sendText("50"); 
-					ssm.sendText("1"); 
-				
-				}
-				*/
 				
 			}
 			
@@ -615,16 +608,7 @@ public class mainmenu implements ActionListener{
 				monopolypanel.intTurn = Integer.parseInt(strTurn); 
 				System.out.println("This is the turn number: "+monopolypanel.intTurn); 
 				intPiece = 1; 
-				
-				// Resets turn number allowing a loop to form, if playercount = player turn number
-				/*if(monopolypanel.intPlayerCount +1 == monopolypanel.intTurn){
-					ssm.sendText(monopolypanel.strColor1); 
-					ssm.sendText(monopolypanel.intPlayerX1+""); 
-					ssm.sendText(monopolypanel.intPlayerY1+""); 
-					ssm.sendText("1"); 
-				
-				}
-				*/
+			
 				
 			}
 			
@@ -658,16 +642,6 @@ public class mainmenu implements ActionListener{
 				System.out.println("This is the turn number: "+monopolypanel.intTurn); 
 				intPiece = 1; 
 				
-				// Resets turn number allowing a loop to form, if playercount = player turn number
-				/*
-				if(monopolypanel.intPlayerCount + 1 == monopolypanel.intTurn){
-					ssm.sendText("red"); 
-					ssm.sendText("50"); 
-					ssm.sendText("50"); 
-					ssm.sendText("1"); 
-				
-				}
-				*/
 				
 			}
 			
@@ -700,15 +674,7 @@ public class mainmenu implements ActionListener{
 				System.out.println("This is the turn number: "+monopolypanel.intTurn); 
 				intPiece = 1; 
 				
-				// Resets turn number allowing a loop to form, if playercount = player turn number
-				/*if(monopolypanel.intPlayerCount +1 == monopolypanel.intTurn){
-					ssm.sendText("red"); 
-					ssm.sendText("50"); 
-					ssm.sendText("50"); 
-					ssm.sendText("1"); 
-				
-				}
-				*/
+
 			}
 			
 			// fifth code to reset the turn number if there are four players playing, the turn number will turn to this and reset the code
@@ -719,10 +685,216 @@ public class mainmenu implements ActionListener{
 				
 			}
 			
+			
 			//System.out.println(blnServer); 
 			String strData; 
 			strData = ssm.readText(); 
 			monopolypanel.textarea.append("\n"+strData);
+			
+			// --------- see if a message is regarding the payment of a property --------
+			// this is for property number 1: 
+			if(strData.equals("Geography") || blnPropertyBought == true){
+				strProperties[1][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[1][11] = strData;
+					blnPropertyBought = false; 
+				}
+			}else if(strData.equals("History") || blnPropertyBought == true){
+				strProperties[3][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[3][11] = strData; 
+					blnPropertyBought = false; 
+				}
+			}else if(strData.equals("Guidance") || blnPropertyBought == true){
+				strProperties[5][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[5][11] = strData; 
+					blnPropertyBought = false; 
+				}
+			}else if(strData.equals("Visual Arts") || blnPropertyBought == true){
+				strProperties[6][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[6][11] = strData; 
+					blnPropertyBought = false; 
+				}
+			}else if(strData.equals("Music") || blnPropertyBought == true){
+				strProperties[8][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[8][11] = strData; 
+					blnPropertyBought = false; 
+				}
+			}else if(strData.equals("Drama") || blnPropertyBought == true){
+				strProperties[9][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[9][11] = strData; 
+					blnPropertyBought = false; 
+				}
+			}else if(strData.equals("Accounting") || blnPropertyBought == true){
+				strProperties[11][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[11][11] = strData; 
+					blnPropertyBought = false; 
+				}
+			}else if(strData.equals("Student Council") || blnPropertyBought == true){
+				strProperties[12][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[12][11] = strData; 
+					blnPropertyBought = false; 
+				}
+			}else if(strData.equals("Marketing") || blnPropertyBought == true){
+				strProperties[13][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[13][11] = strData; 
+					blnPropertyBought = false; 
+				}
+			}else if(strData.equals("Business Leadership") || blnPropertyBought == true){
+				strProperties[14][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[14][11] = strData; 
+					blnPropertyBought = false; 
+				}
+			}else if(strData.equals("Guidance") || blnPropertyBought == true){
+				strProperties[15][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[15][11] = strData; 
+					blnPropertyBought = false; 
+				}
+			}else if(strData.equals("Religion") || blnPropertyBought == true){
+				strProperties[16][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[16][11] = strData; 
+					blnPropertyBought = false; 
+				}
+			}else if(strData.equals("World Religions") || blnPropertyBought == true){
+				strProperties[18][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[18][11] = strData; 
+					blnPropertyBought = false; 
+				}
+			}else if(strData.equals("Philosphy") || blnPropertyBought == true){
+				strProperties[19][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[19][11] = strData; 
+					blnPropertyBought = false; 
+				}
+			}else if(strData.equals("Indigenous Studies") || blnPropertyBought == true){
+				strProperties[21][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[21][11] = strData; 
+					blnPropertyBought = false; 
+				}
+			}else if(strData.equals("Writer's Craft") || blnPropertyBought == true){
+				strProperties[23][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[23][11] = strData; 
+					blnPropertyBought = false; 
+				}
+			}else if(strData.equals("English") || blnPropertyBought == true){
+				strProperties[24][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[24][11] = strData; 
+					blnPropertyBought = false; 
+				}
+			}else if(strData.equals("Guidance") || blnPropertyBought == true){
+				strProperties[25][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[25][11] = strData; 
+					blnPropertyBought = false; 
+				}
+			}else if(strData.equals("Advanced Functions") || blnPropertyBought == true){
+				strProperties[26][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[26][11] = strData; 
+					blnPropertyBought = false; 
+				}
+			}else if(strData.equals("Data Management") || blnPropertyBought == true){
+				strProperties[27][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[27][11] = strData; 
+					blnPropertyBought = false; 
+				}
+			}else if(strData.equals("Athletic Council") || blnPropertyBought == true){
+				strProperties[28][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[28][11] = strData; 
+					blnPropertyBought = false; 
+				}
+			}else if(strData.equals("Calculas and Vectors") || blnPropertyBought == true){
+				strProperties[29][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[29][11] = strData; 
+					blnPropertyBought = false; 
+				}
+			}else if(strData.equals("Biology") || blnPropertyBought == true){
+				strProperties[31][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[31][11] = strData; 
+					blnPropertyBought = false; 
+				}
+			}else if(strData.equals("Chemistry") || blnPropertyBought == true){
+				strProperties[32][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[32][11] = strData; 
+					blnPropertyBought = false; 
+				}
+			}else if(strData.equals("Physics") || blnPropertyBought == true){
+				strProperties[34][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[34][11] = strData; 
+					blnPropertyBought = false; 
+				}
+			}else if(strData.equals("Guidance") || blnPropertyBought == true){
+				strProperties[35][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[35][11] = strData; 
+					blnPropertyBought = false; 
+				}
+			}else if(strData.equals("Tech Design") || blnPropertyBought == true){
+				strProperties[37][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[37][11] = strData; 
+					blnPropertyBought = false; 
+				}
+			}else if(strData.equals("Computer Science") || blnPropertyBought == true){
+				strProperties[39][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[39][11] = strData; 
+					blnPropertyBought = false; 
+				}
+			}
+		
+			
+			
+			
+			
 			
 		}
 	
@@ -1154,6 +1326,16 @@ public class mainmenu implements ActionListener{
 					monopolypanel.house.setEnabled(false);
 				}
 			}
+		// ---------------------- Sending message over the server that the property can no longer be bought --------------
+		ssm.sendText(monopolypanel.strPropertyN); 
+		ssm.sendText(monopolypanel.intPlayer+""); 
+		
+		System.out.println(monopolypanel.strPropertyN); 
+		System.out.println(monopolypanel.intPlayer); 
+			
+			
+			
+			
 		}
 		//PROPERTIES PANEL (that you own)
 		//-next
