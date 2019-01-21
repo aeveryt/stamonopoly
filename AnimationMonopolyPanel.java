@@ -7,21 +7,29 @@ import java.io.*;
 
 public class AnimationMonopolyPanel extends JPanel{
 	//Properties
-	
+	//-card variables
 	BufferedImage monopolyboard;
 	BufferedImage communitycard;
 	BufferedImage chancecard;
+	//-chatbox
 	JTextField textfield = new JTextField();
 	Timer timer;
+	//-chat history
 	JTextArea textarea = new JTextArea();
 	JScrollPane scroll; 
+	//-buy button variables
 	JButton buy;
 	JButton dontbuy;
+	//-rolling die button
 	JButton rolldie;
+	//-property variables
 	JButton next;
 	JButton back;
+	//-fonts
 	Font text = null;
 	Font title = null;
+	Font property = null;
+	//-string
 	String strColor = ""; 
 	String strDice1 = "";
 	String strDice2 = ""; 
@@ -30,47 +38,49 @@ public class AnimationMonopolyPanel extends JPanel{
 	String strCardinfo = "";
 	String strPlayerTurn = "";
 	String strDisplayLength = "";
+	//-money
 	int intMoney = 1500;
 	String strMoney = ""+intMoney;
+	//-property variables
+	boolean blnOwned = false;
 	int intPropertyN = 0; 
+	int intRent;
+	int intHouse1; //these are the classroom improvements
+	int intHouse2;
+	int intHouse3;
+	int intHotel;
 	String strPropertyN = ""; 
-	String strProperty = "";
+	String strPropertyOwned = "";
+	
+	//-player variables
 	int intYOUx =  650; 
 	int intYOUy = 650;
 	int intPlayerCount =0; 
 	int intPlayer = 0; 
 	int intTurn = 1; 
-	String strYourColor = ""; 
 	
 	// indicate which colours were selected
+	String strYourColor = ""; 
 	boolean blnBlue;
 	boolean blnGreen; 
 	boolean blnYellow; 
-	boolean blnRed; 
-	
+	boolean blnRed; 	
 	// Player one: 
 	String strColor1 = "";  
 	int intPlayerX1 = -50;
-	int intPlayerY1 = -50; 
-	
+	int intPlayerY1 = -50;
 	// Player 2:
 	String strColor2 = "";
 	int intPlayerX2 = -50; 
-	int intPlayerY2 = -50; 
-	
+	int intPlayerY2 = -50;
 	// Player 3: 
 	String strColor3 = ""; 
 	int intPlayerX3 = -50; 
 	int intPlayerY3 = -50; 
-	
 	// Player 4: 
 	String strColor4 = ""; 
 	int intPlayerX4 = -50; 
 	int intPlayerY4 = -50; 
-	
-	
-	
-	// JScrollPane scroll = new JScrollPane(textarea);
 	
 	
 	//Methods
@@ -113,10 +123,19 @@ public class AnimationMonopolyPanel extends JPanel{
 		
 		//properties outline
 		g.fillRect(725,331,282,315);
-		g.setFont(text);
-		g.setColor(Color.BLACK);
-		g.drawString(strProperty,728,350);
-		g.setColor(Color.WHITE);
+		if(blnOwned){
+			g.setFont(property);
+			g.setColor(Color.RED);
+			g.drawString(strPropertyOwned,730,353);
+			g.setFont(text);
+			g.setColor(Color.BLACK);
+			g.drawString("Rent: $"+intRent,730,386);
+			g.drawString("1 Improvement: $"+intHouse1,730,414);
+			g.drawString("2 Improvements: $"+intHouse2,730,432);
+			g.drawString("3 Improvements: $"+intHouse3,730,449);
+			g.drawString("Upgrade to STEM: $"+intHotel,730,466);
+			g.setColor(Color.WHITE);
+		}
 		
 		
 		// load the rolled number into the dice area
@@ -271,14 +290,12 @@ public class AnimationMonopolyPanel extends JPanel{
 			text = text.deriveFont(Font.PLAIN, 14);
 		}
 		catch(Exception e){
-			//System.out.println(e.toString());
 		}
 		try{
 			text = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("kabel.ttf")); 
 			text = text.deriveFont(Font.PLAIN, 14);
 		}
 		catch(Exception e){
-			//System.out.println(e.toString());
 			System.out.println("Unable to load font file kabel.ttf. Setting default font"); 
 		}
 		//-title font
@@ -287,14 +304,26 @@ public class AnimationMonopolyPanel extends JPanel{
 			title = text.deriveFont(Font.PLAIN, 30);
 		}
 		catch(Exception e){
-			//System.out.println(e.toString());
 		}
 		try{
 			title = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("kabel.ttf")); 
 			title = text.deriveFont(Font.PLAIN, 30);
 		}
 		catch(Exception e){
-			//System.out.println(e.toString());
+			System.out.println("Unable to load font file kabel.ttf. Setting default font"); 
+		}
+		//-property title
+		try{
+			property = Font.createFont(Font.TRUETYPE_FONT, this.getClass().getResourceAsStream("kabel.ttf")); 
+			property = text.deriveFont(Font.PLAIN, 20);
+		}
+		catch(Exception e){
+		}
+		try{
+			property = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("kabel.ttf")); 
+			property = text.deriveFont(Font.PLAIN, 20);
+		}
+		catch(Exception e){
 			System.out.println("Unable to load font file kabel.ttf. Setting default font"); 
 		}
 	}	
