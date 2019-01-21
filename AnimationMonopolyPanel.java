@@ -50,7 +50,7 @@ public class AnimationMonopolyPanel extends JPanel{
 	int intHouse3;
 	int intHotel;
 	String strPropertyN = ""; 
-	String strProperty = "";
+	String strPropertyOwned = "";
 	
 	//-player variables
 	int intYOUx =  650; 
@@ -126,7 +126,7 @@ public class AnimationMonopolyPanel extends JPanel{
 		if(blnOwned){
 			g.setFont(property);
 			g.setColor(Color.RED);
-			g.drawString(strPropertyN,730,353);
+			g.drawString(strPropertyOwned,730,353);
 			g.setFont(text);
 			g.setColor(Color.BLACK);
 			g.drawString("Rent: $"+intRent,730,386);
