@@ -480,6 +480,225 @@ public class mainmenu implements ActionListener{
 		
 		//CHARACTERS SERVER PAGE	
 		else if(evt.getSource() == ssm){
+		String strData; 
+		boolean blnMovement = true; 
+		strData = ssm.readText(); 
+		
+		
+				
+		// --------- see if a message is regarding the payment of a property --------
+		if(strData.equals("Geography") || strData.equals("History") || strData.equals("Guidance 1") || strData.equals("Visual Arts") || strData.equals("Music") || strData.equals("Drama") || strData.equals("Accounting") || strData.equals("Student Council") || strData.equals("Marketing") || strData.equals("Business Leadership")|| strData.equals("Guidance 2") || strData.equals("Religion") || strData.equals("World Religions")|| strData.equals("Philosphy")|| strData.equals("Indigenous Studies")|| strData.equals("Writer's Craft") || strData.equals("English")|| strData.equals("Guidance 3")|| strData.equals("Advanced Functions") || strData.equals("Data Management") || strData.equals("Athletic Council") || strData.equals("Calculas and Vectors") || strData.equals("Biology") || strData.equals("Chemistry") || strData.equals("Physics") || strData.equals("Guidance 4") || strData.equals("Tech Design") || strData.equals("Computer Science") || blnPropertyBought == true){
+			blnMovement = false; 
+		
+
+			// this is for property number 1: 
+			if(strData.equals("Geography") || blnPropertyBought == true){
+				strProperties[1][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[1][12] = strData;
+					blnPropertyBought = false; 
+				}
+			}else if(strData.equals("History") || blnPropertyBought == true){
+				strProperties[3][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[3][12] = strData; 
+					blnPropertyBought = false; 
+				}
+			}else if(strData.equals("Guidance 1") || blnPropertyBought == true){
+				strProperties[5][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[5][12] = strData; 
+					blnPropertyBought = false; 
+				}
+			}else if(strData.equals("Visual Arts") || blnPropertyBought == true){
+				strProperties[6][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[6][12] = strData; 
+					blnPropertyBought = false; 
+				}
+			}else if(strData.equals("Music") || blnPropertyBought == true){
+				strProperties[8][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[8][12] = strData; 
+					blnPropertyBought = false; 
+				}
+			}else if(strData.equals("Drama") || blnPropertyBought == true){
+				strProperties[9][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[9][12] = strData; 
+					blnPropertyBought = false; 
+				}
+			}else if(strData.equals("Accounting") || blnPropertyBought == true){
+				strProperties[11][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[11][12] = strData; 
+					blnPropertyBought = false; 
+				}
+			}else if(strData.equals("Student Council") || blnPropertyBought == true){
+				strProperties[12][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[12][12] = strData; 
+					blnPropertyBought = false; 
+				}
+			}else if(strData.equals("Marketing") || blnPropertyBought == true){
+				strProperties[13][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[13][12] = strData; 
+					blnPropertyBought = false; 
+				}
+			}else if(strData.equals("Business Leadership") || blnPropertyBought == true){
+				strProperties[14][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[14][12] = strData; 
+					blnPropertyBought = false; 
+				}
+			}else if(strData.equals("Guidance 2") || blnPropertyBought == true){
+				strProperties[15][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[15][12] = strData; 
+					blnPropertyBought = false; 
+				}
+			}else if(strData.equals("Religion") || blnPropertyBought == true){
+				strProperties[16][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[16][12] = strData; 
+					blnPropertyBought = false; 
+				}
+			}else if(strData.equals("World Religions") || blnPropertyBought == true){
+				strProperties[18][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[18][12] = strData; 
+					blnPropertyBought = false; 
+				}
+			}else if(strData.equals("Philosphy") || blnPropertyBought == true){
+				strProperties[19][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[19][12] = strData; 
+					blnPropertyBought = false; 
+				}
+			}else if(strData.equals("Indigenous Studies") || blnPropertyBought == true){
+				strProperties[21][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[21][12] = strData; 
+					blnPropertyBought = false; 
+				}
+			}else if(strData.equals("Writer's Craft") || blnPropertyBought == true){
+				strProperties[23][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[23][12] = strData; 
+					blnPropertyBought = false; 
+				}
+			}else if(strData.equals("English") || blnPropertyBought == true){
+				strProperties[24][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[24][12] = strData; 
+					blnPropertyBought = false; 
+				}
+			}else if(strData.equals("Guidance 3") || blnPropertyBought == true){
+				strProperties[25][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[25][12] = strData; 
+					blnPropertyBought = false; 
+				}
+			}else if(strData.equals("Advanced Functions") || blnPropertyBought == true){
+				strProperties[26][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[26][12] = strData; 
+					blnPropertyBought = false; 
+				}
+			}else if(strData.equals("Data Management") || blnPropertyBought == true){
+				strProperties[27][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[27][12] = strData; 
+					blnPropertyBought = false; 
+				}
+			}else if(strData.equals("Athletic Council") || blnPropertyBought == true){
+				strProperties[28][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[28][12] = strData; 
+					blnPropertyBought = false; 
+				}
+			}else if(strData.equals("Calculas and Vectors") || blnPropertyBought == true){
+				strProperties[29][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[29][12] = strData; 
+					blnPropertyBought = false; 
+				}
+			}else if(strData.equals("Biology") || blnPropertyBought == true){
+				strProperties[31][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[31][12] = strData; 
+					blnPropertyBought = false; 
+				}
+			}else if(strData.equals("Chemistry") || blnPropertyBought == true){
+				strProperties[32][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[32][12] = strData; 
+					blnPropertyBought = false; 
+				}
+			}else if(strData.equals("Physics") || blnPropertyBought == true){
+				strProperties[34][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[34][12] = strData; 
+					blnPropertyBought = false; 
+				}
+			}else if(strData.equals("Guidance 4") || blnPropertyBought == true){
+				strProperties[35][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[35][12] = strData; 
+					blnPropertyBought = false; 
+				}
+			}else if(strData.equals("Tech Design") || blnPropertyBought == true){
+				strProperties[37][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[37][12] = strData; 
+					blnPropertyBought = false; 
+				}
+			}else if(strData.equals("Computer Science") || blnPropertyBought == true){
+				strProperties[39][9] = "t"; 
+				blnPropertyBought = true; 
+				if(blnPropertyBought == true){
+					strProperties[39][12] = strData; 
+					blnPropertyBought = false; 
+				}
+			}
+		
+		
+		
+		
+		}
+		
+		
+		
+		
+		
 			// If you are the server 
 			if(blnServer == true){
 				characterspanel.strData = ssm.readText(); 
@@ -545,373 +764,154 @@ public class mainmenu implements ActionListener{
 			System.out.println("This is the turn number: "+monopolypanel.intTurn); 
 			System.out.println("this is the piece number: "+intPiece); 
 			
-			
-			// Update other players scren: 
-			if(monopolypanel.intTurn == 1 && intPiece == 1){
-			System.out.println("testing" +monopolypanel.strColor); 
-			
-				// how to know which information is being received?! 
-				if(monopolypanel.strColor.equals("red") || monopolypanel.strColor.equals("blue") || monopolypanel.strColor.equals("yellow") || monopolypanel.strColor.equals("green")) {
-					System.out.println("i'm back in here"); 
-					monopolypanel.strColor1 = ssm.readText(); 
+			// only updates screen if the message is regard to movement
+			if(blnMovement == true){
+				// Update other players scren: 
+				if(monopolypanel.intTurn == 1 && intPiece == 1){
+				System.out.println("testing" +monopolypanel.strColor); 
+				
+					// how to know which information is being received?! 
+					if(monopolypanel.strColor.equals("red") || monopolypanel.strColor.equals("blue") || monopolypanel.strColor.equals("yellow") || monopolypanel.strColor.equals("green")) {
+						System.out.println("i'm back in here"); 
+						monopolypanel.strColor1 = ssm.readText(); 
+						intPiece = intPiece + 1; 
+					}
+				}
+				else if(monopolypanel.intTurn == 1 && intPiece == 2){
+					String strPlayerX; 
+					strPlayerX = ssm.readText(); 
+					monopolypanel.intPlayerX1 = Integer.parseInt(strPlayerX); 
 					intPiece = intPiece + 1; 
 				}
-			}
-			else if(monopolypanel.intTurn == 1 && intPiece == 2){
-				String strPlayerX; 
-				strPlayerX = ssm.readText(); 
-				monopolypanel.intPlayerX1 = Integer.parseInt(strPlayerX); 
-				intPiece = intPiece + 1; 
-			}
-			else if(monopolypanel.intTurn == 1 && intPiece == 3){
-				String strPlayerY; 
-				strPlayerY = ssm.readText(); 
-				monopolypanel.intPlayerY1 = Integer.parseInt(strPlayerY); 
-				intPiece = intPiece +1; 
-			}
-			else if(monopolypanel.intTurn == 1 && intPiece == 4){
-				// updates whos turn it is. 
-				String strTurn; 
-				strTurn = ssm.readText(); 
-				monopolypanel.intTurn = Integer.parseInt(strTurn); 
-				System.out.println("This is the turn number: "+monopolypanel.intTurn); 
-				intPiece = 1; 
+				else if(monopolypanel.intTurn == 1 && intPiece == 3){
+					String strPlayerY; 
+					strPlayerY = ssm.readText(); 
+					monopolypanel.intPlayerY1 = Integer.parseInt(strPlayerY); 
+					intPiece = intPiece +1; 
+				}
+				else if(monopolypanel.intTurn == 1 && intPiece == 4){
+					// updates whos turn it is. 
+					String strTurn; 
+					strTurn = ssm.readText(); 
+					monopolypanel.intTurn = Integer.parseInt(strTurn); 
+					System.out.println("This is the turn number: "+monopolypanel.intTurn); 
+					intPiece = 1; 
+					
+					
+				}
+				
+				// code for second player: 
+				if(monopolypanel.intTurn == 2 && intPiece == 1){
+				System.out.println("testing" +monopolypanel.strColor); 
+					// how to know which information is being received?! 
+					if(monopolypanel.strColor.equals("red") || monopolypanel.strColor.equals("blue") || monopolypanel.strColor.equals("yellow") || monopolypanel.strColor.equals("green")) {
+						System.out.println("I'm receiving it here"); 
+						monopolypanel.strColor2 = ssm.readText(); 
+						intPiece = intPiece + 1; 
+					}
+				}
+				else if(monopolypanel.intTurn == 2 && intPiece == 2){
+					String strPlayerX; 
+					strPlayerX = ssm.readText(); 
+					monopolypanel.intPlayerX2 = Integer.parseInt(strPlayerX); 
+					intPiece = intPiece + 1; 
+				}else if(monopolypanel.intTurn == 2 && intPiece == 3){
+					String strPlayerY; 
+					strPlayerY = ssm.readText(); 
+					monopolypanel.intPlayerY2 = Integer.parseInt(strPlayerY); 
+					intPiece = intPiece +1; 
+				}
+				else if(monopolypanel.intTurn == 2 && intPiece == 4){
+					// updates whos turn it is. 
+					String strTurn; 
+					strTurn = ssm.readText(); 
+					monopolypanel.intTurn = Integer.parseInt(strTurn); 
+					System.out.println("This is the turn number: "+monopolypanel.intTurn); 
+					intPiece = 1; 
+				
+					
+				}
 				
 				
-			}
-			
-			// code for second player: 
-			if(monopolypanel.intTurn == 2 && intPiece == 1){
-			System.out.println("testing" +monopolypanel.strColor); 
-				// how to know which information is being received?! 
-				if(monopolypanel.strColor.equals("red") || monopolypanel.strColor.equals("blue") || monopolypanel.strColor.equals("yellow") || monopolypanel.strColor.equals("green")) {
-					System.out.println("I'm receiving it here"); 
-					monopolypanel.strColor2 = ssm.readText(); 
+				// code for third player: 
+				if(monopolypanel.intTurn == 3 && intPiece == 1){
+				System.out.println("testing" +monopolypanel.strColor); 
+					// how to know which information is being received?! 
+					if(monopolypanel.strColor.equals("red") || monopolypanel.strColor.equals("blue") || monopolypanel.strColor.equals("yellow") || monopolypanel.strColor.equals("green")) {
+						monopolypanel.strColor3 = ssm.readText(); 
+						intPiece = intPiece + 1; 
+					}
+				}
+				else if(monopolypanel.intTurn == 3 && intPiece == 2){
+					String strPlayerX; 
+					strPlayerX = ssm.readText(); 
+					monopolypanel.intPlayerX3 = Integer.parseInt(strPlayerX); 
 					intPiece = intPiece + 1; 
 				}
-			}
-			else if(monopolypanel.intTurn == 2 && intPiece == 2){
-				String strPlayerX; 
-				strPlayerX = ssm.readText(); 
-				monopolypanel.intPlayerX2 = Integer.parseInt(strPlayerX); 
-				intPiece = intPiece + 1; 
-			}else if(monopolypanel.intTurn == 2 && intPiece == 3){
-				String strPlayerY; 
-				strPlayerY = ssm.readText(); 
-				monopolypanel.intPlayerY2 = Integer.parseInt(strPlayerY); 
-				intPiece = intPiece +1; 
-			}
-			else if(monopolypanel.intTurn == 2 && intPiece == 4){
-				// updates whos turn it is. 
-				String strTurn; 
-				strTurn = ssm.readText(); 
-				monopolypanel.intTurn = Integer.parseInt(strTurn); 
-				System.out.println("This is the turn number: "+monopolypanel.intTurn); 
-				intPiece = 1; 
-			
+				else if(monopolypanel.intTurn == 3 && intPiece == 3){
+					String strPlayerY; 
+					strPlayerY = ssm.readText(); 
+					monopolypanel.intPlayerY3 = Integer.parseInt(strPlayerY); 
+					intPiece = intPiece +1; 
+				}
+				else if(monopolypanel.intTurn == 3 && intPiece == 4){
+					// updates whos turn it is. 
+					String strTurn; 
+					strTurn = ssm.readText(); 
+					monopolypanel.intTurn = Integer.parseInt(strTurn); 
+					System.out.println("This is the turn number: "+monopolypanel.intTurn); 
+					intPiece = 1; 
+					
+					
+				}
 				
-			}
-			
-			
-			// code for third player: 
-			if(monopolypanel.intTurn == 3 && intPiece == 1){
-			System.out.println("testing" +monopolypanel.strColor); 
-				// how to know which information is being received?! 
-				if(monopolypanel.strColor.equals("red") || monopolypanel.strColor.equals("blue") || monopolypanel.strColor.equals("yellow") || monopolypanel.strColor.equals("green")) {
-					monopolypanel.strColor3 = ssm.readText(); 
+				// code for player four: 
+				if(monopolypanel.intTurn == 4 && intPiece == 1){
+				System.out.println("testing" +monopolypanel.strColor); 
+					// how to know which information is being received?! 
+					if(monopolypanel.strColor.equals("red") || monopolypanel.strColor.equals("blue") || monopolypanel.strColor.equals("yellow") || monopolypanel.strColor.equals("green")) {
+						monopolypanel.strColor4 = ssm.readText(); 
+						intPiece = intPiece + 1; 
+					}
+				}
+				else if(monopolypanel.intTurn == 4 && intPiece == 2){
+					String strPlayerX; 
+					strPlayerX = ssm.readText(); 
+					monopolypanel.intPlayerX4 = Integer.parseInt(strPlayerX); 
 					intPiece = intPiece + 1; 
 				}
-			}
-			else if(monopolypanel.intTurn == 3 && intPiece == 2){
-				String strPlayerX; 
-				strPlayerX = ssm.readText(); 
-				monopolypanel.intPlayerX3 = Integer.parseInt(strPlayerX); 
-				intPiece = intPiece + 1; 
-			}
-			else if(monopolypanel.intTurn == 3 && intPiece == 3){
-				String strPlayerY; 
-				strPlayerY = ssm.readText(); 
-				monopolypanel.intPlayerY3 = Integer.parseInt(strPlayerY); 
-				intPiece = intPiece +1; 
-			}
-			else if(monopolypanel.intTurn == 3 && intPiece == 4){
-				// updates whos turn it is. 
-				String strTurn; 
-				strTurn = ssm.readText(); 
-				monopolypanel.intTurn = Integer.parseInt(strTurn); 
-				System.out.println("This is the turn number: "+monopolypanel.intTurn); 
-				intPiece = 1; 
-				
-				
-			}
-			
-			// code for player four: 
-			if(monopolypanel.intTurn == 4 && intPiece == 1){
-			System.out.println("testing" +monopolypanel.strColor); 
-				// how to know which information is being received?! 
-				if(monopolypanel.strColor.equals("red") || monopolypanel.strColor.equals("blue") || monopolypanel.strColor.equals("yellow") || monopolypanel.strColor.equals("green")) {
-					monopolypanel.strColor4 = ssm.readText(); 
-					intPiece = intPiece + 1; 
+				else if(monopolypanel.intTurn == 4 && intPiece == 3){
+					String strPlayerY; 
+					strPlayerY = ssm.readText(); 
+					monopolypanel.intPlayerY4 = Integer.parseInt(strPlayerY); 
+					intPiece = intPiece +1; 
 				}
-			}
-			else if(monopolypanel.intTurn == 4 && intPiece == 2){
-				String strPlayerX; 
-				strPlayerX = ssm.readText(); 
-				monopolypanel.intPlayerX4 = Integer.parseInt(strPlayerX); 
-				intPiece = intPiece + 1; 
-			}
-			else if(monopolypanel.intTurn == 4 && intPiece == 3){
-				String strPlayerY; 
-				strPlayerY = ssm.readText(); 
-				monopolypanel.intPlayerY4 = Integer.parseInt(strPlayerY); 
-				intPiece = intPiece +1; 
-			}
-			else if(monopolypanel.intTurn == 4 && intPiece == 4){
-				// updates whos turn it is. 
-				String strTurn; 
-				strTurn = ssm.readText(); 
-				monopolypanel.intTurn = Integer.parseInt(strTurn); 
-				System.out.println("This is the turn number: "+monopolypanel.intTurn); 
-				intPiece = 1; 
-				
+				else if(monopolypanel.intTurn == 4 && intPiece == 4){
+					// updates whos turn it is. 
+					String strTurn; 
+					strTurn = ssm.readText(); 
+					monopolypanel.intTurn = Integer.parseInt(strTurn); 
+					System.out.println("This is the turn number: "+monopolypanel.intTurn); 
+					intPiece = 1; 
+					
 
-			}
-			
-			// fifth code to reset the turn number if there are four players playing, the turn number will turn to this and reset the code
-			if(monopolypanel.intTurn == 5 && intPiece == 1){
-				monopolypanel.intTurn = 1; 
-				intPiece = 1;
-				// allowing button to reset
+				}
 				
-			}
-			
-			
-			//System.out.println(blnServer); 
-			String strData; 
-			strData = ssm.readText(); 
-			monopolypanel.textarea.append("\n"+strData);
-			
-			// --------- see if a message is regarding the payment of a property --------
-			// this is for property number 1: 
-			if(strData.equals("Geography") || blnPropertyBought == true){
-				strProperties[1][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
-					strProperties[1][12] = strData;
-					blnPropertyBought = false; 
-				}
-			}else if(strData.equals("History") || blnPropertyBought == true){
-				strProperties[3][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
-					strProperties[3][12] = strData; 
-					blnPropertyBought = false; 
-				}
-			}else if(strData.equals("Guidance") || blnPropertyBought == true){
-				strProperties[5][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
-					strProperties[5][12] = strData; 
-					blnPropertyBought = false; 
-				}
-			}else if(strData.equals("Visual Arts") || blnPropertyBought == true){
-				strProperties[6][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
-					strProperties[6][12] = strData; 
-					blnPropertyBought = false; 
-				}
-			}else if(strData.equals("Music") || blnPropertyBought == true){
-				strProperties[8][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
-					strProperties[8][12] = strData; 
-					blnPropertyBought = false; 
-				}
-			}else if(strData.equals("Drama") || blnPropertyBought == true){
-				strProperties[9][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
-					strProperties[9][12] = strData; 
-					blnPropertyBought = false; 
-				}
-			}else if(strData.equals("Accounting") || blnPropertyBought == true){
-				strProperties[11][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
-					strProperties[11][12] = strData; 
-					blnPropertyBought = false; 
-				}
-			}else if(strData.equals("Student Council") || blnPropertyBought == true){
-				strProperties[12][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
-					strProperties[12][12] = strData; 
-					blnPropertyBought = false; 
-				}
-			}else if(strData.equals("Marketing") || blnPropertyBought == true){
-				strProperties[13][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
-					strProperties[13][12] = strData; 
-					blnPropertyBought = false; 
-				}
-			}else if(strData.equals("Business Leadership") || blnPropertyBought == true){
-				strProperties[14][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
-					strProperties[14][12] = strData; 
-					blnPropertyBought = false; 
-				}
-			}else if(strData.equals("Guidance") || blnPropertyBought == true){
-				strProperties[15][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
-					strProperties[15][12] = strData; 
-					blnPropertyBought = false; 
-				}
-			}else if(strData.equals("Religion") || blnPropertyBought == true){
-				strProperties[16][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
-					strProperties[16][12] = strData; 
-					blnPropertyBought = false; 
-				}
-			}else if(strData.equals("World Religions") || blnPropertyBought == true){
-				strProperties[18][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
-					strProperties[18][12] = strData; 
-					blnPropertyBought = false; 
-				}
-			}else if(strData.equals("Philosphy") || blnPropertyBought == true){
-				strProperties[19][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
-					strProperties[19][12] = strData; 
-					blnPropertyBought = false; 
-				}
-			}else if(strData.equals("Indigenous Studies") || blnPropertyBought == true){
-				strProperties[21][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
-					strProperties[21][12] = strData; 
-					blnPropertyBought = false; 
-				}
-			}else if(strData.equals("Writer's Craft") || blnPropertyBought == true){
-				strProperties[23][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
-					strProperties[23][12] = strData; 
-					blnPropertyBought = false; 
-				}
-			}else if(strData.equals("English") || blnPropertyBought == true){
-				strProperties[24][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
-					strProperties[24][12] = strData; 
-					blnPropertyBought = false; 
-				}
-			}else if(strData.equals("Guidance") || blnPropertyBought == true){
-				strProperties[25][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
-					strProperties[25][12] = strData; 
-					blnPropertyBought = false; 
-				}
-			}else if(strData.equals("Advanced Functions") || blnPropertyBought == true){
-				strProperties[26][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
-					strProperties[26][12] = strData; 
-					blnPropertyBought = false; 
-				}
-			}else if(strData.equals("Data Management") || blnPropertyBought == true){
-				strProperties[27][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
-					strProperties[27][12] = strData; 
-					blnPropertyBought = false; 
-				}
-			}else if(strData.equals("Athletic Council") || blnPropertyBought == true){
-				strProperties[28][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
-					strProperties[28][12] = strData; 
-					blnPropertyBought = false; 
-				}
-			}else if(strData.equals("Calculas and Vectors") || blnPropertyBought == true){
-				strProperties[29][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
-					strProperties[29][12] = strData; 
-					blnPropertyBought = false; 
-				}
-			}else if(strData.equals("Biology") || blnPropertyBought == true){
-				strProperties[31][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
-					strProperties[31][12] = strData; 
-					blnPropertyBought = false; 
-				}
-			}else if(strData.equals("Chemistry") || blnPropertyBought == true){
-				strProperties[32][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
-					strProperties[32][12] = strData; 
-					blnPropertyBought = false; 
-				}
-			}else if(strData.equals("Physics") || blnPropertyBought == true){
-				strProperties[34][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
-					strProperties[34][12] = strData; 
-					blnPropertyBought = false; 
-				}
-			}else if(strData.equals("Guidance") || blnPropertyBought == true){
-				strProperties[35][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
-					strProperties[35][12] = strData; 
-					blnPropertyBought = false; 
-				}
-			}else if(strData.equals("Tech Design") || blnPropertyBought == true){
-				strProperties[37][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
-					strProperties[37][12] = strData; 
-					blnPropertyBought = false; 
-				}
-			}else if(strData.equals("Computer Science") || blnPropertyBought == true){
-				strProperties[39][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
-					strProperties[39][12] = strData; 
-					blnPropertyBought = false; 
+				// fifth code to reset the turn number if there are four players playing, the turn number will turn to this and reset the code
+				if(monopolypanel.intTurn == 5 && intPiece == 1){
+					monopolypanel.intTurn = 1; 
+					intPiece = 1;
+					// allowing button to reset
+					
 				}
 			}
-		
 			
-			
-			
-			
+			monopolypanel.textarea.append("\n"+strData); 
+			blnMovement = true; 
+			 
 			
 		}
 	
-		/*
-		//Checking to see if someone has bought property?? under 719? ---------------------------------------------------------------
-			String strData;
-			strData = ssm.readText(); 
-			if (strData.equalsIgnoreCase(strProperties[monopolypanel.strPropertyN][0])){ //cannot convert string to int
-				strProperties[monopolypanel.strPropertiesN][9] = false; // cannot convert boolean to string
-				blnProperties = true; // when player buys properties
-				if(blnProperties){
-					ssm.sendText(strProperties[monopolypanel.strPropertyN][9]); //cannot convert boolean to string
-					blnProperties = false; // this makes it false for the player and everyone else 
-				}
-			}
-		// Check this section above loooool if incorrect, delete this section.  ------------------------------------------------------------------------------------------	
-		*/
 		
 		
 		//ROLLING THE DICE
@@ -1026,7 +1026,7 @@ public class mainmenu implements ActionListener{
 			else if (strCard.equalsIgnoreCase("chance")){
 				monopolypanel.strCard = "chance";
 				// generates random card number
-				intNum = (int) (Math.random()*30+1);
+				intNum = (int) (Math.random()*29+0);
 				// prints out what the community card says
 				strCard = strChance[intNum][1];
 				monopolypanel.strCardinfo = strCard;
@@ -1047,16 +1047,16 @@ public class mainmenu implements ActionListener{
 						monopolypanel.intYOUy = 650;
 					}
 					else if(intLocation>=10 && intLocation<20){
-						monopolypanel.intYOUx = 20;
+						monopolypanel.intYOUx = 50;
 						monopolypanel.intYOUy = 650 - ((intLocation-10)*60);
 					}
 					else if(intLocation>=20 && intLocation<30){
-						monopolypanel.intYOUx = 20 + ((intLocation-20)*60);
-						monopolypanel.intYOUy = 20;
+						monopolypanel.intYOUx = 50 + ((intLocation-20)*60);
+						monopolypanel.intYOUy = 50;
 					}
 					else if(intLocation>=30 && intLocation<40){
 						monopolypanel.intYOUx = 650;
-						monopolypanel.intYOUy = 20 + ((intLocation-30)*60);
+						monopolypanel.intYOUy = 50 + ((intLocation-30)*60);
 					}
 					//if chance card sends you to jail
 					if(intLocation == 10){
@@ -1347,8 +1347,8 @@ public class mainmenu implements ActionListener{
 				}
 			}
 		// ---------------------- Sending message over the server that the property can no longer be bought --------------
-		ssm.sendText(monopolypanel.strPropertyN); 
-		ssm.sendText(monopolypanel.intPlayer+""); 
+		//ssm.sendText(monopolypanel.strPropertyN); 
+		//ssm.sendText(monopolypanel.intPlayer+""); 
 		
 		System.out.println(monopolypanel.strPropertyN); 
 		System.out.println(monopolypanel.intPlayer); 
