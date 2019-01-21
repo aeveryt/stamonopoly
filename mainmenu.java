@@ -85,12 +85,10 @@ public class mainmenu implements ActionListener{
 		}
 		//-page 1
 		else if(evt.getSource() == thepanelinstructions.backtomain){
-			System.out.println("Trying to go back to main menu");
 			theframe.setContentPane(thepanel);
 			theframe.setVisible(true);
 		}
 		else if(evt.getSource() == thepanelinstructions.topage2){
-			System.out.println("Trying to go page 2");
 			thepanelinstructions.backtomain.setVisible(false);
 			thepanelinstructions.topage2.setVisible(false);
 			thepanelinstructions.backtopage1.setVisible(true);
@@ -105,7 +103,6 @@ public class mainmenu implements ActionListener{
 		}
 		//-page 2
 		else if(evt.getSource() == thepanelinstructions.backtopage1){
-			System.out.println("Trying to go back to page 1");
 			thepanelinstructions.backtomain.setVisible(true);
 			thepanelinstructions.topage2.setVisible(true);
 			thepanelinstructions.backtopage1.setVisible(false);
@@ -119,7 +116,6 @@ public class mainmenu implements ActionListener{
 			theframe.setVisible(true);
 		}
 		else if(evt.getSource() == thepanelinstructions.topage3){
-			System.out.println("Trying to go to page 3");
 			thepanelinstructions.backtomain.setVisible(false);
 			thepanelinstructions.topage2.setVisible(false);
 			thepanelinstructions.backtopage1.setVisible(false);
@@ -138,7 +134,6 @@ public class mainmenu implements ActionListener{
 		}
 		//-page 3
 		else if(evt.getSource() == thepanelinstructions.backtopage2){
-			System.out.println("Trying to go to page 2");
 			thepanelinstructions.backtomain.setVisible(false);
 			thepanelinstructions.topage2.setVisible(false);
 			thepanelinstructions.backtopage1.setVisible(true);
@@ -158,7 +153,6 @@ public class mainmenu implements ActionListener{
 			theframe.setVisible(true);
 		}
 		else if(evt.getSource() == thepanelinstructions.topage4){
-			System.out.println("Trying to go to page 4");
 			thepanelinstructions.backtomain.setVisible(false);
 			thepanelinstructions.topage2.setVisible(false);
 			thepanelinstructions.backtopage1.setVisible(false);
@@ -179,7 +173,6 @@ public class mainmenu implements ActionListener{
 		}
 		//-page 4
 		else if(evt.getSource() == thepanelinstructions.backtopage3){
-			System.out.println("Trying to go back to page 3");
 			thepanelinstructions.backtomain.setVisible(false);
 			thepanelinstructions.topage2.setVisible(false);
 			thepanelinstructions.backtopage1.setVisible(false);
@@ -199,7 +192,6 @@ public class mainmenu implements ActionListener{
 			theframe.setVisible(true);
 		}
 		else if(evt.getSource() == thepanelinstructions.topage5){
-			System.out.println("Trying to go to page 5");
 			thepanelinstructions.backtomain.setVisible(false);
 			thepanelinstructions.topage2.setVisible(false);
 			thepanelinstructions.backtopage1.setVisible(false);
@@ -220,7 +212,6 @@ public class mainmenu implements ActionListener{
 		}
 		//-page 5
 		else if(evt.getSource() == thepanelinstructions.backtopage4){
-			System.out.println("Trying to go back to page 4");
 			thepanelinstructions.backtomain.setVisible(false);
 			thepanelinstructions.topage2.setVisible(false);
 			thepanelinstructions.backtopage1.setVisible(false);
@@ -240,7 +231,6 @@ public class mainmenu implements ActionListener{
 			theframe.setVisible(true);
 		}
 		else if(evt.getSource() == thepanelinstructions.tomain5){
-			System.out.println("Trying to go back to main menu");
 			thepanelinstructions.backtomain.setVisible(false);
 			thepanelinstructions.topage2.setVisible(false);
 			thepanelinstructions.backtopage1.setVisible(false);
@@ -751,31 +741,31 @@ public class mainmenu implements ActionListener{
 			for(intCount = 1; intCount <= intdiesum; intCount++){
 				//System.out.println(intCount); 
 				if(monopolypanel.intYOUx <= 650 && monopolypanel.intYOUx > 50 && monopolypanel.intYOUy >= 650){
-					System.out.println("going to the left"); 
+					//System.out.println("going to the left"); 
 					monopolypanel.intYOUx = monopolypanel.intYOUx - 60; 	
 				}
 				else if(monopolypanel.intYOUy > 50 && monopolypanel.intYOUy > 40 && monopolypanel.intYOUx == 50){
-					System.out.println("going up");
-					System.out.println(monopolypanel.intYOUx); 
-					System.out.println(monopolypanel.intYOUy);  
+					//System.out.println("going up");
+					//System.out.println(monopolypanel.intYOUx); 
+					//System.out.println(monopolypanel.intYOUy);  
 					//monopolypanel.intYOUx = 30;
 					monopolypanel.intYOUy = monopolypanel.intYOUy - 60; 
 				}
 				else if(monopolypanel.intYOUy < 51 && monopolypanel.intYOUx < 650){
-					System.out.println("going right");
-					System.out.println(monopolypanel.intYOUx); 
-					System.out.println(monopolypanel.intYOUy);
+					//System.out.println("going right");
+					//System.out.println(monopolypanel.intYOUx); 
+					//System.out.println(monopolypanel.intYOUy);
 					//monopolypanel.intYOUy = 30; 
 					monopolypanel.intYOUx =monopolypanel.intYOUx + 60; 
 				}
 				else if(monopolypanel.intYOUy < 650 && monopolypanel.intYOUx == 650){
-					System.out.println("going down"); 
+					//System.out.println("going down"); 
 					monopolypanel.intYOUy = monopolypanel.intYOUy + 60; 
 				}
 			}
 			
 			//- printing out dice to animation monopoly panel
-			System.out.println(intdice1+" + " +intdice2); 
+			//System.out.println(intdice1+" + " +intdice2); 
 			String strDice1; 
 			String strDice2; 
 			String strDiceSum;
@@ -829,7 +819,7 @@ public class mainmenu implements ActionListener{
 				intMoney = intMoney + intMoneyCommunity;
 				monopolypanel.intMoney = intMoney;
 			}
-			//-CHANCE
+			//-chance
 			else if (strCard.equalsIgnoreCase("chance")){
 				monopolypanel.strCard = "chance";
 				// generates random card number
@@ -843,12 +833,29 @@ public class mainmenu implements ActionListener{
 				System.out.println(strCheck);
 				
 				//--if statements
-				//-money
+				//-location
 				if(strCheck.equalsIgnoreCase("l")){
 					intLocation = Integer.parseInt(strChance[intNum][3]);
 					monopolypanel.intPropertyN = intLocation;
+					System.out.println("The Chance card took you to location: " +monopolypanel.intPropertyN);
+					if(intLocation>=0 && intLocation<10){
+						monopolypanel.intYOUx = 650-((intLocation)*60);
+						monopolypanel.intYOUy = 650;
+					}
+					else if(intLocation>=10 && intLocation<20){
+						monopolypanel.intYOUx = 20;
+						monopolypanel.intYOUy = 650 - ((intLocation-10)*60);
+					}
+					else if(intLocation>=20 && intLocation<30){
+						monopolypanel.intYOUx = 20 + ((intLocation-20)*60);
+						monopolypanel.intYOUy = 20;
+					}
+					else if(intLocation>=30 && intLocation<40){
+						monopolypanel.intYOUx = 650;
+						monopolypanel.intYOUy = 20 + ((intLocation-30)*60);
+					}
 				}
-				//-location
+				//-money
 				else if(strCheck.equalsIgnoreCase("m")){
 					intMoneyChance = Integer.parseInt(strChance[intNum][3]);
 					intMoney = intMoney + intMoneyChance;
@@ -886,9 +893,10 @@ public class mainmenu implements ActionListener{
 			monopolypanel.strPropertyN = strProperties[monopolypanel.intPropertyN][0]; 	
 			monopolypanel.strMoney = intMoney+"";
 			
-			//--landing on  go to prinicpal office
+			//--landing on go to prinicpal office
 			if(strProperties[monopolypanel.intPropertyN][0].equalsIgnoreCase("Go To Principal's Office")){
 				//Player moves to principal office
+				monopolypanel.intPropertyN = 10;
 				monopolypanel.intYOUx = 50;
 				monopolypanel.intYOUy = 650; 
 				//isolate player for 3 turns unless dice == double or they pay to get out or or or they have freEee pass
