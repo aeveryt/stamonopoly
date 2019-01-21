@@ -708,12 +708,6 @@ public class mainmenu implements ActionListener{
 				
 			}
 			
-			
-			
-			
-			
-			 
-		
 			//System.out.println(blnServer); 
 			String strData; 
 			strData = ssm.readText(); 
@@ -791,7 +785,8 @@ public class mainmenu implements ActionListener{
 			int intCard; // card that is randomly chosen
 			int intNum; // random num generated.
 			int intLength; // measure the number of letters in a string
-
+			int intLandedRent; //the rent of the property that you landed on 
+		
 			//initialize
 			strCard = strProperties[monopolypanel.intPropertyN][0];
 			
@@ -865,6 +860,8 @@ public class mainmenu implements ActionListener{
 			else if(strProperties[monopolypanel.intPropertyN][9].equalsIgnoreCase("t")){
 				monopolypanel.buy.setEnabled(false);
 				monopolypanel.dontbuy.setEnabled(false);
+				intLandedRent = Integer.parseInt(strProperties[monopolypanel.intPropertyN][3]);
+				intMoney = intMoney - intLandedRent;
 			}
 			//--printing out to animation panel your money and the property you landed on
 			monopolypanel.strPropertyN = strProperties[monopolypanel.intPropertyN][0]; 	
