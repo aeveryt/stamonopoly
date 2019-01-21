@@ -27,6 +27,7 @@ public class mainmenu implements ActionListener{
 	int intRoll = 2;  
 	boolean blnPlay = false; 
 	boolean blnDice = false; 
+	boolean blnProperties = false;  // related to sending properties over the server.
 	
 	//-Players
 	int intMoney = 1500;
@@ -716,6 +717,22 @@ public class mainmenu implements ActionListener{
 			monopolypanel.textarea.append("\n"+strData);
 			
 		}
+	
+		/*
+		//Checking to see if someone has bought property?? under 719? ---------------------------------------------------------------
+			String strData;
+			strData = ssm.readText(); 
+			if (strData.equalsIgnoreCase(strProperties[monopolypanel.strPropertyN][0])){ //cannot convert string to int
+				strProperties[monopolypanel.strPropertiesN][9] = false; // cannot convert boolean to string
+				blnProperties = true; // when player buys properties
+				if(blnProperties){
+					ssm.sendText(strProperties[monopolypanel.strPropertyN][9]); //cannot convert boolean to string
+					blnProperties = false; // this makes it false for the player and everyone else 
+				}
+			}
+		// Check this section above loooool if incorrect, delete this section.  ------------------------------------------------------------------------------------------	
+		*/
+		
 		
 		//ROLLING THE DICE
 		else if(evt.getSource() == monopolypanel.rolldie){
@@ -923,10 +940,21 @@ public class mainmenu implements ActionListener{
 			monopolypanel.buy.setEnabled(false);
 			monopolypanel.dontbuy.setEnabled(false);
 			monopolypanel.blnOwned = true;
-			strPropertyCost = strProperties[monopolypanel.intPropertyN][2];
+			//When property is bought
+			strPropertyCost = strProperties[monopolypanel.intPropertyN][2]; // cost of property
 			System.out.println("buying stuff $"+strProperties[monopolypanel.intPropertyN][2]);
-			intPropertyCost = Integer.parseInt(strProperties[monopolypanel.intPropertyN][2]);
-			intMoney = intMoney-intPropertyCost;
+			intPropertyCost = Integer.parseInt(strProperties[monopolypanel.intPropertyN][2]); // converting int to string
+			intMoney = intMoney-intPropertyCost; // subtracting
+			
+			//Trying to send over to other person.
+			// if mistake is made, discard this entire section ----------------------------------------------------------
+			
+			ssm.sendText(strProperties[monopolypanel.intPropertyN][0]); // send over to others which properties have been bought. 
+			monopolypanel.strPlayer = Integer.toString(monopolypanel.intPlayer); // might be able to set the variable on main menu
+			ssm.sendText(monopolypanel.strPlayer); // intplayer is Int variable so it cannot be sent over as text? i converted it into string.
+		
+			// ------------------------------------------------------------------------------------------------------------------------
+			
 			monopolypanel.strMoney = intMoney+"";
 			monopolypanel.intMoney = intMoney;
 			monopolypanel.intRent = Integer.parseInt(strProperties[monopolypanel.intPropertyN][3]);

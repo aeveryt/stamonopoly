@@ -52,13 +52,14 @@ public class AnimationMonopolyPanel extends JPanel{
 	String strPropertyN = ""; 
 	String strPropertyOwned = "";
 	
+	
 	//-player variables
 	int intYOUx =  650; 
 	int intYOUy = 650;
 	int intPlayerCount =0; 
 	int intPlayer = 0; 
 	int intTurn = 1; 
-	
+	String strPlayer = "";
 	// indicate which colours were selected
 	String strYourColor = ""; 
 	boolean blnBlue;
