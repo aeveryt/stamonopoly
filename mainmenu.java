@@ -918,6 +918,7 @@ public class mainmenu implements ActionListener{
 		
 		//BUYING PROPERTIES
 		else if(evt.getSource()== monopolypanel.buy){
+			monopolypanel.blnOwned = true;
 			strPropertyCost = strProperties[monopolypanel.intPropertyN][2];
 			System.out.println("buying stuff $"+strProperties[monopolypanel.intPropertyN][2]);
 			//strPropertyCost = strProperties[monopolypanel.intPropertyN][10];
@@ -925,6 +926,11 @@ public class mainmenu implements ActionListener{
 			intMoney = intMoney-intPropertyCost;
 			monopolypanel.strMoney = intMoney+"";
 			monopolypanel.intMoney = intMoney;
+			monopolypanel.intRent = Integer.parseInt(strProperties[monopolypanel.intPropertyN][3]);
+			monopolypanel.intHouse1 = Integer.parseInt(strProperties[monopolypanel.intPropertyN][4]);
+			monopolypanel.intHouse2 = Integer.parseInt(strProperties[monopolypanel.intPropertyN][5]);
+			monopolypanel.intHouse3 = Integer.parseInt(strProperties[monopolypanel.intPropertyN][6]);
+			monopolypanel.intHotel = Integer.parseInt(strProperties[monopolypanel.intPropertyN][7]);
 			//what is this code for?????
 			for(intCol = 1; intCol <8; intCol++){
 			monopolypanel.strProperty = strProperties[monopolypanel.intPropertyN][intCol];

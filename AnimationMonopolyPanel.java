@@ -42,6 +42,7 @@ public class AnimationMonopolyPanel extends JPanel{
 	int intMoney = 1500;
 	String strMoney = ""+intMoney;
 	//-property variables
+	boolean blnOwned = false;
 	int intPropertyN = 0; 
 	int intRent;
 	int intHouse1; //these are the classroom improvements
@@ -122,17 +123,19 @@ public class AnimationMonopolyPanel extends JPanel{
 		
 		//properties outline
 		g.fillRect(725,331,282,315);
-		g.setFont(property);
-		g.setColor(Color.RED);
-		g.drawString(strPropertyN,730,353);
-		g.setFont(text);
-		g.setColor(Color.BLACK);
-		g.drawString("Rent: $"+intRent,730,386);
-		g.drawString("1 Improvement: $"+intHouse1,730,404);
-		g.drawString("2 Improvements: $"+intHouse2,730,422);
-		g.drawString("3 Improvements: $"+intHouse3,730,439);
-		g.drawString("Upgrade to STEM: $"+intHotel,730,456);
-		g.setColor(Color.WHITE);
+		if(blnOwned){
+			g.setFont(property);
+			g.setColor(Color.RED);
+			g.drawString(strPropertyN,730,353);
+			g.setFont(text);
+			g.setColor(Color.BLACK);
+			g.drawString("Rent: $"+intRent,730,386);
+			g.drawString("1 Improvement: $"+intHouse1,730,414);
+			g.drawString("2 Improvements: $"+intHouse2,730,432);
+			g.drawString("3 Improvements: $"+intHouse3,730,449);
+			g.drawString("Upgrade to STEM: $"+intHotel,730,466);
+			g.setColor(Color.WHITE);
+		}
 		
 		
 		// load the rolled number into the dice area
