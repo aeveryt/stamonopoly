@@ -39,6 +39,7 @@ public class mainmenu implements ActionListener{
 	
 	//-Properties (that you own)
 	int intNumofProperties = 0; //number of properties owned
+	//--property colours
 	int intBrown;
 	int intRailRoad;
 	int intLightBlue;
@@ -49,6 +50,7 @@ public class mainmenu implements ActionListener{
 	int intYellow;
 	int intGreen;
 	int intDarkBlue;
+	int intRentOption;
 	
 	//-File Variables 
 	//--board
@@ -898,7 +900,9 @@ public class mainmenu implements ActionListener{
 			//-check if property is owned
 			//--if property isn't owned
 			if(strProperties[monopolypanel.intPropertyN][9].equalsIgnoreCase("f")){
-				if(intMoney>0){
+				intPropertyCost = Integer.parseInt(strProperties[monopolypanel.intPropertyN][3]);
+				//checks to see if you can afford the property
+				if(intMoney>intPropertyCost){
 					monopolypanel.buy.setEnabled(true);
 					monopolypanel.dontbuy.setEnabled(true);
 				}
@@ -1115,7 +1119,8 @@ public class mainmenu implements ActionListener{
 				}
 			}
 		}
-		
+		//PROPERTIES PANEL (that you own)
+		//-next
 		else if(evt.getSource()==monopolypanel.next){
 			/* - checking if you own the property
 			 * for (intRow = 0; intRow < 40; intRow ++){	
@@ -1149,14 +1154,15 @@ public class mainmenu implements ActionListener{
 			monopolypanel.intHotel = Integer.parseInt(strProperties[monopolypanel.intPropertyN][7]);
 			 * 	
 			 * */
-			
 		}
+		//-back
 		else if(evt.getSource() == monopolypanel.back){
 		}
-			
 		
+		//BUYING A HOUSE (Classroom Improvement)
+		else if(evt.getSource() == monopolypanel.house){
+		}	
 	}
-	
 	
 	//Constructor
 	public mainmenu(){
