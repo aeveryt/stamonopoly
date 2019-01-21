@@ -898,6 +898,11 @@ public class mainmenu implements ActionListener{
 				monopolypanel.buy.setEnabled(false);
 				monopolypanel.dontbuy.setEnabled(false);
 				intLandedRent = Integer.parseInt(strProperties[monopolypanel.intPropertyN][3]);
+				//if utilities owned
+				if(monopolypanel.intPropertyN == 12 || monopolypanel.intPropertyN == 28){
+					intLandedRent = intdiesum*intLandedRent;
+				}
+
 				intMoney = intMoney - intLandedRent;
 			}
 			//--printing out from animation panel your money and the property you landed on
