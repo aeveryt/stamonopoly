@@ -1022,7 +1022,7 @@ public class mainmenu implements ActionListener{
 			else if (strCard.equalsIgnoreCase("chance")){
 				monopolypanel.strCard = "chance";
 				// generates random card number
-				intNum = (int) (Math.random()*30+1);
+				intNum = (int) (Math.random()*29+0);
 				// prints out what the community card says
 				strCard = strChance[intNum][1];
 				monopolypanel.strCardinfo = strCard;
