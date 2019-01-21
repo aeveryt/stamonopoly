@@ -1049,6 +1049,10 @@ public class mainmenu implements ActionListener{
 			if(strProperties[monopolypanel.intPropertyN][10].equalsIgnoreCase("br")){
 				System.out.println("bought brown");
 				intBrown = intBrown + 1;
+				//can buy a house
+				if(intBrown == 2){
+					monopolypanel.house.setEnabled(true);
+				}
 			}
 			else if(strProperties[monopolypanel.intPropertyN][10].equalsIgnoreCase("rail")){
 				System.out.println("bought rail");
@@ -1057,30 +1061,58 @@ public class mainmenu implements ActionListener{
 			else if(strProperties[monopolypanel.intPropertyN][10].equalsIgnoreCase("lb")){
 				System.out.println("bought lb");
 				intLightBlue = intLightBlue	+ 1;
+				//can buy a house
+				if(intLightBlue == 3){
+					monopolypanel.house.setEnabled(true);
+				}
 			}
 			else if(strProperties[monopolypanel.intPropertyN][10].equalsIgnoreCase("pur")){
 				System.out.println("bought purple");
 				intPurple = intPurple + 1;
+				//can buy a house
+				if(intPurple == 3){
+					monopolypanel.house.setEnabled(true);
+				}
 			}
 			else if(strProperties[monopolypanel.intPropertyN][10].equalsIgnoreCase("or")){
 				System.out.println("bought orange");
 				intOrange = intOrange + 1;
+				//can buy a house
+				if(intOrange == 3){
+					monopolypanel.house.setEnabled(true);
+				}
 			}
 			else if(strProperties[monopolypanel.intPropertyN][10].equalsIgnoreCase("red")){
 				System.out.println("bought red");
 				intRed = intRed + 1;
+				//can buy a house
+				if(intRed == 3){
+					monopolypanel.house.setEnabled(true);
+				}
 			}
 			else if(strProperties[monopolypanel.intPropertyN][10].equalsIgnoreCase("yel")){
 				System.out.println("bought yellow");
 				intYellow = intYellow + 1;
+				//can buy a house
+				if(intYellow == 3){
+					monopolypanel.house.setEnabled(true);
+				}
 			}
 			else if(strProperties[monopolypanel.intPropertyN][10].equalsIgnoreCase("gre")){
 				System.out.println("bought green");
 				intGreen = intGreen + 1;
+				//can buy a house
+				if(intGreen == 3){
+					monopolypanel.house.setEnabled(true);
+				}
 			}
 			else if(strProperties[monopolypanel.intPropertyN][10].equalsIgnoreCase("db")){
 				System.out.println("bought dark blue");
 				intDarkBlue = intDarkBlue + 1;
+				//can buy a house
+				if(intDarkBlue == 2){
+					monopolypanel.house.setEnabled(true);
+				}
 			}
 		}
 		
