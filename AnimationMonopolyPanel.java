@@ -41,8 +41,11 @@ public class AnimationMonopolyPanel extends JPanel{
 	String strCardinfo = "";
 	String strPlayerTurn = "";
 	String strDisplayLength = "";
+	String strDisplayLength2 = "";
+	String strDisplayLength3 = "";
+	
+	
 	//- Community card / Chance card
-	//int intCardX = 850; might not need this variable.
 	int intCardY = 145;
 	
 	//-money
@@ -123,6 +126,8 @@ public class AnimationMonopolyPanel extends JPanel{
 		g.setColor(Color.BLACK);
 		g.drawString (strCard,850,125);
 		g.drawString(strDisplayLength,850,intCardY);
+		g.drawString(strDisplayLength2,850,intCardY+15);
+		g.drawString(strDisplayLength3,850,intCardY+30);
 		
 		g.setColor(Color.WHITE);
 		

@@ -985,7 +985,11 @@ public class mainmenu implements ActionListener{
 			int intCard; // card that is randomly chosen
 			int intNum; // random num generated.
 			int intLength; // measure the number of letters in a string
+			int intLength2;
 			int intLandedRent; //the rent of the property that you landed on 
+			int intRemain = 0; // the amount of letters remaining. 
+			int intLines = 0; // lines needed to print (might not need this nayrmoe)
+			int intLengthMax = 25;
 		
 			//initialize
 			strCard = strProperties[monopolypanel.intPropertyN][0];
@@ -998,26 +1002,35 @@ public class mainmenu implements ActionListener{
 				//card info
 				strCard = strCommunity[intNum][1];
 				monopolypanel.strCardinfo = strCard;
-				System.out.println(strCommunity[intNum][2]);
-
 				System.out.println(strCommunity[intNum][1]);// prints out what the community card says
-				intLength = strCommunity[intNum][1].length();
-				
-				// must subtract intlength with a certain amount of substring characters
-					
-				int intCount;
-				
-				for(intCount = intLength; intCount > 0; intCount --){
+
+				//-Printing Community  CardInfo to panel 
+				// if intLength is greater than 25 letters
+
+				intLength = strCommunity[intNum][1].length(); //length of first line
+				intRemain = intLength - intLengthMax; 
 					if(intLength > 25){
-						intLength = intLength - 1;
-						monopolypanel.strDisplayLength = strCommunity[intNum][1].substring(0,intLength);
+						monopolypanel.strDisplayLength = strCommunity[intNum][1].substring(0,intLengthMax);
+						intRemain = intLength - intRemain;
+						monopolypanel.strDisplayLength2 = strCommunity[intNum][1].substring(intRemain,intLength);
+					/*		if(intRemain > 25){
+							intRemain = intRemain - intLengthMax;
+							System.out.println(strCommunity[intNum][1].substring(intLength-intRemain,intLength));
+					}		*/					
+						}else{
+							monopolypanel.strDisplayLength = strCommunity[intNum][1].substring(0,intLength);
+						}
 						
+						//--Length of second line 
+						intLength2 = monopolypanel.strDisplayLength2.length();
+						System.out.println(intLength2);
+					if(intLength2 > 25){
+						intRemain = intLength2 - intRemain;
+						System.out.println(intRemain);
+						monopolypanel.strDisplayLength3 = strCommunity[intNum][1].substring(intRemain,intLength);
 					}
-				}
-	
-				System.out.println("The number of substrings in this card is "+ intLength);
-				//strNum = strCommunity[intNum][0];
-				
+						
+						
 				intMoneyCommunity = Integer.parseInt(strCommunity[intNum][2]);
 				intMoney = intMoney + intMoneyCommunity;
 				monopolypanel.intMoney = intMoney;
@@ -1072,36 +1085,25 @@ public class mainmenu implements ActionListener{
 					intMoney = intMoney + intMoneyChance;
 					monopolypanel.intMoney = intMoney;
 				}
-				// if intlenght is graer than 25, then chop it and count 25, then substract the amount chopped and place it under. 
-				int intNum2;
-				int intRemain = 0; // the amount of letters remaining. 
-				int intLines = 0;
-				int intLengthMax = 25;
-				
+				//-Printing Chance CardInfo to panel 
+				// if intLength is greater than 25 letters
+
 				intLength = strChance[intNum][1].length();
-				
-				intLines  = intLength / 20; // indicates how many lines will be needed for 
-				intRemain = intLength - intLengthMax;
-				
-				 //intLength = monopolypanel.strDisplayLength.length();
-				System.out.println("remaining amount: " + intRemain);
-				System.out.println("amound of lines we need " + intLines);
-					
-					for(intCount = 0; intCount <intLines; intCount++){
-					
-						if(intLength > 25){
-							monopolypanel.strDisplayLength = strChance[intNum][1].substring(0,intLengthMax);
-						}
-						else{
+				intRemain = intLength - intLengthMax; 
+					if(intLength > 25){
+						monopolypanel.strDisplayLength = strChance[intNum][1].substring(0,intLengthMax);
+						intRemain = intLength - intRemain;
+						monopolypanel.strDisplayLength2 = strChance[intNum][1].substring(intRemain,intLength);
+							if(intRemain > 25){
+							intRemain = intRemain - intLengthMax;
+							System.out.println(strChance[intNum][1].substring(intLength-intRemain,intLength));
+					}							
+						}else{
 							monopolypanel.strDisplayLength = strChance[intNum][1].substring(0,intLength);
 						}
-						if(intLines >=2){
-							monopolypanel.intCardY = monopolypanel.intCardY + 15; //prints out the thing on different line each time. 
-						}
-					}
-				monopolypanel.intCardY = 145;// resets intcardY value
-			
-				System.out.println("The number of substrings in this card is "+ intLength);
+					
+				//monopolypanel.intCardY = 145;// resets intcardY value
+
 			}
 			
 			//-check if property is owned
