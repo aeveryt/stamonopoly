@@ -1043,16 +1043,16 @@ public class mainmenu implements ActionListener{
 						monopolypanel.intYOUy = 650;
 					}
 					else if(intLocation>=10 && intLocation<20){
-						monopolypanel.intYOUx = 20;
+						monopolypanel.intYOUx = 50;
 						monopolypanel.intYOUy = 650 - ((intLocation-10)*60);
 					}
 					else if(intLocation>=20 && intLocation<30){
-						monopolypanel.intYOUx = 20 + ((intLocation-20)*60);
-						monopolypanel.intYOUy = 20;
+						monopolypanel.intYOUx = 50 + ((intLocation-20)*60);
+						monopolypanel.intYOUy = 50;
 					}
 					else if(intLocation>=30 && intLocation<40){
 						monopolypanel.intYOUx = 650;
-						monopolypanel.intYOUy = 20 + ((intLocation-30)*60);
+						monopolypanel.intYOUy = 50 + ((intLocation-30)*60);
 					}
 					//if chance card sends you to jail
 					if(intLocation == 10){
