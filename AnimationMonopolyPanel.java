@@ -124,14 +124,14 @@ public class AnimationMonopolyPanel extends JPanel{
 		g.fillRect(725,331,282,315);
 		g.setFont(property);
 		g.setColor(Color.RED);
-		g.drawString(strProperty,730,353);
+		g.drawString(strPropertyN,730,353);
 		g.setFont(text);
 		g.setColor(Color.BLACK);
-		g.drawString("Rent: $"+intRent,730,377);
-		g.drawString("1 Improvement: $"+intHouse1,730,396);
-		g.drawString("2 Improvements: $"+intHouse2,730,413);
-		g.drawString("3 Improvements: $"+intHouse3,730,430);
-		g.drawString("Upgrade to STEM: $"+intHotel,730,447);
+		g.drawString("Rent: $"+intRent,730,386);
+		g.drawString("1 Improvement: $"+intHouse1,730,404);
+		g.drawString("2 Improvements: $"+intHouse2,730,422);
+		g.drawString("3 Improvements: $"+intHouse3,730,439);
+		g.drawString("Upgrade to STEM: $"+intHotel,730,456);
 		g.setColor(Color.WHITE);
 		
 		
