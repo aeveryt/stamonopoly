@@ -783,23 +783,10 @@ public class mainmenu implements ActionListener{
 			monopolypanel.strPropertyN = strProperties[monopolypanel.intPropertyN][0]; 	
 			monopolypanel.strMoney = intMoney+"";
 			
-					
-			//int Array[] = new int[30]; //community
-			//int Array2[] = new int[30]; // chance
-			//Converting String into int 
-		//for(intRow = 0; intRow < 30; intRow++){
-			//(amount of money a player may gain or lose)
-			//intCommunity = Integer.parseInt(strCommunity[intRow][2]); 
-			//intChance = Integer.parseInt(strChance[intRow][3]);
-			//Array[intRow] = intCommunity;
-			//Array2[intRow] = intChance;
-		//}
-			
 			//-Landing on chance or community cards
 			String strCard;
 			String strNum;
 			String strCheck; //check if the card affects the location or money
-		
 			int intLocation; //if it affects location
 			int intMoneyChance; //money affected from chance
 			int intMoneyCommunity; //money affected from community
@@ -807,12 +794,11 @@ public class mainmenu implements ActionListener{
 			int intNum; // random num generated.
 			int intLength; // measure the number of letters in a string
 
-			
 			//initialize
 			strCard = strProperties[monopolypanel.intPropertyN][0];
 			
-			//community chest
-			if (strCard.equalsIgnoreCase("community")){
+			//-community chest
+			if(strCard.equalsIgnoreCase("community")){
 				monopolypanel.strCard = "community card";
 				//generates random number
 				intNum = (int) (Math.random()*29+0);
@@ -831,9 +817,7 @@ public class mainmenu implements ActionListener{
 				intMoney = intMoney + intMoneyCommunity;
 				monopolypanel.intMoney = intMoney;
 			}
-				
-			
-			//chance	
+			//-CHANCE
 			else if (strCard.equalsIgnoreCase("chance")){
 				monopolypanel.strCard = "chance";
 				// generates random card number
@@ -865,6 +849,22 @@ public class mainmenu implements ActionListener{
 				System.out.println(monopolypanel.strDisplayLength);
 				
 				System.out.println("The number of substrings in this card is "+ intLength);
+			}
+			
+			//check if property is owned
+			if(strProperties[monopolypanel.intPropertyN][9].equalsIgnoreCase("false")){
+				if(intMoney>0){
+					monopolypanel.buy.setEnabled(true);
+					monopolypanel.dontbuy.setEnabled(true);
+				}
+				else{
+					monopolypanel.buy.setEnabled(false);
+					monopolypanel.dontbuy.setEnabled(true);
+				}
+			}
+			else if(strProperties[monopolypanel.intPropertyN][9].equalsIgnoreCase("true")){
+				monopolypanel.buy.setEnabled(false);
+				monopolypanel.dontbuy.setEnabled(false);
 			}
 			
 		}
@@ -931,6 +931,7 @@ public class mainmenu implements ActionListener{
 			
 		}
 			
+		
 	}
 	
 	
@@ -1167,6 +1168,8 @@ public class mainmenu implements ActionListener{
 		monopolypanel.back.addActionListener(this);
 		monopolypanel.buy.addActionListener(this);
 		monopolypanel.dontbuy.addActionListener(this);
+		monopolypanel.buy.setEnabled(false);
+		monopolypanel.dontbuy.setEnabled(false);
 		
 		// timer: 
 		thetimer = new Timer(1000/60, this);
