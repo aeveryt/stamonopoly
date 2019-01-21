@@ -48,7 +48,7 @@ public class mainmenu implements ActionListener{
 	BufferedReader chance = null;
 	//--Data Array
 	String strSplit[];
-	String strProperties[][] = new String[40][10];
+	String strProperties[][] = new String[40][11];
 	String strCommunity [][] = new String[30][3];
 	String strChance [][] = new String[30][4];	
 	String strLine = "";
@@ -1071,7 +1071,7 @@ public class mainmenu implements ActionListener{
 					System.out.println("false");
 			}
 				strSplit = strLine.split(",");
-			for (intCol = 0; intCol < 10; intCol++){	
+			for (intCol = 0; intCol < 11; intCol++){	
 				strProperties[intRow][intCol] = strSplit[intCol];				
 			}
 		}
