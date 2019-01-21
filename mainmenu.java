@@ -924,6 +924,7 @@ public class mainmenu implements ActionListener{
 				monopolypanel.intYOUy = 650; 
 				monopolypanel.strPropertyN = strProperties[10][0];
 				monopolypanel.buy.setEnabled(true);
+				monopolypanel.dontbuy.setEnabled(false);
 				//rolling doubles can get you out of jail
 				//- but you need to be in jail for at least one turn
 				if(intdice1==intdice2 && intOfficeTime<3 && intOfficeTime>0){
@@ -1016,7 +1017,8 @@ public class mainmenu implements ActionListener{
 			monopolypanel.strPropertyOwned = strProperties[monopolypanel.intPropertyN][0];
 			
 			//---------------------------- Trying to make player pay for jail--------------------------
-			if(strProperties[monopolypanel.intPropertyN][0].equalsIgnoreCase("Go To Principal's Office")){
+			if(monopolypanel.intPropertyN==10){
+				System.out.println("bought my way out of jail");
 				blnOffice = false;
 				intOfficeTime = 0;
 				intMoney = intMoney - 50;
