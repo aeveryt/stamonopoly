@@ -892,6 +892,13 @@ public class mainmenu implements ActionListener{
 				monopolypanel.intYOUx = 50;
 				monopolypanel.intYOUy = 650; 
 				//isolate player for 3 turns unless dice == double or they pay to get out or or or they have freEee pass
+				monopolypanel.intTurn = 3;
+				
+				monopolypanel.buy.setEnabled(true);
+				if (monopolypanel.intTurn !=0){
+					monopolypanel.intYOUx = 50;
+					monopolypanel.intYOUy = 650; 
+				}
 			}
 		}
 		
