@@ -892,9 +892,10 @@ public class mainmenu implements ActionListener{
 				monopolypanel.intYOUx = 50;
 				monopolypanel.intYOUy = 650; 
 				//isolate player for 3 turns unless dice == double or they pay to get out or or or they have freEee pass
-				monopolypanel.intTurn = 3;
-				
+				//monopolypanel.intTurn = 3;
+			
 				monopolypanel.buy.setEnabled(true);
+				
 				if (monopolypanel.intTurn !=0){
 					monopolypanel.intYOUx = 50;
 					monopolypanel.intYOUy = 650; 
@@ -978,6 +979,13 @@ public class mainmenu implements ActionListener{
 			monopolypanel.intHotel = Integer.parseInt(strProperties[monopolypanel.intPropertyN][7]);
 			strProperties[monopolypanel.intPropertyN][9]= "t";
 			monopolypanel.strPropertyOwned = strProperties[monopolypanel.intPropertyN][0];
+			
+			//---------------------------- Trying to make player pay for jail--------------------------
+			if(strProperties[monopolypanel.intPropertyN][0].equalsIgnoreCase("Go To Principal's Office")){
+				intMoney = intMoney - 50;
+				monopolypanel.dontbuy.setEnabled(false);
+				monopolypanel.blnOwned = false;
+			}
 		}
 		
 		else if(evt.getSource()==monopolypanel.next){
