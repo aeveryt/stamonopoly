@@ -784,16 +784,16 @@ public class mainmenu implements ActionListener{
 			monopolypanel.strMoney = intMoney+"";
 			
 					
-			int Array[] = new int[30]; //community
+			//int Array[] = new int[30]; //community
 			//int Array2[] = new int[30]; // chance
 			//Converting String into int 
-		for(intRow = 0; intRow < 30; intRow++){
+		//for(intRow = 0; intRow < 30; intRow++){
 			//(amount of money a player may gain or lose)
-			intCommunity = Integer.parseInt(strCommunity[intRow][2]); 
-			intChance = Integer.parseInt(strChance[intRow][3]);
-			Array[intRow] = intCommunity;
+			//intCommunity = Integer.parseInt(strCommunity[intRow][2]); 
+			//intChance = Integer.parseInt(strChance[intRow][3]);
+			//Array[intRow] = intCommunity;
 			//Array2[intRow] = intChance;
-		}
+		//}
 			
 			//-Landing on chance or community cards
 			String strCard;
@@ -802,6 +802,7 @@ public class mainmenu implements ActionListener{
 		
 			int intLocation; //if it affects location
 			int intMoneyChance; //money affected from chance
+			int intMoneyCommunity; //money affected from community
 			int intCard; // card that is randomly chosen
 			int intNum; // random num generated.
 			int intLength; // measure the number of letters in a string
@@ -813,91 +814,27 @@ public class mainmenu implements ActionListener{
 			//community chest
 			if (strCard.equalsIgnoreCase("community")){
 				monopolypanel.strCard = "community card";
+				//generates random number
 				intNum = (int) (Math.random()*29+0);
+				//card info
 				strCard = strCommunity[intNum][1];
-				
-				System.out.println(strCommunity[intNum][1]);// prints out what the community card says
-				
-				intLength = strCommunity[intNum][1].length();
-				
-				monopolypanel.strDisplayLength = strCommunity[intNum][1].substring(0,intLength - 25);
-				System.out.println(monopolypanel.strDisplayLength);
-					
-				/*
-				 * 
-				 */
-				
-				System.out.println("The number of substrings in this card is "+ intLength);
-				
-				
-				strNum = strCommunity[intNum][0];
-				intCard = Integer.parseInt(strNum);
-				
-				if (intCard ==1){
-					intMoney = intMoney + Array[0];
-				}else if(intCard == 2){
-					
-				}else if(intCard == 3){
-					intMoney = intMoney + Array[1];
-				}else if(intCard == 4){
-					intMoney = intMoney + Array[3];
-				}else if(intCard == 5){
-					intMoney = intMoney + Array[4];
-				}else if(intCard == 6){
-					intMoney = intMoney + Array[5];
-				}else if(intCard == 7){
-					intMoney = intMoney + Array[6];
-				}else if(intCard == 8){
-					intMoney = intMoney + Array[7];
-				}else if(intCard == 9){
-					intMoney = intMoney + Array[8];
-				}else if(intCard == 10){
-					intMoney = intMoney + Array[9];
-				}else if(intCard == 11){
-					intMoney = intMoney + Array[10];
-				}else if(intCard == 12){
-					intMoney = intMoney + Array[11];
-				}else if(intCard == 13){
-					intMoney = intMoney + Array[12];
-				}else if(intCard == 14){
-					intMoney = intMoney + Array[13];
-				}else if(intCard == 15){
-					intMoney = intMoney + Array[14];
-				}else if(intCard == 16){
-					intMoney = intMoney + Array[15];
-				}else if(intCard == 17){
-					intMoney = intMoney + Array[16];
-				}else if(intCard == 18){
-					intMoney = intMoney + Array[17];
-				}else if(intCard == 19){
-					intMoney = intMoney + Array[18];
-				}else if(intCard == 20){
-					intMoney = intMoney + Array[19];
-				}else if(intCard == 21){
-					intMoney = intMoney + Array[20];
-				}else if(intCard == 22){
-					intMoney = intMoney + Array[21];
-				}else if(intCard == 23){
-					intMoney = intMoney + Array[22];
-				}else if(intCard == 24){
-					intMoney = intMoney + Array[23];
-				}else if(intCard == 25){
-					intMoney = intMoney + Array[24];
-				}else if(intCard == 26){
-					intMoney = intMoney + Array[25];
-				}else if(intCard == 27){
-					intMoney = intMoney + Array[26];
-				}else if(intCard == 28){
-					intMoney = intMoney + Array[27];
-				}else if(intCard == 29){
-					intMoney = intMoney + Array[28];
-				}else if(intCard == 30){
-					intMoney = intMoney + Array[29];
-				}
+				monopolypanel.strCardinfo = strCard;
+				System.out.println(strCommunity[intNum][2]);
+
+				//System.out.println(strCommunity[intNum][1]);// prints out what the community card says
+				//intLength = strCommunity[intNum][1].length();
+				//monopolypanel.strDisplayLength = strCommunity[intNum][1].substring(0,intLength - 25);
+				//System.out.println(monopolypanel.strDisplayLength);
+				//System.out.println("The number of substrings in this card is "+ intLength);
+				//strNum = strCommunity[intNum][0];
+				intMoneyCommunity = Integer.parseInt(strCommunity[intNum][2]);
+				intMoney = intMoney + intMoneyCommunity;
+				monopolypanel.intMoney = intMoney;
+			}
 				
 			
 			//chance	
-			}else if (strCard.equalsIgnoreCase("chance")){
+			else if (strCard.equalsIgnoreCase("chance")){
 				monopolypanel.strCard = "chance";
 				// generates random card number
 				intNum = (int) (Math.random()*30+1);
