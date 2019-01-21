@@ -988,6 +988,7 @@ public class mainmenu implements ActionListener{
 			intMoney = intMoney-intPropertyCost;
 			monopolypanel.strMoney = intMoney+"";
 			monopolypanel.intMoney = intMoney;
+			monopolypanel.strProperty = strProperties[monopolypanel.intPropertyN][0];
 		}
 			
 	}

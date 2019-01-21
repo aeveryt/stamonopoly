@@ -34,6 +34,7 @@ public class AnimationMonopolyPanel extends JPanel{
 	String strMoney = ""+intMoney;
 	int intPropertyN = 0; 
 	String strPropertyN = ""; 
+	String strProperty = "";
 	int intYOUx =  650; 
 	int intYOUy = 650;
 	int intPlayerCount =0; 
@@ -112,6 +113,11 @@ public class AnimationMonopolyPanel extends JPanel{
 		
 		//properties outline
 		g.fillRect(725,331,282,315);
+		g.setFont(text);
+		g.setColor(Color.BLACK);
+		g.drawString(strProperty,728,350);
+		g.setColor(Color.WHITE);
+		
 		
 		// load the rolled number into the dice area
 		g.setFont(title);
