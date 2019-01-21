@@ -28,6 +28,7 @@ public class mainmenu implements ActionListener{
 	boolean blnPlay = false; 
 	boolean blnDice = false; 
 	boolean blnProperties = false;  // related to sending properties over the server.
+	int intPlayerOwned; //checks which players owns which property
 	
 	//-Players
 	int intMoney = 1500;
@@ -35,6 +36,19 @@ public class mainmenu implements ActionListener{
 	int intPropertyCost = 0;
 	boolean blnOffice = false; //checks if the player is in jail
 	int intOfficeTime = 0;
+	
+	//-Properties (that you own)
+	int intNumofProperties = 0; //number of properties owned
+	int intBrown;
+	int intRailRoad;
+	int intLightBlue;
+	int intPurple;
+	int intUtility;
+	int intOrange;
+	int intRed;
+	int intYellow;
+	int intGreen;
+	int intDarkBlue;
 	
 	//-File Variables 
 	//--board
@@ -49,6 +63,7 @@ public class mainmenu implements ActionListener{
 	//--Data Array
 	String strSplit[];
 	String strProperties[][] = new String[40][10];
+	String strPropertiesOwned[]; //properties that you own
 	String strCommunity [][] = new String[30][3];
 	String strChance [][] = new String[30][4];	
 	String strLine = "";
@@ -1010,6 +1025,7 @@ public class mainmenu implements ActionListener{
 		
 			// ------------------------------------------------------------------------------------------------------------------------
 			
+			monopolypanel.strPropertyOwned = strProperties[monopolypanel.intPropertyN][0];
 			monopolypanel.strMoney = intMoney+"";
 			monopolypanel.intMoney = intMoney;
 			monopolypanel.intRent = Integer.parseInt(strProperties[monopolypanel.intPropertyN][3]);
@@ -1017,8 +1033,7 @@ public class mainmenu implements ActionListener{
 			monopolypanel.intHouse2 = Integer.parseInt(strProperties[monopolypanel.intPropertyN][5]);
 			monopolypanel.intHouse3 = Integer.parseInt(strProperties[monopolypanel.intPropertyN][6]);
 			monopolypanel.intHotel = Integer.parseInt(strProperties[monopolypanel.intPropertyN][7]);
-			strProperties[monopolypanel.intPropertyN][9]= "t"+monopolypanel.intPlayer;
-			monopolypanel.strPropertyOwned = strProperties[monopolypanel.intPropertyN][0];
+			strProperties[monopolypanel.intPropertyN][9]= "t"; //+monopolypanel.intPlayer <- add this after when server stuff is done
 			
 			//---------------------------- Trying to make player pay for jail--------------------------
 			if(monopolypanel.intPropertyN==10){
@@ -1030,9 +1045,78 @@ public class mainmenu implements ActionListener{
 				monopolypanel.dontbuy.setEnabled(false);
 				monopolypanel.blnOwned = false;
 			}
+			//-------------------------- Checking if you have the option to buy a house --------------
+			if(strProperties[intPlayerOwned][10].equalsIgnoreCase("br")){
+				System.out.println("bought brown");
+				intBrown = intBrown + 1;
+			}
+			else if(strProperties[intPlayerOwned][10].equalsIgnoreCase("rail")){
+				System.out.println("bought rail");
+				intRailRoad = intRailRoad + 1;
+			}
+			else if(strProperties[intPlayerOwned][10].equalsIgnoreCase("lb")){
+				System.out.println("bought lb");
+				intLightBlue = intLightBlue	+ 1;
+			}
+			else if(strProperties[intPlayerOwned][10].equalsIgnoreCase("pur")){
+				System.out.println("bought purple");
+				intPurple = intPurple + 1;
+			}
+			else if(strProperties[intPlayerOwned][10].equalsIgnoreCase("or")){
+				System.out.println("bought orange");
+				intOrange = intOrange + 1;
+			}
+			else if(strProperties[intPlayerOwned][10].equalsIgnoreCase("red")){
+				System.out.println("bought red");
+				intRed = intRed + 1;
+			}
+			else if(strProperties[intPlayerOwned][10].equalsIgnoreCase("yel")){
+				System.out.println("bought yellow");
+				intYellow = intYellow + 1;
+			}
+			else if(strProperties[intPlayerOwned][10].equalsIgnoreCase("gre")){
+				System.out.println("bought green");
+				intGreen = intGreen + 1;
+			}
+			else if(strProperties[intPlayerOwned][10].equalsIgnoreCase("db")){
+				System.out.println("bought dark blue");
+				intDarkBlue = intDarkBlue + 1;
+			}
 		}
 		
 		else if(evt.getSource()==monopolypanel.next){
+			/* - checking if you own the property
+			 * for (intRow = 0; intRow < 40; intRow ++){	
+			 * 	intPlayerOwned = Integer.parseInt(strProperties[intRow][9].substring(1,2));
+			 * 	if(intPlayerOwned == intPlayer){
+			 * 		intNumofProperties = intNumofProperties +1;
+			 * 	}
+			 * }
+			 * 
+			 * - intialize array
+			 * strPropertiesOwned = new String [intNumofProperties];
+			 * intCol = 0;
+			 * 
+			 * - load array
+			 * for (intRow = 0; intRow < 40; intRow ++){	
+			 * 	intPlayerOwned = Integer.parseInt(strProperties[intRow][9].substring(1,2));
+			 * 	if(intPlayerOwned == intPlayer){
+			 * 		strPropertiesOwned[intCol] = strProperties[intRow][0];
+			 * 		intCol = intCol+1;
+			 * 	}
+			 * }
+			 * 
+			 * - printing out array (clicking the next button shows next property that you also owned
+			 * monopolypanel.strPropertyOwned = strProperties[monopolypanel.intPropertyN][0];
+			monopolypanel.strMoney = intMoney+"";
+			monopolypanel.intMoney = intMoney;
+			monopolypanel.intRent = Integer.parseInt(strProperties[monopolypanel.intPropertyN][3]);
+			monopolypanel.intHouse1 = Integer.parseInt(strProperties[monopolypanel.intPropertyN][4]);
+			monopolypanel.intHouse2 = Integer.parseInt(strProperties[monopolypanel.intPropertyN][5]);
+			monopolypanel.intHouse3 = Integer.parseInt(strProperties[monopolypanel.intPropertyN][6]);
+			monopolypanel.intHotel = Integer.parseInt(strProperties[monopolypanel.intPropertyN][7]);
+			 * 	
+			 * */
 			
 		}
 		else if(evt.getSource() == monopolypanel.back){
@@ -1121,7 +1205,6 @@ public class mainmenu implements ActionListener{
 				strSplit = strLine.split(",");
 			for (intCol = 0; intCol < 4; intCol++){
 				strChance[intRow][intCol] = strSplit[intCol];
-				//System.out.println(strChance[intRow][intCol] = strSplit[intCol]);
 			}
 		}
 			
@@ -1268,6 +1351,8 @@ public class mainmenu implements ActionListener{
 		monopolypanel.add(monopolypanel.rolldie);
 		monopolypanel.add(monopolypanel.next);
 		monopolypanel.add(monopolypanel.back);
+		monopolypanel.add(monopolypanel.house);
+		monopolypanel.add(monopolypanel.hotel);
 		
 		// Game play - ACTION LISTENER
 		monopolypanel.rolldie.addActionListener(this);
@@ -1275,8 +1360,12 @@ public class mainmenu implements ActionListener{
 		monopolypanel.back.addActionListener(this);
 		monopolypanel.buy.addActionListener(this);
 		monopolypanel.dontbuy.addActionListener(this);
+		monopolypanel.house.addActionListener(this);
+		monopolypanel.hotel.addActionListener(this);
 		monopolypanel.buy.setEnabled(false);
 		monopolypanel.dontbuy.setEnabled(false);
+		monopolypanel.house.setEnabled(false);
+		monopolypanel.hotel.setEnabled(false);
 		
 		// timer: 
 		thetimer = new Timer(1000/60, this);

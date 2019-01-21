@@ -20,6 +20,9 @@ public class AnimationMonopolyPanel extends JPanel{
 	//-buy button variables
 	JButton buy;
 	JButton dontbuy;
+	//hotels/houses - aka classroom improvements and stem
+	JButton house;
+	JButton hotel;
 	//-rolling die button
 	JButton rolldie;
 	//-property variables
@@ -119,8 +122,8 @@ public class AnimationMonopolyPanel extends JPanel{
 		
 		g.setColor(Color.WHITE);
 		
-		//profile
-		g.fillRect(1104,108,170,160);
+		//profile - icon
+		g.fillRect(1104,165,170,105);
 		
 		//properties outline
 		g.fillRect(725,331,282,315);
@@ -153,7 +156,7 @@ public class AnimationMonopolyPanel extends JPanel{
 		//Icon header
 		g.setFont(text);
 		g.setColor(Color.BLACK); 
-		g.drawString("ICON:",1110,130);
+		g.drawString("ICON:",1110,200);
 		g.drawString("MONEY: $" + strMoney,1110,260);
 		
 		if(strColor.equals("red1") || strYourColor.equals("red")){
@@ -176,7 +179,7 @@ public class AnimationMonopolyPanel extends JPanel{
 		
 		
 		// draw the profile box in:
-		g.fillRect(1164,163,50,50); 
+		g.fillRect(1164,180,50,50); 
 		
 
 		// set up your character
@@ -264,6 +267,14 @@ public class AnimationMonopolyPanel extends JPanel{
 		dontbuy = new JButton("Don't buy");
 		dontbuy.setSize(120,60);
 		dontbuy.setLocation(720,166);
+		
+		house = new JButton("Buy Class Improvements");
+		house.setSize(182,25);
+		house.setLocation(1097,108);
+		
+		hotel = new JButton("Upgrade to STEM");
+		hotel.setSize(182,25);
+		hotel.setLocation(1097,135);
 		
 		rolldie = new JButton("Roll the die!");
 		rolldie.setSize(130,20);
