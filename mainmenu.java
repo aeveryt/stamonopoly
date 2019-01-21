@@ -1003,17 +1003,21 @@ public class mainmenu implements ActionListener{
 				System.out.println(strCommunity[intNum][1]);// prints out what the community card says
 				intLength = strCommunity[intNum][1].length();
 				
-				// must divide intlength with a certain amount of substring characters
-				intLength = intLength - (intLength/25);
-				System.out.println(intLength);
-					while(intLength > 25){
-						intLength = intLength - (intLength/25);
-						System.out.println(intLength);
+				// must subtract intlength with a certain amount of substring characters
+					
+				int intCount;
+				
+				for(intCount = intLength; intCount > 0; intCount --){
+					if(intLength > 25){
+						intLength = intLength - 1;
+						monopolypanel.strDisplayLength = strCommunity[intNum][1].substring(0,intLength);
+						
 					}
-				monopolypanel.strDisplayLength = strCommunity[intNum][1].substring(0,intLength);
+				}
 	
 				System.out.println("The number of substrings in this card is "+ intLength);
 				//strNum = strCommunity[intNum][0];
+				
 				intMoneyCommunity = Integer.parseInt(strCommunity[intNum][2]);
 				intMoney = intMoney + intMoneyCommunity;
 				monopolypanel.intMoney = intMoney;
@@ -1056,7 +1060,7 @@ public class mainmenu implements ActionListener{
 					}
 					//if chance card sends you to jail
 					if(intLocation == 10){
-						System.out.println("sending you to jail because of chance");
+						//System.out.println("sending you to jail because of chance");
 						blnOffice = true;
 						intOfficeTime = 4;
 					}
@@ -1069,18 +1073,34 @@ public class mainmenu implements ActionListener{
 					monopolypanel.intMoney = intMoney;
 				}
 				// if intlenght is graer than 25, then chop it and count 25, then substract the amount chopped and place it under. 
+				int intNum2;
+				int intRemain = 0; // the amount of letters remaining. 
+				int intLines = 0;
+				int intLengthMax = 25;
+				
 				intLength = strChance[intNum][1].length();
 				
-				intLength = intLength - (intLength/5);
-				System.out.println(intLength);
-					while(intLength > 20){
-						intLength = intLength - (intLength/5);
-						System.out.println(intLength);
+				intLines  = intLength / 20; // indicates how many lines will be needed for 
+				intRemain = intLength - intLengthMax;
+				
+				 //intLength = monopolypanel.strDisplayLength.length();
+				System.out.println("remaining amount: " + intRemain);
+				System.out.println("amound of lines we need " + intLines);
+					
+					for(intCount = 0; intCount <intLines; intCount++){
+					
+						if(intLength > 25){
+							monopolypanel.strDisplayLength = strChance[intNum][1].substring(0,intLengthMax);
+						}
+						else{
+							monopolypanel.strDisplayLength = strChance[intNum][1].substring(0,intLength);
+						}
+						if(intLines >=2){
+							monopolypanel.intCardY = monopolypanel.intCardY + 15; //prints out the thing on different line each time. 
+						}
 					}
-				
-				monopolypanel.strDisplayLength = strChance[intNum][1].substring(0,intLength);
-				System.out.println(monopolypanel.strDisplayLength);
-				
+				monopolypanel.intCardY = 145;// resets intcardY value
+			
 				System.out.println("The number of substrings in this card is "+ intLength);
 			}
 			
