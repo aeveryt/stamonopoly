@@ -51,6 +51,7 @@ public class mainmenu implements ActionListener{
 	int intGreen;
 	int intDarkBlue;
 	int intRentOption;
+	int intHouse;
 	
 	//-File Variables 
 	//--board
@@ -64,7 +65,7 @@ public class mainmenu implements ActionListener{
 	BufferedReader chance = null;
 	//--Data Array
 	String strSplit[];
-	String strProperties[][] = new String[40][11];
+	String strProperties[][] = new String[40][12];
 	String strPropertiesOwned[]; //properties that you own
 	String strCommunity [][] = new String[30][3];
 	String strChance [][] = new String[30][4];	
@@ -900,7 +901,7 @@ public class mainmenu implements ActionListener{
 			//-check if property is owned
 			//--if property isn't owned
 			if(strProperties[monopolypanel.intPropertyN][9].equalsIgnoreCase("f")){
-				intPropertyCost = Integer.parseInt(strProperties[monopolypanel.intPropertyN][3]);
+				intPropertyCost = Integer.parseInt(strProperties[monopolypanel.intPropertyN][2]);
 				//checks to see if you can afford the property
 				if(intMoney>intPropertyCost){
 					monopolypanel.buy.setEnabled(true);
@@ -1057,6 +1058,9 @@ public class mainmenu implements ActionListener{
 				if(intBrown == 2){
 					monopolypanel.house.setEnabled(true);
 				}
+				else{
+					monopolypanel.house.setEnabled(false);
+				}
 			}
 			else if(strProperties[monopolypanel.intPropertyN][10].equalsIgnoreCase("rail")){
 				System.out.println("bought rail");
@@ -1069,6 +1073,9 @@ public class mainmenu implements ActionListener{
 				if(intLightBlue == 3){
 					monopolypanel.house.setEnabled(true);
 				}
+				else{
+					monopolypanel.house.setEnabled(false);
+				}
 			}
 			else if(strProperties[monopolypanel.intPropertyN][10].equalsIgnoreCase("pur")){
 				System.out.println("bought purple");
@@ -1076,6 +1083,9 @@ public class mainmenu implements ActionListener{
 				//can buy a house
 				if(intPurple == 3){
 					monopolypanel.house.setEnabled(true);
+				}
+				else{
+					monopolypanel.house.setEnabled(false);
 				}
 			}
 			else if(strProperties[monopolypanel.intPropertyN][10].equalsIgnoreCase("or")){
@@ -1093,6 +1103,9 @@ public class mainmenu implements ActionListener{
 				if(intRed == 3){
 					monopolypanel.house.setEnabled(true);
 				}
+				else{
+					monopolypanel.house.setEnabled(false);
+				}
 			}
 			else if(strProperties[monopolypanel.intPropertyN][10].equalsIgnoreCase("yel")){
 				System.out.println("bought yellow");
@@ -1100,6 +1113,9 @@ public class mainmenu implements ActionListener{
 				//can buy a house
 				if(intYellow == 3){
 					monopolypanel.house.setEnabled(true);
+				}
+				else{
+					monopolypanel.house.setEnabled(false);
 				}
 			}
 			else if(strProperties[monopolypanel.intPropertyN][10].equalsIgnoreCase("gre")){
@@ -1109,6 +1125,9 @@ public class mainmenu implements ActionListener{
 				if(intGreen == 3){
 					monopolypanel.house.setEnabled(true);
 				}
+				else{
+					monopolypanel.house.setEnabled(false);
+				}
 			}
 			else if(strProperties[monopolypanel.intPropertyN][10].equalsIgnoreCase("db")){
 				System.out.println("bought dark blue");
@@ -1116,6 +1135,9 @@ public class mainmenu implements ActionListener{
 				//can buy a house
 				if(intDarkBlue == 2){
 					monopolypanel.house.setEnabled(true);
+				}
+				else{
+					monopolypanel.house.setEnabled(false);
 				}
 			}
 		}
@@ -1161,7 +1183,19 @@ public class mainmenu implements ActionListener{
 		
 		//BUYING A HOUSE (Classroom Improvement)
 		else if(evt.getSource() == monopolypanel.house){
-		}	
+			intMoney = intMoney - 50; 
+			intHouse = intHouse + 1;
+			monopolypanel.strMoney = intMoney+"";
+			monopolypanel.intMoney = intMoney;
+			
+			if(intHouse == 4){
+				monopolypanel.hotel.setEnabled(true);
+			}
+		}
+		
+		//BUYING A HOTEL (Hotel)
+		else if(evt.getSource() == monopolypanel.hotel){
+		}		
 	}
 	
 	//Constructor
@@ -1193,7 +1227,9 @@ public class mainmenu implements ActionListener{
 		 * [6] Rent with 3 houses
 		 * [7] Rent with hotel 
 		 * [8] Mortgage
-		 * [9] Boolean (if you landed on it)
+		 * [9] Boolean - if the property is owned (if you landed on it)
+		 * [10] Colour of property
+		 * [11] Number of Houses on the property (4 houses = hotel)
 		 * */
 		
 			for (intRow = 0; intRow < 40; intRow ++){
@@ -1203,7 +1239,7 @@ public class mainmenu implements ActionListener{
 					System.out.println("false");
 			}
 				strSplit = strLine.split(",");
-			for (intCol = 0; intCol < 11; intCol++){	
+			for (intCol = 0; intCol < 12; intCol++){	
 				strProperties[intRow][intCol] = strSplit[intCol];				
 			}
 		}
