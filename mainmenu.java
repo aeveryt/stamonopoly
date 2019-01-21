@@ -775,13 +775,11 @@ public class mainmenu implements ActionListener{
 			monopolypanel.intPropertyN = monopolypanel.intPropertyN + intdiesum; 
 			
 			//-Trying to load property names in:
-			//position
+			//--position
 			if(monopolypanel.intPropertyN>39){
 				monopolypanel.intPropertyN = monopolypanel.intPropertyN - 40;
 				intMoney = intMoney+200;
 			}
-			monopolypanel.strPropertyN = strProperties[monopolypanel.intPropertyN][0]; 	
-			monopolypanel.strMoney = intMoney+"";
 			
 			//-Landing on chance or community cards
 			String strCard;
@@ -830,7 +828,7 @@ public class mainmenu implements ActionListener{
 				strCheck = strChance[intNum][2].substring(0,1);
 				System.out.println(strCheck);
 				
-				//if statements
+				//--if statements
 				//-money
 				if(strCheck.equalsIgnoreCase("l")){
 					intLocation = Integer.parseInt(strChance[intNum][3]);
@@ -851,7 +849,8 @@ public class mainmenu implements ActionListener{
 				System.out.println("The number of substrings in this card is "+ intLength);
 			}
 			
-			//check if property is owned
+			//-check if property is owned
+			//--if property isn't owned
 			if(strProperties[monopolypanel.intPropertyN][9].equalsIgnoreCase("f")){
 				if(intMoney>0){
 					monopolypanel.buy.setEnabled(true);
@@ -862,10 +861,14 @@ public class mainmenu implements ActionListener{
 					monopolypanel.dontbuy.setEnabled(true);
 				}
 			}
+			//--if property is owned
 			else if(strProperties[monopolypanel.intPropertyN][9].equalsIgnoreCase("t")){
 				monopolypanel.buy.setEnabled(false);
 				monopolypanel.dontbuy.setEnabled(false);
 			}
+			//--printing out to animation panel your money and the property you landed on
+			monopolypanel.strPropertyN = strProperties[monopolypanel.intPropertyN][0]; 	
+			monopolypanel.strMoney = intMoney+"";
 			
 		}
 		
@@ -933,10 +936,7 @@ public class mainmenu implements ActionListener{
 			monopolypanel.intHouse3 = Integer.parseInt(strProperties[monopolypanel.intPropertyN][6]);
 			monopolypanel.intHotel = Integer.parseInt(strProperties[monopolypanel.intPropertyN][7]);
 			strProperties[monopolypanel.intPropertyN][9]= "t";
-			//what is this code for?????
-			//for(intCol = 1; intCol <8; intCol++){
-				monopolypanel.strPropertyOwned = strProperties[monopolypanel.intPropertyN][0];
-			//}
+			monopolypanel.strPropertyOwned = strProperties[monopolypanel.intPropertyN][0];
 		}
 		
 		else if(evt.getSource()==monopolypanel.next){
