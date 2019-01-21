@@ -33,6 +33,8 @@ public class mainmenu implements ActionListener{
 	int intMoney = 1500;
 	String strPropertyCost = "";
 	int intPropertyCost = 0;
+	boolean blnOffice = false; //checks if the player is in jail
+	int intOfficeTime = 0;
 	
 	//-File Variables 
 	//--board
@@ -737,7 +739,21 @@ public class mainmenu implements ActionListener{
 			//send stuff to update location of your character 
 			// make if you get to a certain point the intYOUy is changed instead.
 			// it is not going up 
-				
+			
+			//- printing out dice to animation monopoly panel
+			//System.out.println(intdice1+" + " +intdice2); 
+			String strDice1; 
+			String strDice2; 
+			String strDiceSum;
+			strDice1 = (intdice1+""); 
+			strDice2 = (intdice2+""); 
+			strDiceSum = (intdiesum+"");
+			monopolypanel.strDice1 = strDice1;
+			monopolypanel.strDice2 = strDice2;
+			monopolypanel.strDiceSum = strDiceSum;
+			
+			monopolypanel.intPropertyN = monopolypanel.intPropertyN + intdiesum; 
+
 			for(intCount = 1; intCount <= intdiesum; intCount++){
 				//System.out.println(intCount); 
 				if(monopolypanel.intYOUx <= 650 && monopolypanel.intYOUx > 50 && monopolypanel.intYOUy >= 650){
@@ -763,22 +779,9 @@ public class mainmenu implements ActionListener{
 					monopolypanel.intYOUy = monopolypanel.intYOUy + 60; 
 				}
 			}
+		
 			
-			//- printing out dice to animation monopoly panel
-			//System.out.println(intdice1+" + " +intdice2); 
-			String strDice1; 
-			String strDice2; 
-			String strDiceSum;
-			strDice1 = (intdice1+""); 
-			strDice2 = (intdice2+""); 
-			strDiceSum = (intdiesum+"");
-			monopolypanel.strDice1 = strDice1;
-			monopolypanel.strDice2 = strDice2;
-			monopolypanel.strDiceSum = strDiceSum;
-			monopolypanel.intPropertyN = monopolypanel.intPropertyN + intdiesum; 
-			
-			//-Trying to load property names in:
-			//--position
+			//-If you pass GO
 			if(monopolypanel.intPropertyN>39){
 				monopolypanel.intPropertyN = monopolypanel.intPropertyN - 40;
 				intMoney = intMoney+200;
@@ -833,11 +836,12 @@ public class mainmenu implements ActionListener{
 				System.out.println(strCheck);
 				
 				//--if statements
-				//-location
+				//---location
 				if(strCheck.equalsIgnoreCase("l")){
 					intLocation = Integer.parseInt(strChance[intNum][3]);
 					monopolypanel.intPropertyN = intLocation;
-					System.out.println("The Chance card took you to location: " +monopolypanel.intPropertyN);
+					//Printing out location effect on the board from animation panel 
+					//System.out.println("The Chance card took you to location: " +monopolypanel.intPropertyN);
 					if(intLocation>=0 && intLocation<10){
 						monopolypanel.intYOUx = 650-((intLocation)*60);
 						monopolypanel.intYOUy = 650;
@@ -854,6 +858,13 @@ public class mainmenu implements ActionListener{
 						monopolypanel.intYOUx = 650;
 						monopolypanel.intYOUy = 20 + ((intLocation-30)*60);
 					}
+					//if chance card sends you to jail
+					if(intLocation == 10){
+						blnOffice = true;
+						intOfficeTime = 3;
+						System.out.println("sending you to jail with this many turns "+intOfficeTime);
+					}
+					//*** need to add logic that if location passes go then add money :)
 				}
 				//-money
 				else if(strCheck.equalsIgnoreCase("m")){
@@ -889,7 +900,7 @@ public class mainmenu implements ActionListener{
 				intLandedRent = Integer.parseInt(strProperties[monopolypanel.intPropertyN][3]);
 				intMoney = intMoney - intLandedRent;
 			}
-			//--printing out to animation panel your money and the property you landed on
+			//--printing out from animation panel your money and the property you landed on
 			monopolypanel.strPropertyN = strProperties[monopolypanel.intPropertyN][0]; 	
 			monopolypanel.strMoney = intMoney+"";
 			
@@ -899,16 +910,31 @@ public class mainmenu implements ActionListener{
 				monopolypanel.intPropertyN = 10;
 				monopolypanel.intYOUx = 50;
 				monopolypanel.intYOUy = 650; 
+				blnOffice = true;
+				intOfficeTime = 3;
 				//isolate player for 3 turns unless dice == double or they pay to get out or or or they have freEee pass
-				//monopolypanel.intTurn = 3;
-			
+				/*monopolypanel.intTurn = 3;
 				monopolypanel.buy.setEnabled(true);
-				
 				if (monopolypanel.intTurn !=0){
 					monopolypanel.intYOUx = 50;
 					monopolypanel.intYOUy = 650; 
-				}
+				}*/
 			}
+		
+			
+			else if(blnOffice){
+				intOfficeTime = intOfficeTime-1;
+				System.out.println(intOfficeTime + " turns remaining till you can leave the office.");
+				monopolypanel.intPropertyN = 10;
+				monopolypanel.intYOUx = 50;
+				monopolypanel.intYOUy = 650; 
+				monopolypanel.strPropertyN = strProperties[10][0];
+			}
+			
+			if(intOfficeTime<1){
+				blnOffice = false;
+			}
+				
 		}
 		
 		//TIMER (REPAINT)
