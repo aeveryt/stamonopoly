@@ -124,7 +124,7 @@ public class AnimationMonopolyPanel extends JPanel{
 		
 		//properties outline
 		g.fillRect(725,331,282,315);
-		if(blnOwned){
+		if(blnOwned&&intPropertyN!=10){
 			g.setFont(property);
 			g.setColor(Color.RED);
 			g.drawString(strPropertyOwned,730,353);

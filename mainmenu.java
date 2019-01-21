@@ -48,7 +48,7 @@ public class mainmenu implements ActionListener{
 	BufferedReader chance = null;
 	//--Data Array
 	String strSplit[];
-	String strProperties[][] = new String[40][11];
+	String strProperties[][] = new String[40][10];
 	String strCommunity [][] = new String[30][3];
 	String strChance [][] = new String[30][4];	
 	String strLine = "";
@@ -913,13 +913,6 @@ public class mainmenu implements ActionListener{
 				monopolypanel.intYOUy = 650; 
 				blnOffice = true;
 				intOfficeTime = 4;
-				//isolate player for 3 turns unless dice == double or they pay to get out or or or they have freEee pass
-				/*monopolypanel.intTurn = 3;
-				monopolypanel.buy.setEnabled(true);
-				if (monopolypanel.intTurn !=0){
-					monopolypanel.intYOUx = 50;
-					monopolypanel.intYOUy = 650; 
-				}*/
 			}
 		
 			
@@ -930,6 +923,7 @@ public class mainmenu implements ActionListener{
 				monopolypanel.intYOUx = 50;
 				monopolypanel.intYOUy = 650; 
 				monopolypanel.strPropertyN = strProperties[10][0];
+				monopolypanel.buy.setEnabled(true);
 				//rolling doubles can get you out of jail
 				//- but you need to be in jail for at least one turn
 				if(intdice1==intdice2 && intOfficeTime<3 && intOfficeTime>0){
@@ -1023,7 +1017,10 @@ public class mainmenu implements ActionListener{
 			
 			//---------------------------- Trying to make player pay for jail--------------------------
 			if(strProperties[monopolypanel.intPropertyN][0].equalsIgnoreCase("Go To Principal's Office")){
+				blnOffice = false;
+				intOfficeTime = 0;
 				intMoney = intMoney - 50;
+				monopolypanel.buy.setEnabled(false);
 				monopolypanel.dontbuy.setEnabled(false);
 				monopolypanel.blnOwned = false;
 			}
@@ -1078,7 +1075,7 @@ public class mainmenu implements ActionListener{
 					System.out.println("false");
 			}
 				strSplit = strLine.split(",");
-			for (intCol = 0; intCol < 11; intCol++){	
+			for (intCol = 0; intCol < 10; intCol++){	
 				strProperties[intRow][intCol] = strSplit[intCol];				
 			}
 		}
