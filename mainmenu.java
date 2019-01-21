@@ -48,7 +48,7 @@ public class mainmenu implements ActionListener{
 	BufferedReader chance = null;
 	//--Data Array
 	String strSplit[];
-	String strProperties[][] = new String[40][10];
+	String strProperties[][] = new String[40][11];
 	String strCommunity [][] = new String[30][3];
 	String strChance [][] = new String[30][4];	
 	String strLine = "";
@@ -860,9 +860,9 @@ public class mainmenu implements ActionListener{
 					}
 					//if chance card sends you to jail
 					if(intLocation == 10){
+						System.out.println("sending you to jail because of chance");
 						blnOffice = true;
-						intOfficeTime = 3;
-						System.out.println("sending you to jail with this many turns "+intOfficeTime);
+						intOfficeTime = 4;
 					}
 					//*** need to add logic that if location passes go then add money :)
 				}
@@ -907,11 +907,12 @@ public class mainmenu implements ActionListener{
 			//--landing on go to prinicpal office
 			if(strProperties[monopolypanel.intPropertyN][0].equalsIgnoreCase("Go To Principal's Office")){
 				//Player moves to principal office
+				System.out.println("going to jail because of space");
 				monopolypanel.intPropertyN = 10;
 				monopolypanel.intYOUx = 50;
 				monopolypanel.intYOUy = 650; 
 				blnOffice = true;
-				intOfficeTime = 3;
+				intOfficeTime = 4;
 				//isolate player for 3 turns unless dice == double or they pay to get out or or or they have freEee pass
 				/*monopolypanel.intTurn = 3;
 				monopolypanel.buy.setEnabled(true);
@@ -929,6 +930,12 @@ public class mainmenu implements ActionListener{
 				monopolypanel.intYOUx = 50;
 				monopolypanel.intYOUy = 650; 
 				monopolypanel.strPropertyN = strProperties[10][0];
+				//rolling doubles can get you out of jail
+				//- but you need to be in jail for at least one turn
+				if(intdice1==intdice2 && intOfficeTime<3 && intOfficeTime>0){
+					System.out.println("released out of jail from doubles");
+					blnOffice = false;
+				}
 			}
 			
 			if(intOfficeTime<1){
@@ -1071,7 +1078,7 @@ public class mainmenu implements ActionListener{
 					System.out.println("false");
 			}
 				strSplit = strLine.split(",");
-			for (intCol = 0; intCol < 10; intCol++){	
+			for (intCol = 0; intCol < 11; intCol++){	
 				strProperties[intRow][intCol] = strSplit[intCol];				
 			}
 		}
