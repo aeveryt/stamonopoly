@@ -886,6 +886,13 @@ public class mainmenu implements ActionListener{
 			monopolypanel.strPropertyN = strProperties[monopolypanel.intPropertyN][0]; 	
 			monopolypanel.strMoney = intMoney+"";
 			
+			//--landing on  go to prinicpal office
+			if(strProperties[monopolypanel.intPropertyN][0].equalsIgnoreCase("Go To Principal's Office")){
+				//Player moves to principal office
+				monopolypanel.intYOUx = 50;
+				monopolypanel.intYOUy = 650; 
+				//isolate player for 3 turns unless dice == double or they pay to get out or or or they have freEee pass
+			}
 		}
 		
 		//TIMER (REPAINT)
