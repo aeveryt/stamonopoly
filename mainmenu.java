@@ -1129,7 +1129,13 @@ public class mainmenu implements ActionListener{
 			else if(strProperties[monopolypanel.intPropertyN][9].equalsIgnoreCase("t")){
 				monopolypanel.buy.setEnabled(false);
 				monopolypanel.dontbuy.setEnabled(false);
-				intLandedRent = Integer.parseInt(strProperties[monopolypanel.intPropertyN][3]);
+				intPlayerOwned = Integer.parseInt(strProperties[monopolypanel.intPropertyN][12]);
+				if(intPlayerOwned == monopolypanel.intPlayer){
+					intLandedRent = 0;
+				}
+				else{
+					intLandedRent = Integer.parseInt(strProperties[monopolypanel.intPropertyN][3]);
+				}
 				//if utilities owned
 				if(monopolypanel.intPropertyN == 12 || monopolypanel.intPropertyN == 28){
 					intLandedRent = intdiesum*intLandedRent;
