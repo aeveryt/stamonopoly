@@ -484,9 +484,808 @@ public class mainmenu implements ActionListener{
 		boolean blnMovement = true; 
 		strData = ssm.readText(); 
 		
+		//----- see if someone landed on your property so you can collect rent!
+		if(strData.equals("Geography1") || strData.equals("History3") || strData.equals("Guidance 15") || strData.equals("Visual Arts6") || strData.equals("Music8") || strData.equals("Drama9") || strData.equals("Accounting11") || strData.equals("Student Council12") || strData.equals("Marketing13") || strData.equals("Business Leadership14")|| strData.equals("Guidance 215") || strData.equals("Religion16") || strData.equals("World Religions")|| strData.equals("Philosphy19")|| strData.equals("Indigenous Studies21")|| strData.equals("Writer's Craft23") || strData.equals("English24")|| strData.equals("Guidance 325")|| strData.equals("Advanced Functions26") || strData.equals("Data Management27") || strData.equals("Athletic Council28") || strData.equals("Calculas and Vectors29") || strData.equals("Biology31") || strData.equals("Chemistry32") || strData.equals("Physics34") || strData.equals("Guidance 435") || strData.equals("Tech Design37") || strData.equals("Computer Science39")){
+			blnMovement = false; 
+			//add collected rent to your total amount of money, if the person who owns it equals to your player number you collect rent
+			if(strData.equals("Geography1")){
+				if(strProperties[1][12].equals(monopolypanel.intPlayer+"")){
+					int intCost; 
+					String strRent; 
+					
+					// check to see if houses are owned:
+					if(strProperties[1][11].equals("0")){
+						strRent = strProperties[1][3];
+						intCost = Integer.parseInt(strRent);
+						intMoney = intMoney + intCost;  
+					}else if(strProperties[1][11].equals("1")){
+						strRent = strProperties[1][4];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[1][11].equals("2")){
+						strRent = strProperties[1][5];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[1][11].equals("3")){
+						strRent = strProperties[1][6];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[1][11].equals("4")){
+						strRent = strProperties[1][7]; 
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}
+				}
+			}else if(strData.equals("History3")){
+			if(strProperties[3][12].equals(monopolypanel.intPlayer+"")){
+					int intCost; 
+					String strRent; 
+					
+					// check to see if houses are owned:
+					if(strProperties[3][11].equals("0")){
+						strRent = strProperties[3][3];
+						intCost = Integer.parseInt(strRent);
+						intMoney = intMoney + intCost;  
+					}else if(strProperties[3][11].equals("1")){
+						strRent = strProperties[3][4];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[3][11].equals("2")){
+						strRent = strProperties[3][5];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[3][11].equals("3")){
+						strRent = strProperties[3][6];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[3][11].equals("4")){
+						strRent = strProperties[3][7]; 
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}
+				}
+			}else if(strData.equals("Guidance 15")){
+				if(strProperties[5][12].equals(monopolypanel.intPlayer+"")){
+					int intCost; 
+					String strRent; 
+					
+					// check to see if houses are owned:
+					if(strProperties[5][11].equals("0")){
+						strRent = strProperties[5][3];
+						intCost = Integer.parseInt(strRent);
+						intMoney = intMoney + intCost;  
+					}else if(strProperties[5][11].equals("1")){
+						strRent = strProperties[5][4];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[5][11].equals("2")){
+						strRent = strProperties[5][5];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[5][11].equals("3")){
+						strRent = strProperties[5][6];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[5][11].equals("4")){
+						strRent = strProperties[5][7]; 
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}
+				}
+			}else if(strData.equals("Visual Arts6")){
+				if(strProperties[6][12].equals(monopolypanel.intPlayer+"")){
+					int intCost; 
+					String strRent; 
+					
+					// check to see if houses are owned:
+					if(strProperties[6][11].equals("0")){
+						strRent = strProperties[6][3];
+						intCost = Integer.parseInt(strRent);
+						intMoney = intMoney + intCost;  
+					}else if(strProperties[6][11].equals("1")){
+						strRent = strProperties[6][4];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[6][11].equals("2")){
+						strRent = strProperties[6][5];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[6][11].equals("3")){
+						strRent = strProperties[6][6];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[6][11].equals("4")){
+						strRent = strProperties[6][7]; 
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}
+				}
+			}else if(strData.equals("Music8")){
+				if(strProperties[8][12].equals(monopolypanel.intPlayer+"")){
+					int intCost; 
+					String strRent; 
+					
+					// check to see if houses are owned:
+					if(strProperties[8][11].equals("0")){
+						strRent = strProperties[8][3];
+						intCost = Integer.parseInt(strRent);
+						intMoney = intMoney + intCost;  
+					}else if(strProperties[8][11].equals("1")){
+						strRent = strProperties[8][4];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[8][11].equals("2")){
+						strRent = strProperties[8][5];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[8][11].equals("3")){
+						strRent = strProperties[8][6];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[8][11].equals("4")){
+						strRent = strProperties[8][7]; 
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}
+				}
+			}else if(strData.equals("Drama9")){
+				if(strProperties[9][12].equals(monopolypanel.intPlayer+"")){
+					int intCost; 
+					String strRent; 
+					
+					// check to see if houses are owned:
+					if(strProperties[9][11].equals("0")){
+						strRent = strProperties[9][3];
+						intCost = Integer.parseInt(strRent);
+						intMoney = intMoney + intCost;  
+					}else if(strProperties[9][11].equals("1")){
+						strRent = strProperties[9][4];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[9][11].equals("2")){
+						strRent = strProperties[9][5];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[9][11].equals("3")){
+						strRent = strProperties[9][6];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[9][11].equals("4")){
+						strRent = strProperties[9][7]; 
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}
+				}
+			}else if(strData.equals("Accounting11")){
+				if(strProperties[11][12].equals(monopolypanel.intPlayer+"")){
+					int intCost; 
+					String strRent; 
+					
+					// check to see if houses are owned:
+					if(strProperties[11][11].equals("0")){
+						strRent = strProperties[11][3];
+						intCost = Integer.parseInt(strRent);
+						intMoney = intMoney + intCost;  
+					}else if(strProperties[11][11].equals("1")){
+						strRent = strProperties[11][4];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[11][11].equals("2")){
+						strRent = strProperties[11][5];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[11][11].equals("3")){
+						strRent = strProperties[11][6];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[11][11].equals("4")){
+						strRent = strProperties[11][7]; 
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}
+				}
+			}else if(strData.equals("Student Council12")){
+				if(strProperties[12][12].equals(monopolypanel.intPlayer+"")){
+					int intCost; 
+					String strRent; 
+					
+					// check to see if houses are owned:
+					if(strProperties[12][11].equals("0")){
+						strRent = strProperties[12][3];
+						intCost = Integer.parseInt(strRent);
+						intMoney = intMoney + intCost;  
+					}else if(strProperties[12][11].equals("1")){
+						strRent = strProperties[12][4];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[12][11].equals("2")){
+						strRent = strProperties[12][5];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[12][11].equals("3")){
+						strRent = strProperties[12][6];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[12][11].equals("4")){
+						strRent = strProperties[12][7]; 
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}
+				}
+			}else if(strData.equals("Marketing13")){
+				if(strProperties[13][12].equals(monopolypanel.intPlayer+"")){
+					int intCost; 
+					String strRent; 
+					
+					// check to see if houses are owned:
+					if(strProperties[13][11].equals("0")){
+						strRent = strProperties[13][3];
+						intCost = Integer.parseInt(strRent);
+						intMoney = intMoney + intCost;  
+					}else if(strProperties[13][11].equals("1")){
+						strRent = strProperties[13][4];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[13][11].equals("2")){
+						strRent = strProperties[13][5];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[13][11].equals("3")){
+						strRent = strProperties[13][6];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[13][11].equals("4")){
+						strRent = strProperties[13][7]; 
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}
+				}
+			}else if(strData.equals("Business Leadership14")){
+				if(strProperties[14][12].equals(monopolypanel.intPlayer+"")){
+					int intCost; 
+					String strRent; 
+					
+					// check to see if houses are owned:
+					if(strProperties[14][11].equals("0")){
+						strRent = strProperties[14][3];
+						intCost = Integer.parseInt(strRent);
+						intMoney = intMoney + intCost;  
+					}else if(strProperties[14][11].equals("1")){
+						strRent = strProperties[14][4];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[14][11].equals("2")){
+						strRent = strProperties[14][5];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[14][11].equals("3")){
+						strRent = strProperties[14][6];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[14][11].equals("4")){
+						strRent = strProperties[14][7]; 
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}
+				}
+			}else if(strData.equals("Guidance 215")){
+				if(strProperties[15][12].equals(monopolypanel.intPlayer+"")){
+					int intCost; 
+					String strRent; 
+					
+					// check to see if houses are owned:
+					if(strProperties[15][11].equals("0")){
+						strRent = strProperties[15][3];
+						intCost = Integer.parseInt(strRent);
+						intMoney = intMoney + intCost;  
+					}else if(strProperties[15][11].equals("1")){
+						strRent = strProperties[15][4];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[15][11].equals("2")){
+						strRent = strProperties[15][5];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[15][11].equals("3")){
+						strRent = strProperties[15][6];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[15][11].equals("4")){
+						strRent = strProperties[15][7]; 
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}
+				}
+			}else if(strData.equals("Religion16")){
+				if(strProperties[16][12].equals(monopolypanel.intPlayer+"")){
+					int intCost; 
+					String strRent; 
+					
+					// check to see if houses are owned:
+					if(strProperties[16][11].equals("0")){
+						strRent = strProperties[16][3];
+						intCost = Integer.parseInt(strRent);
+						intMoney = intMoney + intCost;  
+					}else if(strProperties[16][11].equals("1")){
+						strRent = strProperties[16][4];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[16][11].equals("2")){
+						strRent = strProperties[16][5];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[16][11].equals("3")){
+						strRent = strProperties[16][6];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[16][11].equals("4")){
+						strRent = strProperties[16][7]; 
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}
+				}
+			}else if(strData.equals("World Religions18")){
+				if(strProperties[18][12].equals(monopolypanel.intPlayer+"")){
+					int intCost; 
+					String strRent; 
+					
+					// check to see if houses are owned:
+					if(strProperties[18][11].equals("0")){
+						strRent = strProperties[18][3];
+						intCost = Integer.parseInt(strRent);
+						intMoney = intMoney + intCost;  
+					}else if(strProperties[18][11].equals("1")){
+						strRent = strProperties[18][4];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[18][11].equals("2")){
+						strRent = strProperties[18][5];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[18][11].equals("3")){
+						strRent = strProperties[18][6];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[18][11].equals("4")){
+						strRent = strProperties[18][7]; 
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}
+				}
+			}else if(strData.equals("Philosphy19")){
+				if(strProperties[19][12].equals(monopolypanel.intPlayer+"")){
+					int intCost; 
+					String strRent; 
+					
+					// check to see if houses are owned:
+					if(strProperties[19][11].equals("0")){
+						strRent = strProperties[19][3];
+						intCost = Integer.parseInt(strRent);
+						intMoney = intMoney + intCost;  
+					}else if(strProperties[19][11].equals("1")){
+						strRent = strProperties[19][4];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[19][11].equals("2")){
+						strRent = strProperties[19][5];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[19][11].equals("3")){
+						strRent = strProperties[19][6];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[19][11].equals("4")){
+						strRent = strProperties[19][7]; 
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}
+				}
+			}else if(strData.equals("Indigenous Studies21")){
+				if(strProperties[21][12].equals(monopolypanel.intPlayer+"")){
+					int intCost; 
+					String strRent; 
+					
+					// check to see if houses are owned:
+					if(strProperties[21][11].equals("0")){
+						strRent = strProperties[21][3];
+						intCost = Integer.parseInt(strRent);
+						intMoney = intMoney + intCost;  
+					}else if(strProperties[21][11].equals("1")){
+						strRent = strProperties[21][4];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[21][11].equals("2")){
+						strRent = strProperties[21][5];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[21][11].equals("3")){
+						strRent = strProperties[21][6];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[21][11].equals("4")){
+						strRent = strProperties[21][7]; 
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}
+				}
+			}else if(strData.equals("Writer's Craft23")){
+				if(strProperties[23][12].equals(monopolypanel.intPlayer+"")){
+					int intCost; 
+					String strRent; 
+					
+					// check to see if houses are owned:
+					if(strProperties[23][11].equals("0")){
+						strRent = strProperties[23][3];
+						intCost = Integer.parseInt(strRent);
+						intMoney = intMoney + intCost;  
+					}else if(strProperties[23][11].equals("1")){
+						strRent = strProperties[23][4];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[23][11].equals("2")){
+						strRent = strProperties[23][5];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[23][11].equals("3")){
+						strRent = strProperties[23][6];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[23][11].equals("4")){
+						strRent = strProperties[23][7]; 
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}
+				}
+			}else if(strData.equals("English24")){
+				if(strProperties[24][12].equals(monopolypanel.intPlayer+"")){
+					int intCost; 
+					String strRent; 
+					
+					// check to see if houses are owned:
+					if(strProperties[24][11].equals("0")){
+						strRent = strProperties[24][3];
+						intCost = Integer.parseInt(strRent);
+						intMoney = intMoney + intCost;  
+					}else if(strProperties[24][11].equals("1")){
+						strRent = strProperties[24][4];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[24][11].equals("2")){
+						strRent = strProperties[24][5];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[24][11].equals("3")){
+						strRent = strProperties[24][6];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[24][11].equals("4")){
+						strRent = strProperties[24][7]; 
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}
+				}
+			}else if(strData.equals("Guidance 325")){
+				if(strProperties[25][12].equals(monopolypanel.intPlayer+"")){
+					int intCost; 
+					String strRent; 
+					
+					// check to see if houses are owned:
+					if(strProperties[25][11].equals("0")){
+						strRent = strProperties[25][3];
+						intCost = Integer.parseInt(strRent);
+						intMoney = intMoney + intCost;  
+					}else if(strProperties[25][11].equals("1")){
+						strRent = strProperties[25][4];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[25][11].equals("2")){
+						strRent = strProperties[25][5];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[25][11].equals("3")){
+						strRent = strProperties[25][6];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[25][11].equals("4")){
+						strRent = strProperties[25][7]; 
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}
+				}
+			}else if(strData.equals("Advanced Functions26")){
+				if(strProperties[26][12].equals(monopolypanel.intPlayer+"")){
+					int intCost; 
+					String strRent; 
+					
+					// check to see if houses are owned:
+					if(strProperties[26][11].equals("0")){
+						strRent = strProperties[26][3];
+						intCost = Integer.parseInt(strRent);
+						intMoney = intMoney + intCost;  
+					}else if(strProperties[26][11].equals("1")){
+						strRent = strProperties[26][4];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[26][11].equals("2")){
+						strRent = strProperties[26][5];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[26][11].equals("3")){
+						strRent = strProperties[26][6];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[26][11].equals("4")){
+						strRent = strProperties[26][7]; 
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}
+				}
+			}else if(strData.equals("Data Management27")){
+				if(strProperties[27][12].equals(monopolypanel.intPlayer+"")){
+					int intCost; 
+					String strRent; 
+					
+					// check to see if houses are owned:
+					if(strProperties[27][11].equals("0")){
+						strRent = strProperties[27][3];
+						intCost = Integer.parseInt(strRent);
+						intMoney = intMoney + intCost;  
+					}else if(strProperties[27][11].equals("1")){
+						strRent = strProperties[27][4];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[27][11].equals("2")){
+						strRent = strProperties[27][5];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[27][11].equals("3")){
+						strRent = strProperties[27][6];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[27][11].equals("4")){
+						strRent = strProperties[27][7]; 
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}
+				}
+			}else if(strData.equals("Athletic Council28")){
+				if(strProperties[28][12].equals(monopolypanel.intPlayer+"")){
+					int intCost; 
+					String strRent; 
+					
+					// check to see if houses are owned:
+					if(strProperties[28][11].equals("0")){
+						strRent = strProperties[28][3];
+						intCost = Integer.parseInt(strRent);
+						intMoney = intMoney + intCost;  
+					}else if(strProperties[28][11].equals("1")){
+						strRent = strProperties[28][4];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[28][11].equals("2")){
+						strRent = strProperties[28][5];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[28][11].equals("3")){
+						strRent = strProperties[28][6];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[28][11].equals("4")){
+						strRent = strProperties[28][7]; 
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}
+				}
+			}else if(strData.equals("Calculas and Vectors29")){
+				if(strProperties[29][12].equals(monopolypanel.intPlayer+"")){
+					int intCost; 
+					String strRent; 
+					
+					// check to see if houses are owned:
+					if(strProperties[29][11].equals("0")){
+						strRent = strProperties[29][3];
+						intCost = Integer.parseInt(strRent);
+						intMoney = intMoney + intCost;  
+					}else if(strProperties[29][11].equals("1")){
+						strRent = strProperties[29][4];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[29][11].equals("2")){
+						strRent = strProperties[29][5];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[29][11].equals("3")){
+						strRent = strProperties[29][6];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[29][11].equals("4")){
+						strRent = strProperties[29][7]; 
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}
+				}
+			}else if(strData.equals("Biology31")){
+				if(strProperties[31][12].equals(monopolypanel.intPlayer+"")){
+					int intCost; 
+					String strRent; 
+					
+					// check to see if houses are owned:
+					if(strProperties[31][11].equals("0")){
+						strRent = strProperties[31][3];
+						intCost = Integer.parseInt(strRent);
+						intMoney = intMoney + intCost;  
+					}else if(strProperties[31][11].equals("1")){
+						strRent = strProperties[31][4];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[31][11].equals("2")){
+						strRent = strProperties[31][5];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[31][11].equals("3")){
+						strRent = strProperties[31][6];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[31][11].equals("4")){
+						strRent = strProperties[31][7]; 
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}
+				}
+			}else if(strData.equals("Chemistry32")){
+				if(strProperties[32][12].equals(monopolypanel.intPlayer+"")){
+					int intCost; 
+					String strRent; 
+					
+					// check to see if houses are owned:
+					if(strProperties[32][11].equals("0")){
+						strRent = strProperties[32][3];
+						intCost = Integer.parseInt(strRent);
+						intMoney = intMoney + intCost;  
+					}else if(strProperties[32][11].equals("1")){
+						strRent = strProperties[32][4];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[32][11].equals("2")){
+						strRent = strProperties[32][5];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[32][11].equals("3")){
+						strRent = strProperties[32][6];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[32][11].equals("4")){
+						strRent = strProperties[32][7]; 
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}
+				}
+			}else if(strData.equals("Physics34")){
+				if(strProperties[34][12].equals(monopolypanel.intPlayer+"")){
+					int intCost; 
+					String strRent; 
+					
+					// check to see if houses are owned:
+					if(strProperties[34][11].equals("0")){
+						strRent = strProperties[34][3];
+						intCost = Integer.parseInt(strRent);
+						intMoney = intMoney + intCost;  
+					}else if(strProperties[34][11].equals("1")){
+						strRent = strProperties[34][4];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[34][11].equals("2")){
+						strRent = strProperties[34][5];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[34][11].equals("3")){
+						strRent = strProperties[34][6];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[34][11].equals("4")){
+						strRent = strProperties[34][7]; 
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}
+				}
+			}else if(strData.equals("Guidance 435")){
+				if(strProperties[35][12].equals(monopolypanel.intPlayer+"")){
+					int intCost; 
+					String strRent; 
+					
+					// check to see if houses are owned:
+					if(strProperties[35][11].equals("0")){
+						strRent = strProperties[35][3];
+						intCost = Integer.parseInt(strRent);
+						intMoney = intMoney + intCost;  
+					}else if(strProperties[35][11].equals("1")){
+						strRent = strProperties[35][4];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[35][11].equals("2")){
+						strRent = strProperties[35][5];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[35][11].equals("3")){
+						strRent = strProperties[35][6];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[35][11].equals("4")){
+						strRent = strProperties[35][7]; 
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}
+				}
+			}else if(strData.equals("Tech Design37")){
+				if(strProperties[37][12].equals(monopolypanel.intPlayer+"")){
+					int intCost; 
+					String strRent; 
+					
+					// check to see if houses are owned:
+					if(strProperties[37][11].equals("0")){
+						strRent = strProperties[37][3];
+						intCost = Integer.parseInt(strRent);
+						intMoney = intMoney + intCost;  
+					}else if(strProperties[37][11].equals("1")){
+						strRent = strProperties[37][4];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[37][11].equals("2")){
+						strRent = strProperties[37][5];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[37][11].equals("3")){
+						strRent = strProperties[37][6];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[37][11].equals("4")){
+						strRent = strProperties[37][7]; 
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}
+				}
+			}else if(strData.equals("Computer Science39")){
+				if(strProperties[39][12].equals(monopolypanel.intPlayer+"")){
+					int intCost; 
+					String strRent; 
+					
+					// check to see if houses are owned:
+					if(strProperties[39][11].equals("0")){
+						strRent = strProperties[39][3];
+						intCost = Integer.parseInt(strRent);
+						intMoney = intMoney + intCost;  
+					}else if(strProperties[39][11].equals("1")){
+						strRent = strProperties[39][4];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[39][11].equals("2")){
+						strRent = strProperties[39][5];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[39][11].equals("3")){
+						strRent = strProperties[39][6];
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}else if(strProperties[39][11].equals("4")){
+						strRent = strProperties[39][7]; 
+						intCost = Integer.parseInt(strRent); 
+						intMoney = intMoney + intCost; 
+					}
+				}
+			}
+			
+			
+			
+			
+			
+		}
+		
+		
+		
+		
 		
 				
-		// --------- see if a message is regarding the payment of a property --------
+		// --------- see if a message is regarding the payment of a property (by another player)--------
 		if(strData.equals("Geography") || strData.equals("History") || strData.equals("Guidance 1") || strData.equals("Visual Arts") || strData.equals("Music") || strData.equals("Drama") || strData.equals("Accounting") || strData.equals("Student Council") || strData.equals("Marketing") || strData.equals("Business Leadership")|| strData.equals("Guidance 2") || strData.equals("Religion") || strData.equals("World Religions")|| strData.equals("Philosphy")|| strData.equals("Indigenous Studies")|| strData.equals("Writer's Craft") || strData.equals("English")|| strData.equals("Guidance 3")|| strData.equals("Advanced Functions") || strData.equals("Data Management") || strData.equals("Athletic Council") || strData.equals("Calculas and Vectors") || strData.equals("Biology") || strData.equals("Chemistry") || strData.equals("Physics") || strData.equals("Guidance 4") || strData.equals("Tech Design") || strData.equals("Computer Science") || blnPropertyBought == true){
 			blnMovement = false; 
 		
@@ -1360,8 +2159,8 @@ public class mainmenu implements ActionListener{
 				}
 			}
 		// ---------------------- Sending message over the server that the property can no longer be bought --------------
-		//ssm.sendText(monopolypanel.strPropertyN); 
-		//ssm.sendText(monopolypanel.intPlayer+""); 
+		ssm.sendText(monopolypanel.strPropertyN); 
+		ssm.sendText(monopolypanel.intPlayer+""); 
 		
 		System.out.println(monopolypanel.strPropertyN); 
 		System.out.println(monopolypanel.intPlayer); 
@@ -1372,7 +2171,11 @@ public class mainmenu implements ActionListener{
 		System.out.println(strProperties[monopolypanel.intPropertyN][9]); 
 		System.out.println(strProperties[monopolypanel.intPropertyN][12]); 
 			
-			
+		// ------------- Sending message over the server about money -----------
+		ssm.sendText(monopolypanel.strPropertyN+monopolypanel.intPropertyN);
+		System.out.println(monopolypanel.strPropertyN+monopolypanel.intPropertyN);
+		
+		
 			
 			
 		}
