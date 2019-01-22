@@ -83,7 +83,7 @@ public class stamonopolycharacters extends JPanel{
 		gameplay.setLocation(1140,620); 
 		
 		try{
-			student1 = ImageIO.read(new File("student1.jpg"));
+			student1 = ImageIO.read(new File("select1.jpg"));
 			title = new Font("kabel.ttf", Font.PLAIN, 12);
 		}catch(IOException e){
 			System.out.println("unable to load image ");
