@@ -2244,7 +2244,24 @@ public class mainmenu implements ActionListener{
 		
 		//BUYING A HOTEL (Hotel)
 		else if(evt.getSource() == monopolypanel.hotel){
-		}		
+		}
+		
+		//Ending of game
+		if (intMoney <= 0){
+			intMoney = 0;
+			monopolypanel.buy.setVisible(false);
+			monopolypanel.dontbuy.setVisible(false);
+			monopolypanel.house.setVisible(false);
+			monopolypanel.rolldie.setVisible(false);
+			monopolypanel.next.setVisible(false);
+			monopolypanel.back.setVisible(false);
+			monopolypanel.hotel.setVisible(false);
+			monopolypanel.textarea.setVisible(false);
+			monopolypanel.textfield.setVisible(false);
+			monopolypanel.intTimer = 0;
+			monopolypanel.blnwinner = false;//  
+		}
+				
 	}
 	
 	//Constructor

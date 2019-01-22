@@ -98,12 +98,14 @@ public class AnimationMonopolyPanel extends JPanel{
 	
 	//Endgame
 	boolean blnwinner;
+	int intTimer = 1;
 	
 	//Methods
 	public void paintComponent(Graphics g){
 		g.setColor(new Color(192,225,175)); 
 		g.fillRect(0,0,1280,720); 
 		g.drawImage(monopolyboard,-260,-3,null);
+		
 		
 		//DRAWING DIE
 		g.setColor(Color.BLACK);
@@ -253,6 +255,16 @@ public class AnimationMonopolyPanel extends JPanel{
 		
 		g.fillRect(intPlayerX4, intPlayerY4, 25,25); 
 		
+		if (intTimer == 0 && blnwinner == true){
+			g.setColor(new Color(192,225,175)); 
+			g.fillRect(0,0,1280,720); 
+			g.drawImage(winner,0,0,null);
+		}else if(intTimer == 0 && blnwinner == false){
+			g.setColor(new Color(192,225,175)); 
+			g.fillRect(0,0,1280,720); 
+			g.drawImage(loser,0,0,null);
+		}
+		
 	}
 	
 
@@ -270,6 +282,7 @@ public class AnimationMonopolyPanel extends JPanel{
 		scroll.setLocation(1020,330);
 		scroll.setSize(255,297);
 		textarea.setEnabled(false);
+		
 		
 		//buttons
 		buy = new JButton("Buy");
@@ -299,6 +312,8 @@ public class AnimationMonopolyPanel extends JPanel{
 		back = new JButton("Back");
 		back.setLocation(867,655);
 		back.setSize(141,60);
+		
+		
 		
 		
 		try{
