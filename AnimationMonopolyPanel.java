@@ -11,6 +11,9 @@ public class AnimationMonopolyPanel extends JPanel{
 	BufferedImage monopolyboard;
 	BufferedImage communitycard;
 	BufferedImage chancecard;
+	BufferedImage select1;
+	BufferedImage winner;
+	BufferedImage loser;
 	//-chatbox
 	JTextField textfield = new JTextField();
 	Timer timer;
@@ -93,6 +96,8 @@ public class AnimationMonopolyPanel extends JPanel{
 	int intPlayerX4 = -50; 
 	int intPlayerY4 = -50; 
 	
+	//Endgame
+	boolean blnwinner;
 	
 	//Methods
 	public void paintComponent(Graphics g){
@@ -247,8 +252,6 @@ public class AnimationMonopolyPanel extends JPanel{
 		}
 		
 		g.fillRect(intPlayerX4, intPlayerY4, 25,25); 
-	
-		
 		
 	}
 	
@@ -300,6 +303,8 @@ public class AnimationMonopolyPanel extends JPanel{
 		
 		try{
 			monopolyboard = ImageIO.read(new File("MonopolyGameBoard.png"));
+			winner = ImageIO.read(new File("winner.png"));
+			loser = ImageIO.read(new File("loser.png"));
 		}catch(IOException e){
 			System.out.println("Unable to upload image");
 		}
