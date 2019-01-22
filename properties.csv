@@ -1,26 +1,26 @@
-Go Space,null,0,200,0,0,0,0,0,t,null,0,0
+Go Space,null,0,200,0,0,0,0,0,t,n,0,0
 Geography,Chalmers,60,2,20,60,180,450,30,f,br,0,0
-Community,null,0,0,0,0,0,0,0,f,null,0,0
+Community,null,0,0,0,0,0,0,0,t,n,0,0
 History,Iorio,60,4,20,60,180,450,50,f,br,0,0
-Course Selection,null,0,80,0,0,0,0,0,t,null,0,0
+Course Selection,null,0,80,0,0,0,0,0,t,n,0,0
 Guidance 1,Aranha,200,25,50,100,200,100,0,f,rail,0,0
 Visual Arts,Fabroa,100,6,30,90,270,550,50,f,lb,0,0
-Chance,null,0,0,0,0,0,0,0,t,null,0,0
+Chance,null,0,0,0,0,0,0,0,t,n,0,0
 Music,Pezzelato,100,6,30,90,270,550,59,f,lb,0,0
 Drama,Devlin-Foley,120,8,40,100,300,600,60,f,lb,0,0
-Principal's Office,null,0,0,0,0,0,0,0,t,null,0,0
+Principal's Office,null,0,0,0,0,0,0,0,t,n,0,0
 Accounting,Adorante,140,10,50,150,450,750,70,f,pur,0,0
 Student Council,null,150,4,10,0,0,0,75,f,u,0,0
 Marketing,Brizzi,140,10,50,150,450,750,70,f,pur,0,0
 Business Leadership,Giantonnio,160,12,60,260,500,900,80,f,pur,0,0
 Guidance 2,Tucci,200,25,50,100,200,100,0,f,rail,0,0
 Religion,Fitzsimmons,180,14,70,200,550,950,90,f,or,0,0
-Community,0,0,0,0,0,0,0,0,0,t,null,0
+Community,0,0,0,0,0,0,0,0,0,t,n,0
 World Religions,LaBarbara,180,14,70,200,550,950,90,f,or,0,0
 Philosphy,Hoffman,200,16,80,220,600,800,100,f,or,0,0
-Free Parking,null,0,0,0,0,0,0,0,t,null,0,0
+Free Parking,null,0,0,0,0,0,0,0,t,n,0,0
 Indigenous Studies,Pirrello,220,18,90,250,700,1050,110,f,red,0,0
-Chance,null,0,0,0,0,0,0,0,t,null,0,0
+Chance,null,0,0,0,0,0,0,0,t,n,0,0
 Writer's Craft,Ratchford,220,18,90,250,700,875,110,f,red,0,0
 English,Salvino,240,20,100,300,750,1100,120,f,red,0,0
 Guidance 3,Pilleggi,200,25,50,100,200,100,0,f,rail,0,0
@@ -28,13 +28,13 @@ Advanced Functions,Lee,260,22,110,330,800,1150,130,f,yel,0,0
 Data Management,DiDonato,260,22,110,330,800,1150,130,f,yel,0,0
 Athletic Council,null,150,4,10,0,0,0,75,f,u,0,0
 Calculus and Vectors,Burchat,280,24,120,350,850,1025,140,f,yel,0,0
-Go To Principal's Office,null,0,0,0,0,0,0,0,t,null,0,0
+Go To Principal's Office,null,0,0,0,0,0,0,0,t,n,0,0
 Biology,Coletta,300,26,130,390,900,1275,150,f,gre,0,0
 Chemistry,Freda,300,26,130,390,900,1275,150,f,gre,0,0
-Community,null,0,0,0,0,0,0,0,t,null,0,0
+Community,null,0,0,0,0,0,0,0,t,n,0,0
 Physics,Lee,320,28,150,450,1000,1400,160,f,gre,0,0
 Guidance 4,Ms.Lowe,200,25,50,100,200,100,0,f,rail,0,0
-Chance,null,0,0,0,0,0,0,0,t,null,0,0
+Chance,null,0,0,0,0,0,0,0,t,n,0,0
 Tech Design,Ciampa,350,35,175,500,110,1500,175,f,db,0,0
-Uniform Fees,null,0,75,0,0,0,0,0,t,null,0,0
+Uniform Fees,null,0,75,0,0,0,0,0,t,n,0,0
 Computer Science,Cadawas,400,50,200,600,1400,2000,200,f,db,0,0
