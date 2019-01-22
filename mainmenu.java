@@ -997,6 +997,9 @@ public class mainmenu implements ActionListener{
 			//-community chest
 			if(strCard.equalsIgnoreCase("community")){
 				monopolypanel.strCard = "community card";
+				monopolypanel.strDisplayLength = "";
+				monopolypanel.strDisplayLength2 = "";
+				monopolypanel.strDisplayLength3 = "";
 				//generates random number
 				intNum = (int) (Math.random()*29+0);
 				//card info
@@ -1004,32 +1007,27 @@ public class mainmenu implements ActionListener{
 				monopolypanel.strCardinfo = strCard;
 				System.out.println(strCommunity[intNum][1]);// prints out what the community card says
 
-				//-Printing Community  CardInfo to panel 
+				
 				// if intLength is greater than 25 letters
 
-				intLength = strCommunity[intNum][1].length(); //length of first line
+				intLength = strCommunity[intNum][1].length();
 				intRemain = intLength - intLengthMax; 
+				
 					if(intLength > 25){
 						monopolypanel.strDisplayLength = strCommunity[intNum][1].substring(0,intLengthMax);
-						intRemain = intLength - intRemain;
+						intRemain = intLength - intRemain; 
 						monopolypanel.strDisplayLength2 = strCommunity[intNum][1].substring(intRemain,intLength);
-					/*		if(intRemain > 25){
-							intRemain = intRemain - intLengthMax;
-							System.out.println(strCommunity[intNum][1].substring(intLength-intRemain,intLength));
-					}		*/					
+							if(intRemain > 25){
+								monopolypanel.strDisplayLength2 = strCommunity[intNum][1].substring(intRemain,intLength - intRemain);
+								intRemain = intLength - intRemain;
+								monopolypanel.strDisplayLength3 = strCommunity[intNum][1].substring(intRemain,intLength);
+						}else if (intRemain < 25){
+							monopolypanel.strDisplayLength2 = strCommunity[intNum][1].substring(intRemain,intLength);
+						}							
 						}else{
 							monopolypanel.strDisplayLength = strCommunity[intNum][1].substring(0,intLength);
 						}
-						
-						//--Length of second line 
-						intLength2 = monopolypanel.strDisplayLength2.length();
-						System.out.println(intLength2);
-					if(intLength2 > 25){
-						intRemain = intLength2 - intRemain;
-						System.out.println(intRemain);
-						monopolypanel.strDisplayLength3 = strCommunity[intNum][1].substring(intRemain,intLength);
-					}
-						
+					
 						
 				intMoneyCommunity = Integer.parseInt(strCommunity[intNum][2]);
 				intMoney = intMoney + intMoneyCommunity;
@@ -1038,6 +1036,9 @@ public class mainmenu implements ActionListener{
 			//-chance
 			else if (strCard.equalsIgnoreCase("chance")){
 				monopolypanel.strCard = "chance";
+				monopolypanel.strDisplayLength = "";
+				monopolypanel.strDisplayLength2 = "";
+				monopolypanel.strDisplayLength3 = "";
 				// generates random card number
 				intNum = (int) (Math.random()*29+0);
 				// prints out what the community card says
@@ -1089,15 +1090,19 @@ public class mainmenu implements ActionListener{
 				// if intLength is greater than 25 letters
 
 				intLength = strChance[intNum][1].length();
-				intRemain = intLength - intLengthMax; 
+				intRemain = intLength - intLengthMax;
+					
 					if(intLength > 25){
 						monopolypanel.strDisplayLength = strChance[intNum][1].substring(0,intLengthMax);
-						intRemain = intLength - intRemain;
+						intRemain = intLength - intRemain; 
 						monopolypanel.strDisplayLength2 = strChance[intNum][1].substring(intRemain,intLength);
 							if(intRemain > 25){
-							intRemain = intRemain - intLengthMax;
-							System.out.println(strChance[intNum][1].substring(intLength-intRemain,intLength));
-					}							
+								monopolypanel.strDisplayLength2 = strChance[intNum][1].substring(intRemain,intLength - intRemain);
+								intRemain = intLength - intRemain;
+								monopolypanel.strDisplayLength3 = strChance[intNum][1].substring(intRemain,intLength);
+						}else if (intRemain < 25){
+							monopolypanel.strDisplayLength2 = strChance[intNum][1].substring(intRemain,intLength);
+						}							
 						}else{
 							monopolypanel.strDisplayLength = strChance[intNum][1].substring(0,intLength);
 						}
