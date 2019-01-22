@@ -1275,7 +1275,7 @@ public class mainmenu implements ActionListener{
 			}
 			
 			
-			
+			monopolypanel.textarea.setText("");
 			
 			
 		}
@@ -1285,10 +1285,19 @@ public class mainmenu implements ActionListener{
 		
 		
 				
-		// --------- see if a message is regarding the payment of a property (by another player)--------
-		if(strData.equals("Geography") || strData.equals("History") || strData.equals("Guidance 1") || strData.equals("Visual Arts") || strData.equals("Music") || strData.equals("Drama") || strData.equals("Accounting") || strData.equals("Student Council") || strData.equals("Marketing") || strData.equals("Business Leadership")|| strData.equals("Guidance 2") || strData.equals("Religion") || strData.equals("World Religions")|| strData.equals("Philosphy")|| strData.equals("Indigenous Studies")|| strData.equals("Writer's Craft") || strData.equals("English")|| strData.equals("Guidance 3")|| strData.equals("Advanced Functions") || strData.equals("Data Management") || strData.equals("Athletic Council") || strData.equals("Calculas and Vectors") || strData.equals("Biology") || strData.equals("Chemistry") || strData.equals("Physics") || strData.equals("Guidance 4") || strData.equals("Tech Design") || strData.equals("Computer Science") || blnPropertyBought == true){
+		// --------- see if a message is regarding the purchase of a property by another player--------
+		if(strData.equals("Geography") || strData.equals("History") || strData.equals("Guidance 1") || strData.equals("Visual Arts") || strData.equals("Music") || strData.equals("Drama") || strData.equals("Accounting") || strData.equals("Student Council") || strData.equals("Marketing") || strData.equals("Business Leadership")|| strData.equals("Guidance 2") || strData.equals("Religion") || strData.equals("World Religions")|| strData.equals("Philosphy")|| strData.equals("Indigenous Studies")|| strData.equals("Writer's Craft") || strData.equals("English")|| strData.equals("Guidance 3")|| strData.equals("Advanced Functions") || strData.equals("Data Management") || strData.equals("Athletic Council") || strData.equals("Calculas and Vectors") || strData.equals("Biology") || strData.equals("Chemistry") || strData.equals("Physics") || strData.equals("Guidance 4") || strData.equals("Tech Design") || strData.equals("Computer Science") || blnPropertyBought == true || strData.equals("Principal's Office")){
 			blnMovement = false; 
 		
+		// this is for principals office:
+		if(strData.equals("Principal's Ofice") || blnPropertyBought == true){
+			blnPropertyBought = true; 
+			if(blnPropertyBought == true){
+				blnPropertyBought = false; 
+			}
+			
+		}
+
 
 			// this is for property number 1: 
 			if(strData.equals("Geography") || blnPropertyBought == true){
@@ -1489,8 +1498,8 @@ public class mainmenu implements ActionListener{
 				}
 			}
 		
-		
-		
+			
+		monopolypanel.textarea.setText("");
 		
 		}
 		
@@ -1703,6 +1712,8 @@ public class mainmenu implements ActionListener{
 					// allowing button to reset
 					
 				}
+				
+				monopolypanel.textarea.setText("");
 			}
 			
 			monopolypanel.textarea.append("\n"+strData); 
@@ -2041,13 +2052,13 @@ public class mainmenu implements ActionListener{
 			
 			//Trying to send over to other person.
 			// if mistake is made, discard this entire section ----------------------------------------------------------
-			
+			/*
 			ssm.sendText(strProperties[monopolypanel.intPropertyN][0]); // send over to others which properties have been bought. 
 			monopolypanel.strPlayer = Integer.toString(monopolypanel.intPlayer); // might be able to set the variable on main menu
 			ssm.sendText(monopolypanel.strPlayer); // intplayer is Int variable so it cannot be sent over as text? i converted it into string.
 		
 			// ------------------------------------------------------------------------------------------------------------------------
-			
+			*/
 			monopolypanel.strPropertyOwned = strProperties[monopolypanel.intPropertyN][0];
 			monopolypanel.strMoney = intMoney+"";
 			monopolypanel.intMoney = intMoney;
@@ -2171,7 +2182,7 @@ public class mainmenu implements ActionListener{
 		System.out.println(strProperties[monopolypanel.intPropertyN][9]); 
 		System.out.println(strProperties[monopolypanel.intPropertyN][12]); 
 			
-		// ------------- Sending message over the server about money -----------
+		// ------------- Sending message over the server about money when you owe someone -----------
 		ssm.sendText(monopolypanel.strPropertyN+monopolypanel.intPropertyN);
 		System.out.println(monopolypanel.strPropertyN+monopolypanel.intPropertyN);
 		
