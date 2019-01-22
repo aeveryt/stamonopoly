@@ -2287,6 +2287,7 @@ public class mainmenu implements ActionListener{
 			monopolypanel.back.setVisible(false);
 			monopolypanel.hotel.setVisible(false);
 			monopolypanel.textarea.setVisible(false);
+			monopolypanel.scroll.setVisible(false);
 			monopolypanel.textfield.setVisible(false);
 			monopolypanel.intTimer = 0;
 			monopolypanel.blnwinner = false;//  
