@@ -2494,7 +2494,6 @@ public class mainmenu implements ActionListener{
 			intMoney = intMoney-intPropertyCost; // subtracting
 			
 		
-			monopolypanel.strColour= strProperties[monopolypanel.intPropertyN][10];
 			monopolypanel.strMoney = intMoney+"";
 			monopolypanel.intMoney = intMoney;
 			monopolypanel.intRent = Integer.parseInt(strProperties[monopolypanel.intPropertyN][3]);
