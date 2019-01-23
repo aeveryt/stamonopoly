@@ -86,7 +86,69 @@ public class mainmenu implements ActionListener{
 	int intCount; 
 	
 	// Properties purchased: 
-	boolean blnPropertyBought = false; 
+	boolean blnPropertyBought1 = false;
+	boolean blnPropertyBought3 = false; 
+	boolean blnPropertyBought5 = false; 
+	boolean blnPropertyBought6 = false;
+	boolean blnPropertyBought8 = false; 
+	boolean blnPropertyBought9 = false; 
+	boolean blnPropertyBought11 = false; 
+	boolean blnPropertyBought12 = false; 
+	boolean blnPropertyBought13 = false; 
+	boolean blnPropertyBought14 = false;
+	boolean blnPropertyBought15= false; 
+	boolean blnPropertyBought16 = false; 
+	boolean blnPropertyBought17 = false;
+	boolean blnPropertyBought18 = false; 
+	boolean blnPropertyBought19 = false; 
+	boolean blnPropertyBought21 = false;
+	boolean blnPropertyBought23 = false;
+	boolean blnPropertyBought24 = false; 
+	boolean blnPropertyBought25 = false;
+	boolean blnPropertyBought26 = false;
+	boolean blnPropertyBought27 = false; 
+	boolean blnPropertyBought28 = false; 
+	boolean blnPropertyBought29 = false; 
+	boolean blnPropertyBought31 = false;
+	boolean blnPropertyBought32 = false; 
+	boolean blnPropertyBought34 = false; 
+	boolean blnPropertyBought35 = false;
+	boolean blnPropertyBought37 = false; 
+	boolean blnPropertyBought39 = false; 
+	boolean blnPropertyBought = false;
+	
+	// houses purchased:
+	boolean blnHouse1 = false;
+	boolean blnHouse3 = false;
+	boolean blnHouse5 = false;
+	boolean blnHouse6 = false;
+	boolean blnHouse8 = false;
+	boolean blnHouse9 = false; 
+	boolean blnHouse11 = false;
+	boolean blnHouse12 = false;
+	boolean blnHouse13 = false;
+	boolean blnHouse14 = false;
+	boolean blnHouse15 = false;
+	boolean blnHouse16 = false;
+	boolean blnHouse17 = false;
+	boolean blnHouse18 = false;
+	boolean blnHouse19 = false;
+	boolean blnHouse21 = false;
+	boolean blnHouse23 = false;
+	boolean blnHouse24 = false;
+	boolean blnHouse25 = false;
+	boolean blnHouse26 = false;
+	boolean blnHouse27 = false;
+	boolean blnHouse28 = false;
+	boolean blnHouse29 = false;
+	boolean blnHouse31 = false;
+	boolean blnHouse32 = false;
+	boolean blnHouse34= false;
+	boolean blnHouse35 = false;
+	boolean blnHouse37 = false;
+	boolean blnHouse39 = false;
+	
+	
 	
 	//*****METHODS*****
 	public void actionPerformed(ActionEvent evt){
@@ -483,6 +545,251 @@ public class mainmenu implements ActionListener{
 		String strData; 
 		boolean blnMovement = true; 
 		strData = ssm.readText(); 
+		
+		// ----- see if someone bought a house:
+		if(strData.equals("1Geography") || strData.equals("3History") || strData.equals("5Guidance 1") || strData.equals("6Visual Arts") || strData.equals("8Music") || strData.equals("9Drama") || strData.equals("11Accounting") || strData.equals("12Student Council") || strData.equals("13Marketing") || strData.equals("14Business Leadership")|| strData.equals("15Guidance 2") || strData.equals("16Religion") || strData.equals("18World Religions")|| strData.equals("19Philosphy")|| strData.equals("21Indigenous Studies")|| strData.equals("23Writer's Craft") || strData.equals("24English")|| strData.equals("25Guidance 3")|| strData.equals("26Advanced Functions") || strData.equals("27Data Management") || strData.equals("28Athletic Council") || strData.equals("29Calculas and Vectors") || strData.equals("31Biology") || strData.equals("32Chemistry") || strData.equals("34Physics") || strData.equals("35Guidance 4") || strData.equals("37Tech Design") || strData.equals("39Computer Science") || blnHouse1 == true || blnHouse3 == true || blnHouse5 == true|| blnHouse6 == true || blnHouse8 == true || blnHouse9 == true || blnHouse11 == true || blnHouse12 == true || blnHouse13 == true || blnHouse14 == true || blnHouse15 == true || blnHouse16 == true || blnHouse17 == true || blnHouse18 == true|| blnHouse19 == true || blnHouse21 == true|| blnHouse23 == true || blnHouse24 == true || blnHouse25 == true || blnHouse26 == true || blnHouse27 == true|| blnHouse28 == true || blnHouse29 == true || blnHouse31 == true|| blnHouse32 == true|| blnHouse34 == true || blnHouse35 == true || blnHouse37 == true || blnHouse39 == true){
+			blnMovement = false; 
+			
+			if(strData.equals("1Geography") || blnHouse1 == true){
+				blnHouse1 = true; 
+				
+				if(blnHouse1 == true){
+					strProperties[1][11] = strData; 
+					blnHouse1 = false; 
+				}
+			}else if(strData.equals("3History") || blnHouse3 == true){
+				blnHouse3 = true; 
+				
+				if(blnHouse3 == true){
+					strProperties[3][11] = strData;
+					blnHouse3 = false; 
+				}
+			
+			
+			}else if(strData.equals("5Guidance 1") || blnHouse5 == true){
+				blnHouse5 = true; 
+				
+				if(blnHouse5 == true){
+					strProperties[5][11] = strData;
+					blnHouse5 = false; 
+				}
+				
+				
+				
+			}else if(strData.equals("6Visual Arts") || blnHouse6 == true){
+				blnHouse6 = true;  
+				
+				if(blnHouse6 == true){
+					strProperties[6][11] = strData;
+					blnHouse6 = false; 
+				}
+				
+			}else if(strData.equals("8Music") || blnHouse8 == true){
+				blnHouse8 = true; 
+				
+				if(blnHouse8 == true){
+					strProperties[8][11] = strData;
+					blnHouse8 = false; 
+				}
+			}else if(strData.equals("9Drama") || blnHouse9 == true){
+				blnHouse9 = true; 
+				
+				if(blnHouse9 == true){
+					strProperties[9][11] = strData;
+					blnHouse9 = false; 
+				}
+				
+			}else if(strData.equals("11Accounting") || blnHouse11 == true){
+				blnHouse11 = true; 
+				
+				if(blnHouse11 == true){
+					strProperties[11][11] = strData;
+					blnHouse11 = false; 
+				}
+			
+			
+			
+				
+			}else if(strData.equals("12Student Council") || blnHouse12 == true){
+			blnHouse12= true; 
+				
+				if(blnHouse12 == true){
+					strProperties[12][11] = strData;
+					blnHouse12 = false; 
+				}
+			
+			
+				
+			}else if(strData.equals("13Marketing") || blnHouse13 == true){
+				blnHouse13 = true; 
+				
+				if(blnHouse13 == true){
+					strProperties[13][11] = strData;
+					blnHouse13 = false; 
+				}
+				
+			}else if(strData.equals("14Business Leadership") || blnHouse14 == true){
+				blnHouse14 = true; 
+				
+				if(blnHouse14 == true){
+					strProperties[14][11] = strData;
+					blnHouse14 = false; 
+				}
+			}else if(strData.equals("15Guidance 2") || blnHouse15 == true){
+			blnHouse15 = true; 
+				
+				if(blnHouse15 == true){
+					strProperties[15][11] = strData;
+					blnHouse15 = false; 
+				}
+				
+			}else if(strData.equals("16Religion") || blnHouse16 == true){
+				
+				blnHouse16= true; 
+				
+				if(blnHouse16 == true){
+					strProperties[16][11] = strData;
+					blnHouse16 = false; 
+				}
+				
+				
+			}else if(strData.equals("18World Religions") || blnHouse18 == true){
+			blnHouse18 = true; 
+				
+				if(blnHouse18 == true){
+					strProperties[18][11] = strData;
+					blnHouse18 = false; 
+				}
+			
+				
+			}else if(strData.equals("19Philosphy") || blnHouse19 == true){
+				blnHouse19 = true; 
+				
+				if(blnHouse19 == true){
+					strProperties[19][11] = strData;
+					blnHouse19 = false; 
+				}
+			}else if(strData.equals("21Indigenous Studies")|| blnHouse21 == true){
+				blnHouse21 = true; 
+				
+				if(blnHouse21 == true){
+					strProperties[21][11] = strData;
+					blnHouse21 = false; 
+				}
+			}else if(strData.equals("23Writer's Craft") || blnHouse23 == true){
+			blnHouse23 = true; 
+				
+				if(blnHouse23 == true){
+					strProperties[23][11] = strData;
+					blnHouse23 = false; 
+				}
+			
+				
+			}else if(strData.equals("24English") || blnHouse24 == true){
+				blnHouse24 = true; 
+				
+				if(blnHouse24 == true){
+					strProperties[24][11] = strData;
+					blnHouse24 = false; 
+				}
+				
+			}else if(strData.equals("25Guidance 3") || blnHouse25 == true){
+				blnHouse25 = true; 
+				
+				if(blnHouse25 == true){
+					strProperties[25][11] = strData;
+					blnHouse25 = false; 
+				}
+			}else if(strData.equals("26Advanced Functions") || blnHouse26 == true){
+				blnHouse26 = true; 
+				
+				if(blnHouse26 == true){
+					strProperties[26][11] = strData;
+					blnHouse26 = false; 
+				}
+			}else if(strData.equals("27Data Management") || blnHouse27 == true){
+				blnHouse27 = true; 
+				
+				if(blnHouse27 == true){
+					strProperties[27][11] = strData;
+					blnHouse27 = false; 
+				}
+			}else if(strData.equals("28Athletic Council") || blnHouse28 == true){
+			blnHouse28 = true; 
+				
+				if(blnHouse28 == true){
+					strProperties[28][11] = strData;
+					blnHouse28 = false; 
+				}
+			
+				
+			}else if(strData.equals("29Calculas and Vectors") || blnHouse29 == true){
+				blnHouse29 = true; 
+				
+				if(blnHouse29 == true){
+					strProperties[29][11] = strData;
+					blnHouse29 = false; 
+				}
+			}else if(strData.equals("31Biology") || blnHouse31 == true){
+			blnHouse31 = true; 
+				
+				if(blnHouse31 == true){
+					strProperties[31][11] = strData;
+					blnHouse31 = false; 
+				}
+				
+			}else if(strData.equals("32Chemistry") || blnHouse32 == true){
+				blnHouse32 = true; 
+				
+				if(blnHouse32 == true){
+					strProperties[32][11] = strData;
+					blnHouse32 = false; 
+				}
+			}else if(strData.equals("34Physics") || blnHouse34 == true){
+				blnHouse34 = true; 
+				
+				if(blnHouse34 == true){
+					strProperties[34][11] = strData;
+					blnHouse34 = false; 
+				}
+			}else if(strData.equals("35Guidance 4") || blnHouse35 == true){
+				blnHouse35 = true; 
+				
+				if(blnHouse35 == true){
+					strProperties[35][11] = strData;
+					blnHouse35 = false; 
+				}
+			}else if(strData.equals("37Tech Design") || blnHouse37 == true){
+				blnHouse37 = true; 
+				
+				if(blnHouse37 == true){
+					strProperties[37][11] = strData;
+					blnHouse37 = false; 
+				}
+			}else if(strData.equals("39Computer Science39") || blnHouse39 == true){
+				blnHouse39 = true; 
+				
+				if(blnHouse39 == true){
+					strProperties[39][11] = strData;
+					blnHouse39 = false; 
+				}
+			}
+			
+			
+			
+			monopolypanel.textarea.setText("");
+			
+			
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		//----- see if someone landed on your property so you can collect rent!
 		if(strData.equals("Geography1") || strData.equals("History3") || strData.equals("Guidance 15") || strData.equals("Visual Arts6") || strData.equals("Music8") || strData.equals("Drama9") || strData.equals("Accounting11") || strData.equals("Student Council12") || strData.equals("Marketing13") || strData.equals("Business Leadership14")|| strData.equals("Guidance 215") || strData.equals("Religion16") || strData.equals("World Religions18")|| strData.equals("Philosphy19")|| strData.equals("Indigenous Studies21")|| strData.equals("Writer's Craft23") || strData.equals("English24")|| strData.equals("Guidance 325")|| strData.equals("Advanced Functions26") || strData.equals("Data Management27") || strData.equals("Athletic Council28") || strData.equals("Calculas and Vectors29") || strData.equals("Biology31") || strData.equals("Chemistry32") || strData.equals("Physics34") || strData.equals("Guidance 435") || strData.equals("Tech Design37") || strData.equals("Computer Science39")){
@@ -1286,7 +1593,7 @@ public class mainmenu implements ActionListener{
 		
 				
 		// --------- see if a message is regarding the purchase of a property by another player--------
-		if(strData.equals("Geography") || strData.equals("History") || strData.equals("Guidance 1") || strData.equals("Visual Arts") || strData.equals("Music") || strData.equals("Drama") || strData.equals("Accounting") || strData.equals("Student Council") || strData.equals("Marketing") || strData.equals("Business Leadership")|| strData.equals("Guidance 2") || strData.equals("Religion") || strData.equals("World Religions")|| strData.equals("Philosphy")|| strData.equals("Indigenous Studies")|| strData.equals("Writer's Craft") || strData.equals("English")|| strData.equals("Guidance 3")|| strData.equals("Advanced Functions") || strData.equals("Data Management") || strData.equals("Athletic Council") || strData.equals("Calculas and Vectors") || strData.equals("Biology") || strData.equals("Chemistry") || strData.equals("Physics") || strData.equals("Guidance 4") || strData.equals("Tech Design") || strData.equals("Computer Science") || blnPropertyBought == true || strData.equals("Principal's Office")){
+		if(strData.equals("Geography") || strData.equals("History") || strData.equals("Guidance 1") || strData.equals("Visual Arts") || strData.equals("Music") || strData.equals("Drama") || strData.equals("Accounting") || strData.equals("Student Council") || strData.equals("Marketing") || strData.equals("Business Leadership")|| strData.equals("Guidance 2") || strData.equals("Religion") || strData.equals("World Religions")|| strData.equals("Philosphy")|| strData.equals("Indigenous Studies")|| strData.equals("Writer's Craft") || strData.equals("English")|| strData.equals("Guidance 3")|| strData.equals("Advanced Functions") || strData.equals("Data Management") || strData.equals("Athletic Council") || strData.equals("Calculas and Vectors") || strData.equals("Biology") || strData.equals("Chemistry") || strData.equals("Physics") || strData.equals("Guidance 4") || strData.equals("Tech Design") || strData.equals("Computer Science") || blnPropertyBought == true || strData.equals("Principal's Office") || blnPropertyBought1 == true || blnPropertyBought5 == true || blnPropertyBought6 == true ||blnPropertyBought8 == true ||blnPropertyBought9 == true||blnPropertyBought11 == true||blnPropertyBought12 == true||blnPropertyBought13 == true||blnPropertyBought14 == true||blnPropertyBought15 == true || blnPropertyBought16 == true||blnPropertyBought17 == true|| blnPropertyBought18 == true ||blnPropertyBought19 == true || blnPropertyBought21 ==true||blnPropertyBought23 == true|| blnPropertyBought24 == true || blnPropertyBought25 == true || blnPropertyBought26 ==true|| blnPropertyBought27 == true || blnPropertyBought28 == true|| blnPropertyBought29 == true||blnPropertyBought31 == true|| blnPropertyBought32 == true|| blnPropertyBought34 == true ||blnPropertyBought35 == true || blnPropertyBought37 == true || blnPropertyBought39 == true){
 			blnMovement = false; 
 		
 		// this is for principals office:
@@ -1300,201 +1607,201 @@ public class mainmenu implements ActionListener{
 
 
 			// this is for property number 1: 
-			if(strData.equals("Geography") || blnPropertyBought == true){
+			if(strData.equals("Geography") || blnPropertyBought1 == true){
 				strProperties[1][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
+				blnPropertyBought1 = true; 
+				if(blnPropertyBought1 == true){
 					strProperties[1][12] = strData;
-					blnPropertyBought = false; 
+					blnPropertyBought1 = false; 
 				}
-			}else if(strData.equals("History") || blnPropertyBought == true){
+			}else if(strData.equals("History") || blnPropertyBought3 == true){
 				strProperties[3][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
+				blnPropertyBought3 = true; 
+				if(blnPropertyBought3 == true){
 					strProperties[3][12] = strData; 
-					blnPropertyBought = false; 
+					blnPropertyBought3 = false; 
 				}
-			}else if(strData.equals("Guidance 1") || blnPropertyBought == true){
+			}else if(strData.equals("Guidance 1") || blnPropertyBought5 == true){
 				strProperties[5][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
+				blnPropertyBought5 = true; 
+				if(blnPropertyBought5 == true){
 					strProperties[5][12] = strData; 
-					blnPropertyBought = false; 
+					blnPropertyBought5 = false; 
 				}
-			}else if(strData.equals("Visual Arts") || blnPropertyBought == true){
+			}else if(strData.equals("Visual Arts") || blnPropertyBought6 == true){
 				strProperties[6][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
+				blnPropertyBought6 = true; 
+				if(blnPropertyBought6 == true){
 					strProperties[6][12] = strData; 
-					blnPropertyBought = false; 
+					blnPropertyBought6 = false; 
 				}
-			}else if(strData.equals("Music") || blnPropertyBought == true){
+			}else if(strData.equals("Music") || blnPropertyBought8 == true){
 				strProperties[8][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
+				blnPropertyBought8 = true; 
+				if(blnPropertyBought8 == true){
 					strProperties[8][12] = strData; 
-					blnPropertyBought = false; 
+					blnPropertyBought8 = false; 
 				}
-			}else if(strData.equals("Drama") || blnPropertyBought == true){
+			}else if(strData.equals("Drama") || blnPropertyBought9 == true){
 				strProperties[9][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
+				blnPropertyBought9 = true; 
+				if(blnPropertyBought9 == true){
 					strProperties[9][12] = strData; 
-					blnPropertyBought = false; 
+					blnPropertyBought9 = false; 
 				}
-			}else if(strData.equals("Accounting") || blnPropertyBought == true){
+			}else if(strData.equals("Accounting") || blnPropertyBought11 == true){
 				strProperties[11][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
+				blnPropertyBought11 = true; 
+				if(blnPropertyBought11 == true){
 					strProperties[11][12] = strData; 
-					blnPropertyBought = false; 
+					blnPropertyBought11 = false; 
 				}
-			}else if(strData.equals("Student Council") || blnPropertyBought == true){
+			}else if(strData.equals("Student Council") || blnPropertyBought12 == true){
 				strProperties[12][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
+				blnPropertyBought12 = true; 
+				if(blnPropertyBought12== true){
 					strProperties[12][12] = strData; 
-					blnPropertyBought = false; 
+					blnPropertyBought12 = false; 
 				}
-			}else if(strData.equals("Marketing") || blnPropertyBought == true){
+			}else if(strData.equals("Marketing") || blnPropertyBought13 == true){
 				strProperties[13][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
+				blnPropertyBought13 = true; 
+				if(blnPropertyBought13 == true){
 					strProperties[13][12] = strData; 
-					blnPropertyBought = false; 
+					blnPropertyBought13 = false; 
 				}
-			}else if(strData.equals("Business Leadership") || blnPropertyBought == true){
+			}else if(strData.equals("Business Leadership") || blnPropertyBought14 == true){
 				strProperties[14][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
+				blnPropertyBought14 = true; 
+				if(blnPropertyBought14 == true){
 					strProperties[14][12] = strData; 
-					blnPropertyBought = false; 
+					blnPropertyBought14 = false; 
 				}
-			}else if(strData.equals("Guidance 2") || blnPropertyBought == true){
+			}else if(strData.equals("Guidance 2") || blnPropertyBought15 == true){
 				strProperties[15][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
+				blnPropertyBought15 = true; 
+				if(blnPropertyBought15 == true){
 					strProperties[15][12] = strData; 
-					blnPropertyBought = false; 
+					blnPropertyBought15 = false; 
 				}
-			}else if(strData.equals("Religion") || blnPropertyBought == true){
+			}else if(strData.equals("Religion") || blnPropertyBought16 == true){
 				strProperties[16][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
+				blnPropertyBought16 = true; 
+				if(blnPropertyBought16 == true){
 					strProperties[16][12] = strData; 
-					blnPropertyBought = false; 
+					blnPropertyBought16 = false; 
 				}
-			}else if(strData.equals("World Religions") || blnPropertyBought == true){
+			}else if(strData.equals("World Religions") || blnPropertyBought18== true){
 				strProperties[18][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
+				blnPropertyBought18 = true; 
+				if(blnPropertyBought18 == true){
 					strProperties[18][12] = strData; 
-					blnPropertyBought = false; 
+					blnPropertyBought18 = false; 
 				}
-			}else if(strData.equals("Philosphy") || blnPropertyBought == true){
+			}else if(strData.equals("Philosphy") || blnPropertyBought19 == true){
 				strProperties[19][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
+				blnPropertyBought19 = true; 
+				if(blnPropertyBought19 == true){
 					strProperties[19][12] = strData; 
-					blnPropertyBought = false; 
+					blnPropertyBought19 = false; 
 				}
-			}else if(strData.equals("Indigenous Studies") || blnPropertyBought == true){
+			}else if(strData.equals("Indigenous Studies") || blnPropertyBought21 == true){
 				strProperties[21][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
+				blnPropertyBought21 = true; 
+				if(blnPropertyBought21 == true){
 					strProperties[21][12] = strData; 
-					blnPropertyBought = false; 
+					blnPropertyBought21 = false; 
 				}
-			}else if(strData.equals("Writer's Craft") || blnPropertyBought == true){
+			}else if(strData.equals("Writer's Craft") || blnPropertyBought23 == true){
 				strProperties[23][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
+				blnPropertyBought23 = true; 
+				if(blnPropertyBought23 == true){
 					strProperties[23][12] = strData; 
-					blnPropertyBought = false; 
+					blnPropertyBought23 = false; 
 				}
-			}else if(strData.equals("English") || blnPropertyBought == true){
+			}else if(strData.equals("English") || blnPropertyBought24 == true){
 				strProperties[24][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
+				blnPropertyBought24 = true; 
+				if(blnPropertyBought24 == true){
 					strProperties[24][12] = strData; 
-					blnPropertyBought = false; 
+					blnPropertyBought24 = false; 
 				}
-			}else if(strData.equals("Guidance 3") || blnPropertyBought == true){
+			}else if(strData.equals("Guidance 3") || blnPropertyBought25 == true){
 				strProperties[25][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
+				blnPropertyBought25 = true; 
+				if(blnPropertyBought25 == true){
 					strProperties[25][12] = strData; 
-					blnPropertyBought = false; 
+					blnPropertyBought25 = false; 
 				}
-			}else if(strData.equals("Advanced Functions") || blnPropertyBought == true){
+			}else if(strData.equals("Advanced Functions") || blnPropertyBought26 == true){
 				strProperties[26][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
+				blnPropertyBought26 = true; 
+				if(blnPropertyBought26 == true){
 					strProperties[26][12] = strData; 
-					blnPropertyBought = false; 
+					blnPropertyBought26 = false; 
 				}
-			}else if(strData.equals("Data Management") || blnPropertyBought == true){
+			}else if(strData.equals("Data Management") || blnPropertyBought27 == true){
 				strProperties[27][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
+				blnPropertyBought27 = true; 
+				if(blnPropertyBought27 == true){
 					strProperties[27][12] = strData; 
-					blnPropertyBought = false; 
+					blnPropertyBought27 = false; 
 				}
-			}else if(strData.equals("Athletic Council") || blnPropertyBought == true){
+			}else if(strData.equals("Athletic Council") || blnPropertyBought28 == true){
 				strProperties[28][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
+				blnPropertyBought28 = true; 
+				if(blnPropertyBought28 == true){
 					strProperties[28][12] = strData; 
-					blnPropertyBought = false; 
+					blnPropertyBought28 = false; 
 				}
-			}else if(strData.equals("Calculas and Vectors") || blnPropertyBought == true){
+			}else if(strData.equals("Calculas and Vectors") || blnPropertyBought29 == true){
 				strProperties[29][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
+				blnPropertyBought29 = true; 
+				if(blnPropertyBought29 == true){
 					strProperties[29][12] = strData; 
-					blnPropertyBought = false; 
+					blnPropertyBought29 = false; 
 				}
-			}else if(strData.equals("Biology") || blnPropertyBought == true){
+			}else if(strData.equals("Biology") || blnPropertyBought31 == true){
 				strProperties[31][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
+				blnPropertyBought31 = true; 
+				if(blnPropertyBought31 == true){
 					strProperties[31][12] = strData; 
-					blnPropertyBought = false; 
+					blnPropertyBought31 = false; 
 				}
-			}else if(strData.equals("Chemistry") || blnPropertyBought == true){
+			}else if(strData.equals("Chemistry") || blnPropertyBought32 == true){
 				strProperties[32][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
+				blnPropertyBought32 = true; 
+				if(blnPropertyBought32 == true){
 					strProperties[32][12] = strData; 
-					blnPropertyBought = false; 
+					blnPropertyBought32 = false; 
 				}
-			}else if(strData.equals("Physics") || blnPropertyBought == true){
+			}else if(strData.equals("Physics") || blnPropertyBought34 == true){
 				strProperties[34][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
+				blnPropertyBought34 = true; 
+				if(blnPropertyBought34 == true){
 					strProperties[34][12] = strData; 
-					blnPropertyBought = false; 
+					blnPropertyBought34 = false; 
 				}
-			}else if(strData.equals("Guidance 4") || blnPropertyBought == true){
+			}else if(strData.equals("Guidance 4") || blnPropertyBought35 == true){
 				strProperties[35][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
+				blnPropertyBought35 = true; 
+				if(blnPropertyBought35 == true){
 					strProperties[35][12] = strData; 
-					blnPropertyBought = false; 
+					blnPropertyBought35 = false; 
 				}
-			}else if(strData.equals("Tech Design") || blnPropertyBought == true){
+			}else if(strData.equals("Tech Design") || blnPropertyBought37 == true){
 				strProperties[37][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
+				blnPropertyBought37 = true; 
+				if(blnPropertyBought37 == true){
 					strProperties[37][12] = strData; 
-					blnPropertyBought = false; 
+					blnPropertyBought37 = false; 
 				}
-			}else if(strData.equals("Computer Science") || blnPropertyBought == true){
+			}else if(strData.equals("Computer Science") || blnPropertyBought39 == true){
 				strProperties[39][9] = "t"; 
-				blnPropertyBought = true; 
-				if(blnPropertyBought == true){
+				blnPropertyBought39 = true; 
+				if(blnPropertyBought39 == true){
 					strProperties[39][12] = strData; 
-					blnPropertyBought = false; 
+					blnPropertyBought39 = false; 
 				}
 			}
 		
@@ -2120,15 +2427,7 @@ public class mainmenu implements ActionListener{
 			intPropertyCost = Integer.parseInt(strProperties[monopolypanel.intPropertyN][2]); // converting string to int
 			intMoney = intMoney-intPropertyCost; // subtracting
 			
-			//Trying to send over to other person.
-			// if mistake is made, discard this entire section ----------------------------------------------------------
-			/*
-			ssm.sendText(strProperties[monopolypanel.intPropertyN][0]); // send over to others which properties have been bought. 
-			monopolypanel.strPlayer = Integer.toString(monopolypanel.intPlayer); // might be able to set the variable on main menu
-			ssm.sendText(monopolypanel.strPlayer); // intplayer is Int variable so it cannot be sent over as text? i converted it into string.
 		
-			// ------------------------------------------------------------------------------------------------------------------------
-			*/
 			monopolypanel.strPropertyOwned = strProperties[monopolypanel.intPropertyN][0];
 			monopolypanel.strMoney = intMoney+"";
 			monopolypanel.intMoney = intMoney;
@@ -2256,6 +2555,9 @@ public class mainmenu implements ActionListener{
 			monopolypanel.hotel.setEnabled(false);
 			System.out.println(intHouse + "on this property now");
 			strProperties[monopolypanel.intPropertyN][11] = intHouse+"";
+			//send text that you own
+			ssm.sendText(monopolypanel.intPropertyN+monopolypanel.strPropertyN); 
+			ssm.sendText(intHouse+"");
 		}
 		
 		//BUYING A HOTEL (Upgrade to STEM)
