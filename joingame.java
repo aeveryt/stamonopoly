@@ -5,18 +5,24 @@ import java.io.*;
 import javax.imageio.*; 
 import java.awt.event.*; 
 
-
+/** <h1>Client (Joining a game)</h1>
+ * The player has decided to join (client) an existing game <br>
+ * Player must input the IP address of another player (and press enter) <br>
+ * Player must also input their own name as well (and press enter) <br>
+ * */
 public class joingame extends JPanel{
 	// properties
 	BufferedImage background; 
-	JButton back;
-	JTextField TF; 
+	/**Go back to start page to decide whether or not to be server/client*/
+	public JButton back;
+	/**Player inputs IP address of another player (server) and must press enter for it to be valid*/
+	public JTextField TF; 
 	Font title;
 	JButton gameplay; 
 	String strCode = "132"; 
-	public startgame startpage; 
 	Font subtitle; 
-	JTextField TFname; 
+	/**Player inputs/types their name (must press enter for it to be valid)*/
+	public JTextField TFname;
 	String strName; 
 	
 	
@@ -35,12 +41,8 @@ public class joingame extends JPanel{
 
 	
 	// constructor 
-	
-	
 	public joingame(){
 		super(); 
-		startpage = new startgame(); 
-		
 				
 		// Exit button
 		back = new JButton("HOMEPAGE"); 

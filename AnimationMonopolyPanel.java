@@ -5,6 +5,7 @@ import javax.swing.*;
 import javax.imageio.*;
 import java.io.*;
 
+/** This is the animation panel for the whole game that includes all the graphics and designs */
 public class AnimationMonopolyPanel extends JPanel{
 	//Properties
 	//-card variables
@@ -15,19 +16,27 @@ public class AnimationMonopolyPanel extends JPanel{
 	BufferedImage winner;
 	BufferedImage loser;
 	//-chatbox
-	JTextField textfield = new JTextField();
+	/**This textfield (from javaswing) allows you to type and chat with other players in the game*/
+	public JTextField textfield = new JTextField();
 	Timer timer;
 	//-chat history
-	JTextArea textarea = new JTextArea();
-	JScrollPane scroll; 
+	/**This text area (from javaswing) displays the chat history with other players throughout the game*/
+	public JTextArea textarea = new JTextArea();
+	/**The scroll in the text area allows you scroll through the chat history*/
+	public JScrollPane scroll; 
 	//-buy button variables
-	JButton buy;
-	JButton dontbuy;
+	/**This button allows you the option to buy the properties if possible*/
+	public JButton buy;
+	/**This button allows you to not buy the property and your turn passes*/
+	public JButton dontbuy;
 	//hotels/houses - aka classroom improvements and stem
-	JButton house;
-	JButton hotel;
+	/**This button allows you to buy houses (classroom improvements) on the property if possible*/
+	public JButton house;
+	/**This button allows you to buy a hotel (upgrate to STEM) on the property if possible*/
+	public JButton hotel;
 	//-rolling die button
-	JButton rolldie;
+	/**This button allows you to roll the die and move around the board - there are two die*/
+	public JButton rolldie;
 	//-property variables
 	JButton next;
 	JButton back;
@@ -101,6 +110,7 @@ public class AnimationMonopolyPanel extends JPanel{
 	int intTimer = 1;
 	
 	//Methods
+	/**Overriding JPanel paintComponent method in the Monopoly Animation Panel */
 	public void paintComponent(Graphics g){
 		g.setColor(new Color(192,225,175)); 
 		g.fillRect(0,0,1280,720); 
@@ -269,6 +279,7 @@ public class AnimationMonopolyPanel extends JPanel{
 	
 
 	//Constructor
+	/**Constructor for Monopoly Animation Panel*/
 	public AnimationMonopolyPanel(){
 		super();
 		
@@ -313,9 +324,7 @@ public class AnimationMonopolyPanel extends JPanel{
 		back.setLocation(867,655);
 		back.setSize(141,60);
 		
-		
-		
-		
+		//winner and loser images 
 		try{
 			monopolyboard = ImageIO.read(new File("MonopolyGameBoard.png"));
 			winner = ImageIO.read(new File("winner.png"));

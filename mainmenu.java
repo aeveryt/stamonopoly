@@ -1,26 +1,65 @@
-// This is mainmenu and gameplay for game 
 import javax.swing.*; 
 import java.awt.*; 
 import java.awt.event.*; 
 import java.awt.Font;
 import java.io.*;
 
+/** <h1> Main Menu and Game Play of St.Augustine Monopoly </h1>
+ * This is the mainmenu and gameplay for game <br>
+ * Number of Players: 1-4
+ * @author Aevery Tam  Sheridan Fong  Vivian Phung
+ * @since 2019-01-06*/
 public class mainmenu implements ActionListener{
 
 	//*****PROPERTIES*****
+	/**Frame of the program from JFrame of javaswing*/
 	public JFrame theframe; 
+	
+	/**Panel of the program from JPanel of javaswing*/
 	public JPanel thepanel;
+	
+	/**Instruction button in the main menu from JButton of javaswing <br>
+	 * This button goes to the instruction page - learn how to play the game*/
 	public JButton InstrucButt;
+	
+	/**Exit button in the main menu from JButton of javaswing <br>
+	 * This button exits and closes the console/program*/
 	public JButton ExitButt; 
+	
+	/**Play button in the main menu from JButton of java swing <br>
+	 * This button leads to the actual gameplay of St.A monopoly*/
 	public JButton PlayButt;
+	
+	/**Instructions panel from JPanel of javaswing <br>
+	 * This entails all of the instruction content of the game*/
 	public monopolyinstructions thepanelinstructions;
+	
+	/**Panel from JPanel of javaswing <br>
+	 * This page allows you to decide whether or not you want to be a server or client */
 	public serverpanel playpage1;
-	public startgame startpage; 
+	
+	/**Panel from JPanel of java swing <br>
+	 * This page is for the player (server) who decides to start the game <br>
+	 * Player must wait for other players (clients) to input IP address and then start the game.*/
+	public startgame startpage;
+	
+	/**Panel from JPanel of java swing <br>
+	 * This page is for the player (client) who decides to join another player's game <br>
+	 * Player must input player's (server) IP address to join the game*/ 
 	public joingame joinpage; 
+	
+	/** Mr.Cadawas' SuperSocketMaster that entails code for server and client*/
 	public SuperSocketMaster ssm; 
+	
+	/**Animation Panel for all of the graphics and designs for the whole gameplay */
 	public AnimationMonopolyPanel monopolypanel; 
+	
+	/**Panel from JPanel of java swing that allows players to choose their player colour. <br>
+	 * Includes buttons - 1 (red), 2 (blue) , 3 (yellow) , 4 (green) */
 	public stamonopolycharacters characterspanel;
-	Timer thetimer;
+	
+	/**Timer that plays throughout the whole gameplay*/
+	public Timer thetimer;
 	
 	//-Sending information over network variable 
 	int intPiece = 1; 
@@ -31,11 +70,11 @@ public class mainmenu implements ActionListener{
 	int intPlayerOwned; //checks which players owns which property
 	
 	//-Players
-	int intMoney = 1500;
+	int intMoney = 1500; // the amount of money that each player starts off with
 	String strPropertyCost = "";
-	int intPropertyCost = 0;
+	int intPropertyCost = 0; // the cost of the property
 	boolean blnOffice = false; //checks if the player is in jail
-	int intOfficeTime = 0;
+	int intOfficeTime = 0; //checks how many turns are left over when in jail (principal's office)
 	
 	//-Properties (that you own)
 	int intNumofProperties = 0; //number of properties owned
@@ -65,10 +104,39 @@ public class mainmenu implements ActionListener{
 	BufferedReader chance = null;
 	//--Data Array
 	String strSplit[];
-	String strProperties[][] = new String[40][13];
+	/** The properties in the St.Augustine Monopoly Board <br>
+	 * Array: [40][13]<br>
+	 * [0] Subject<br>
+	 * [1] Teacher<br>
+	 * [2] Price<br>
+	 * [3] Rent<br>
+	 * [4] Rent with 1 houses <br>
+	 * [5] Rent with 2 houses <br>
+	 * [6] Rent with 3 houses<br>
+	 * [7] Rent with hotel <br>
+	 * [8] Mortgage<br>
+	 * [9] Boolean - if the property is owned (if you landed on it)<br>
+	 * [10] Colour of property<br>
+	 * [11] Number of Houses on the property (4 houses = hotel)<br>
+	 * [12] intPlayer that owns the property
+	 * */
+	public String strProperties[][] = new String[40][13];
 	String strPropertiesOwned[]; //properties that you own
-	String strCommunity [][] = new String[30][3];
-	String strChance [][] = new String[30][4];	
+	/**The Community Chest Cards in the St. Augustine Monopoly Board <br>
+	 * These are randomly generated <br>
+	 * Array: [30][3]<br>
+	 * [0] - Card Number<br>
+	 * [1] - Statement <br>
+	 * [2] - Money Given or Owed 
+	 * */
+	public String strCommunity [][] = new String[30][3];
+	/**The Chance cards in the St.Augustine Monopoly Board <br>
+	 * [0] - Card Number<br>
+	 * [1] - Statement <br>
+	 * [2] - Effect of the card (location/money check)<br>
+	 * [3] - Money or Location effect (cost/location)
+	 * */
+	public String strChance [][] = new String[30][4];	
 	String strLine = "";
 	int intRow;
 	int intCol;
@@ -151,10 +219,13 @@ public class mainmenu implements ActionListener{
 	
 	
 	//*****METHODS*****
+	/**Override actionPerformed method from ActionListener that was implemented <br>
+	 * To listen to methods from java swing: .addActionListener and  evt.getSource() <br>
+	 * Listened to: instruction buttons, rolling die*/
 	public void actionPerformed(ActionEvent evt){
 		
 		//INSTRUCTIONS SCREEN
-		//-to instructions screen
+		//-going to instructions screen
 		if(evt.getSource() == InstrucButt){
 			thepanelinstructions.blnpage1 = true;
 			thepanelinstructions.blnpage2 = false;
@@ -359,8 +430,7 @@ public class mainmenu implements ActionListener{
 			ssm.connect();
 			blnServer = true;
 			System.out.println(blnServer); 	
-		}
-		
+		}		
 		else if(evt.getSource() == playpage1.existing){
 			System.out.println("going to exisitng game"); 
 			theframe.setContentPane(joinpage); 
@@ -2029,8 +2099,7 @@ public class mainmenu implements ActionListener{
 			
 		}
 	
-		
-		
+			
 		//ROLLING THE DICE
 		else if(evt.getSource() == monopolypanel.rolldie){
 			//- making sure you can't access these buttons
@@ -2516,14 +2585,15 @@ public class mainmenu implements ActionListener{
 			 * 
 			 * - intialize array
 			 * strPropertiesOwned = new String [intNumofProperties];
-			 * intCol = 0;
+			 * intCol = -1;
 			 * 
 			 * - load array
 			 * for (intRow = 0; intRow < 40; intRow ++){	
 			 * 	intPlayerOwned = Integer.parseInt(strProperties[intRow][9].substring(1,2));
 			 * 	if(intPlayerOwned == intPlayer){
-			 * 		strPropertiesOwned[intCol] = strProperties[intRow][0];
 			 * 		intCol = intCol+1;
+			 * 		strPropertiesOwned[intCol] = intRow;
+			 * 		
 			 * 	}
 			 * }
 			 * 
@@ -2592,6 +2662,7 @@ public class mainmenu implements ActionListener{
 	}
 	
 	//Constructor
+	/** Constructor for the St. Augustine Monopoly */
 	public mainmenu(){
 	
 	//Reading CSV files	
@@ -2623,15 +2694,17 @@ public class mainmenu implements ActionListener{
 		 * [9] Boolean - if the property is owned (if you landed on it)
 		 * [10] Colour of property
 		 * [11] Number of Houses on the property (4 houses = hotel)
+		 * [12] intPlayer that owns the property
 		 * */
 		
-			for (intRow = 0; intRow < 40; intRow ++){
-				try{	
-					strLine = properties.readLine();
-				}catch(IOException e){
-					System.out.println("false");
+		for (intRow = 0; intRow < 40; intRow ++){
+			try{	
+				strLine = properties.readLine();
 			}
-				strSplit = strLine.split(",");
+			catch(IOException e){
+				System.out.println("false");
+			}
+			strSplit = strLine.split(",");
 			for (intCol = 0; intCol < 13; intCol++){	
 				strProperties[intRow][intCol] = strSplit[intCol];				
 			}
@@ -2643,16 +2716,14 @@ public class mainmenu implements ActionListener{
 		 * [2] - Money Given or Owed
 		 * */
 		for (intRow = 0; intRow < 30; intRow ++){
-				try{
-					strLine = community.readLine();
-				}catch(IOException e){
-					System.out.println("false");
+			try{
+				strLine = community.readLine();
+			}catch(IOException e){
+				System.out.println("false");
 			}
-				strSplit = strLine.split(",");
+			strSplit = strLine.split(",");
 			for (intCol = 0; intCol < 3; intCol++){
-				
 				strCommunity[intRow][intCol] = strSplit[intCol];
-				
 			}
 		}
 		
@@ -2688,13 +2759,24 @@ public class mainmenu implements ActionListener{
 		
 	
 		//set variables
-		theframe = new JFrame("Main Menu");
+		/**Establishing frame */
+		theframe = new JFrame("St. Augustine Monopoly");
+		/**Setting panel for Monopoly game */
 		thepanel = new JPanel(); 
+		/**Implementing Monopoly gameplay instructions into main menu */
 		thepanelinstructions = new monopolyinstructions();
+		/**Implementing server panel */
 		playpage1 = new serverpanel();
+		/**Implementing panel for being the server (starting the game) */
 		startpage = new startgame(); 
+		/**Implementing panel for being the client (joining the game) */
 		joinpage = new joingame(); 
+		/**Implementing all of the animation and graphics */
 		monopolypanel = new AnimationMonopolyPanel();
+		/**Implementing the characters page
+		 * This is shown after players join the game.
+		 * They can now choose their player colours through buttons
+		 * Options: red, blue, yellow, green */
 		characterspanel = new stamonopolycharacters();  
 		
 		//set panel
@@ -2702,25 +2784,30 @@ public class mainmenu implements ActionListener{
 		thepanel.setLayout(null); 
 		
 		//instruction button 
+		/**The instructions button from the main menu page to read how to play the game. */
 		InstrucButt = new JButton("Instructions"); 
 		InstrucButt.setSize(120, 30); 
 		InstrucButt.setLocation(110,250); 
 		InstrucButt.addActionListener(this);
 	
 		//play button 
-		//PlayButt.setFont(new Font("kabel.ttf", Font.PLAIN, 40));
+		/**The play button from the main menu page.
+		 * This button starts the actual gameplay */
 		PlayButt = new JButton("Play"); 
 		PlayButt.setSize(200, 35); 
 		PlayButt.setLocation(75,200); 
 		PlayButt.addActionListener(this); 
 		
-		//exit button 
+		//exit button
+		/**The exit button from the main menu page.
+		 * This button closes the game */ 
 		ExitButt = new JButton("Exit"); 
 		ExitButt.setSize(80, 30); 
 		ExitButt. setLocation(1200, 0); 
 		ExitButt.addActionListener(this);
 		
 		//insert image
+		/** This inserts an image into the main menu */
 		ImageIcon icon = new ImageIcon("Homepage.jpg"); 
 		JLabel label = new JLabel(icon);
 		label.setSize(1280,720);  
@@ -2835,6 +2922,7 @@ public class mainmenu implements ActionListener{
 		monopolypanel.hotel.setEnabled(false);
 		
 		// timer: 
+		/** Timer plays throughout the whole entirety of the game */
 		thetimer = new Timer(1000/60, this);
 		thetimer.start(); 
 		
@@ -2843,13 +2931,13 @@ public class mainmenu implements ActionListener{
 		theframe.pack();
 		theframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
 		theframe.setVisible(true);
-		//prevents windows from being resized
+		/** prevents windows from being resized */
 		theframe.setResizable(false); 	
 	
 	}
 	
 	
-	
+	/**This method actually executes the code and displays the program on screen from main menu*/
 	public static void main(String []args){
 		new mainmenu(); 
 	}

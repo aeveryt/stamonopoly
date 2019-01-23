@@ -5,7 +5,11 @@ import java.io.*;
 import javax.imageio.*; 
 import java.awt.event.*; 
 
-
+/**<h1>Server Page</h1>
+ * Player has decided to be the server that starts the game <br>
+ * Player must wait for players (clients) to type in the IP address displayed <br>
+ * Player can type their name in the textfield but must press enter or it will not display
+ * */
 public class startgame extends JPanel{
 	// properties
 	BufferedImage background; 
@@ -23,7 +27,7 @@ public class startgame extends JPanel{
 	
 	
 	// methods
-	
+	/**Overriding paint component method from JPanel*/
 	public void paintComponent(Graphics g){
 		g.setColor(Color.WHITE);
 		g.setFont(title);  
@@ -42,7 +46,7 @@ public class startgame extends JPanel{
 	
 	// constructor 
 	
-	
+	/**Constructor for server page (player that starts the game)*/
 	public startgame(){
 		super(); 
 		strAddress = "12345"; 

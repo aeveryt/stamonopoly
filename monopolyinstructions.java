@@ -5,6 +5,9 @@ import java.io.*;
 import javax.imageio.*;
 import java.awt.Font;
 
+/**<h1> St.Augustine Monopoly Instructions Page </h1>
+ * This is the instructions page of St.Augustine Monopoly game
+ * */
 public class monopolyinstructions extends JPanel{
 	//Properties
 	Font title;
@@ -13,15 +16,25 @@ public class monopolyinstructions extends JPanel{
 	BufferedImage page3;
 	BufferedImage page4;
 	BufferedImage page5;
+	/** PAGE 1 - when clicked, it goes back to main menu */
 	public JButton backtomain;
+	/** PAGE 1 - when clicked, it goes to page 2 */
 	public JButton topage2;
+	/** PAGE 2 - when clicked, it goes back to page 1*/
 	public JButton backtopage1;
+	/** PAGE 2 - when clicked, it goes to page 3 */
 	public JButton topage3;
-	public JButton topage4;
+	/** PAGE 3 - when clicked, it goes back to page 2 */
 	public JButton backtopage2;
+	/** PAGE 3 - when clicked, it goes to page 4 */
+	public JButton topage4;
+	/** PAGE 4 - when clicked, it goes back to page 3 */
 	public JButton backtopage3;
+	/** PAGE 4 - when clicked, it goes to page 5 */
 	public JButton topage5;
+	/** PAGE 5 - when clicked, it goes back to page 4 */
 	public JButton backtopage4;
+	/** PAGE 5 - when clicked, it goes to the main menu */
 	public JButton tomain5;
 	
 	boolean blnpage1 = true;
@@ -33,6 +46,7 @@ public class monopolyinstructions extends JPanel{
 	//-initialize
 
 	//Methods
+	/**Overriding JPanel paintComponent method for monopoly instructions */
 	public void paintComponent(Graphics g){
 		g.setFont(title);
 		g.setColor(Color.BLACK);
@@ -65,6 +79,7 @@ public class monopolyinstructions extends JPanel{
 	}
 	
 	//Constructor
+	/** Constructor for the the instructions game of St.A Monopoly Game */
 	public monopolyinstructions(){
 		//from JPanel
 		super();
