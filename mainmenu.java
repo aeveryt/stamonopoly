@@ -76,6 +76,8 @@ public class mainmenu implements ActionListener{
 	int intPropertyCost = 0; // the cost of the property
 	boolean blnOffice = false; //checks if the player is in jail
 	int intOfficeTime = 0; //checks how many turns are left over when in jail (principal's office)
+	int intPropertyPanel = 0 ;//property panel page
+	int intPropertyDisplay;
 	
 	//-Properties (that you own)
 	int intNumofProperties = 0; //number of properties owned
@@ -90,7 +92,7 @@ public class mainmenu implements ActionListener{
 	int intYellow = 0;
 	int intGreen = 0;
 	int intDarkBlue = 0;
-	int intRentOption = 0;
+	//-- house properties
 	int intHouse = 0;
 	
 	//-File Variables 
@@ -122,7 +124,7 @@ public class mainmenu implements ActionListener{
 	 * [12] intPlayer that owns the property
 	 * */
 	public String strProperties[][] = new String[40][13];
-	String strPropertiesOwned[]; //properties that you own
+	int intPropertiesOwned[]; //properties that you own
 	/**The Community Chest Cards in the St. Augustine Monopoly Board <br>
 	 * These are randomly generated <br>
 	 * Array: [30][3]<br>
@@ -855,11 +857,7 @@ public class mainmenu implements ActionListener{
 		
 		
 		
-		
-		
-		
-		
-		
+	
 		
 		
 		//----- see if someone landed on your property so you can collect rent!
@@ -1659,9 +1657,7 @@ public class mainmenu implements ActionListener{
 		}
 		
 		
-		
-		
-		
+	
 				
 		// --------- see if a message is regarding the purchase of a property by another player--------
 		if(strData.equals("Geography") || strData.equals("History") || strData.equals("Guidance 1") || strData.equals("Visual Arts") || strData.equals("Music") || strData.equals("Drama") || strData.equals("Accounting") || strData.equals("Student Council") || strData.equals("Marketing") || strData.equals("Business Leadership")|| strData.equals("Guidance 2") || strData.equals("Religion") || strData.equals("World Religions")|| strData.equals("Philosphy")|| strData.equals("Indigenous Studies")|| strData.equals("Writer's Craft") || strData.equals("English")|| strData.equals("Guidance 3")|| strData.equals("Advanced Functions") || strData.equals("Data Management") || strData.equals("Athletic Council") || strData.equals("Calculas and Vectors") || strData.equals("Biology") || strData.equals("Chemistry") || strData.equals("Physics") || strData.equals("Guidance 4") || strData.equals("Tech Design") || strData.equals("Computer Science") || blnPropertyBought == true || strData.equals("Principal's Office") || blnPropertyBought1 == true || blnPropertyBought5 == true || blnPropertyBought6 == true ||blnPropertyBought8 == true ||blnPropertyBought9 == true||blnPropertyBought11 == true||blnPropertyBought12 == true||blnPropertyBought13 == true||blnPropertyBought14 == true||blnPropertyBought15 == true || blnPropertyBought16 == true||blnPropertyBought17 == true|| blnPropertyBought18 == true ||blnPropertyBought19 == true || blnPropertyBought21 ==true||blnPropertyBought23 == true|| blnPropertyBought24 == true || blnPropertyBought25 == true || blnPropertyBought26 ==true|| blnPropertyBought27 == true || blnPropertyBought28 == true|| blnPropertyBought29 == true||blnPropertyBought31 == true|| blnPropertyBought32 == true|| blnPropertyBought34 == true ||blnPropertyBought35 == true || blnPropertyBought37 == true || blnPropertyBought39 == true){
@@ -1880,9 +1876,7 @@ public class mainmenu implements ActionListener{
 		monopolypanel.textarea.setText("");
 		
 		}
-		
-		
-		
+				
 		
 		
 			// If you are the server 
@@ -2576,42 +2570,72 @@ public class mainmenu implements ActionListener{
 		//PROPERTIES PANEL (that you own)
 		//-next
 		else if(evt.getSource()==monopolypanel.next){
-			/* - checking if you own the property
-			 * for (intRow = 0; intRow < 40; intRow ++){	
-			 * 	intPlayerOwned = Integer.parseInt(strProperties[intRow][12]);
-			 * 	if(intPlayerOwned == intPlayer){
-			 * 		intNumofProperties = intNumofProperties +1;
-			 * 	}
-			 * }
-			 * 
-			 * - intialize array
-			 * strPropertiesOwned = new String [intNumofProperties];
-			 * intCol = -1;
-			 * 
-			 * - load array
-			 * for (intRow = 0; intRow < 40; intRow ++){	
-			 * 	intPlayerOwned = Integer.parseInt(strProperties[intRow][9].substring(1,2));
-			 * 	if(intPlayerOwned == intPlayer){
-			 * 		intCol = intCol+1;
-			 * 		strPropertiesOwned[intCol] = intRow;
-			 * 		
-			 * 	}
-			 * }
-			 * 
-			 * - printing out array (clicking the next button shows next property that you also owned
-			 * monopolypanel.strPropertyOwned = strProperties[monopolypanel.intPropertyN][0];
-			monopolypanel.strMoney = intMoney+"";
-			monopolypanel.intMoney = intMoney;
-			monopolypanel.intRent = Integer.parseInt(strProperties[monopolypanel.intPropertyN][3]);
-			monopolypanel.intHouse1 = Integer.parseInt(strProperties[monopolypanel.intPropertyN][4]);
-			monopolypanel.intHouse2 = Integer.parseInt(strProperties[monopolypanel.intPropertyN][5]);
-			monopolypanel.intHouse3 = Integer.parseInt(strProperties[monopolypanel.intPropertyN][6]);
-			monopolypanel.intHotel = Integer.parseInt(strProperties[monopolypanel.intPropertyN][7]);
-			 * 	
-			 * */
+			// - checking if you own the property
+			for (intRow = 0; intRow < 40; intRow ++){	
+			intPlayerOwned = Integer.parseInt(strProperties[intRow][12]);
+			if(intPlayerOwned == monopolypanel.intPlayer){
+		  		intNumofProperties = intNumofProperties +1;
+				}
+			}
+		  System.out.println("You own this many properties: " +intNumofProperties);
+			// - intialize array
+			intPropertiesOwned = new int [intNumofProperties];
+			intCol = -1;
+		 
+			// - load array
+			for(intRow = 0; intRow < 40; intRow ++){	
+				intPlayerOwned = Integer.parseInt(strProperties[intRow][12]);
+				if(intPlayerOwned == monopolypanel.intPlayer){
+					intCol = intCol+1;
+					intPropertiesOwned[intCol] = intRow; 		
+					}
+				}
+			intPropertyPanel = intPropertyPanel+1;	
+			//printing out array (clicking the next button shows next property that you also owned
+			if(intPropertyPanel<intNumofProperties){
+				intPropertyPanel = intNumofProperties;
+			}	
+			monopolypanel.strPropertyOwned = strProperties[intPropertiesOwned[intPropertyPanel]][0];
+			monopolypanel.intRent = Integer.parseInt(strProperties[intPropertiesOwned[intPropertyPanel]][3]);
+			monopolypanel.intHouse1 = Integer.parseInt(strProperties[intPropertiesOwned[intPropertyPanel]][4]);
+			monopolypanel.intHouse2 = Integer.parseInt(strProperties[intPropertiesOwned[intPropertyPanel]][5]);
+			monopolypanel.intHouse3 = Integer.parseInt(strProperties[intPropertiesOwned[intPropertyPanel]][6]);
+			monopolypanel.intHotel = Integer.parseInt(strProperties[intPropertiesOwned[intPropertyPanel]][7]);
+		
 		}
 		//-back
 		else if(evt.getSource() == monopolypanel.back){
+			// - checking if you own the property
+			for (intRow = 0; intRow < 40; intRow ++){	
+			intPlayerOwned = Integer.parseInt(strProperties[intRow][12]);
+			if(intPlayerOwned == monopolypanel.intPlayer){
+		  		intNumofProperties = intNumofProperties +1;
+				}
+			}
+		  System.out.println("You own this many properties: " +intNumofProperties);
+			// - intialize array
+			intPropertiesOwned = new int [intNumofProperties];
+			intCol = -1;
+		 
+			// - load array
+			for(intRow = 0; intRow < 40; intRow ++){	
+				intPlayerOwned = Integer.parseInt(strProperties[intRow][12]);
+				if(intPlayerOwned == monopolypanel.intPlayer){
+					intCol = intCol+1;
+					intPropertiesOwned[intCol] = intRow; 		
+					}
+				}
+			intPropertyPanel = intPropertyPanel-1;	
+			//printing out array (clicking the next button shows next property that you also owned
+			if(intPropertyPanel>intNumofProperties){
+				intPropertyPanel = intNumofProperties;
+			}	
+			monopolypanel.strPropertyOwned = strProperties[intPropertiesOwned[intPropertyPanel]][0];
+			monopolypanel.intRent = Integer.parseInt(strProperties[intPropertiesOwned[intPropertyPanel]][3]);
+			monopolypanel.intHouse1 = Integer.parseInt(strProperties[intPropertiesOwned[intPropertyPanel]][4]);
+			monopolypanel.intHouse2 = Integer.parseInt(strProperties[intPropertiesOwned[intPropertyPanel]][5]);
+			monopolypanel.intHouse3 = Integer.parseInt(strProperties[intPropertiesOwned[intPropertyPanel]][6]);
+			monopolypanel.intHotel = Integer.parseInt(strProperties[intPropertiesOwned[intPropertyPanel]][7]);
 		}
 		
 		//BUYING A HOUSE (Classroom Improvement)
