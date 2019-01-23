@@ -1744,7 +1744,6 @@ public class mainmenu implements ActionListener{
 			// it is not going up 
 			
 			//- printing out dice to animation monopoly panel
-			//System.out.println(intdice1+" + " +intdice2); 
 			String strDice1; 
 			String strDice2; 
 			String strDiceSum;
@@ -1859,7 +1858,6 @@ public class mainmenu implements ActionListener{
 					intLocation = Integer.parseInt(strChance[intNum][3]);
 					monopolypanel.intPropertyN = intLocation;
 					//Printing out location effect on the board from animation panel 
-					//System.out.println("The Chance card took you to location: " +monopolypanel.intPropertyN);
 					if(intLocation>=0 && intLocation<10){
 						monopolypanel.intYOUx = 650-((intLocation)*60);
 						monopolypanel.intYOUy = 650;
@@ -1878,7 +1876,6 @@ public class mainmenu implements ActionListener{
 					}
 					//if chance card sends you to jail
 					if(intLocation == 10){
-						//System.out.println("sending you to jail because of chance");
 						blnOffice = true;
 						intOfficeTime = 4;
 					}
@@ -1943,7 +1940,6 @@ public class mainmenu implements ActionListener{
 				//if utilities owned
 				if(monopolypanel.intPropertyN == 12 || monopolypanel.intPropertyN == 28){
 					intLandedRent = intdiesum*intLandedRent;
-					//System.out.println(intdiesum + "x4="+ intLandedRent);
 				}
 
 				intMoney = intMoney - intLandedRent;
@@ -1955,7 +1951,6 @@ public class mainmenu implements ActionListener{
 			//--landing on go to prinicpal office
 			if(strProperties[monopolypanel.intPropertyN][0].equalsIgnoreCase("Go To Principal's Office")){
 				//Player moves to principal office
-				System.out.println("going to jail because of space");
 				monopolypanel.intPropertyN = 10;
 				monopolypanel.intYOUx = 50;
 				monopolypanel.intYOUy = 650; 
@@ -1976,7 +1971,6 @@ public class mainmenu implements ActionListener{
 				//rolling doubles can get you out of jail
 				//- but you need to be in jail for at least one turn
 				if(intdice1==intdice2 && intOfficeTime<3 && intOfficeTime>0){
-					System.out.println("released out of jail from doubles");
 					blnOffice = false;
 				}
 			}
