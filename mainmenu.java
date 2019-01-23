@@ -2515,23 +2515,33 @@ public class mainmenu implements ActionListener{
 			//-------------------------- Buying the colour --------------------------
 			if(strProperties[monopolypanel.intPropertyN][10].equalsIgnoreCase("br")){
 				intBrown = intBrown + 1;
+				intNumofProperties = intNumofProperties +1;
 				System.out.println("Properties of this colour: " + intBrown);
+			}
+			if(strProperties[monopolypanel.intPropertyN][10].equalsIgnoreCase("u")){
+				intUtility = intUtility + 1;
+				intNumofProperties = intNumofProperties +1;
+				System.out.println("Properties of this utility: " +intUtility);
 			}
 			else if(strProperties[monopolypanel.intPropertyN][10].equalsIgnoreCase("rail")){
 				intRailRoad = intRailRoad + 1;
+				intNumofProperties = intNumofProperties +1;
 				strProperties[monopolypanel.intPropertyN][11] = intRailRoad+"";
 				System.out.println("Properties of this colour: " + intRailRoad);
 			}
 			else if(strProperties[monopolypanel.intPropertyN][10].equalsIgnoreCase("lb")){
 				intLightBlue = intLightBlue	+ 1;
+				intNumofProperties = intNumofProperties +1;
 				System.out.println("Properties of this colour: " + intLightBlue);
 			}
 			else if(strProperties[monopolypanel.intPropertyN][10].equalsIgnoreCase("pur")){
 				intPurple = intPurple + 1;
+				intNumofProperties = intNumofProperties +1;
 				System.out.println("Properties of this colour: " + intPurple);
 			}
 			else if(strProperties[monopolypanel.intPropertyN][10].equalsIgnoreCase("or")){
 				intOrange = intOrange + 1;
+				intNumofProperties = intNumofProperties +1;
 				System.out.println("Properties of this colour: " + intOrange);
 			}
 			else if(strProperties[monopolypanel.intPropertyN][10].equalsIgnoreCase("red")){
@@ -2540,36 +2550,45 @@ public class mainmenu implements ActionListener{
 			}
 			else if(strProperties[monopolypanel.intPropertyN][10].equalsIgnoreCase("yel")){
 				intYellow = intYellow + 1;
+				intNumofProperties = intNumofProperties +1;
 				System.out.println("Properties of this colour: " + intYellow);
 			}
 			else if(strProperties[monopolypanel.intPropertyN][10].equalsIgnoreCase("gre")){
 				intGreen = intGreen + 1;
+				intNumofProperties = intNumofProperties +1;
 				System.out.println("Properties of this colour: " + intGreen);
 			}
 			else if(strProperties[monopolypanel.intPropertyN][10].equalsIgnoreCase("db")){
 				intDarkBlue = intDarkBlue + 1;
+				intNumofProperties = intNumofProperties +1;
 				System.out.println("Properties of this colour: " + intDarkBlue);
 			}
-		// ---------------------- Sending message over the server that the property can no longer be bought --------------
-		ssm.sendText(monopolypanel.strPropertyN); 
-		ssm.sendText(monopolypanel.intPlayer+""); 
+			// ---------------------- Sending message over the server that the property can no longer be bought --------------
+			ssm.sendText(monopolypanel.strPropertyN); 
+			ssm.sendText(monopolypanel.intPlayer+""); 
 		
-		System.out.println(monopolypanel.strPropertyN); 
-		System.out.println(monopolypanel.intPlayer); 
-		// to load in that you bought the property
-		System.out.println("This is what is inserted into the CSV: "); 
-		System.out.println(strProperties[monopolypanel.intPropertyN][9]); 
-		System.out.println(strProperties[monopolypanel.intPropertyN][12]); 
+			System.out.println(monopolypanel.strPropertyN); 
+			System.out.println(monopolypanel.intPlayer); 
+			// to load in that you bought the property
+			System.out.println("This is what is inserted into the CSV: "); 
+			System.out.println(strProperties[monopolypanel.intPropertyN][9]); 
+			System.out.println(strProperties[monopolypanel.intPropertyN][12]); 
 			
-		// ------------- Sending message over the server about money when you owe someone -----------
-		ssm.sendText(monopolypanel.strPropertyN+monopolypanel.intPropertyN);
-		System.out.println(monopolypanel.strPropertyN+monopolypanel.intPropertyN);
+			// ------------- Sending message over the server about money when you owe someone -----------
+			ssm.sendText(monopolypanel.strPropertyN+monopolypanel.intPropertyN);
+			System.out.println(monopolypanel.strPropertyN+monopolypanel.intPropertyN);
 			
+			//set viewing properties enabled
+			if(intNumofProperties>1){
+				monopolypanel.next.setEnabled(true);
+				monopolypanel.back.setEnabled(true);
+			}
 			
 		}
 		//PROPERTIES PANEL (that you own)
 		//-next
 		else if(evt.getSource()==monopolypanel.next){
+			intNumofProperties = 0;
 			// - checking if you own the property
 			for (intRow = 0; intRow < 40; intRow ++){	
 			intPlayerOwned = Integer.parseInt(strProperties[intRow][12]);
@@ -2592,8 +2611,8 @@ public class mainmenu implements ActionListener{
 				}
 			intPropertyPanel = intPropertyPanel+1;	
 			//printing out array (clicking the next button shows next property that you also owned
-			if(intPropertyPanel<intNumofProperties){
-				intPropertyPanel = intNumofProperties;
+			if(intPropertyPanel>intNumofProperties){
+				intPropertyPanel = intNumofProperties-1;
 			}	
 			monopolypanel.strPropertyOwned = strProperties[intPropertiesOwned[intPropertyPanel]][0];
 			monopolypanel.intRent = Integer.parseInt(strProperties[intPropertiesOwned[intPropertyPanel]][3]);
@@ -2605,6 +2624,7 @@ public class mainmenu implements ActionListener{
 		}
 		//-back
 		else if(evt.getSource() == monopolypanel.back){
+			intNumofProperties= 0;
 			// - checking if you own the property
 			for (intRow = 0; intRow < 40; intRow ++){	
 			intPlayerOwned = Integer.parseInt(strProperties[intRow][12]);
@@ -2618,7 +2638,7 @@ public class mainmenu implements ActionListener{
 			intCol = -1;
 		 
 			// - load array
-			for(intRow = 0; intRow < 40; intRow ++){	
+			for(intRow = 0; intRow < 40; intRow ++){
 				intPlayerOwned = Integer.parseInt(strProperties[intRow][12]);
 				if(intPlayerOwned == monopolypanel.intPlayer){
 					intCol = intCol+1;
@@ -2627,8 +2647,8 @@ public class mainmenu implements ActionListener{
 				}
 			intPropertyPanel = intPropertyPanel-1;	
 			//printing out array (clicking the next button shows next property that you also owned
-			if(intPropertyPanel>intNumofProperties){
-				intPropertyPanel = intNumofProperties;
+			if(intPropertyPanel<0){
+				intPropertyPanel = 0;
 			}	
 			monopolypanel.strPropertyOwned = strProperties[intPropertiesOwned[intPropertyPanel]][0];
 			monopolypanel.intRent = Integer.parseInt(strProperties[intPropertiesOwned[intPropertyPanel]][3]);
@@ -2636,6 +2656,7 @@ public class mainmenu implements ActionListener{
 			monopolypanel.intHouse2 = Integer.parseInt(strProperties[intPropertiesOwned[intPropertyPanel]][5]);
 			monopolypanel.intHouse3 = Integer.parseInt(strProperties[intPropertiesOwned[intPropertyPanel]][6]);
 			monopolypanel.intHotel = Integer.parseInt(strProperties[intPropertiesOwned[intPropertyPanel]][7]);
+			
 		}
 		
 		//BUYING A HOUSE (Classroom Improvement)
@@ -2929,6 +2950,8 @@ public class mainmenu implements ActionListener{
 		monopolypanel.dontbuy.setEnabled(false);
 		monopolypanel.house.setEnabled(false);
 		monopolypanel.hotel.setEnabled(false);
+		monopolypanel.next.setEnabled(false);
+		monopolypanel.back.setEnabled(false);
 		
 		// timer: 
 		//Timer plays throughout the whole entirety of the game 
