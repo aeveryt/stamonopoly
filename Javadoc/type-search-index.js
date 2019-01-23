@@ -1,0 +1,1 @@
+typeSearchIndex = [{"p":"<Unnamed>","l":"AnimationMonopolyPanel"},{"p":"<Unnamed>","l":"joingame"},{"p":"<Unnamed>","l":"mainmenu"},{"p":"<Unnamed>","l":"monopolyinstructions"},{"p":"<Unnamed>","l":"serverpanel"},{"p":"<Unnamed>","l":"stamonopolycharacters"},{"p":"<Unnamed>","l":"startgame"},{"p":"<Unnamed>","l":"SuperSocketMaster"}]

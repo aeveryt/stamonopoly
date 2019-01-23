@@ -16,7 +16,6 @@ public class startgame extends JPanel{
 	JButton back; 
 	Font title;
 	Font bold; 
-	public mainmenu menu; 
 	String strAddress = "1345";
 	JButton gameplay; 
 	int intConnections;
