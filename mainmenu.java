@@ -12,7 +12,8 @@ import java.io.*;
 public class mainmenu implements ActionListener{
 
 	//*****PROPERTIES*****
-	/**Frame of the program from JFrame of javaswing*/
+	/**Frame of the program from JFrame of javaswing<br>
+	 * Resolution: 1280,720*/
 	public JFrame theframe; 
 	
 	/**Panel of the program from JPanel of javaswing*/
@@ -2759,24 +2760,13 @@ public class mainmenu implements ActionListener{
 		
 	
 		//set variables
-		/**Establishing frame */
 		theframe = new JFrame("St. Augustine Monopoly");
-		/**Setting panel for Monopoly game */
 		thepanel = new JPanel(); 
-		/**Implementing Monopoly gameplay instructions into main menu */
 		thepanelinstructions = new monopolyinstructions();
-		/**Implementing server panel */
 		playpage1 = new serverpanel();
-		/**Implementing panel for being the server (starting the game) */
 		startpage = new startgame(); 
-		/**Implementing panel for being the client (joining the game) */
 		joinpage = new joingame(); 
-		/**Implementing all of the animation and graphics */
 		monopolypanel = new AnimationMonopolyPanel();
-		/**Implementing the characters page
-		 * This is shown after players join the game.
-		 * They can now choose their player colours through buttons
-		 * Options: red, blue, yellow, green */
 		characterspanel = new stamonopolycharacters();  
 		
 		//set panel
@@ -2784,23 +2774,18 @@ public class mainmenu implements ActionListener{
 		thepanel.setLayout(null); 
 		
 		//instruction button 
-		/**The instructions button from the main menu page to read how to play the game. */
 		InstrucButt = new JButton("Instructions"); 
 		InstrucButt.setSize(120, 30); 
 		InstrucButt.setLocation(110,250); 
 		InstrucButt.addActionListener(this);
 	
 		//play button 
-		/**The play button from the main menu page.
-		 * This button starts the actual gameplay */
 		PlayButt = new JButton("Play"); 
 		PlayButt.setSize(200, 35); 
 		PlayButt.setLocation(75,200); 
 		PlayButt.addActionListener(this); 
 		
 		//exit button
-		/**The exit button from the main menu page.
-		 * This button closes the game */ 
 		ExitButt = new JButton("Exit"); 
 		ExitButt.setSize(80, 30); 
 		ExitButt. setLocation(1200, 0); 
@@ -2922,7 +2907,7 @@ public class mainmenu implements ActionListener{
 		monopolypanel.hotel.setEnabled(false);
 		
 		// timer: 
-		/** Timer plays throughout the whole entirety of the game */
+		//Timer plays throughout the whole entirety of the game 
 		thetimer = new Timer(1000/60, this);
 		thetimer.start(); 
 		
@@ -2931,13 +2916,14 @@ public class mainmenu implements ActionListener{
 		theframe.pack();
 		theframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
 		theframe.setVisible(true);
-		/** prevents windows from being resized */
+		// prevents windows from being resized
 		theframe.setResizable(false); 	
 	
 	}
 	
 	
-	/**This method actually executes the code and displays the program on screen from main menu*/
+	/**This method actually executes the code and displays the program on screen from main menu
+	 * @param String[] args*/
 	public static void main(String []args){
 		new mainmenu(); 
 	}
