@@ -124,6 +124,8 @@ public class mainmenu implements ActionListener{
 	 * [12] intPlayer that owns the property
 	 * */
 	public String strProperties[][] = new String[40][13];
+	/**This array allows you to see the properties you own <br>
+	 * The array length is dependent on how many properties you own*/
 	int intPropertiesOwned[]; //properties that you own
 	/**The Community Chest Cards in the St. Augustine Monopoly Board <br>
 	 * These are randomly generated <br>
@@ -2493,6 +2495,7 @@ public class mainmenu implements ActionListener{
 			
 		
 			monopolypanel.strPropertyOwned = strProperties[monopolypanel.intPropertyN][0];
+			monopolypanel.strColour= strProperties[monopolypanel.intPropertyN][10];
 			monopolypanel.strMoney = intMoney+"";
 			monopolypanel.intMoney = intMoney;
 			monopolypanel.intRent = Integer.parseInt(strProperties[monopolypanel.intPropertyN][3]);
@@ -2614,6 +2617,10 @@ public class mainmenu implements ActionListener{
 			if(intPropertyPanel>intNumofProperties){
 				intPropertyPanel = intNumofProperties-1;
 			}	
+			
+			//set colour of property in property outline
+			monopolypanel.strPropertyOwned = strProperties[monopolypanel.intPropertyN][0];
+			monopolypanel.strColour = strProperties[intPropertiesOwned[intPropertyPanel]][10];
 			monopolypanel.strPropertyOwned = strProperties[intPropertiesOwned[intPropertyPanel]][0];
 			monopolypanel.intRent = Integer.parseInt(strProperties[intPropertiesOwned[intPropertyPanel]][3]);
 			monopolypanel.intHouse1 = Integer.parseInt(strProperties[intPropertiesOwned[intPropertyPanel]][4]);
@@ -2651,6 +2658,7 @@ public class mainmenu implements ActionListener{
 				intPropertyPanel = 0;
 			}	
 			monopolypanel.strPropertyOwned = strProperties[intPropertiesOwned[intPropertyPanel]][0];
+			monopolypanel.strColour = strProperties[intPropertiesOwned[intPropertyPanel]][10];
 			monopolypanel.intRent = Integer.parseInt(strProperties[intPropertiesOwned[intPropertyPanel]][3]);
 			monopolypanel.intHouse1 = Integer.parseInt(strProperties[intPropertiesOwned[intPropertyPanel]][4]);
 			monopolypanel.intHouse2 = Integer.parseInt(strProperties[intPropertiesOwned[intPropertyPanel]][5]);
@@ -2970,8 +2978,8 @@ public class mainmenu implements ActionListener{
 	
 	
 	/**This method actually executes the code and displays the program on screen from main menu
-	 * @param String[] args*/
-	public static void main(String []args){
+	 * @param String [] args*/
+	public static void main(String [] args){
 		new mainmenu(); 
 	}
 }

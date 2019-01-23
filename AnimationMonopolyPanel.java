@@ -75,6 +75,8 @@ public class AnimationMonopolyPanel extends JPanel{
 	int intHotel;
 	String strPropertyN = ""; 
 	String strPropertyOwned = "";
+	//-property colours
+	String strColour = "";
 	
 	
 	//-player variables
@@ -157,7 +159,39 @@ public class AnimationMonopolyPanel extends JPanel{
 		g.fillRect(725,331,282,315);
 		if(blnOwned&&intPropertyN!=10){
 			g.setFont(property);
-			g.setColor(Color.RED);
+			if(strColour.equalsIgnoreCase("br")){
+				g.setColor(new Color(102, 86, 60));
+			}
+			else if(strColour.equalsIgnoreCase("red")){
+				g.setColor(Color.RED);
+			}
+			else if(strColour.equalsIgnoreCase("u")){
+				g.setColor(new Color(149, 153, 142));
+			}
+			else if(strColour.equalsIgnoreCase("rail")){
+				g.setColor(Color.BLACK);
+			}
+			else if(strColour.equalsIgnoreCase("lb")){
+				g.setColor(new Color(181, 206, 224));
+			}
+			else if(strColour.equalsIgnoreCase("pur")){
+				g.setColor(new Color(171, 133, 181));
+			}
+			else if(strColour.equalsIgnoreCase("or")){
+				g.setColor(new Color(224, 141, 8));
+			}
+			else if(strColour.equalsIgnoreCase("yel")){
+				g.setColor(Color.YELLOW);
+			}
+			else if(strColour.equalsIgnoreCase("gre")){
+				g.setColor(Color.GREEN);
+			}
+			else if(strColour.equalsIgnoreCase("db")){
+				g.setColor(new Color(7, 16, 142));
+			}
+			else{
+				g.setColor(Color.BLACK);
+			}
 			g.drawString(strPropertyOwned,730,353);
 			g.setFont(text);
 			g.setColor(Color.BLACK);
