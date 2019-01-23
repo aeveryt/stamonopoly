@@ -2494,6 +2494,7 @@ public class mainmenu implements ActionListener{
 			intMoney = intMoney-intPropertyCost; // subtracting
 			
 		
+			monopolypanel.strPropertyOwned = strProperties[monopolypanel.intPropertyN][0];
 			monopolypanel.strMoney = intMoney+"";
 			monopolypanel.intMoney = intMoney;
 			monopolypanel.intRent = Integer.parseInt(strProperties[monopolypanel.intPropertyN][3]);
@@ -2515,51 +2516,61 @@ public class mainmenu implements ActionListener{
 			}
 			//-------------------------- Buying the colour --------------------------
 			if(strProperties[monopolypanel.intPropertyN][10].equalsIgnoreCase("br")){
+				monopolypanel.strColour= strProperties[monopolypanel.intPropertyN][10];
 				intBrown = intBrown + 1;
 				intNumofProperties = intNumofProperties +1;
 				System.out.println("Properties of this colour: " + intBrown);
 			}
 			if(strProperties[monopolypanel.intPropertyN][10].equalsIgnoreCase("u")){
+				monopolypanel.strColour= strProperties[monopolypanel.intPropertyN][10];
 				intUtility = intUtility + 1;
 				intNumofProperties = intNumofProperties +1;
 				System.out.println("Properties of this utility: " +intUtility);
 			}
 			else if(strProperties[monopolypanel.intPropertyN][10].equalsIgnoreCase("rail")){
+				monopolypanel.strColour= strProperties[monopolypanel.intPropertyN][10];
 				intRailRoad = intRailRoad + 1;
 				intNumofProperties = intNumofProperties +1;
 				strProperties[monopolypanel.intPropertyN][11] = intRailRoad+"";
 				System.out.println("Properties of this colour: " + intRailRoad);
 			}
 			else if(strProperties[monopolypanel.intPropertyN][10].equalsIgnoreCase("lb")){
+				monopolypanel.strColour= strProperties[monopolypanel.intPropertyN][10];
 				intLightBlue = intLightBlue	+ 1;
 				intNumofProperties = intNumofProperties +1;
 				System.out.println("Properties of this colour: " + intLightBlue);
 			}
 			else if(strProperties[monopolypanel.intPropertyN][10].equalsIgnoreCase("pur")){
+				monopolypanel.strColour= strProperties[monopolypanel.intPropertyN][10];
 				intPurple = intPurple + 1;
 				intNumofProperties = intNumofProperties +1;
 				System.out.println("Properties of this colour: " + intPurple);
 			}
 			else if(strProperties[monopolypanel.intPropertyN][10].equalsIgnoreCase("or")){
+				monopolypanel.strColour= strProperties[monopolypanel.intPropertyN][10];
 				intOrange = intOrange + 1;
 				intNumofProperties = intNumofProperties +1;
 				System.out.println("Properties of this colour: " + intOrange);
 			}
 			else if(strProperties[monopolypanel.intPropertyN][10].equalsIgnoreCase("red")){
+				monopolypanel.strColour= strProperties[monopolypanel.intPropertyN][10];
 				intRed = intRed + 1;
 				System.out.println("Properties of this colour: " + intRed);
 			}
 			else if(strProperties[monopolypanel.intPropertyN][10].equalsIgnoreCase("yel")){
+				monopolypanel.strColour= strProperties[monopolypanel.intPropertyN][10];
 				intYellow = intYellow + 1;
 				intNumofProperties = intNumofProperties +1;
 				System.out.println("Properties of this colour: " + intYellow);
 			}
 			else if(strProperties[monopolypanel.intPropertyN][10].equalsIgnoreCase("gre")){
+				monopolypanel.strColour= strProperties[monopolypanel.intPropertyN][10];
 				intGreen = intGreen + 1;
 				intNumofProperties = intNumofProperties +1;
 				System.out.println("Properties of this colour: " + intGreen);
 			}
 			else if(strProperties[monopolypanel.intPropertyN][10].equalsIgnoreCase("db")){
+				monopolypanel.strColour= strProperties[monopolypanel.intPropertyN][10];
 				intDarkBlue = intDarkBlue + 1;
 				intNumofProperties = intNumofProperties +1;
 				System.out.println("Properties of this colour: " + intDarkBlue);
