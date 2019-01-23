@@ -38,8 +38,10 @@ public class AnimationMonopolyPanel extends JPanel{
 	/**This button allows you to roll the die and move around the board - there are two die*/
 	public JButton rolldie;
 	//-property variables
-	JButton next;
-	JButton back;
+	/**This buttons allows you to view properties for the next page*/
+	public JButton next;
+	/**This button allows you to view properties for the page (in the back)*/
+	public JButton back;
 	//-fonts
 	Font text = null;
 	Font title = null;
